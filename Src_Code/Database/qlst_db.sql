@@ -82,6 +82,7 @@ CREATE TABLE [dbo].[DonHang]
 
 CREATE TABLE [dbo].[ChiTietDonHang]
 (
+	[MaChiTiet] varchar(50) not null,
 	[MaDon] varchar(50) not null,
 	[MaSP] varchar(50) not null,
 	[TenSP] nvarchar(100),
@@ -89,7 +90,7 @@ CREATE TABLE [dbo].[ChiTietDonHang]
 	[SoLuong] int,
 	[ThanhTien] int,
 	[DonViTinh] nvarchar(100),
-	CONSTRAINT PK_ChiTietDonHang PRIMARY KEY([MaDon], [MaSP]),
+	CONSTRAINT PK_ChiTietDonHang PRIMARY KEY([MaChiTiet], [MaDon], [MaSP]),
 	CONSTRAINT FK_DonHang_ChiTietDonHang FOREIGN KEY([MaDon]) REFERENCES [dbo].[DonHang]([MaDon]),
 	CONSTRAINT FK_SanPham_ChiTietDonHang FOREIGN KEY([MaSP]) REFERENCES [dbo].[SanPham]([MaSP])
 );
