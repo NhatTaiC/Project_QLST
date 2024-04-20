@@ -165,7 +165,7 @@ VALUES
 	('MSP078', N'ASUS ZenScreen MB166C- 16 inch', 4000000, 4990000, 10, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003'),
 	('MSP079', N'ASUS Zenbook 14 OLED UX3405MA-PP588W', 26000000, 26990000, 10, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003'),
 	('MSP080', N'ASUS ZenScreen OLED MQ16AH – 16 inch', 3000000, 3900000, 10, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003'),
-	('MSP080', N'ASUS ZenScreen MB166C Portable Monitor- 16 inch', 4000000, 4990000, 10, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003'),
+	('MSP081', N'ASUS ZenScreen MB166C Portable Monitor- 16 inch', 4000000, 4990000, 10, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003'),
 	('MSP082', N'ASUS ZenScreen MB16AH Portable USB- 16 inch', 5000000, 5990000, 10, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003');
 
 
@@ -185,7 +185,15 @@ INSERT INTO [dbo].[NhanVien]
 )
 VALUES
 	('NV001', N'Hoàng Văn Mạnh', N'1996-06-05', N'Nam', N'Ngõ 6 Phù Đổng, Hồ Chí Minh', N'0963852741', 'NV001'),
-	('NV002', N'Mai Vân Linh', N'1998-06-18', N'Nữ', N'10 Hoàng Mai, Hà Nội', N'0963852741', 'NV002');
+	('NV002', N'Mai Vân Linh', N'1998-06-18', N'Nữ', N'10 Hoàng Mai, Hà Nội', N'0963852741', 'NV002'),
+	('NV003', N'Trần Hoàng Diệu', N'2000-05-18', N'Nữ', N'10 Lò Đúc, Hà Nội', N'0123456789', 'NV003'),
+	('NV004', N'Hồ Nhật Tâm', N'1986-04-12', N'Nam', N'23 Trần Duy Hưng, Hà Nội', N'0789456123', 'NV004'),
+	('NV005', N'Nguyễn Văn Đức', N'1963-01-16', N'Nam', N'50 Phan Văn Trị, TP HCM', N'0123456987', 'NV005'),
+	('NV006', N'Phan Văn Bình', N'1984-11-23', N'Nam', N'7 D2, TP HCM', N'0456123987', 'NV006'),
+	('NV007', N'Hồ Phan Minh Đăng', N'1966-06-07', N'Nam', N'16 Võ Văn Ngân, TP HCM', N'0321456987', 'NV007'),
+	('NV008', N'Trần Thị Hoàn', N'1961-02-01', N'Nữ', N'23 Nguyễn Thái Học, TP HCM', N'0112365478', 'NV008'),
+	('NV009', N'Trần Thị Hồng', N'1956-06-08', N'Nữ', N'11 Đặng Văn Bi, TP HCM', N'0123665489', 'NV009'),
+	('NV010', N'Trần Huyến Trang', N'1978-02-03', N'Nữ', N'2 Lý Thường Kiệt, TP HCM', N'0321554789', 'NV010'),
 
 --Tbl_DonHang
 INSERT INTO [dbo].[DonHang]
