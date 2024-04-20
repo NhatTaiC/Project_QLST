@@ -128,6 +128,6 @@ INSERT INTO [dbo].[ChiTietDonHang]
 	[DonViTinh]
 )
 VALUES
-	('MCT001', 'DH001', 'MSP001', N'Pepsi Lon 350ml', 10000, 10, 100000, N'Chai'),
+	('MCT001','DH001', 'MSP001', N'Pepsi Lon 350ml', 10000, 10, 100000, N'Chai'),
 	('MCT002','DH002', 'MSP002', N'Coca Lon 350ml', 10000, 5, 50000, N'Chai');
 go
