@@ -78,7 +78,15 @@ INSERT INTO [dbo].[SanPham]
 )
 VALUES
 	('MSP001', N'Pepsi Lon 350ml', 4000, 10000, 20, N'Chai', N'Hồ Chí Minh', N'2025-04-01', 'NCC001', 'LSP001'),
-	('MSP002', N'Coca Lon 350ml', 4000, 10000, 10, N'Chai', N'Hồ Chí Minh', N'2025-04-01', 'NCC002', 'LSP001');
+	('MSP002', N'Coca Lon 350ml', 4000, 10000, 10, N'Chai', N'Hồ Chí Minh', N'2025-04-01', 'NCC002', 'LSP001'),
+	('MSP003', N'Fanta Lon 350ml', 4000, 10000, 30, N'Chai', N'Hồ Chí Minh', N'2025-04-01', 'NCC001', 'LSP001'),
+	('MSP004', N'Nike air force 1', 1000000, 1200000, 10, N'Đôi', N'Hồ Chí Minh', N'2025-04-01', 'NCC004', 'LSP004'),
+	('MSP005', N'Adidas stan smith', 1500000, 1700000, 20, N'Đôi', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP004'),
+	('MSP006', N'Oreo đá xay', 50000, 60000, 10, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
+	('MSP007', N'Cơm nắm', 10000, 14000, 10, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
+	('MSP008', N'Trà chanh', 10000, 15000, 20, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP004'),
+	('MSP009', N'TV LG', 15000000, 16000000, 20, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
+	('MSP0010', N'Màn hình Asus', 3000000, 3200000, 10, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC010', 'LSP003');
 
 --Tbl_NhanVien
 INSERT INTO [dbo].[NhanVien]
