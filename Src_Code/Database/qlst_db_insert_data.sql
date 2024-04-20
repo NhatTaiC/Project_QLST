@@ -25,7 +25,16 @@ VALUES
 	('admin', '123456', N'Admin', N'2024-04-01', 0),
 	('user', '123456', N'User', N'2024-04-01', 1),
 	('NV001', '123456', N'Hoàng Văn Mạnh', N'2024-04-01', 1),
-	('NV002', '123456', N'Mai Vân Linh', N'2024-04-01', 1);
+	('NV002', '123456', N'Mai Vân Linh', N'1998-06-18', 1),
+	('NV003', '123456', N'Trần Hoàng Diệu', N'2000-05-18', 1),
+	('NV004', '123456', N'Hồ Nhật Tâm', N'1986-04-12', 1),
+	('NV005', '123456', N'Nguyễn Văn Đức', N'1963-01-16', 1),
+	('NV006', '123456', N'Phan Văn Bình', N'1984-11-23', 1),
+	('NV007', '123456', N'Hồ Phan Minh Đăng', N'1966-06-07', 1),
+	('NV008', '123456', N'Trần Thị Hoàn', N'1961-02-01', 1),
+	('NV009', '123456', N'Trần Thị Hồng', N'1956-06-08', 1),
+	('NV010', '123456',  N'Trần Huyến Trang', N'1978-02-03', 1);
+	
 
 --Tbl_NhaCungCap
 INSERT INTO [dbo].[NhaCungCap]
@@ -193,7 +202,8 @@ VALUES
 	('NV007', N'Hồ Phan Minh Đăng', N'1966-06-07', N'Nam', N'16 Võ Văn Ngân, TP HCM', N'0321456987', 'NV007'),
 	('NV008', N'Trần Thị Hoàn', N'1961-02-01', N'Nữ', N'23 Nguyễn Thái Học, TP HCM', N'0112365478', 'NV008'),
 	('NV009', N'Trần Thị Hồng', N'1956-06-08', N'Nữ', N'11 Đặng Văn Bi, TP HCM', N'0123665489', 'NV009'),
-	('NV010', N'Trần Huyến Trang', N'1978-02-03', N'Nữ', N'2 Lý Thường Kiệt, TP HCM', N'0321554789', 'NV010'),
+	('NV010', N'Trần Huyến Trang', N'1978-02-03', N'Nữ', N'2 Lý Thường Kiệt, TP HCM', N'0321554789', 'NV010');
+
 
 --Tbl_DonHang
 INSERT INTO [dbo].[DonHang]
