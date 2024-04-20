@@ -86,7 +86,7 @@ VALUES
 	('MSP007', N'Cơm nắm', 10000, 14000, 10, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
 	('MSP008', N'Trà chanh', 10000, 15000, 20, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP004'),
 	('MSP009', N'TV LG', 15000000, 16000000, 20, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
-	('MSP0010', N'Màn hình Asus', 3000000, 3200000, 10, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC0010', 'LSP003');
+	('MSP0010', N'Màn hình Asus', 3000000, 3200000, 10, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC010', 'LSP003');
 
 --Tbl_NhanVien
 INSERT INTO [dbo].[NhanVien]
