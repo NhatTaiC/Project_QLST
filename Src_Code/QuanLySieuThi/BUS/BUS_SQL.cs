@@ -2,8 +2,8 @@
  * Châu Nhật Tài, Lê Văn Toàn
  * Project CN.NET
  * Quản Lý Siêu Thị
- * 01/04/2024
- * BUS_TaiKhoan.cs
+ * 22/04/2024
+ * BUS_SQL.cs
  */
 using DAL;
 using DTO;
@@ -15,35 +15,36 @@ using System.Threading.Tasks;
 
 namespace BUS
 {
-    public class BUS_TaiKhoan
+    public class BUS_SQL
     {
-        //Fields
-        private DAL_TaiKhoan dal_tk = new DAL_TaiKhoan();
+        // Fields
+        private DbSql db = new DbSql();
 
-        //Methods
-        //LayDSTK
-        public IQueryable LayDSTK() {
-            return dal_tk.LayDSTK();
+        // Methods
+        // LayDSTK()
+        public IQueryable LayDSTK()
+        {
+            return db.LayDSTK();
         }
 
-        //ThemTK
+        // ThemTK()
         public bool ThemTK(DTO_TaiKhoan tk) {
-            return dal_tk.ThemTK(tk);
+            return db.ThemTK(tk);
         }
 
-        //XoaTK
+        // XoaTK()
         public bool XoaTK(string tk) {
-            return dal_tk.XoaTK(tk);
+            return db.XoaTK(tk);
         }
 
-        //SuaTK
+        // SuaTK()
         public bool SuaTK(DTO_TaiKhoan tk) {
-            return dal_tk.SuaTK(tk);
+            return db.SuaTK(tk);
         }
 
-        //LayDSTK_TheoTK
+        // LayDSTK_TheoTK()
         public IQueryable LayDSTK_TheoTK(string tk) {
-            return dal_tk.LayDSTK_TheoTK(tk);
+            return db.LayDSTK_TheoTK(tk);
         }
     }
 }
