@@ -82,5 +82,50 @@ namespace QuanLySieuThi
                 ActForm("frmTaiKhoan");
             }
         }
+
+        //NhaCungCapMNS_Click
+        private void nhaCungCapMNS_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmNCC"))
+            {
+                frmNCC f = new frmNCC();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmNCC");
+            }
+        }
+        
+        //LoaiSanPhamNMS_Click
+        private void loaiSanPhamMNS_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmLoaiSP"))
+            {
+                frmLoaiSP f = new frmLoaiSP();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmLoaiSP");
+            }
+        }
+
+        //SanPhamMNS_Click
+        private void sanPhamMNS_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmSanPham"))
+            {
+                frmSanPham f = new frmSanPham();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmSanPham");
+            }
+        }
     }
 }
