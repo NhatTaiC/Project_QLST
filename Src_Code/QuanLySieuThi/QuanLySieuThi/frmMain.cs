@@ -24,7 +24,7 @@ namespace QuanLySieuThi
             InitializeComponent();
         }
 
-        //Function CheckFormExist
+        // Function CheckFormExist
         private bool CheckFormExist(string name)
         {
             foreach (Form item in MdiChildren)
@@ -37,7 +37,7 @@ namespace QuanLySieuThi
             return false;
         }
 
-        //Function ActForm
+        // Function ActForm
         private void ActForm(string name) {
             foreach (Form item in MdiChildren)
             {
@@ -49,7 +49,7 @@ namespace QuanLySieuThi
             }
         }
 
-        //Form Closing
+        // Form Closing
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult r = MessageBox.Show("Bạn có chắc muốn thoát không?", "Thông báo",
@@ -62,13 +62,13 @@ namespace QuanLySieuThi
             }
         }
 
-        //ThoatMNS_Click
+        // ThoatMNS_Click
         private void thoatMNS_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        //TaiKhoanMNS_Click
+        // TaiKhoanMNS_Click
         private void taiKhoanMNS_Click(object sender, EventArgs e)
         {
             if (!CheckFormExist("frmTaiKhoan"))

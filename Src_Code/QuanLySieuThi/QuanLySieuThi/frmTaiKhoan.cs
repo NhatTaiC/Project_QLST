@@ -26,12 +26,12 @@ namespace QuanLySieuThi
             InitializeComponent();
         }
 
-        //Initialize Variable
-        private BUS_TaiKhoan bus_tk = new BUS_TaiKhoan();
+        // Initialize Variable
+        private BUS_SQL bus = new BUS_SQL();
 
-        //Function LoadData
+        // Function LoadData
         private void LoadData() {
-            dgvTaiKhoan.DataSource = bus_tk.LayDSTK();
+            dgvTaiKhoan.DataSource = bus.LayDSTK();
             dgvTaiKhoan.Columns["NgayTao"].DefaultCellStyle.Format = "dd-MM-yyyy";
             txtTaiKhoan.Focus();
             dtpTaiKhoan.Value = DateTime.Now;
@@ -42,7 +42,7 @@ namespace QuanLySieuThi
             btnSua.Enabled = false;
         }
 
-        //Function Reset
+        // Function Reset
         private void Reset()
         {
             txtTaiKhoan.Text = string.Empty;
@@ -52,7 +52,7 @@ namespace QuanLySieuThi
             LoadData();
         }
 
-        //Form Closing
+        // Form Closing
         private void frmTaiKhoan_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult r = MessageBox.Show("Bạn có chắc muốn thoát không?", "Thông báo",
@@ -65,30 +65,30 @@ namespace QuanLySieuThi
             }
         }
 
-        //BtnThoat_Click
+        // BtnThoat_Click
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        //BtnLamMoi_Click
+        // BtnLamMoi_Click
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             Reset();
         }
 
-        //Form Load
+        // Form Load
         private void frmTaiKhoan_Load(object sender, EventArgs e)
         {
             LoadData();
         }
 
-        //DgvTaiKhoan_Click
+        // DgvTaiKhoan_Click
         private void dgvTaiKhoan_Click(object sender, EventArgs e)
         {
             int n = dgvTaiKhoan.CurrentCell.RowIndex;
 
-            if (n < dgvTaiKhoan.Rows.Count)
+            if (n != 0)
             {
                 txtTaiKhoan.Enabled = false;
                 btnThem.Enabled = false;
@@ -120,17 +120,17 @@ namespace QuanLySieuThi
             }
         }
         
-        //BtnThem_CLick
+        // BtnThem_CLick
         private void btnThem_Click(object sender, EventArgs e)
         {
             DTO_TaiKhoan tk = new DTO_TaiKhoan(txtTaiKhoan.Text, txtMatKhau.Text,
             txtHoTen.Text, dtpTaiKhoan.Value.ToString(), int.Parse(cboChucVu.SelectedIndex.ToString()));
 
-            bus_tk.ThemTK(tk);
+            bus.ThemTK(tk);
             Reset();
         }
 
-        //BtnXoa_Click
+        // BtnXoa_Click
         private void btnXoa_Click(object sender, EventArgs e)
         {
             DialogResult r = MessageBox.Show("Bạn có chắc muốn xóa không?", "Thông báo",
@@ -139,12 +139,12 @@ namespace QuanLySieuThi
 
             if (r == DialogResult.Yes)
             {
-                bus_tk.XoaTK(txtTaiKhoan.Text);
+                bus.XoaTK(txtTaiKhoan.Text);
                 Reset();
             }
         }
 
-        //BtnSua_Click
+        // BtnSua_Click
         private void btnSua_Click(object sender, EventArgs e)
         {
             DialogResult r = MessageBox.Show("Bạn có chắc muốn sửa không?", "Thông báo",
@@ -156,7 +156,7 @@ namespace QuanLySieuThi
                 DTO_TaiKhoan tk = new DTO_TaiKhoan(txtTaiKhoan.Text, txtMatKhau.Text,
                 txtHoTen.Text, dtpTaiKhoan.Value.ToString(), int.Parse(cboChucVu.SelectedIndex.ToString()));
 
-                bus_tk.SuaTK(tk);
+                bus.SuaTK(tk);
                 Reset();
             }
         }
