@@ -190,7 +190,7 @@
             this.tableButton.Name = "tableButton";
             this.tableButton.RowCount = 1;
             this.tableButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tableButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableButton.Size = new System.Drawing.Size(598, 53);
             this.tableButton.TabIndex = 5;
             // 
@@ -203,6 +203,7 @@
             this.btnThoat.TabIndex = 4;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLamMoi
             // 
@@ -213,6 +214,7 @@
             this.btnLamMoi.TabIndex = 3;
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnSua
             // 
@@ -223,6 +225,7 @@
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -233,6 +236,7 @@
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -243,14 +247,23 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dgvNCC
             // 
+            this.dgvNCC.AllowUserToAddRows = false;
+            this.dgvNCC.AllowUserToDeleteRows = false;
+            this.dgvNCC.AllowUserToResizeColumns = false;
+            this.dgvNCC.AllowUserToResizeRows = false;
+            this.dgvNCC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNCC.Location = new System.Drawing.Point(-1, 519);
+            this.dgvNCC.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvNCC.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvNCC.Location = new System.Drawing.Point(0, 519);
             this.dgvNCC.Name = "dgvNCC";
             this.dgvNCC.RowHeadersWidth = 51;
             this.dgvNCC.RowTemplate.Height = 24;
+            this.dgvNCC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNCC.Size = new System.Drawing.Size(1200, 280);
             this.dgvNCC.TabIndex = 6;
             // 
@@ -265,6 +278,8 @@
             this.Controls.Add(this.label1);
             this.Name = "frmNCC";
             this.Text = "frmNCC";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNCC_FormClosing);
+            this.Load += new System.EventHandler(this.frmNCC_Load);
             this.gbTaiKhoan.ResumeLayout(false);
             this.tableForm.ResumeLayout(false);
             this.tableForm.PerformLayout();

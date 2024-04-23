@@ -55,15 +55,6 @@ namespace QuanLySieuThi
             LoadData();
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            DTO_LoaiSP lsp = new DTO_LoaiSP(txtMaSP.Text, txtTenSP.Text,
-            txtMoTa.Text);
-
-            bus.ThemLoaiSP(lsp);
-            Reset();
-        }
-
         private void frmLoaiSP_FormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult r = MessageBox.Show("Bạn có chắc muốn thoát không?", "Thông báo",
@@ -91,6 +82,39 @@ namespace QuanLySieuThi
             LoadData();
         }
 
+        private void dgvLoaiSP_Click(object sender, EventArgs e)
+        {
+
+            int n = dgvLoaiSP.CurrentCell.RowIndex;
+
+            if (n >= 0)
+            {
+                txtMaSP.Enabled = false;
+                btnThem.Enabled = false;
+                btnXoa.Enabled = true;
+                btnSua.Enabled = true;
+
+                txtMaSP.Text = dgvLoaiSP.Rows[n].Cells[0].Value.ToString();
+                txtTenSP.Text = dgvLoaiSP.Rows[n].Cells[1].Value.ToString();
+                txtMoTa.Text = dgvLoaiSP.Rows[n].Cells[2].Value.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn 1 dòng để xóa/sửa!", "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            DTO_LoaiSP lsp = new DTO_LoaiSP(txtMaSP.Text, txtTenSP.Text,
+            txtMoTa.Text);
+
+            bus.ThemLoaiSP(lsp);
+            Reset();
+        }
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
             DialogResult r = MessageBox.Show("Bạn có chắc muốn xóa không?", "Thông báo",
@@ -109,27 +133,18 @@ namespace QuanLySieuThi
 
         }
 
-        private void dgvLoaiSP_Click(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)
         {
+            DialogResult r = MessageBox.Show("Bạn có chắc muốn sửa không?", "Thông báo",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Warning);
 
-            int n = dgvLoaiSP.CurrentCell.RowIndex;
-
-            if (n != 0)
+            if (r == DialogResult.Yes)
             {
-                txtMaSP.Enabled = false;
-                btnThem.Enabled = false;
-                btnXoa.Enabled = true;
-                btnSua.Enabled = true;
+                DTO_LoaiSP lsp = new DTO_LoaiSP(txtMaSP.Text, txtTenSP.Text,txtMoTa.Text);
 
-                txtMaSP.Text = dgvLoaiSP.Rows[n].Cells[0].Value.ToString();
-                txtTenSP.Text = dgvLoaiSP.Rows[n].Cells[1].Value.ToString();
-                txtMoTa.Text = dgvLoaiSP.Rows[n].Cells[2].Value.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn 1 dòng để xóa/sửa!", "Thông báo",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning);
+                bus.SuaLoaiSP(lsp);
+                Reset();
             }
         }
     }

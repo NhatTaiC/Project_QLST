@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvNCC = new System.Windows.Forms.DataGridView();
             this.tableButton = new System.Windows.Forms.TableLayoutPanel();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
@@ -54,25 +53,16 @@
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.txtDonViTinh = new System.Windows.Forms.TextBox();
             this.txtNoiSanXuat = new System.Windows.Forms.TextBox();
-            this.txtHanSuDung = new System.Windows.Forms.TextBox();
             this.txtMaNCC = new System.Windows.Forms.TextBox();
             this.txtMaLoaiSP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
+            this.dgvSP = new System.Windows.Forms.DataGridView();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tableButton.SuspendLayout();
             this.gbTaiKhoan.SuspendLayout();
             this.tableForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvNCC
-            // 
-            this.dgvNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNCC.Location = new System.Drawing.Point(0, 495);
-            this.dgvNCC.Name = "dgvNCC";
-            this.dgvNCC.RowHeadersWidth = 51;
-            this.dgvNCC.RowTemplate.Height = 24;
-            this.dgvNCC.Size = new System.Drawing.Size(1200, 280);
-            this.dgvNCC.TabIndex = 10;
             // 
             // tableButton
             // 
@@ -104,6 +94,7 @@
             this.btnThoat.TabIndex = 4;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLamMoi
             // 
@@ -114,6 +105,7 @@
             this.btnLamMoi.TabIndex = 3;
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnSua
             // 
@@ -124,6 +116,7 @@
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -134,6 +127,7 @@
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -144,6 +138,7 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // gbTaiKhoan
             // 
@@ -177,9 +172,9 @@
             this.tableForm.Controls.Add(this.txtSoLuong, 1, 4);
             this.tableForm.Controls.Add(this.txtDonViTinh, 1, 5);
             this.tableForm.Controls.Add(this.txtNoiSanXuat, 1, 6);
-            this.tableForm.Controls.Add(this.txtHanSuDung, 1, 7);
             this.tableForm.Controls.Add(this.txtMaNCC, 1, 8);
             this.tableForm.Controls.Add(this.txtMaLoaiSP, 1, 9);
+            this.tableForm.Controls.Add(this.dateTimePicker1, 1, 7);
             this.tableForm.Location = new System.Drawing.Point(26, 42);
             this.tableForm.Name = "tableForm";
             this.tableForm.RowCount = 10;
@@ -365,13 +360,6 @@
             this.txtNoiSanXuat.Size = new System.Drawing.Size(369, 22);
             this.txtNoiSanXuat.TabIndex = 14;
             // 
-            // txtHanSuDung
-            // 
-            this.txtHanSuDung.Location = new System.Drawing.Point(226, 171);
-            this.txtHanSuDung.Name = "txtHanSuDung";
-            this.txtHanSuDung.Size = new System.Drawing.Size(369, 22);
-            this.txtHanSuDung.TabIndex = 15;
-            // 
             // txtMaNCC
             // 
             this.txtMaNCC.Location = new System.Drawing.Point(226, 195);
@@ -396,30 +384,58 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Quản Lý Sản Phẩm";
             // 
+            // dgvSP
+            // 
+            this.dgvSP.AllowUserToAddRows = false;
+            this.dgvSP.AllowUserToDeleteRows = false;
+            this.dgvSP.AllowUserToResizeColumns = false;
+            this.dgvSP.AllowUserToResizeRows = false;
+            this.dgvSP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSP.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvSP.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvSP.Location = new System.Drawing.Point(0, 519);
+            this.dgvSP.Name = "dgvSP";
+            this.dgvSP.RowHeadersWidth = 51;
+            this.dgvSP.RowTemplate.Height = 24;
+            this.dgvSP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSP.Size = new System.Drawing.Size(1200, 280);
+            this.dgvSP.TabIndex = 10;
+            this.dgvSP.Click += new System.EventHandler(this.dgvSP_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(226, 171);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(369, 22);
+            this.dateTimePicker1.TabIndex = 18;
+            // 
             // frmSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 799);
-            this.Controls.Add(this.dgvNCC);
+            this.Controls.Add(this.dgvSP);
             this.Controls.Add(this.tableButton);
             this.Controls.Add(this.gbTaiKhoan);
             this.Controls.Add(this.label1);
             this.Name = "frmSanPham";
             this.Text = "frmSanPham";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).EndInit();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSanPham_FormClosing);
+            this.Load += new System.EventHandler(this.frmSanPham_Load);
             this.tableButton.ResumeLayout(false);
             this.gbTaiKhoan.ResumeLayout(false);
             this.tableForm.ResumeLayout(false);
             this.tableForm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dgvNCC;
         private System.Windows.Forms.TableLayoutPanel tableButton;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnLamMoi;
@@ -446,8 +462,9 @@
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.TextBox txtDonViTinh;
         private System.Windows.Forms.TextBox txtNoiSanXuat;
-        private System.Windows.Forms.TextBox txtHanSuDung;
         private System.Windows.Forms.TextBox txtMaNCC;
         private System.Windows.Forms.TextBox txtMaLoaiSP;
+        private System.Windows.Forms.DataGridView dgvSP;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
