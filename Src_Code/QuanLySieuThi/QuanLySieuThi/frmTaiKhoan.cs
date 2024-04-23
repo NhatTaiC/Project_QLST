@@ -88,7 +88,7 @@ namespace QuanLySieuThi
         {
             int n = dgvTaiKhoan.CurrentCell.RowIndex;
 
-            if (n != 0)
+            if (n >= 0)
             {
                 txtTaiKhoan.Enabled = false;
                 btnThem.Enabled = false;
