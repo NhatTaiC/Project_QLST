@@ -78,7 +78,7 @@ namespace DAL
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản không hợp lệ!", "Thông báo",
+                    MessageBox.Show("Tài khoản không hợp lệ, không thể thêm TaiKhoan mới!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Error);
                 }
@@ -118,7 +118,7 @@ namespace DAL
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản không hợp lệ!", "Thông báo",
+                    MessageBox.Show("Tài khoản không hợp lệ, không thể xóa TaiKhoan!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Error);
                 }
@@ -158,7 +158,7 @@ namespace DAL
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản không hợp lệ!", "Thông báo",
+                    MessageBox.Show("Tài khoản không hợp lệ, không thể sửa thông tin TaiKhoan!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Error);
                 }
@@ -172,11 +172,209 @@ namespace DAL
         }
 
         // LayDSTK_TheoTK()
-        public IQueryable LayDSTK_TheoTK(string tk) {
+        public IQueryable LayDSTK_TheoTK(string tk)
+        {
             // Truy vấn DB
             IQueryable temp = from t in db.TaiKhoans
                               where t.TaiKhoan1 == tk
                               select t;
+            return temp;
+        }
+
+        // LayDSNV()
+        public IQueryable LayDSNV()
+        {
+            IQueryable temp = from nv in Db.NhanViens
+                              select nv;
+            return temp;
+        }
+
+        // ThemNV()
+        public bool ThemNV(DTO_NhanVien nv)
+        {
+            try
+            {
+                // Tạo đối tượng NhanVien
+                NhanVien n_insert = new NhanVien
+                {
+                    MaNV = nv.MaNV,
+                    TenNV = nv.TenNV,
+                    NgaySinh = nv.NgaySinh,
+                    GioiTinh = nv.GioiTinh,
+                    DiaChi = nv.DiaChi,
+                    Sdt = nv.SoDT,
+                    TaiKhoan = nv.TaiKhoan
+                };
+
+                // Check TaiKhoan có != null hay ko? => Thêm vào DB TaiKhoan
+                if (n_insert.TaiKhoan != string.Empty)
+                {
+                    string taiKhoan = n_insert.TaiKhoan;
+                    string matKhau = "123456";
+                    string hoTen = n_insert.TenNV;
+                    string ngayTao = $"{DateTime.Now}";
+                    int chucVu = 1;
+
+                    // Tạo đối tượng TaiKhoan mới
+                    TaiKhoan tk = new TaiKhoan { 
+                        TaiKhoan1 = taiKhoan, 
+                        MatKhau = matKhau, 
+                        HoTen = hoTen, 
+                        NgayTao = DateTime.Parse(ngayTao), 
+                        ChucVu = chucVu };
+
+                    // Them TaiKhoan NV mới vào DB TaiKhoan trước
+                    db.TaiKhoans.InsertOnSubmit(tk);
+
+                    // Xác nhận lưu vào DB TaiKhoan
+                    db.SubmitChanges();
+
+                    // Check MaNV có != null hay ko? => Thêm vào DB NhanVien
+                    if (n_insert.MaNV != string.Empty)
+                    {
+                        db.NhanViens.InsertOnSubmit(n_insert); // Thêm vào DB NhanVien
+                        db.SubmitChanges(); // Xác nhận lưu xuống DB NhanVien
+                        MessageBox.Show("Thêm thành công!", "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Mã Nhân Viên không hợp lệ, không thể thêm NhanVien mới!", "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                    } 
+                }
+                else
+                {
+                    MessageBox.Show("Tài khoản không hợp lệ, không thể thêm NhanVien mới!", "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Throw Exception
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+
+        // XoaNV()
+        public bool XoaNV(string nv, string tk) {
+            try
+            {
+                // Check MaNV có != null hay ko? => Thêm vào DB
+                if (nv != string.Empty)
+                {
+                    // Truy vấn MaNV có tồn tại trong Table NhanVien ko?
+                    var n_delete = from n in db.NhanViens
+                                   where n.MaNV == nv && n.TaiKhoan == tk
+                                   select n;
+
+                    foreach (var item in n_delete)
+                    {
+                        db.NhanViens.DeleteOnSubmit(item); // Xóa NhanVien
+                        db.SubmitChanges(); // Xác nhận lưu vào DB NhanVien
+                    }
+
+                    // Check tk của NV có tồn tại ko?
+                    if (tk != string.Empty)
+                    {
+                        var t_delete = from t in db.TaiKhoans
+                                       where t.TaiKhoan1 == tk
+                                       select t;
+
+                        foreach (var item in t_delete)
+                        {
+                            db.TaiKhoans.DeleteOnSubmit(item); // Xóa TaiKhoan trong DB
+                            db.SubmitChanges(); // Xác nhận xóa
+                        }
+
+                        MessageBox.Show("Xóa thành công!", "Thông báo",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Information);
+                        return true; 
+                    }
+                    else
+                    {
+                        MessageBox.Show("TaiKhoan không hợp lệ, không thể xóa TaiKhoan!", "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Mã Nhân Viên không hợp lệ, Không thể xóa NhanVien!", "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Throw Exception
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+
+        // SuaNV()
+        public bool SuaNV(DTO_NhanVien nv) {
+            try
+            {
+                // Tao đối tượng NhanVien
+                NhanVien n_update = db.NhanViens.Single(n => n.MaNV == nv.MaNV && n.TaiKhoan == nv.TaiKhoan);
+
+                // Check MaNV, TaiKhoan có != null hay ko? => Thêm vào DB
+                if (n_update.MaNV != string.Empty && n_update.TaiKhoan != string.Empty)
+                {
+                    n_update.TenNV = nv.TenNV;
+                    n_update.NgaySinh = nv.NgaySinh;
+                    n_update.GioiTinh = nv.GioiTinh;
+                    n_update.DiaChi = nv.DiaChi;
+                    n_update.Sdt = nv.SoDT;
+
+                    // Sửa TaiKhoan DB
+                    TaiKhoan tk = db.TaiKhoans.Single(t => t.TaiKhoan1 == nv.TaiKhoan);
+
+                    tk.TaiKhoan1 = nv.TaiKhoan;
+                    tk.MatKhau = "123456";
+                    tk.HoTen = n_update.TenNV;
+                    tk.NgayTao = n_update.NgaySinh;
+                    tk.ChucVu = 1;
+
+                    // Sửa TaiKhoan NhanVien
+                    n_update.TaiKhoan = nv.TaiKhoan;
+
+                    // Xác nhận thay đổi NhanVien DB
+                    db.SubmitChanges();
+
+                    MessageBox.Show("Sửa thành công!", "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Mã Nhân Viên không hợp lệ, không thể sửa thông tin NhanVien", "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Throw Exception
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+
+        // LayDSNV_TheoMaNV()
+        public IQueryable LayDSNV_TheoMaNV(string nv) {
+            IQueryable temp = from n in db.NhanViens
+                              where n.MaNV == nv
+                              select n;
             return temp;
         }
     }
