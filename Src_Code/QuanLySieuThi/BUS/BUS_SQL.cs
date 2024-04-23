@@ -28,23 +28,57 @@ namespace BUS
         }
 
         // ThemTK()
-        public bool ThemTK(DTO_TaiKhoan tk) {
+        public bool ThemTK(DTO_TaiKhoan tk)
+        {
             return db.ThemTK(tk);
         }
 
         // XoaTK()
-        public bool XoaTK(string tk) {
+        public bool XoaTK(string tk)
+        {
             return db.XoaTK(tk);
         }
 
         // SuaTK()
-        public bool SuaTK(DTO_TaiKhoan tk) {
+        public bool SuaTK(DTO_TaiKhoan tk)
+        {
             return db.SuaTK(tk);
         }
 
         // LayDSTK_TheoTK()
-        public IQueryable LayDSTK_TheoTK(string tk) {
+        public IQueryable LayDSTK_TheoTK(string tk)
+        {
             return db.LayDSTK_TheoTK(tk);
+        }
+
+        // LayDSNV()
+        public IQueryable LayDSNV()
+        {
+            return db.LayDSNV();
+        }
+
+        // ThemNV()
+        public bool ThemNV(DTO_NhanVien nv)
+        {
+            return db.ThemNV(nv);
+        }
+
+        // XoaNV()
+        public bool XoaNV(string nv, string tk)
+        {
+            return db.XoaNV(nv, tk);
+        }
+
+        // SuaNV()
+        public bool SuaNV(DTO_NhanVien nv)
+        {
+            return db.SuaNV(nv);
+        }
+
+        // LayDSNV_TheoMaNV()
+        public IQueryable LayDSNV_TheoMaNV()
+        {
+            return db.LayDSNV_TheoMaNV();
         }
     }
 }

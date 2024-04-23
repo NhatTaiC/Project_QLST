@@ -29,8 +29,26 @@ namespace QuanLySieuThi
         BUS_SQL bus = new BUS_SQL();
 
         // Function LoadData()
-        public void LoadData() { 
-        //dgvNhanVien.DataSource = bus.lay
+        public void LoadData() {
+            // dgvNhanVien
+            dgvNhanVien.DataSource = bus.LayDSNV();
+
+            // cboTaiKhoan
+            cboTaiKhoan.DataSource = bus.LayDSTK();
+            cboTaiKhoan.DisplayMember = "TaiKhoan";
+            cboTaiKhoan.ValueMember = "TaiKhoan";
+
+            // cboGioiTinh
+            cboGioiTinh.SelectedIndex = 0;
+
+            // Others
+            txtMaNV.Focus();
+            cboTaiKhoan.SelectedIndex = 0;
+            cboTaiKhoan.Enabled = true;
+            txtMaNV.Enabled = true;
+            btnThem.Enabled = true;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
         }
 
         // Form Closing
