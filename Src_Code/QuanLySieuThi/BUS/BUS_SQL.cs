@@ -46,5 +46,36 @@ namespace BUS
         public IQueryable LayDSTK_TheoTK(string tk) {
             return db.LayDSTK_TheoTK(tk);
         }
+
+        //LoaiSP
+        //Lay DS loai SP
+        public IQueryable LayDSLoaiSP()
+        {
+            return db.LayDSLoaiSP();
+        }
+
+        // ThemLoaiSP()
+        public bool ThemLoaiSP(DTO_LoaiSP lsp)
+        {
+            return db.ThemLoaiSP(lsp);
+        }
+
+        // XoaLoaiTK()
+        public bool XoaLoaiSP(string maLoaiSP)
+        {
+            return db.XoaLoaiSP(maLoaiSP);
+        }
+
+        // SuaLoaiTK)
+        public bool SuaLoaiSP(DTO_LoaiSP lsp)
+        {
+            return db.SuaLoaiSP(lsp);
+        }
+
+        // LayDSLSP_TheoMaSP()
+        public IQueryable LayDSLSP_TheoMaLSP(string maLoaiSP)
+        {
+            return db.LayDSLSP_TheoMaLSP(maLoaiSP);
+        }
     }
 }

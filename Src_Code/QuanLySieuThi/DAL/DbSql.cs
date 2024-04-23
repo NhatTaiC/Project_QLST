@@ -179,5 +179,140 @@ namespace DAL
                               select t;
             return temp;
         }
+
+
+        // LayDSLoaiSP()
+        public IQueryable LayDSLoaiSP()
+        {
+            // Truy vấn lấy DSLoaiSP
+            IQueryable temp = from t in db.LoaiSanPhams
+                              select t;
+            return temp;
+        }
+        // ThemLoaiSP()
+        public bool ThemLoaiSP(DTO_LoaiSP lsp)
+        {
+            try
+            {
+                // Tạo đối tượng LoaiSP
+                LoaiSanPham t_insert = new LoaiSanPham
+                {
+                    MaLoaiSP = lsp.MaLSP,
+                    TenLoaiSP = lsp.TenLSP,
+                    MoTa = lsp.MoTa,
+                };
+
+                // Check LoaiSP có # null ko mới add vào DB
+                if (t_insert.MaLoaiSP != string.Empty)
+                {
+                    db.LoaiSanPhams.InsertOnSubmit(t_insert); // Thêm DB
+                    db.SubmitChanges(); // Xác nhận thay đổi DB
+                    MessageBox.Show("Thêm thành công!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Information);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Loại sản phẩm không hợp lệ!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Throw Exception
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+
+        // XoaLoaiSP()
+        public bool XoaLoaiSP(string lsp)
+        {
+            try
+            {
+                // Check LoaiSP có # null ko? mới xóa
+                if (lsp != string.Empty)
+                {
+                    // Truy vấn LoaiSP có trong DSLoaiSP hay ko?
+                    var t_delete = from t in db.LoaiSanPhams
+                                   where t.MaLoaiSP == lsp
+                                   select t;
+
+                    // Xóa TK
+                    foreach (var item in t_delete)
+                    {
+                        db.LoaiSanPhams.DeleteOnSubmit(item); // Xóa DB
+                        db.SubmitChanges(); // Xác nhận thay đổi DB
+                    }
+
+                    MessageBox.Show("Xóa thành công!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Information);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Loại sản phẩm không hợp lệ!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Throw Exception
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+
+        // SuaLoaiSP()
+        public bool SuaLoaiSP(DTO_LoaiSP lsp)
+        {
+            try
+            {
+                // Tạo đối tượng LoaiSP = cách truy vấn DB
+                LoaiSanPham t_update = db.LoaiSanPhams.Single(t => t.MaLoaiSP == lsp.MaLSP);
+
+                // Check LoaiSP != Null ko? mới sửa thông tin LoaiSP
+                if (t_update.MaLoaiSP != string.Empty)
+                {
+                    // Sửa thông tin LoaiSP
+                    t_update.TenLoaiSP = lsp.TenLSP;
+                    t_update.MoTa = lsp.MoTa;
+
+                    // Xác nhận thay đổi DB
+                    db.SubmitChanges();
+
+                    MessageBox.Show("Sửa thành công!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Information);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Loại sản phẩm không hợp lệ!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Throw Exception
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+
+        // LayDSTK_TheoTK()
+        public IQueryable LayDSLSP_TheoMaLSP(string lsp)
+        {
+            // Truy vấn DB
+            IQueryable temp = from t in db.LoaiSanPhams
+                              where t.MaLoaiSP == lsp
+                              select t;
+            return temp;
+        }
     }
 }
