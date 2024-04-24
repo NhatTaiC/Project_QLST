@@ -76,9 +76,9 @@ namespace BUS
         }
 
         // LayDSNV_TheoMaNV()
-        public IQueryable LayDSNV_TheoMaNV()
+        public IQueryable LayDSNV_TheoMaNV(string nv)
         {
-            return db.LayDSNV_TheoMaNV();
+            return db.LayDSNV_TheoMaNV(nv);
         }
     }
 }
