@@ -45,9 +45,16 @@ namespace DAL
         // LayDSTK()
         public IQueryable LayDSTK()
         {
-            // Truy vấn lấy DSTK
+            // Lấy DSTK
             IQueryable temp = from t in db.TaiKhoans
-                              select t;
+                              select new
+                              {
+                                  TaiKhoan = t.TaiKhoan1,
+                                  MatKhau = t.MatKhau,
+                                  HoTen = t.HoTen,
+                                  NgayTao = t.NgayTao,
+                                  ChucVu = t.ChucVu
+                              };
             return temp;
         }
 
@@ -66,21 +73,39 @@ namespace DAL
                     ChucVu = tk.ChucVu
                 };
 
-                // Check TaiKhoan có # null ko mới add vào DB
-                if (t_insert.TaiKhoan1 != string.Empty)
+                var temp = from t in db.TaiKhoans
+                           where t.TaiKhoan1 == tk.TaiKhoan
+                           select t;
+
+                // Check xem đã có TaiKhoan trong DB TaiKhoan chưa?
+                if (temp.Count() != 1)
                 {
-                    db.TaiKhoans.InsertOnSubmit(t_insert); // Thêm DB
-                    db.SubmitChanges(); // Xác nhận thay đổi DB
-                    MessageBox.Show("Thêm thành công!", "Thông báo",
-                       MessageBoxButtons.OK,
-                       MessageBoxIcon.Information);
-                    return true;
+                    // Check TaiKhoan có # null ko mới add vào DB
+                    if (t_insert.TaiKhoan1 != string.Empty)
+                    {
+                        db.TaiKhoans.InsertOnSubmit(t_insert); // Thêm DB
+                        db.SubmitChanges(); // Xác nhận thay đổi DB
+
+                        // Thông báo
+                        MessageBox.Show("Thêm thành công!", "Thông báo",
+                           MessageBoxButtons.OK,
+                           MessageBoxIcon.Information);
+                        return true;
+                    }
+                    else
+                    {
+                        // Thông báo
+                        MessageBox.Show("Tài khoản không hợp lệ, không thể thêm TaiKhoan mới!", "Thông báo",
+                           MessageBoxButtons.OK,
+                           MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản không hợp lệ, không thể thêm TaiKhoan mới!", "Thông báo",
-                       MessageBoxButtons.OK,
-                       MessageBoxIcon.Error);
+                    // Thông báo
+                    MessageBox.Show("Đã có TaiKhoan trong DB TaiKhoan!", "Thông báo",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -111,6 +136,7 @@ namespace DAL
                         db.SubmitChanges(); // Xác nhận thay đổi DB
                     }
 
+                    // Thông báo
                     MessageBox.Show("Xóa thành công!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Information);
@@ -118,6 +144,7 @@ namespace DAL
                 }
                 else
                 {
+                    // Thông báo
                     MessageBox.Show("Tài khoản không hợp lệ, không thể xóa TaiKhoan!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Error);
@@ -151,6 +178,7 @@ namespace DAL
                     // Xác nhận thay đổi DB
                     db.SubmitChanges();
 
+                    // Thông báo
                     MessageBox.Show("Sửa thành công!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Information);
@@ -158,6 +186,7 @@ namespace DAL
                 }
                 else
                 {
+                    // Thông báo
                     MessageBox.Show("Tài khoản không hợp lệ, không thể sửa thông tin TaiKhoan!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Error);
@@ -174,18 +203,35 @@ namespace DAL
         // LayDSTK_TheoTK()
         public IQueryable LayDSTK_TheoTK(string tk)
         {
-            // Truy vấn DB
+            // Lấy DSTK Theo TK
             IQueryable temp = from t in db.TaiKhoans
                               where t.TaiKhoan1 == tk
-                              select t;
+                              select new
+                              {
+                                  TaiKhoan = t.TaiKhoan1,
+                                  MatKhau = t.MatKhau,
+                                  HoTen = t.HoTen,
+                                  NgayTao = t.NgayTao,
+                                  ChucVu = t.ChucVu
+                              };
             return temp;
         }
 
         // LayDSNV()
         public IQueryable LayDSNV()
         {
+            // Lấy DSNV
             IQueryable temp = from nv in Db.NhanViens
-                              select nv;
+                              select new
+                              {
+                                  MaNV = nv.MaNV,
+                                  HoTenNV = nv.TenNV,
+                                  NgaySinh = nv.NgaySinh,
+                                  GioiTinh = nv.GioiTinh,
+                                  DiaChi = nv.DiaChi,
+                                  SDT = nv.Sdt,
+                                  TaiKhoan = nv.TaiKhoan
+                              };
             return temp;
         }
 
@@ -206,51 +252,72 @@ namespace DAL
                     TaiKhoan = nv.TaiKhoan
                 };
 
-                // Check TaiKhoan có != null hay ko? => Thêm vào DB TaiKhoan
-                if (n_insert.TaiKhoan != string.Empty)
+                var temp = from n in Db.NhanViens
+                           where n.MaNV == nv.MaNV
+                           select n;
+
+                // Check NhanVien đã có trong DB NhanVien hay chưa?
+                if (temp != null)
                 {
-                    string taiKhoan = n_insert.TaiKhoan;
-                    string matKhau = "123456";
-                    string hoTen = n_insert.TenNV;
-                    string ngayTao = $"{DateTime.Now}";
-                    int chucVu = 1;
-
-                    // Tạo đối tượng TaiKhoan mới
-                    TaiKhoan tk = new TaiKhoan { 
-                        TaiKhoan1 = taiKhoan, 
-                        MatKhau = matKhau, 
-                        HoTen = hoTen, 
-                        NgayTao = DateTime.Parse(ngayTao), 
-                        ChucVu = chucVu };
-
-                    // Them TaiKhoan NV mới vào DB TaiKhoan trước
-                    db.TaiKhoans.InsertOnSubmit(tk);
-
-                    // Xác nhận lưu vào DB TaiKhoan
-                    db.SubmitChanges();
-
-                    // Check MaNV có != null hay ko? => Thêm vào DB NhanVien
-                    if (n_insert.MaNV != string.Empty)
+                    // Check TaiKhoan có != null hay ko? => Thêm vào DB TaiKhoan
+                    if (n_insert.TaiKhoan != string.Empty)
                     {
-                        db.NhanViens.InsertOnSubmit(n_insert); // Thêm vào DB NhanVien
-                        db.SubmitChanges(); // Xác nhận lưu xuống DB NhanVien
-                        MessageBox.Show("Thêm thành công!", "Thông báo",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-                        return true;
+                        string taiKhoan = n_insert.TaiKhoan;
+                        string matKhau = "123456";
+                        string hoTen = n_insert.TenNV;
+                        string ngayTao = $"{DateTime.Now}";
+                        int chucVu = 1;
+
+                        // Tạo đối tượng TaiKhoan mới
+                        TaiKhoan tk = new TaiKhoan
+                        {
+                            TaiKhoan1 = taiKhoan,
+                            MatKhau = matKhau,
+                            HoTen = hoTen,
+                            NgayTao = DateTime.Parse(ngayTao),
+                            ChucVu = chucVu
+                        };
+
+                        // Them TaiKhoan NV mới vào DB TaiKhoan trước
+                        db.TaiKhoans.InsertOnSubmit(tk);
+
+                        // Xác nhận lưu vào DB TaiKhoan
+                        db.SubmitChanges();
+
+                        // Check MaNV có != null hay ko? => Thêm vào DB NhanVien
+                        if (n_insert.MaNV != string.Empty)
+                        {
+                            db.NhanViens.InsertOnSubmit(n_insert); // Thêm vào DB NhanVien
+                            db.SubmitChanges(); // Xác nhận lưu xuống DB NhanVien
+
+                            // Thông báo
+                            MessageBox.Show("Thêm thành công!", "Thông báo",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                            return true;
+                        }
+                        else
+                        {
+                            // Thông báo
+                            MessageBox.Show("Mã Nhân Viên không hợp lệ, không thể thêm NhanVien mới!", "Thông báo",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Mã Nhân Viên không hợp lệ, không thể thêm NhanVien mới!", "Thông báo",
+                        // Thông báo
+                        MessageBox.Show("Tài khoản không hợp lệ, không thể thêm NhanVien mới!", "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-                    } 
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản không hợp lệ, không thể thêm NhanVien mới!", "Thông báo",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Error);
+                    // Thông báo
+                    MessageBox.Show("Đã có NhanVien trong DB NhanVien!", "Thông báo",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -262,7 +329,8 @@ namespace DAL
         }
 
         // XoaNV()
-        public bool XoaNV(string nv, string tk) {
+        public bool XoaNV(string nv, string tk)
+        {
             try
             {
                 // Check MaNV có != null hay ko? => Thêm vào DB
@@ -292,13 +360,15 @@ namespace DAL
                             db.SubmitChanges(); // Xác nhận xóa
                         }
 
+                        // Thông báo
                         MessageBox.Show("Xóa thành công!", "Thông báo",
                                MessageBoxButtons.OK,
                                MessageBoxIcon.Information);
-                        return true; 
+                        return true;
                     }
                     else
                     {
+                        // Thông báo
                         MessageBox.Show("TaiKhoan không hợp lệ, không thể xóa TaiKhoan!", "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -306,6 +376,7 @@ namespace DAL
                 }
                 else
                 {
+                    // Thông báo
                     MessageBox.Show("Mã Nhân Viên không hợp lệ, Không thể xóa NhanVien!", "Thông báo",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
@@ -320,7 +391,8 @@ namespace DAL
         }
 
         // SuaNV()
-        public bool SuaNV(DTO_NhanVien nv) {
+        public bool SuaNV(DTO_NhanVien nv)
+        {
             try
             {
                 // Tao đối tượng NhanVien
@@ -335,7 +407,7 @@ namespace DAL
                     n_update.DiaChi = nv.DiaChi;
                     n_update.Sdt = nv.SoDT;
 
-                    // Sửa TaiKhoan DB
+                    // Sửa TaiKhoan trong DB TaiKhoan
                     TaiKhoan tk = db.TaiKhoans.Single(t => t.TaiKhoan1 == nv.TaiKhoan);
 
                     tk.TaiKhoan1 = nv.TaiKhoan;
@@ -344,12 +416,13 @@ namespace DAL
                     tk.NgayTao = n_update.NgaySinh;
                     tk.ChucVu = 1;
 
-                    // Sửa TaiKhoan NhanVien
+                    // Sửa TaiKhoan trong DB NhanVien
                     n_update.TaiKhoan = nv.TaiKhoan;
 
-                    // Xác nhận thay đổi NhanVien DB
+                    // Xác nhận thay đổi DB NhanVien
                     db.SubmitChanges();
 
+                    // Thông báo
                     MessageBox.Show("Sửa thành công!", "Thông báo",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
@@ -357,6 +430,7 @@ namespace DAL
                 }
                 else
                 {
+                    // Thông báo
                     MessageBox.Show("Mã Nhân Viên không hợp lệ, không thể sửa thông tin NhanVien", "Thông báo",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
@@ -371,10 +445,21 @@ namespace DAL
         }
 
         // LayDSNV_TheoMaNV()
-        public IQueryable LayDSNV_TheoMaNV(string nv) {
+        public IQueryable LayDSNV_TheoMaNV(string nv)
+        {
+            // Lấy DSNV theo MaNV
             IQueryable temp = from n in db.NhanViens
                               where n.MaNV == nv
-                              select n;
+                              select new
+                              {
+                                  MaNV = n.MaNV,
+                                  HoTenNV = n.TenNV,
+                                  NgaySinh = n.NgaySinh,
+                                  GioiTinh = n.GioiTinh,
+                                  DiaChi = n.DiaChi,
+                                  SDT = n.Sdt,
+                                  TaiKhoan = n.TaiKhoan
+                              };
             return temp;
         }
     }
