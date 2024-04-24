@@ -283,11 +283,11 @@
             this.dgvTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTaiKhoan.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvTaiKhoan.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvTaiKhoan.Location = new System.Drawing.Point(0, 519);
+            this.dgvTaiKhoan.Location = new System.Drawing.Point(0, 541);
             this.dgvTaiKhoan.Name = "dgvTaiKhoan";
             this.dgvTaiKhoan.RowHeadersWidth = 82;
             this.dgvTaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTaiKhoan.Size = new System.Drawing.Size(1200, 280);
+            this.dgvTaiKhoan.Size = new System.Drawing.Size(1141, 280);
             this.dgvTaiKhoan.TabIndex = 0;
             this.dgvTaiKhoan.Click += new System.EventHandler(this.dgvTaiKhoan_Click);
             // 
@@ -295,7 +295,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 799);
+            this.ClientSize = new System.Drawing.Size(1141, 821);
             this.ControlBox = false;
             this.Controls.Add(this.dgvTaiKhoan);
             this.Controls.Add(this.tableButton);
