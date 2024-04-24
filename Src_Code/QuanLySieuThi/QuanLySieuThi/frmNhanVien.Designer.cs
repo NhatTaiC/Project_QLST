@@ -208,6 +208,7 @@
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(326, 26);
             this.txtMaNV.TabIndex = 0;
+            this.txtMaNV.TextChanged += new System.EventHandler(this.txtMaNV_TextChanged);
             // 
             // dtpNgaySinh
             // 
@@ -222,7 +223,6 @@
             // cboTaiKhoan
             // 
             this.cboTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cboTaiKhoan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTaiKhoan.FormattingEnabled = true;
             this.cboTaiKhoan.Location = new System.Drawing.Point(334, 243);
             this.cboTaiKhoan.Name = "cboTaiKhoan";
@@ -293,6 +293,7 @@
             this.btnLamMoi.TabIndex = 3;
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnSua
             // 
@@ -303,6 +304,7 @@
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -313,6 +315,7 @@
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -323,6 +326,7 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // dgvNhanVien
             // 
@@ -330,20 +334,24 @@
             this.dgvNhanVien.AllowUserToDeleteRows = false;
             this.dgvNhanVien.AllowUserToResizeColumns = false;
             this.dgvNhanVien.AllowUserToResizeRows = false;
+            this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvNhanVien.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvNhanVien.Location = new System.Drawing.Point(0, 696);
+            this.dgvNhanVien.Location = new System.Drawing.Point(0, 673);
             this.dgvNhanVien.Name = "dgvNhanVien";
+            this.dgvNhanVien.RowHeadersWidth = 82;
             this.dgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNhanVien.Size = new System.Drawing.Size(951, 185);
+            this.dgvNhanVien.Size = new System.Drawing.Size(978, 208);
             this.dgvNhanVien.TabIndex = 4;
+            this.dgvNhanVien.Click += new System.EventHandler(this.dgvNhanVien_Click);
             // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 881);
+            this.ClientSize = new System.Drawing.Size(978, 881);
+            this.ControlBox = false;
             this.Controls.Add(this.dgvNhanVien);
             this.Controls.Add(this.tableButton);
             this.Controls.Add(this.groupBox1);
@@ -354,6 +362,7 @@
             this.Name = "frmNhanVien";
             this.Text = "frmNhanVien";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmNhanVien_FormClosing);
+            this.Load += new System.EventHandler(this.frmNhanVien_Load);
             this.tableForm.ResumeLayout(false);
             this.tableForm.PerformLayout();
             this.groupBox1.ResumeLayout(false);
