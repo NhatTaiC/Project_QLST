@@ -101,6 +101,7 @@ namespace QuanLySieuThi
 
             if (n >= 0)
             {
+                // Others
                 txtTaiKhoan.Enabled = false;
                 btnThem.Enabled = false;
                 btnXoa.Enabled = true;
