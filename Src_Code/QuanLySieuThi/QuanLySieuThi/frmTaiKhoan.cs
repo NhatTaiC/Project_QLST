@@ -31,11 +31,18 @@ namespace QuanLySieuThi
 
         // Function LoadData
         private void LoadData() {
+            // dgvTaiKhoan
             dgvTaiKhoan.DataSource = bus.LayDSTK();
-            dgvTaiKhoan.Columns["NgayTao"].DefaultCellStyle.Format = "dd-MM-yyyy";
-            txtTaiKhoan.Focus();
+
+            // Columns["NgayTao"]
+            dgvTaiKhoan.Columns["NgayTao"].DefaultCellStyle.Format = "dd/MM/yyyy";
+
+            // dtpTaiKhoan
             dtpTaiKhoan.Value = DateTime.Now;
-            cboChucVu.SelectedIndex = 0;
+
+            // Others
+            txtTaiKhoan.Focus();
+            cboChucVu.SelectedIndex = 1;
             txtTaiKhoan.Enabled = true;
             btnThem.Enabled = true;
             btnXoa.Enabled = false;
@@ -45,16 +52,19 @@ namespace QuanLySieuThi
         // Function Reset
         private void Reset()
         {
+            // Reset Text
             txtTaiKhoan.Text = string.Empty;
             txtMatKhau.Text = string.Empty;
             txtHoTen.Text = string.Empty;
 
+            // Call LoadData()
             LoadData();
         }
 
         // Form Closing
         private void frmTaiKhoan_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Thông báo
             DialogResult r = MessageBox.Show("Bạn có chắc muốn thoát không?", "Thông báo",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
@@ -86,6 +96,7 @@ namespace QuanLySieuThi
         // DgvTaiKhoan_Click
         private void dgvTaiKhoan_Click(object sender, EventArgs e)
         {
+            // Get Index Row Selected
             int n = dgvTaiKhoan.CurrentCell.RowIndex;
 
             if (n >= 0)
@@ -114,6 +125,7 @@ namespace QuanLySieuThi
             }
             else
             {
+                // Thông báo
                 MessageBox.Show("Vui lòng chọn 1 dòng để xóa/sửa!", "Thông báo",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
