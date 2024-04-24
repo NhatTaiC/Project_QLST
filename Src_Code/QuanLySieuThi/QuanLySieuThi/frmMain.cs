@@ -82,5 +82,20 @@ namespace QuanLySieuThi
                 ActForm("frmTaiKhoan");
             }
         }
+
+        // nhanVienMNS_Click
+        private void nhanVienMNS_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmNhanVien"))
+            {
+                frmNhanVien f = new frmNhanVien();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmNhanVien");
+            }
+        }
     }
 }
