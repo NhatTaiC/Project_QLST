@@ -3,7 +3,7 @@
  * Project CN.NET
  * Quản Lý Siêu Thị
  * 22/04/2024
- * DbSql.cs
+ * DAL_TaiKhoan.cs
  */
 using DTO;
 using System;
@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace DAL
 {
-    public class DbSql
+    public class DAL_TaiKhoan
     {
         // Fields
         private QLSTDataContext db;
@@ -23,14 +23,14 @@ namespace DAL
         private string dbName = "QLST";
 
         // Constructors
-        public DbSql(QLSTDataContext db, string serverName, string dbName)
+        public DAL_TaiKhoan(QLSTDataContext db, string serverName, string dbName)
         {
             this.db = db;
             this.serverName = serverName;
             this.dbName = dbName;
         }
 
-        public DbSql()
+        public DAL_TaiKhoan()
         {
             string sql = "Data Source=" + ServerName + ";Initial Catalog=" + DbName + ";Integrated Security=True;";
             Db = new QLSTDataContext(sql);
@@ -45,9 +45,16 @@ namespace DAL
         // LayDSTK()
         public IQueryable LayDSTK()
         {
-            // Truy vấn lấy DSTK
+            // Lấy DSTK
             IQueryable temp = from t in db.TaiKhoans
-                              select t;
+                              select new
+                              {
+                                  TaiKhoan = t.TaiKhoan1,
+                                  MatKhau = t.MatKhau,
+                                  HoTen = t.HoTen,
+                                  NgayTao = t.NgayTao,
+                                  ChucVu = t.ChucVu
+                              };
             return temp;
         }
 
@@ -66,21 +73,39 @@ namespace DAL
                     ChucVu = tk.ChucVu
                 };
 
-                // Check TaiKhoan có # null ko mới add vào DB
-                if (t_insert.TaiKhoan1 != string.Empty)
+                // Check xem đã có TaiKhoan trong DB TaiKhoan chưa?
+                var temp = from t in db.TaiKhoans
+                           where t.TaiKhoan1 == tk.TaiKhoan
+                           select t;
+
+                if (temp.Count() != 1)
                 {
-                    db.TaiKhoans.InsertOnSubmit(t_insert); // Thêm DB
-                    db.SubmitChanges(); // Xác nhận thay đổi DB
-                    MessageBox.Show("Thêm thành công!", "Thông báo",
-                       MessageBoxButtons.OK,
-                       MessageBoxIcon.Information);
-                    return true;
+                    // Check TaiKhoan có # null ko mới add vào DB TaiKhoan
+                    if (t_insert.TaiKhoan1 != string.Empty)
+                    {
+                        db.TaiKhoans.InsertOnSubmit(t_insert); // Thêm DB TaiKhoan
+                        db.SubmitChanges(); // Xác nhận thay đổi DB TaiKhoan
+
+                        // Thông báo
+                        MessageBox.Show("Thêm thành công!", "Thông báo",
+                           MessageBoxButtons.OK,
+                           MessageBoxIcon.Information);
+                        return true;
+                    }
+                    else
+                    {
+                        // Thông báo
+                        MessageBox.Show("Tài khoản không hợp lệ, không thể thêm TaiKhoan mới!", "Thông báo",
+                           MessageBoxButtons.OK,
+                           MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản không hợp lệ!", "Thông báo",
-                       MessageBoxButtons.OK,
-                       MessageBoxIcon.Error);
+                    // Thông báo
+                    MessageBox.Show("Đã có TaiKhoan trong DB TaiKhoan!", "Thông báo",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -99,6 +124,18 @@ namespace DAL
                 // Check TaiKhoan có # null ko? mới xóa
                 if (tk != string.Empty)
                 {
+                    // Truy vấn NhanVien có cùng TaiKhoan và xóa đi trước khi thông báo
+                    var tk_nv = from t in db.NhanViens
+                                where t.MaNV == tk
+                                select t;
+
+                    // Xóa NhanVien có cùng TaiKhoan
+                    foreach (var item in tk_nv)
+                    {
+                        db.NhanViens.DeleteOnSubmit(item); // Xóa NhanVien có cùng TaiKhoan trong DB NhanVien
+                        db.SubmitChanges(); // Xác nhận thay đổi DB NhanVien
+                    }
+
                     // Truy vấn TaiKhoan có trong DSTK hay ko?
                     var t_delete = from t in db.TaiKhoans
                                    where t.TaiKhoan1 == tk
@@ -107,10 +144,11 @@ namespace DAL
                     // Xóa TK
                     foreach (var item in t_delete)
                     {
-                        db.TaiKhoans.DeleteOnSubmit(item); // Xóa DB
-                        db.SubmitChanges(); // Xác nhận thay đổi DB
+                        db.TaiKhoans.DeleteOnSubmit(item); // Xóa TaiKhoan trong DB TaiKhoan
+                        db.SubmitChanges(); // Xác nhận thay đổi DB TaiKhoan
                     }
 
+                    // Thông báo
                     MessageBox.Show("Xóa thành công!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Information);
@@ -118,7 +156,8 @@ namespace DAL
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản không hợp lệ!", "Thông báo",
+                    // Thông báo
+                    MessageBox.Show("Tài khoản không hợp lệ, không thể xóa TaiKhoan!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Error);
                 }
@@ -151,6 +190,7 @@ namespace DAL
                     // Xác nhận thay đổi DB
                     db.SubmitChanges();
 
+                    // Thông báo
                     MessageBox.Show("Sửa thành công!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Information);
@@ -158,7 +198,8 @@ namespace DAL
                 }
                 else
                 {
-                    MessageBox.Show("Tài khoản không hợp lệ!", "Thông báo",
+                    // Thông báo
+                    MessageBox.Show("Tài khoản không hợp lệ, không thể sửa thông tin TaiKhoan!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Error);
                 }
@@ -172,11 +213,15 @@ namespace DAL
         }
 
         // LayDSTK_TheoTK()
-        public IQueryable LayDSTK_TheoTK(string tk) {
-            // Truy vấn DB
+        public IQueryable LayDSTK_TheoTK(string tk)
+        {
+            // Lấy DSTK Theo TK
             IQueryable temp = from t in db.TaiKhoans
                               where t.TaiKhoan1 == tk
-                              select t;
+                              select new
+                              {
+                                  TaiKhoan = t.TaiKhoan1,
+                              };
             return temp;
         }
     }

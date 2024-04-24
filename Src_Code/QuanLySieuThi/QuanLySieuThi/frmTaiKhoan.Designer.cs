@@ -60,7 +60,7 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(416, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(731, 89);
+            this.label1.Size = new System.Drawing.Size(368, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản Lý Tài Khoản";
             // 
@@ -94,14 +94,14 @@
             // 
             this.txtHoTen.Location = new System.Drawing.Point(226, 69);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(369, 44);
+            this.txtHoTen.Size = new System.Drawing.Size(369, 26);
             this.txtHoTen.TabIndex = 2;
             // 
             // txtMatKhau
             // 
             this.txtMatKhau.Location = new System.Drawing.Point(226, 36);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(369, 44);
+            this.txtMatKhau.Size = new System.Drawing.Size(369, 26);
             this.txtMatKhau.TabIndex = 1;
             // 
             // label2
@@ -163,16 +163,16 @@
             // 
             this.txtTaiKhoan.Location = new System.Drawing.Point(226, 3);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(369, 44);
+            this.txtTaiKhoan.Size = new System.Drawing.Size(369, 26);
             this.txtTaiKhoan.TabIndex = 0;
             // 
             // dtpTaiKhoan
             // 
-            this.dtpTaiKhoan.CustomFormat = "dd-MM-yyyy";
+            this.dtpTaiKhoan.CustomFormat = "dd/MM/yyyy";
             this.dtpTaiKhoan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpTaiKhoan.Location = new System.Drawing.Point(226, 102);
             this.dtpTaiKhoan.Name = "dtpTaiKhoan";
-            this.dtpTaiKhoan.Size = new System.Drawing.Size(369, 44);
+            this.dtpTaiKhoan.Size = new System.Drawing.Size(369, 26);
             this.dtpTaiKhoan.TabIndex = 3;
             // 
             // cboChucVu
@@ -184,7 +184,7 @@
             "1"});
             this.cboChucVu.Location = new System.Drawing.Point(226, 135);
             this.cboChucVu.Name = "cboChucVu";
-            this.cboChucVu.Size = new System.Drawing.Size(369, 44);
+            this.cboChucVu.Size = new System.Drawing.Size(369, 26);
             this.cboChucVu.TabIndex = 4;
             // 
             // gbTaiKhoan
@@ -283,19 +283,19 @@
             this.dgvTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTaiKhoan.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvTaiKhoan.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvTaiKhoan.Location = new System.Drawing.Point(0, 519);
+            this.dgvTaiKhoan.Location = new System.Drawing.Point(0, 541);
             this.dgvTaiKhoan.Name = "dgvTaiKhoan";
             this.dgvTaiKhoan.RowHeadersWidth = 82;
             this.dgvTaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTaiKhoan.Size = new System.Drawing.Size(1200, 280);
+            this.dgvTaiKhoan.Size = new System.Drawing.Size(1141, 280);
             this.dgvTaiKhoan.TabIndex = 0;
             this.dgvTaiKhoan.Click += new System.EventHandler(this.dgvTaiKhoan_Click);
             // 
             // frmTaiKhoan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 36F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 799);
+            this.ClientSize = new System.Drawing.Size(1141, 821);
             this.ControlBox = false;
             this.Controls.Add(this.dgvTaiKhoan);
             this.Controls.Add(this.tableButton);
