@@ -77,5 +77,69 @@ namespace BUS
         {
             return db.LayDSLSP_TheoMaLSP(maLoaiSP);
         }
+
+
+        //NCC
+        //Lay DS NCC
+        public IQueryable LayDSNCC()
+        {
+            return db.LayDSNCC();
+        }
+
+        // ThemLoaiSP()
+        public bool ThemNCC(DTO_NCC ncc)
+        {
+            return db.ThemNCC(ncc);
+        }
+
+        // XoaLoaiTK()
+        public bool XoaNCC(string maNCC)
+        {
+            return db.XoaNCC(maNCC);
+        }
+
+        // SuaLoaiTK)
+        public bool SuaNCC(DTO_NCC ncc)
+        {
+            return db.SuaNCC(ncc);
+        }
+
+        // LayDSLSP_TheoMaSP()
+        public IQueryable LayDSNCC_TheoMaNCC(string maNCC)
+        {
+            return db.LayDSNCC_TheoMaNCC(maNCC);
+        }
+
+
+        //NCC
+        //Lay DS NCC
+        public IQueryable LayDSSP()
+        {
+            return db.LayDSSP();
+        }
+
+        // ThemLoaiSP()
+        public bool ThemSP(DTO_SanPham sp)
+        {
+            return db.ThemSP(sp);
+        }
+
+        // XoaLoaiTK()
+        public bool XoaSP(string maSP)
+        {
+            return db.XoaSP(maSP);
+        }
+
+        // SuaLoaiTK)
+        public bool SuaSP(DTO_SanPham sp)
+        {
+            return db.SuaSP(sp);
+        }
+
+        // LayDSLSP_TheoMaSP()
+        public IQueryable LayDSSP_TheoMaSP(string maSP)
+        {
+            return db.LayDSSP_TheoMaSP(maSP);
+        }
     }
 }

@@ -305,12 +305,300 @@ namespace DAL
             return false;
         }
 
-        // LayDSTK_TheoTK()
+        // LayDSLoaiSP_TheoMaSP()
         public IQueryable LayDSLSP_TheoMaLSP(string lsp)
         {
             // Truy vấn DB
             IQueryable temp = from t in db.LoaiSanPhams
                               where t.MaLoaiSP == lsp
+                              select t;
+            return temp;
+        }
+
+        //NCC
+        // LayDSLoaiSP()
+        public IQueryable LayDSNCC()
+        {
+            // Truy vấn lấy DSLoaiSP
+            IQueryable temp = from t in db.NhaCungCaps
+                              select t;
+            return temp;
+        }
+        // ThemLoaiSP()
+        public bool ThemNCC(DTO_NCC ncc)
+        {
+            try
+            {
+                // Tạo đối tượng NCC
+                NhaCungCap t_insert = new NhaCungCap
+                {
+                    MaNCC = ncc.MaNCC,
+                    TenNCC = ncc.TenNCC,
+                    DiaChiNCC = ncc.DiaChiNCC,
+                    SdtNCC = ncc.SdtNCC,
+                };
+
+                // Check NCC có # null ko mới add vào DB
+                if (t_insert.MaNCC != string.Empty)
+                {
+                    db.NhaCungCaps.InsertOnSubmit(t_insert); // Thêm DB
+                    db.SubmitChanges(); // Xác nhận thay đổi DB
+                    MessageBox.Show("Thêm thành công!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Information);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Nhà cung cấp không hợp lệ!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Throw Exception
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+
+        // XoaNCC()
+        public bool XoaNCC(string maNCC)
+        {
+            try
+            {
+                // Check LoaiSP có # null ko? mới xóa
+                if (maNCC != string.Empty)
+                {
+                    // Truy vấn LoaiSP có trong DSLoaiSP hay ko?
+                    var t_delete = from t in db.NhaCungCaps
+                                   where t.MaNCC == maNCC
+                                   select t;
+
+                    // Xóa TK
+                    foreach (var item in t_delete)
+                    {
+                        db.NhaCungCaps.DeleteOnSubmit(item); // Xóa DB
+                        db.SubmitChanges(); // Xác nhận thay đổi DB
+                    }
+
+                    MessageBox.Show("Xóa thành công!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Information);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Nhà cung cấp không hợp lệ!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Throw Exception
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+
+        // SuaLoaiSP()
+        public bool SuaNCC(DTO_NCC ncc)
+        {
+            try
+            {
+                // Tạo đối tượng LoaiSP = cách truy vấn DB
+                NhaCungCap t_update = db.NhaCungCaps.Single(t => t.MaNCC == ncc.MaNCC);
+
+                // Check LoaiSP != Null ko? mới sửa thông tin LoaiSP
+                if (t_update.MaNCC != string.Empty)
+                {
+                    // Sửa thông tin LoaiSP
+                    t_update.TenNCC = ncc.TenNCC;
+                    t_update.DiaChiNCC = ncc.DiaChiNCC;
+                    t_update.SdtNCC = ncc.SdtNCC;
+
+                    // Xác nhận thay đổi DB
+                    db.SubmitChanges();
+
+                    MessageBox.Show("Sửa thành công!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Information);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Loại sản phẩm không hợp lệ!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Throw Exception
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+
+        // LayDSTK_TheoTK()
+        public IQueryable LayDSNCC_TheoMaNCC(string maNCC)
+        {
+            // Truy vấn DB
+            IQueryable temp = from t in db.NhaCungCaps
+                              where t.MaNCC == maNCC
+                              select t;
+            return temp;
+        }
+
+
+        //NCC
+        // LayDSLoaiSP()
+        public IQueryable LayDSSP()
+        {
+            // Truy vấn lấy DSLoaiSP
+            IQueryable temp = from t in db.SanPhams
+                              select t;
+            return temp;
+        }
+        // ThemLoaiSP()
+        public bool ThemSP(DTO_SanPham sp)
+        {
+            try
+            {
+                // Tạo đối tượng NCC
+                SanPham t_insert = new SanPham
+                {
+                    MaSP = sp.MaSP,
+                    TenSP = sp.TenSP,
+                    GiaNhap = sp.GiaNhap,
+                    GiaBan = sp.GiaBan,
+                    SoLuong = sp.SoLuong,
+                    DonViTinh = sp.DonViTinh,
+                    NoiSanXuat = sp.NoiSanXuat,
+                    HanSuDung = DateTime.Parse(sp.HanSuDung),
+                    MaNCC = sp.MaNCC,
+                    MaLoaiSP = sp.MaLoaiSP,
+                };
+
+                // Check NCC có # null ko mới add vào DB
+                if (t_insert.MaSP != string.Empty)
+                {
+                    db.SanPhams.InsertOnSubmit(t_insert); // Thêm DB
+                    db.SubmitChanges(); // Xác nhận thay đổi DB
+                    MessageBox.Show("Thêm thành công!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Information);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Nhà cung cấp không hợp lệ!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Throw Exception
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+
+        // XoaNCC()
+        public bool XoaSP(string maSP)
+        {
+            try
+            {
+                // Check LoaiSP có # null ko? mới xóa
+                if (maSP != string.Empty)
+                {
+                    // Truy vấn LoaiSP có trong DSLoaiSP hay ko?
+                    var t_delete = from t in db.SanPhams
+                                   where t.MaNCC == maSP
+                                   select t;
+
+                    // Xóa TK
+                    foreach (var item in t_delete)
+                    {
+                        db.SanPhams.DeleteOnSubmit(item); // Xóa DB
+                        db.SubmitChanges(); // Xác nhận thay đổi DB
+                    }
+
+                    MessageBox.Show("Xóa thành công!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Information);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Sản phẩm không hợp lệ!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Throw Exception
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+
+        // SuaLoaiSP()
+        public bool SuaSP(DTO_SanPham sp)
+        {
+            try
+            {
+                // Tạo đối tượng LoaiSP = cách truy vấn DB
+                SanPham t_update = db.SanPhams.Single(t => t.MaNCC == sp.MaSP);
+
+                // Check LoaiSP != Null ko? mới sửa thông tin LoaiSP
+                if (t_update.MaNCC != string.Empty)
+                {
+                    // Sửa thông tin LoaiSP
+                    t_update.TenSP = sp.TenSP;
+                    t_update.GiaNhap = sp.GiaNhap;
+                    t_update.GiaBan = sp.GiaBan;
+                    t_update.SoLuong = sp.SoLuong;
+                    t_update.DonViTinh = sp.DonViTinh;
+                    t_update.NoiSanXuat = sp.NoiSanXuat;
+                    t_update.HanSuDung = DateTime.Parse(sp.HanSuDung);
+                    t_update.MaNCC = sp.MaNCC;
+                    t_update.MaLoaiSP = sp.MaLoaiSP;
+
+
+                    // Xác nhận thay đổi DB
+                    db.SubmitChanges();
+
+                    MessageBox.Show("Sửa thành công!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Information);
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Sản phẩm không hợp lệ!", "Thông báo",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Throw Exception
+                MessageBox.Show(ex.Message);
+            }
+            return false;
+        }
+
+        // LayDSTK_TheoTK()
+        public IQueryable LayDSSP_TheoMaSP(string maSP)
+        {
+            // Truy vấn DB
+            IQueryable temp = from t in db.SanPhams
+                              where t.MaSP == maSP
                               select t;
             return temp;
         }
