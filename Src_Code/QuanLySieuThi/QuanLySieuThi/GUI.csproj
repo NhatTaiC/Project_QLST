@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmChiTietDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChiTietDonHang.Designer.cs">
+      <DependentUpon>frmChiTietDonHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmChiTietDonHang.resx">
+      <DependentUpon>frmChiTietDonHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDonHang.resx">
       <DependentUpon>frmDonHang.cs</DependentUpon>
     </EmbeddedResource>
