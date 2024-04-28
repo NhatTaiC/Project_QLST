@@ -72,7 +72,7 @@ namespace DAL
                         TaiKhoan1 = tk.TaiKhoan,
                         MatKhau = tk.MatKhau,
                         HoTen = tk.HoTen,
-                        NgayTao = DateTime.Parse(tk.NgayTao),
+                        NgayTao = tk.NgayTao,
                         ChucVu = tk.ChucVu
                     };
 
@@ -87,7 +87,7 @@ namespace DAL
                         db.SubmitChanges(); // Xác nhận thay đổi DB TaiKhoan
 
                         // Thông báo
-                        MessageBox.Show("Thêm Tài Khoản thành công!", "Thông báo",
+                        MessageBox.Show("Thêm Tài Khoản mới thành công!", "Thông báo",
                            MessageBoxButtons.OK,
                            MessageBoxIcon.Information);
                         return true;
@@ -184,7 +184,7 @@ namespace DAL
                     // Sửa thông tin TaiKhoan
                     t_update.MatKhau = tk.MatKhau;
                     t_update.HoTen = tk.HoTen;
-                    t_update.NgayTao = DateTime.Parse(tk.NgayTao);
+                    t_update.NgayTao = tk.NgayTao;
                     t_update.ChucVu = tk.ChucVu;
 
                     // Xác nhận thay đổi DB
@@ -221,6 +221,19 @@ namespace DAL
                               select new
                               {
                                   TaiKhoan = t.TaiKhoan1,
+                              };
+            return temp;
+        }
+
+        // LayDSTK_TheoChucVu()
+        public IQueryable LayDSTK_TheoChucVuAll()
+        {
+            // Lấy DSTK Theo TK
+            IQueryable temp = from t in db.TaiKhoans
+                              group t by t.ChucVu into cv
+                              select new
+                              {
+                                  ChucVu = cv.Key,
                               };
             return temp;
         }

@@ -48,10 +48,12 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvTaiKhoan = new System.Windows.Forms.DataGridView();
+            this.tableDGVTaiKhoan = new System.Windows.Forms.TableLayoutPanel();
             this.tableForm.SuspendLayout();
             this.gbTaiKhoan.SuspendLayout();
             this.tableButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
+            this.tableDGVTaiKhoan.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -286,15 +288,30 @@
             this.dgvTaiKhoan.AllowUserToResizeRows = false;
             this.dgvTaiKhoan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTaiKhoan.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvTaiKhoan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTaiKhoan.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvTaiKhoan.Location = new System.Drawing.Point(0, 541);
+            this.dgvTaiKhoan.Location = new System.Drawing.Point(3, 3);
             this.dgvTaiKhoan.Name = "dgvTaiKhoan";
             this.dgvTaiKhoan.RowHeadersWidth = 82;
             this.dgvTaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTaiKhoan.Size = new System.Drawing.Size(1141, 280);
+            this.dgvTaiKhoan.Size = new System.Drawing.Size(1135, 257);
             this.dgvTaiKhoan.TabIndex = 0;
             this.dgvTaiKhoan.Click += new System.EventHandler(this.dgvTaiKhoan_Click);
+            // 
+            // tableDGVTaiKhoan
+            // 
+            this.tableDGVTaiKhoan.ColumnCount = 1;
+            this.tableDGVTaiKhoan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableDGVTaiKhoan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableDGVTaiKhoan.Controls.Add(this.dgvTaiKhoan, 0, 0);
+            this.tableDGVTaiKhoan.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableDGVTaiKhoan.Location = new System.Drawing.Point(0, 558);
+            this.tableDGVTaiKhoan.Name = "tableDGVTaiKhoan";
+            this.tableDGVTaiKhoan.RowCount = 1;
+            this.tableDGVTaiKhoan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableDGVTaiKhoan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableDGVTaiKhoan.Size = new System.Drawing.Size(1141, 263);
+            this.tableDGVTaiKhoan.TabIndex = 4;
             // 
             // frmTaiKhoan
             // 
@@ -302,7 +319,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1141, 821);
             this.ControlBox = false;
-            this.Controls.Add(this.dgvTaiKhoan);
+            this.Controls.Add(this.tableDGVTaiKhoan);
             this.Controls.Add(this.tableButton);
             this.Controls.Add(this.gbTaiKhoan);
             this.Controls.Add(this.label1);
@@ -318,6 +335,7 @@
             this.gbTaiKhoan.ResumeLayout(false);
             this.tableButton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).EndInit();
+            this.tableDGVTaiKhoan.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,5 +363,6 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dgvTaiKhoan;
+        private System.Windows.Forms.TableLayoutPanel tableDGVTaiKhoan;
     }
 }

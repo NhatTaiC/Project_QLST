@@ -20,7 +20,7 @@
       <Column Name="MatKhau" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="HoTen" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="NgayTao" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="ChucVu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ChucVu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="TaiKhoan_NhanVien" Member="NhanViens" ThisKey="TaiKhoan1" OtherKey="TaiKhoan" Type="NhanVien" />
     </Type>
   </Table>

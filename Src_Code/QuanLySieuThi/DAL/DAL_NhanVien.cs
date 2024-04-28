@@ -98,7 +98,7 @@ namespace DAL
                             string matKhau = "123456";
                             string hoTen = n_insert.TenNV;
                             DateTime ngayTao = DateTime.Now;
-                            int chucVu = 1;
+                            string chucVu = "Nhân Viên";
 
                             // Tạo đối tượng TaiKhoan mới
                             TaiKhoan tk = new TaiKhoan
@@ -123,7 +123,7 @@ namespace DAL
                                 db.SubmitChanges(); // Xác nhận lưu xuống DB NhanVien
 
                                 // Thông báo
-                                MessageBox.Show("Thêm Nhân Viên thành công!", "Thông báo",
+                                MessageBox.Show("Thêm Nhân Viên mới thành công!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                                 return true;
@@ -254,7 +254,7 @@ namespace DAL
                     tk.MatKhau = "123456";
                     tk.HoTen = n_update.TenNV;
                     tk.NgayTao = DateTime.Now;
-                    tk.ChucVu = 1;
+                    tk.ChucVu = "Nhân Viên";
 
                     // Xác nhận thay đổi DB NhanVien
                     db.SubmitChanges();

@@ -126,6 +126,7 @@
             this.donHangMNS.Name = "donHangMNS";
             this.donHangMNS.Size = new System.Drawing.Size(180, 22);
             this.donHangMNS.Text = "Đơn Hàng";
+            this.donHangMNS.Click += new System.EventHandler(this.donHangMNS_Click);
             // 
             // chiTietDonHangMNS
             // 

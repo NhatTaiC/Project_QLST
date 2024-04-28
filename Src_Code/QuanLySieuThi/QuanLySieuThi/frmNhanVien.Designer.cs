@@ -52,10 +52,12 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
+            this.tableDGVNhanVien = new System.Windows.Forms.TableLayoutPanel();
             this.tableForm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
+            this.tableDGVNhanVien.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -272,7 +274,7 @@
             this.tableButton.Controls.Add(this.btnSua, 2, 0);
             this.tableButton.Controls.Add(this.btnXoa, 1, 0);
             this.tableButton.Controls.Add(this.btnThem, 0, 0);
-            this.tableButton.Location = new System.Drawing.Point(140, 576);
+            this.tableButton.Location = new System.Drawing.Point(140, 561);
             this.tableButton.Name = "tableButton";
             this.tableButton.RowCount = 1;
             this.tableButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -343,15 +345,30 @@
             this.dgvNhanVien.AllowUserToResizeRows = false;
             this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvNhanVien.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgvNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNhanVien.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvNhanVien.Location = new System.Drawing.Point(0, 673);
+            this.dgvNhanVien.Location = new System.Drawing.Point(3, 3);
             this.dgvNhanVien.Name = "dgvNhanVien";
             this.dgvNhanVien.RowHeadersWidth = 82;
             this.dgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNhanVien.Size = new System.Drawing.Size(978, 208);
+            this.dgvNhanVien.Size = new System.Drawing.Size(972, 197);
             this.dgvNhanVien.TabIndex = 4;
             this.dgvNhanVien.Click += new System.EventHandler(this.dgvNhanVien_Click);
+            // 
+            // tableDGVNhanVien
+            // 
+            this.tableDGVNhanVien.ColumnCount = 1;
+            this.tableDGVNhanVien.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableDGVNhanVien.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableDGVNhanVien.Controls.Add(this.dgvNhanVien, 0, 0);
+            this.tableDGVNhanVien.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableDGVNhanVien.Location = new System.Drawing.Point(0, 678);
+            this.tableDGVNhanVien.Name = "tableDGVNhanVien";
+            this.tableDGVNhanVien.RowCount = 1;
+            this.tableDGVNhanVien.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableDGVNhanVien.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableDGVNhanVien.Size = new System.Drawing.Size(978, 203);
+            this.tableDGVNhanVien.TabIndex = 5;
             // 
             // frmNhanVien
             // 
@@ -359,7 +376,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 881);
             this.ControlBox = false;
-            this.Controls.Add(this.dgvNhanVien);
+            this.Controls.Add(this.tableDGVNhanVien);
             this.Controls.Add(this.tableButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -375,6 +392,7 @@
             this.groupBox1.ResumeLayout(false);
             this.tableButton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
+            this.tableDGVNhanVien.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,5 +424,6 @@
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.ComboBox cboTaiKhoan;
         private System.Windows.Forms.ComboBox cboGioiTinh;
+        private System.Windows.Forms.TableLayoutPanel tableDGVNhanVien;
     }
 }

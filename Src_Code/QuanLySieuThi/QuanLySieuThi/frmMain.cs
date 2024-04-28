@@ -97,5 +97,20 @@ namespace QuanLySieuThi
                 ActForm("frmNhanVien");
             }
         }
+
+        // donHangMNS_Click
+        private void donHangMNS_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmDonHang"))
+            {
+                frmDonHang f = new frmDonHang();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmDonHang");
+            }
+        }
     }
 }

@@ -466,7 +466,7 @@ namespace DAL
 		
 		private System.Nullable<System.DateTime> _NgayTao;
 		
-		private System.Nullable<int> _ChucVu;
+		private string _ChucVu;
 		
 		private EntitySet<NhanVien> _NhanViens;
 		
@@ -482,7 +482,7 @@ namespace DAL
     partial void OnHoTenChanged();
     partial void OnNgayTaoChanging(System.Nullable<System.DateTime> value);
     partial void OnNgayTaoChanged();
-    partial void OnChucVuChanging(System.Nullable<int> value);
+    partial void OnChucVuChanging(string value);
     partial void OnChucVuChanged();
     #endregion
 		
@@ -572,8 +572,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChucVu", DbType="Int")]
-		public System.Nullable<int> ChucVu
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ChucVu", DbType="NVarChar(100)")]
+		public string ChucVu
 		{
 			get
 			{
