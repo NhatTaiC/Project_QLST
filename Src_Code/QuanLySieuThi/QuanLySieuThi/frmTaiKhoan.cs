@@ -152,8 +152,8 @@ namespace QuanLySieuThi
 
             if (tk_nv == 1)
             {
-                DialogResult r = MessageBox.Show("Xóa TaiKhoan sẽ xóa luôn thông tin NhanVien gắn với TaiKhoan\n" +
-                        $"\nBạn có chắc muốn xóa TaiKhoan +{txtHoTen.Text}+ không?", "Thông báo",
+                DialogResult r = MessageBox.Show("Xóa Tài Khoản sẽ xóa luôn thông tin Nhân Viên gắn với Tài Khoản\n" +
+                        $"\nBạn có chắc muốn xóa Tài Khoản +{txtHoTen.Text}+ không?", "Thông báo",
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Warning);
 
@@ -165,7 +165,7 @@ namespace QuanLySieuThi
             }
             else
             {
-                DialogResult r = MessageBox.Show($"Bạn có chắc muốn xóa TaiKhoan +{txtHoTen.Text}+ không?", "Thông báo",
+                DialogResult r = MessageBox.Show($"Bạn có chắc muốn xóa Tài Khoản +{txtHoTen.Text}+ không?", "Thông báo",
                        MessageBoxButtons.YesNo,
                        MessageBoxIcon.Warning);
 
@@ -180,7 +180,7 @@ namespace QuanLySieuThi
         // BtnSua_Click
         private void btnSua_Click(object sender, EventArgs e)
         {
-            DialogResult r = MessageBox.Show($"Bạn có chắc muốn sửa thông tin TaiKhoan +{txtHoTen.Text}+ không?", "Thông báo",
+            DialogResult r = MessageBox.Show($"Bạn có chắc muốn sửa thông tin Tài Khoản +{txtHoTen.Text}+ không?", "Thông báo",
                MessageBoxButtons.YesNo,
                MessageBoxIcon.Warning);
 
