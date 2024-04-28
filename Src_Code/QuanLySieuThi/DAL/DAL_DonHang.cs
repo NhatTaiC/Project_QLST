@@ -61,65 +61,45 @@ namespace DAL
         {
             try
             {
-                // Tạo đối tượng Đơn Hàng
-                DonHang dh_insert = new DonHang
+                if (dh.MaDon != string.Empty)
                 {
-                    MaDon = dh.MaDon,
-                    NgayBan = dh.NgayBan,
-                    TongGiaTri = dh.TongGiaTri,
-                    MaNV = dh.MaNV
-                };
-
-                // Check xem Đơn Hàng đã có trong DB DonHang hay chưa?
-                var temp = from d in db.DonHangs
-                                  where d.MaDon == dh.MaDon
-                                  select d;
-
-                if (temp.Count() != 1)
-                {
-                    if (dh_insert.MaDon != string.Empty)
+                    // Tạo đối tượng Đơn Hàng
+                    DonHang dh_insert = new DonHang
                     {
-                        // Check xem Đơn Hàng có Nhân Viên nào phụ trách không?
-                        var temp2 = from d2 in db.DonHangs
-                                    join nk in db.NhanViens
-                                    on d2.MaNV equals nk.MaNV
-                                    where d2.MaNV == dh.MaNV
-                                    select d2;
+                        MaDon = dh.MaDon,
+                        NgayBan = dh.NgayBan,
+                        TongGiaTri = dh.TongGiaTri,
+                        MaNV = dh.MaNV
+                    };
 
-                        if (temp2.Count() == 1)
-                        {
-                            db.DonHangs.InsertOnSubmit(dh_insert); // Thêm Đơn Hàng vào DB DonHang
-                            db.SubmitChanges(); // Xác nhận thêm Đơn Hàng vào DB DonHang
+                    // Check xem Đơn Hàng đã có trong DB DonHang hay chưa?
+                    var temp = from d in db.DonHangs
+                               where d.MaDon == dh.MaDon
+                               select d;
 
-                            // Thông báo
-                            MessageBox.Show("Thêm Đơn Hàng thành công!", "Thông báo",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
-                            return true;
-                        }
-                        else
-                        {
-                            // Thông báo
-                            MessageBox.Show("Đơn Hàng không có Nhân Viên phụ trách, Không thể thêm!", "Thông báo",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-                        } 
+                    if (temp.Count() != 1)
+                    {
+                        db.DonHangs.InsertOnSubmit(dh_insert); // Thêm Đơn Hàng vào DB DonHang
+                        db.SubmitChanges(); // Xác nhận thêm Đơn Hàng vào DB DonHang
+
+                        // Thông báo
+                        MessageBox.Show("Thêm Đơn Hàng mới thành công!", "Thông báo",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        return true;
                     }
                     else
                     {
                         // Thông báo
-                        MessageBox.Show("Mã Đơn Hàng không hợp lệ, Không thể thêm!", "Thông báo",
+                        MessageBox.Show("Đã có Đơn Hàng trong DB DonHang, không thể thêm!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
-                    }
+                    } 
                 }
-                else
-                {
-                    // Thông báo
-                    MessageBox.Show("Đã có Đơn Hàng trong DB DonHang!", "Thông báo",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
+                // Thông báo
+                MessageBox.Show("Mã Đơn Hàng không hợp lệ, Không thể thêm!", "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
@@ -174,7 +154,7 @@ namespace DAL
         public bool SuaDonHang(DTO_DonHang dh) {
             try
             {
-                // Check xoaDonHang có != null không mới xóa
+                // Check dh.MaDon có != null không mới sửa thông tin
                 if (dh.MaDon != string.Empty)
                 {
                     // Tìm Đơn Hàng cần sửa thông tin
@@ -200,7 +180,6 @@ namespace DAL
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
-
             }
             catch (Exception ex)
             {
