@@ -126,12 +126,14 @@
             this.donHangMNS.Name = "donHangMNS";
             this.donHangMNS.Size = new System.Drawing.Size(180, 22);
             this.donHangMNS.Text = "Đơn Hàng";
+            this.donHangMNS.Click += new System.EventHandler(this.donHangMNS_Click);
             // 
             // chiTietDonHangMNS
             // 
             this.chiTietDonHangMNS.Name = "chiTietDonHangMNS";
             this.chiTietDonHangMNS.Size = new System.Drawing.Size(180, 22);
             this.chiTietDonHangMNS.Text = "Chi Tiết Đơn Hàng";
+            this.chiTietDonHangMNS.Click += new System.EventHandler(this.chiTietDonHangMNS_Click);
             // 
             // banHangMNS
             // 

@@ -25,7 +25,7 @@ CREATE TABLE [dbo].[TaiKhoan]
 	[MatKhau] varchar(50),
 	[HoTen] nvarchar(100),
 	[NgayTao] date,
-	[ChucVu] int
+	[ChucVu] nvarchar(100)
 );
 
 CREATE TABLE [dbo].[NhaCungCap]

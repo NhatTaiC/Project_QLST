@@ -41,9 +41,13 @@ namespace QuanLySieuThi
             // dtpTaiKhoan
             dtpTaiKhoan.Value = DateTime.Now;
 
+            // cboChucVu
+            cboChucVu.DataSource = bus_tk.LayDSTK_TheoChucVuAll();
+            cboChucVu.DisplayMember = "ChucVu";
+            cboChucVu.ValueMember = "ChucVu";
+
             // Others
             txtTaiKhoan.Focus();
-            cboChucVu.SelectedIndex = 1;
             txtTaiKhoan.Enabled = true;
             btnThem.Enabled = true;
             btnXoa.Enabled = false;
@@ -58,7 +62,7 @@ namespace QuanLySieuThi
             txtMatKhau.Text = string.Empty;
             txtHoTen.Text = string.Empty;
 
-            // Call LoadData()
+            // Called LoadData()
             LoadData();
         }
 
@@ -116,14 +120,9 @@ namespace QuanLySieuThi
                 dtpTaiKhoan.Value = DateTime.Parse(dgvTaiKhoan.Rows[n].Cells[3].Value.ToString());
 
                 //Xử lý ComboBox
-                if (dgvTaiKhoan.Rows[n].Cells[4].Value.ToString() == "0")
-                {
-                    cboChucVu.SelectedIndex = 0;
-                }
-                else
-                {
-                    cboChucVu.SelectedIndex = 1;
-                }
+                cboChucVu.DataSource = bus_tk.LayDSTK_TheoChucVuAll();
+                cboChucVu.DisplayMember = "ChucVu";
+                cboChucVu.ValueMember = "ChucVu";
             }
             else
             {
@@ -138,7 +137,7 @@ namespace QuanLySieuThi
         private void btnThem_Click(object sender, EventArgs e)
         {
             DTO_TaiKhoan tk = new DTO_TaiKhoan(txtTaiKhoan.Text, txtMatKhau.Text,
-            txtHoTen.Text, dtpTaiKhoan.Value.ToString(), int.Parse(cboChucVu.SelectedIndex.ToString()));
+            txtHoTen.Text, dtpTaiKhoan.Value, cboChucVu.SelectedValue.ToString());
 
             bus_tk.ThemTK(tk);
             Reset();
@@ -152,8 +151,8 @@ namespace QuanLySieuThi
 
             if (tk_nv == 1)
             {
-                DialogResult r = MessageBox.Show("Xóa TaiKhoan sẽ xóa luôn thông tin NhanVien gắn với TaiKhoan\n" +
-                        $"\nBạn có chắc muốn xóa TaiKhoan +{txtHoTen.Text}+ không?", "Thông báo",
+                DialogResult r = MessageBox.Show("Xóa Tài Khoản sẽ xóa luôn thông tin Nhân Viên gắn với Tài Khoản\n" +
+                        $"\nBạn có chắc muốn xóa Tài Khoản +{txtTaiKhoan.Text}+ không?", "Thông báo",
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Warning);
 
@@ -165,7 +164,7 @@ namespace QuanLySieuThi
             }
             else
             {
-                DialogResult r = MessageBox.Show($"Bạn có chắc muốn xóa TaiKhoan +{txtHoTen.Text}+ không?", "Thông báo",
+                DialogResult r = MessageBox.Show($"Bạn có chắc muốn xóa Tài Khoản +{txtTaiKhoan.Text}+ không?", "Thông báo",
                        MessageBoxButtons.YesNo,
                        MessageBoxIcon.Warning);
 
@@ -180,14 +179,14 @@ namespace QuanLySieuThi
         // BtnSua_Click
         private void btnSua_Click(object sender, EventArgs e)
         {
-            DialogResult r = MessageBox.Show($"Bạn có chắc muốn sửa thông tin TaiKhoan +{txtHoTen.Text}+ không?", "Thông báo",
+            DialogResult r = MessageBox.Show($"Bạn có chắc muốn sửa thông tin Tài Khoản +{txtTaiKhoan.Text}+ không?", "Thông báo",
                MessageBoxButtons.YesNo,
                MessageBoxIcon.Warning);
 
             if (r == DialogResult.Yes)
             {
                 DTO_TaiKhoan tk = new DTO_TaiKhoan(txtTaiKhoan.Text, txtMatKhau.Text,
-                txtHoTen.Text, dtpTaiKhoan.Value.ToString(), int.Parse(cboChucVu.SelectedIndex.ToString()));
+                txtHoTen.Text, dtpTaiKhoan.Value, cboChucVu.SelectedValue.ToString());
 
                 bus_tk.SuaTK(tk);
                 Reset();

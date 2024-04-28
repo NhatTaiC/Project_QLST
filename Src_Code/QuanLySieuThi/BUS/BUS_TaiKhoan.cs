@@ -50,5 +50,11 @@ namespace BUS
         {
             return dal_tk.LayDSTK_TheoTK(tk);
         }
+
+        // LayDSTK_TheoChucVuAll()
+        public IQueryable LayDSTK_TheoChucVuAll()
+        {
+            return dal_tk.LayDSTK_TheoChucVuAll();
+        }
     }
 }
