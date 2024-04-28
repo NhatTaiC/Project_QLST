@@ -20,5 +20,7 @@ namespace DTO
         public string MaLSP { get => maLSP; set => maLSP = value; }
         public string TenLSP { get => tenLSP; set => tenLSP = value; }
         public string MoTa { get => moTa; set => moTa = value; }
+
+
     }
 }

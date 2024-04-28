@@ -453,21 +453,21 @@ namespace DAL
         }
 
 
-        //NCC
+        //SP
         // LayDSLoaiSP()
         public IQueryable LayDSSP()
         {
-            // Truy vấn lấy DSLoaiSP
+            // Truy vấn lấy DSSP
             IQueryable temp = from t in db.SanPhams
                               select t;
             return temp;
         }
-        // ThemLoaiSP()
+        // ThemSP()
         public bool ThemSP(DTO_SanPham sp)
         {
             try
             {
-                // Tạo đối tượng NCC
+                // Tạo đối tượng SP
                 SanPham t_insert = new SanPham
                 {
                     MaSP = sp.MaSP,
@@ -482,7 +482,7 @@ namespace DAL
                     MaLoaiSP = sp.MaLoaiSP,
                 };
 
-                // Check NCC có # null ko mới add vào DB
+                // Check sp có # null ko mới add vào DB
                 if (t_insert.MaSP != string.Empty)
                 {
                     db.SanPhams.InsertOnSubmit(t_insert); // Thêm DB
@@ -494,7 +494,7 @@ namespace DAL
                 }
                 else
                 {
-                    MessageBox.Show("Nhà cung cấp không hợp lệ!", "Thông báo",
+                    MessageBox.Show("Sản phẩm không hợp lệ!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Error);
                 }
@@ -507,20 +507,20 @@ namespace DAL
             return false;
         }
 
-        // XoaNCC()
+        // XoaSP()
         public bool XoaSP(string maSP)
         {
             try
             {
-                // Check LoaiSP có # null ko? mới xóa
+                // Check SP có # null ko? mới xóa
                 if (maSP != string.Empty)
                 {
-                    // Truy vấn LoaiSP có trong DSLoaiSP hay ko?
+                    // Truy vấn SP có trong DSSP hay ko?
                     var t_delete = from t in db.SanPhams
                                    where t.MaNCC == maSP
                                    select t;
 
-                    // Xóa TK
+                    // Xóa SP
                     foreach (var item in t_delete)
                     {
                         db.SanPhams.DeleteOnSubmit(item); // Xóa DB
@@ -547,18 +547,18 @@ namespace DAL
             return false;
         }
 
-        // SuaLoaiSP()
+        // SuaSP()
         public bool SuaSP(DTO_SanPham sp)
         {
             try
             {
-                // Tạo đối tượng LoaiSP = cách truy vấn DB
+                // Tạo đối tượng SP = cách truy vấn DB
                 SanPham t_update = db.SanPhams.Single(t => t.MaNCC == sp.MaSP);
 
-                // Check LoaiSP != Null ko? mới sửa thông tin LoaiSP
+                // Check SP != Null ko? mới sửa thông tin SP
                 if (t_update.MaNCC != string.Empty)
                 {
-                    // Sửa thông tin LoaiSP
+                    // Sửa thông tin SP
                     t_update.TenSP = sp.TenSP;
                     t_update.GiaNhap = sp.GiaNhap;
                     t_update.GiaBan = sp.GiaBan;
@@ -593,7 +593,7 @@ namespace DAL
             return false;
         }
 
-        // LayDSTK_TheoTK()
+        // LayDSSP_TheomaSP()
         public IQueryable LayDSSP_TheoMaSP(string maSP)
         {
             // Truy vấn DB
