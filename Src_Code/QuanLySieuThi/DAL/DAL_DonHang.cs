@@ -61,17 +61,9 @@ namespace DAL
         {
             try
             {
+                // Check dh.MaDon có != null hay không?
                 if (dh.MaDon != string.Empty)
                 {
-                    // Tạo đối tượng Đơn Hàng
-                    DonHang dh_insert = new DonHang
-                    {
-                        MaDon = dh.MaDon,
-                        NgayBan = dh.NgayBan,
-                        TongGiaTri = dh.TongGiaTri,
-                        MaNV = dh.MaNV
-                    };
-
                     // Check xem Đơn Hàng đã có trong DB DonHang hay chưa?
                     var temp = from d in db.DonHangs
                                where d.MaDon == dh.MaDon
@@ -79,6 +71,15 @@ namespace DAL
 
                     if (temp.Count() != 1)
                     {
+                        // Tạo đối tượng Đơn Hàng
+                        DonHang dh_insert = new DonHang
+                        {
+                            MaDon = dh.MaDon,
+                            NgayBan = dh.NgayBan,
+                            TongGiaTri = dh.TongGiaTri,
+                            MaNV = dh.MaNV
+                        };
+
                         db.DonHangs.InsertOnSubmit(dh_insert); // Thêm Đơn Hàng vào DB DonHang
                         db.SubmitChanges(); // Xác nhận thêm Đơn Hàng vào DB DonHang
 
@@ -128,7 +129,7 @@ namespace DAL
                     }
 
                     // Thông báo
-                    MessageBox.Show("Xóa Đơn Hàng thành công!", "Thông báo",
+                    MessageBox.Show($"Xóa Đơn Hàng +{maDonHang}+ thành công!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                     return true; 
@@ -168,7 +169,7 @@ namespace DAL
                     db.SubmitChanges();
 
                     // Thông báo
-                    MessageBox.Show("Sửa thông tin Đơn Hàng thành công!", "Thông báo",
+                    MessageBox.Show($"Sửa thông tin Đơn Hàng +{dh.MaDon}+ thành công!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                     return true;

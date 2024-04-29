@@ -101,6 +101,7 @@
             this.nhaCungCapMNS.Name = "nhaCungCapMNS";
             this.nhaCungCapMNS.Size = new System.Drawing.Size(180, 22);
             this.nhaCungCapMNS.Text = "Nhà Cung Cấp";
+            this.nhaCungCapMNS.Click += new System.EventHandler(this.nhaCungCapMNS_Click);
             // 
             // loaiSanPhamMNS
             // 

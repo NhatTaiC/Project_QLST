@@ -66,16 +66,6 @@ namespace DAL
                 // Check TaiKhoan có # null ko mới add vào DB TaiKhoan
                 if (tk.TaiKhoan != string.Empty)
                 {
-                    // Tạo đối tượng TaiKhoan
-                    TaiKhoan t_insert = new TaiKhoan
-                    {
-                        TaiKhoan1 = tk.TaiKhoan,
-                        MatKhau = tk.MatKhau,
-                        HoTen = tk.HoTen,
-                        NgayTao = tk.NgayTao,
-                        ChucVu = tk.ChucVu
-                    };
-
                     // Check xem đã có TaiKhoan trong DB TaiKhoan chưa?
                     var temp = from t in db.TaiKhoans
                                where t.TaiKhoan1 == tk.TaiKhoan
@@ -83,6 +73,16 @@ namespace DAL
 
                     if (temp.Count() != 1)
                     {
+                        // Tạo đối tượng TaiKhoan
+                        TaiKhoan t_insert = new TaiKhoan
+                        {
+                            TaiKhoan1 = tk.TaiKhoan,
+                            MatKhau = tk.MatKhau,
+                            HoTen = tk.HoTen,
+                            NgayTao = tk.NgayTao,
+                            ChucVu = tk.ChucVu
+                        };
+
                         db.TaiKhoans.InsertOnSubmit(t_insert); // Thêm DB TaiKhoan
                         db.SubmitChanges(); // Xác nhận thay đổi DB TaiKhoan
 
@@ -150,7 +150,7 @@ namespace DAL
                     }
 
                     // Thông báo
-                    MessageBox.Show("Xóa Tài Khoản thành công!", "Thông báo",
+                    MessageBox.Show($"Xóa Tài Khoản +{tk}+ thành công!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Information);
                     return true;
@@ -191,7 +191,7 @@ namespace DAL
                     db.SubmitChanges();
 
                     // Thông báo
-                    MessageBox.Show("Sửa thông tin Tài Khoản thành công!", "Thông báo",
+                    MessageBox.Show($"Sửa thông tin Tài Khoản +{tk.TaiKhoan}+ thành công!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Information);
                     return true; 

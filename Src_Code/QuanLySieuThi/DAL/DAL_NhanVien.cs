@@ -201,7 +201,7 @@ namespace DAL
                         }
 
                         // Thông báo
-                        MessageBox.Show("Xóa Nhân Viên thành công!", "Thông báo",
+                        MessageBox.Show($"Xóa Nhân Viên +{nv}+ thành công!", "Thông báo",
                                MessageBoxButtons.OK,
                                MessageBoxIcon.Information);
                         return true;
@@ -260,7 +260,7 @@ namespace DAL
                     db.SubmitChanges();
 
                     // Thông báo
-                    MessageBox.Show("Sửa thông tin Nhân Viên thành công!", "Thông báo",
+                    MessageBox.Show($"Sửa thông tin Nhân Viên +{nv.MaNV}+ thành công!", "Thông báo",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
                     return true;

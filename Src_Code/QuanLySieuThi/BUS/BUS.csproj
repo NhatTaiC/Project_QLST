@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="BUS_ChiTietDonHang.cs" />
     <Compile Include="BUS_DonHang.cs" />
+    <Compile Include="BUS_NhaCungCap.cs" />
     <Compile Include="BUS_NhanVien.cs" />
     <Compile Include="BUS_TaiKhoan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -69,19 +69,6 @@ namespace DAL
                 // Check xem MaChiTiet, MaDon, MaSP có != null không?
                 if (ctdh.MaChiTiet != string.Empty)
                 {
-                    // Tạo đối tượng Chi Tiết Đơn Hàng
-                    ChiTietDonHang ct_insert = new ChiTietDonHang
-                    {
-                        MaChiTiet = ctdh.MaChiTiet,
-                        MaDon = ctdh.MaDon,
-                        MaSP = ctdh.MaSP,
-                        TenSP = ctdh.TenSP,
-                        GiaBan = ctdh.GiaBan,
-                        SoLuong = ctdh.SoLuong,
-                        ThanhTien = ctdh.ThanhTien,
-                        DonViTinh = ctdh.DonViTinh
-                    };
-
                     // Check Chi Tiết Đơn Hàng đã có trong DB ChiTietDonHang hay chưa?
                     var temp = from ct in db.ChiTietDonHangs
                                where ct.MaChiTiet == ctdh.MaChiTiet
@@ -89,6 +76,19 @@ namespace DAL
 
                     if (temp.Count() != 1)
                     {
+                        // Tạo đối tượng Chi Tiết Đơn Hàng
+                        ChiTietDonHang ct_insert = new ChiTietDonHang
+                        {
+                            MaChiTiet = ctdh.MaChiTiet,
+                            MaDon = ctdh.MaDon,
+                            MaSP = ctdh.MaSP,
+                            TenSP = ctdh.TenSP,
+                            GiaBan = ctdh.GiaBan,
+                            SoLuong = ctdh.SoLuong,
+                            ThanhTien = ctdh.ThanhTien,
+                            DonViTinh = ctdh.DonViTinh
+                        };
+
                         db.ChiTietDonHangs.InsertOnSubmit(ct_insert); // Thêm Chi Tiết Đơn Hàng vào DB ChiTietDonHang
                         db.SubmitChanges(); // Xác nhận thay đổi DB ChiTietDonHang
 
@@ -143,7 +143,7 @@ namespace DAL
                     }
 
                     // Thông báo
-                    MessageBox.Show("Xóa Chi Tiết Đơn Hàng thành công!", "Thông báo",
+                    MessageBox.Show($"Xóa Chi Tiết Đơn Hàng +{maCTDH}+ thành công!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 
@@ -187,7 +187,7 @@ namespace DAL
                     db.SubmitChanges();
 
                     // Thông báo
-                    MessageBox.Show("Sửa thông tin Chi Tiết Đơn Hàng thành công!", "Thông báo",
+                    MessageBox.Show($"Sửa thông tin Chi Tiết Đơn Hàng +{ctdh.MaChiTiet}+ thành công!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 

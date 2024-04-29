@@ -127,5 +127,20 @@ namespace QuanLySieuThi
                 ActForm("frmChiTietDonHang");
             }
         }
+
+        // nhaCungCapMNS_Click
+        private void nhaCungCapMNS_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmNhaCungCap"))
+            {
+                frmNhaCungCap f = new frmNhaCungCap();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmNhaCungCap");
+            }
+        }
     }
 }
