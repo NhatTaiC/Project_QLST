@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.gbLoaiSP = new System.Windows.Forms.GroupBox();
             this.tableForm = new System.Windows.Forms.TableLayoutPanel();
-            this.txtTenSP = new System.Windows.Forms.TextBox();
+            this.txtTenLSP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,11 +45,14 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvLoaiSP = new System.Windows.Forms.DataGridView();
             this.tableDGVLoaiSanPham = new System.Windows.Forms.TableLayoutPanel();
+            this.tableButton2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnTim = new System.Windows.Forms.Button();
             this.gbLoaiSP.SuspendLayout();
             this.tableForm.SuspendLayout();
             this.tableButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiSP)).BeginInit();
             this.tableDGVLoaiSanPham.SuspendLayout();
+            this.tableButton2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -77,7 +80,7 @@
             this.tableForm.ColumnCount = 2;
             this.tableForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.70286F));
             this.tableForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.29714F));
-            this.tableForm.Controls.Add(this.txtTenSP, 1, 1);
+            this.tableForm.Controls.Add(this.txtTenLSP, 1, 1);
             this.tableForm.Controls.Add(this.label2, 0, 0);
             this.tableForm.Controls.Add(this.label3, 0, 1);
             this.tableForm.Controls.Add(this.label4, 0, 2);
@@ -92,13 +95,13 @@
             this.tableForm.Size = new System.Drawing.Size(672, 135);
             this.tableForm.TabIndex = 1;
             // 
-            // txtTenSP
+            // txtTenLSP
             // 
-            this.txtTenSP.Location = new System.Drawing.Point(269, 54);
-            this.txtTenSP.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
-            this.txtTenSP.Name = "txtTenSP";
-            this.txtTenSP.Size = new System.Drawing.Size(398, 26);
-            this.txtTenSP.TabIndex = 1;
+            this.txtTenLSP.Location = new System.Drawing.Point(269, 54);
+            this.txtTenLSP.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
+            this.txtTenLSP.Name = "txtTenLSP";
+            this.txtTenLSP.Size = new System.Drawing.Size(398, 26);
+            this.txtTenLSP.TabIndex = 1;
             // 
             // label2
             // 
@@ -165,7 +168,7 @@
             this.tableButton.Controls.Add(this.btnSua, 2, 0);
             this.tableButton.Controls.Add(this.btnXoa, 1, 0);
             this.tableButton.Controls.Add(this.btnThem, 0, 0);
-            this.tableButton.Location = new System.Drawing.Point(104, 464);
+            this.tableButton.Location = new System.Drawing.Point(104, 419);
             this.tableButton.Name = "tableButton";
             this.tableButton.RowCount = 1;
             this.tableButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -258,9 +261,34 @@
             this.tableDGVLoaiSanPham.Name = "tableDGVLoaiSanPham";
             this.tableDGVLoaiSanPham.RowCount = 1;
             this.tableDGVLoaiSanPham.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableDGVLoaiSanPham.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableDGVLoaiSanPham.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 296F));
             this.tableDGVLoaiSanPham.Size = new System.Drawing.Size(913, 296);
             this.tableDGVLoaiSanPham.TabIndex = 6;
+            // 
+            // tableButton2
+            // 
+            this.tableButton2.ColumnCount = 1;
+            this.tableButton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableButton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableButton2.Controls.Add(this.btnTim, 0, 0);
+            this.tableButton2.Location = new System.Drawing.Point(273, 483);
+            this.tableButton2.Name = "tableButton2";
+            this.tableButton2.RowCount = 1;
+            this.tableButton2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableButton2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableButton2.Size = new System.Drawing.Size(339, 80);
+            this.tableButton2.TabIndex = 7;
+            // 
+            // btnTim
+            // 
+            this.btnTim.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTim.Location = new System.Drawing.Point(3, 3);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(333, 74);
+            this.btnTim.TabIndex = 0;
+            this.btnTim.Text = "Tìm Sản Phẩm Theo Tên Loại Sản Phẩm";
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // frmLoaiSanPham
             // 
@@ -268,6 +296,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 881);
             this.ControlBox = false;
+            this.Controls.Add(this.tableButton2);
             this.Controls.Add(this.tableDGVLoaiSanPham);
             this.Controls.Add(this.tableButton);
             this.Controls.Add(this.gbLoaiSP);
@@ -284,6 +313,7 @@
             this.tableButton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLoaiSP)).EndInit();
             this.tableDGVLoaiSanPham.ResumeLayout(false);
+            this.tableButton2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,7 +328,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMoTa;
-        private System.Windows.Forms.TextBox txtTenSP;
+        private System.Windows.Forms.TextBox txtTenLSP;
         private System.Windows.Forms.TextBox txtMaLSP;
         private System.Windows.Forms.TableLayoutPanel tableButton;
         private System.Windows.Forms.Button btnThoat;
@@ -308,5 +338,7 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dgvLoaiSP;
         private System.Windows.Forms.TableLayoutPanel tableDGVLoaiSanPham;
+        private System.Windows.Forms.TableLayoutPanel tableButton2;
+        private System.Windows.Forms.Button btnTim;
     }
 }

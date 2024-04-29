@@ -216,5 +216,34 @@ namespace DAL
                               };
             return temp;
         }
+
+        // TimNCC_TheoTenNCC()
+        public IQueryable TimNCC_TheoTenNCC(string tenNCC)
+        {
+            IQueryable temp = from nc in db.NhaCungCaps
+                              where nc.TenNCC.Contains(tenNCC)
+                              select new
+                              {
+                                  MaNCC = nc.MaNCC,
+                                  TenNCC = nc.TenNCC,
+                                  DiaChiNCC = nc.DiaChiNCC,
+                                  SdtNCC = nc.SdtNCC
+                              };
+            return temp;
+        }
+
+        // TimNCC_TheoMaNCC()
+        public IQueryable TimNCC_TheoMaNCC(string maNCC) {
+            IQueryable temp = from nc in db.NhaCungCaps
+                              where nc.MaNCC == maNCC
+                              select new
+                              {
+                                  MaNCC = nc.MaNCC,
+                                  TenNCC = nc.TenNCC,
+                                  DiaChiNCC = nc.DiaChiNCC,
+                                  SdtNCC = nc.SdtNCC
+                              };
+            return temp;
+        }
     }
 }

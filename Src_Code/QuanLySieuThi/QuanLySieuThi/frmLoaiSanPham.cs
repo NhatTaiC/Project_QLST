@@ -48,7 +48,7 @@ namespace QuanLySieuThi
         {
             // Reset Teset
             txtMaLSP.Text = string.Empty;
-            txtTenSP.Text = string.Empty;
+            txtTenLSP.Text = string.Empty;
             txtMoTa.Text = string.Empty;
 
             // Called LoadData()
@@ -93,7 +93,7 @@ namespace QuanLySieuThi
                 btnSua.Enabled = true;
 
                 txtMaLSP.Text = dgvLoaiSP.Rows[n].Cells[0].Value.ToString();
-                txtTenSP.Text = dgvLoaiSP.Rows[n].Cells[1].Value.ToString();
+                txtTenLSP.Text = dgvLoaiSP.Rows[n].Cells[1].Value.ToString();
                 txtMoTa.Text = dgvLoaiSP.Rows[n].Cells[2].Value.ToString();
             }
             else
@@ -107,7 +107,7 @@ namespace QuanLySieuThi
         // btnThem_Click
         private void btnThem_Click(object sender, EventArgs e)
         {
-            DTO_LoaiSanPham lsp = new DTO_LoaiSanPham(txtMaLSP.Text, txtTenSP.Text,
+            DTO_LoaiSanPham lsp = new DTO_LoaiSanPham(txtMaLSP.Text, txtTenLSP.Text,
             txtMoTa.Text);
 
             bus_lsp.ThemLSP(lsp);
@@ -136,7 +136,7 @@ namespace QuanLySieuThi
 
             if (r == DialogResult.Yes)
             {
-                DTO_LoaiSanPham lsp = new DTO_LoaiSanPham(txtMaLSP.Text, txtTenSP.Text,txtMoTa.Text);
+                DTO_LoaiSanPham lsp = new DTO_LoaiSanPham(txtMaLSP.Text, txtTenLSP.Text,txtMoTa.Text);
 
                 bus_lsp.SuaLSP(lsp);
                 Reset();
@@ -147,6 +147,24 @@ namespace QuanLySieuThi
         private void frmLoaiSanPham_Load(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        // btnTim_Click
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            // Check TenLSP có != null hay không?
+            if (txtTenLSP.Text != string.Empty)
+            {
+                // Tìm LSP theo tenLSP
+                dgvLoaiSP.DataSource = bus_lsp.TimLSP_TheoTenLSP(txtTenLSP.Text);
+            }
+            else
+            {
+                // Thông báo
+                MessageBox.Show("Vui lòng không để trống tên loại sản phẩm!", "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
         }
     }
 }

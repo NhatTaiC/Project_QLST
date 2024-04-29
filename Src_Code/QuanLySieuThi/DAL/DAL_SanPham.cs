@@ -8,6 +8,7 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -144,7 +145,8 @@ namespace DAL
         }
 
         // XoaSP()
-        public bool XoaSP(string maSP) {
+        public bool XoaSP(string maSP)
+        {
             try
             {
                 // Check sp.MaSP có != null hay không?
@@ -183,7 +185,8 @@ namespace DAL
         }
 
         // SuaSP()
-        public bool SuaSP(DTO_SanPham sp) {
+        public bool SuaSP(DTO_SanPham sp)
+        {
             try
             {
                 // Check sp.MaSP có != null hay không?
@@ -225,6 +228,47 @@ namespace DAL
                 MessageBox.Show(ex.Message);
             }
             return false;
+        }
+
+        // TimSP_TheoTenSP()
+        public IQueryable TimSP_TheoTenSP(string tenSP)
+        {
+            IQueryable temp = from sp in db.SanPhams
+                              where sp.TenSP.Contains(tenSP)
+                              select new
+                              {
+                                  MaSP = sp.MaSP,
+                                  TenSP = sp.TenSP,
+                                  GiaNhap = sp.GiaNhap,
+                                  GiaBan = sp.GiaBan,
+                                  SoLuong = sp.SoLuong,
+                                  DonViTinh = sp.DonViTinh,
+                                  NoiSanXuat = sp.NoiSanXuat,
+                                  HanSuDung = sp.HanSuDung,
+                                  MaNCC = sp.MaNCC,
+                                  MaLoaiSP = sp.MaLoaiSP
+                              };
+            return temp;
+        }
+
+        // TimSP_TheoMaSP()
+        public IQueryable TimSP_TheoMaSP(string maSP) {
+            IQueryable temp = from sp in db.SanPhams
+                              where sp.MaSP == maSP
+                              select new
+                              {
+                                  MaSP = sp.MaSP,
+                                  TenSP = sp.TenSP,
+                                  GiaNhap = sp.GiaNhap,
+                                  GiaBan = sp.GiaBan,
+                                  SoLuong = sp.SoLuong,
+                                  DonViTinh = sp.DonViTinh,
+                                  NoiSanXuat = sp.NoiSanXuat,
+                                  HanSuDung = sp.HanSuDung,
+                                  MaNCC = sp.MaNCC,
+                                  MaLoaiSP = sp.MaLoaiSP
+                              };
+            return temp;
         }
     }
 }

@@ -50,5 +50,15 @@ namespace BUS
         public IQueryable LayDSNCC_TheoTenNCC(string maNCC) {
             return dal_ncc.LayDSNCC_TheoTenNCC(maNCC);
         }
+
+        // TimNCC_TheoTenNCC()
+        public IQueryable TimNCC_TheoTenNCC(string tenNCC) {
+            return dal_ncc.TimNCC_TheoTenNCC(tenNCC);
+        }
+
+        // TimNCC_TheoMaNCC()
+        public IQueryable TimNCC_TheoMaNCC(string maNCC) {
+            return dal_ncc.TimNCC_TheoMaNCC(maNCC);
+        }
     }
 }

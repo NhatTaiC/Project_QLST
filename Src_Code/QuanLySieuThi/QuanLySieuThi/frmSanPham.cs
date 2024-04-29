@@ -241,7 +241,26 @@ namespace QuanLySieuThi
             }
             else
             {
+                // Thông báo
                 MessageBox.Show("Vui lòng chọn 1 dòng để xóa/sửa!", "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
+        }
+
+        // btnTim_Click
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            // Check TenSP có != null hay không?
+            if (txtTenSP.Text != string.Empty)
+            {
+                // Tìm SP theo tenSP
+                dgvSP.DataSource = bus_sp.TimSP_TheoTenSP(txtTenSP.Text);
+            }
+            else
+            {
+                // Thông báo
+                MessageBox.Show("Vui lòng không để trống tên sản phẩm!", "Thông báo",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
             }

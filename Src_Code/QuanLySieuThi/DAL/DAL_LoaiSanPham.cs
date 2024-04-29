@@ -210,5 +210,31 @@ namespace DAL
                               };
             return temp;
         }
+
+        // TimLSP_TheoTenLSP
+        public IQueryable TimLSP_TheoTenLSP(string tenLSP) {
+            IQueryable temp = from lsp in db.LoaiSanPhams
+                              where lsp.TenLoaiSP.Contains(tenLSP)
+                              select new
+                              {
+                                  MaLoaiSP = lsp.MaLoaiSP,
+                                  TenLoaiSP = lsp.TenLoaiSP,
+                                  MoTa = lsp.MoTa
+                              };
+            return temp;
+        }
+
+        // TimLSP_TheoMaLSP
+        public IQueryable TimLSP_TheoMaLSP(string maLSP) {
+            IQueryable temp = from lsp in db.LoaiSanPhams
+                              where lsp.MaLoaiSP == maLSP
+                              select new
+                              {
+                                  MaLoaiSP = lsp.MaLoaiSP,
+                                  TenLoaiSP = lsp.TenLoaiSP,
+                                  MoTa = lsp.MoTa
+                              };
+            return temp;
+        }
      }
 }

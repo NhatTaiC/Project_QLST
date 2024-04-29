@@ -221,5 +221,30 @@ namespace QuanLySieuThi
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        // btnTim_Click
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            // Check maDH có != null hay không?
+            if (txtMaDon.Text != string.Empty)
+            {
+                // Tìm SP theo tenSP
+                dgvDonHang.DataSource = bus_dh.TimDonHang_TheoMaDonHang(txtMaDon.Text);
+            }
+            else
+            {
+                // Thông báo
+                MessageBox.Show("Vui lòng không để trống mã đơn hàng!", "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
+        }
+
+        // btnTimTenNV_Click
+        private void btnTimTenNV_Click(object sender, EventArgs e)
+        {
+            // Tìm SP theo tenNV
+            dgvDonHang.DataSource = bus_dh.TimDonHang_TheoMaNV(cboMaNV.SelectedValue.ToString());
+        }
     }
 }

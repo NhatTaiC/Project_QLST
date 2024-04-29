@@ -237,5 +237,54 @@ namespace DAL
                               };
             return temp;
         }
+
+        // TimTaiKhoan_TheoTenNV()
+        public IQueryable TimTaiKhoan_TheoTenNV(string tenNV) {
+            // Lấy DSTK
+            IQueryable temp = from t in db.TaiKhoans
+                              where t.HoTen.Contains(tenNV)
+                              select new
+                              {
+                                  TaiKhoan = t.TaiKhoan1,
+                                  MatKhau = t.MatKhau,
+                                  HoTen = t.HoTen,
+                                  NgayTao = t.NgayTao,
+                                  ChucVu = t.ChucVu
+                              };
+            return temp;
+        }
+
+        // TimTaiKhoan_TheoTaiKhoan()
+        public IQueryable TimTaiKhoan_TheoTaiKhoan(string taiKhoan)
+        {
+            // Lấy DSTK
+            IQueryable temp = from t in db.TaiKhoans
+                              where t.TaiKhoan1 == taiKhoan
+                              select new
+                              {
+                                  TaiKhoan = t.TaiKhoan1,
+                                  MatKhau = t.MatKhau,
+                                  HoTen = t.HoTen,
+                                  NgayTao = t.NgayTao,
+                                  ChucVu = t.ChucVu
+                              };
+            return temp;
+        }
+
+        // TimTaiKhoan_TheoChucVu()
+        public IQueryable TimTaiKhoan_TheoChucVu(string chucVu) {
+            // Lấy DSTK
+            IQueryable temp = from t in db.TaiKhoans
+                              where t.ChucVu.Contains(chucVu)
+                              select new
+                              {
+                                  TaiKhoan = t.TaiKhoan1,
+                                  MatKhau = t.MatKhau,
+                                  HoTen = t.HoTen,
+                                  NgayTao = t.NgayTao,
+                                  ChucVu = t.ChucVu
+                              };
+            return temp;
+        }
     }
 }

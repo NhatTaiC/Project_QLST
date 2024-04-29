@@ -49,18 +49,22 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvTaiKhoan = new System.Windows.Forms.DataGridView();
             this.tableDGVTaiKhoan = new System.Windows.Forms.TableLayoutPanel();
+            this.tableButton2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnTimTKTheoTenNV = new System.Windows.Forms.Button();
+            this.btnTimTKTheoCV = new System.Windows.Forms.Button();
             this.tableForm.SuspendLayout();
             this.gbTaiKhoan.SuspendLayout();
             this.tableButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).BeginInit();
             this.tableDGVTaiKhoan.SuspendLayout();
+            this.tableButton2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(416, 58);
+            this.label1.Location = new System.Drawing.Point(273, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(368, 45);
             this.label1.TabIndex = 0;
@@ -197,7 +201,7 @@
             // gbTaiKhoan
             // 
             this.gbTaiKhoan.Controls.Add(this.tableForm);
-            this.gbTaiKhoan.Location = new System.Drawing.Point(246, 143);
+            this.gbTaiKhoan.Location = new System.Drawing.Point(103, 128);
             this.gbTaiKhoan.Name = "gbTaiKhoan";
             this.gbTaiKhoan.Size = new System.Drawing.Size(654, 262);
             this.gbTaiKhoan.TabIndex = 2;
@@ -217,7 +221,7 @@
             this.tableButton.Controls.Add(this.btnSua, 2, 0);
             this.tableButton.Controls.Add(this.btnXoa, 1, 0);
             this.tableButton.Controls.Add(this.btnThem, 0, 0);
-            this.tableButton.Location = new System.Drawing.Point(272, 451);
+            this.tableButton.Location = new System.Drawing.Point(129, 410);
             this.tableButton.Name = "tableButton";
             this.tableButton.RowCount = 1;
             this.tableButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -294,7 +298,7 @@
             this.dgvTaiKhoan.Name = "dgvTaiKhoan";
             this.dgvTaiKhoan.RowHeadersWidth = 82;
             this.dgvTaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTaiKhoan.Size = new System.Drawing.Size(1135, 257);
+            this.dgvTaiKhoan.Size = new System.Drawing.Size(855, 257);
             this.dgvTaiKhoan.TabIndex = 0;
             this.dgvTaiKhoan.Click += new System.EventHandler(this.dgvTaiKhoan_Click);
             // 
@@ -310,15 +314,53 @@
             this.tableDGVTaiKhoan.RowCount = 1;
             this.tableDGVTaiKhoan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableDGVTaiKhoan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableDGVTaiKhoan.Size = new System.Drawing.Size(1141, 263);
+            this.tableDGVTaiKhoan.Size = new System.Drawing.Size(861, 263);
             this.tableDGVTaiKhoan.TabIndex = 4;
+            // 
+            // tableButton2
+            // 
+            this.tableButton2.ColumnCount = 2;
+            this.tableButton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableButton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableButton2.Controls.Add(this.btnTimTKTheoCV, 1, 0);
+            this.tableButton2.Controls.Add(this.btnTimTKTheoTenNV, 0, 0);
+            this.tableButton2.Location = new System.Drawing.Point(132, 477);
+            this.tableButton2.Name = "tableButton2";
+            this.tableButton2.RowCount = 1;
+            this.tableButton2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableButton2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableButton2.Size = new System.Drawing.Size(592, 64);
+            this.tableButton2.TabIndex = 5;
+            // 
+            // btnTimTKTheoTenNV
+            // 
+            this.btnTimTKTheoTenNV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTimTKTheoTenNV.Location = new System.Drawing.Point(3, 3);
+            this.btnTimTKTheoTenNV.Name = "btnTimTKTheoTenNV";
+            this.btnTimTKTheoTenNV.Size = new System.Drawing.Size(290, 58);
+            this.btnTimTKTheoTenNV.TabIndex = 0;
+            this.btnTimTKTheoTenNV.Text = "Tìm Tài Khoản Theo Tên Nhân Viên";
+            this.btnTimTKTheoTenNV.UseVisualStyleBackColor = true;
+            this.btnTimTKTheoTenNV.Click += new System.EventHandler(this.btnTimTKTheoTenNV_Click);
+            // 
+            // btnTimTKTheoCV
+            // 
+            this.btnTimTKTheoCV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTimTKTheoCV.Location = new System.Drawing.Point(299, 3);
+            this.btnTimTKTheoCV.Name = "btnTimTKTheoCV";
+            this.btnTimTKTheoCV.Size = new System.Drawing.Size(290, 58);
+            this.btnTimTKTheoCV.TabIndex = 1;
+            this.btnTimTKTheoCV.Text = "Tìm Tài Khoản Theo Chức Vụ";
+            this.btnTimTKTheoCV.UseVisualStyleBackColor = true;
+            this.btnTimTKTheoCV.Click += new System.EventHandler(this.btnTimTKTheoCV_Click);
             // 
             // frmTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1141, 821);
+            this.ClientSize = new System.Drawing.Size(861, 821);
             this.ControlBox = false;
+            this.Controls.Add(this.tableButton2);
             this.Controls.Add(this.tableDGVTaiKhoan);
             this.Controls.Add(this.tableButton);
             this.Controls.Add(this.gbTaiKhoan);
@@ -336,6 +378,7 @@
             this.tableButton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTaiKhoan)).EndInit();
             this.tableDGVTaiKhoan.ResumeLayout(false);
+            this.tableButton2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,5 +407,8 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dgvTaiKhoan;
         private System.Windows.Forms.TableLayoutPanel tableDGVTaiKhoan;
+        private System.Windows.Forms.TableLayoutPanel tableButton2;
+        private System.Windows.Forms.Button btnTimTKTheoCV;
+        private System.Windows.Forms.Button btnTimTKTheoTenNV;
     }
 }

@@ -31,7 +31,8 @@ namespace QuanLySieuThi
         private BUS_NhanVien bus_nv = new BUS_NhanVien();
 
         // Function LoadData
-        private void LoadData() {
+        private void LoadData()
+        {
             // dgvTaiKhoan
             dgvTaiKhoan.DataSource = bus_tk.LayDSTK();
 
@@ -123,6 +124,12 @@ namespace QuanLySieuThi
                 cboChucVu.DataSource = bus_tk.LayDSTK_TheoChucVuAll();
                 cboChucVu.DisplayMember = "ChucVu";
                 cboChucVu.ValueMember = "ChucVu";
+
+                // Lưu lại giá trị chucVu = strChucVu
+                string strChucVu = dgvTaiKhoan.Rows[n].Cells[4].Value.ToString();
+
+                // Tìm vị trí chức vụ trong cboChucVu
+                cboChucVu.SelectedIndex = cboChucVu.FindStringExact(strChucVu);
             }
             else
             {
@@ -132,7 +139,7 @@ namespace QuanLySieuThi
                 MessageBoxIcon.Warning);
             }
         }
-        
+
         // BtnThem_CLick
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -160,7 +167,7 @@ namespace QuanLySieuThi
                 {
                     bus_tk.XoaTK(txtTaiKhoan.Text);
                     Reset();
-                } 
+                }
             }
             else
             {
@@ -191,6 +198,31 @@ namespace QuanLySieuThi
                 bus_tk.SuaTK(tk);
                 Reset();
             }
+        }
+
+        // btnTimTKTheoTenNV_Click
+        private void btnTimTKTheoTenNV_Click(object sender, EventArgs e)
+        {
+            // Check tenNV có != null hay không?
+            if (txtHoTen.Text != string.Empty)
+            {
+                // Tìm taiKhoan theo tenNV
+                dgvTaiKhoan.DataSource = bus_tk.TimTaiKhoan_TheoTenNV(txtHoTen.Text);
+            }
+            else
+            {
+                // Thông báo
+                MessageBox.Show("Vui lòng không để trống tên nhân viên!", "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
+        }
+
+        // btnTimTKTheoCV_Click
+        private void btnTimTKTheoCV_Click(object sender, EventArgs e)
+        {
+            // Tìm taiKhoan theo tenNV
+            dgvTaiKhoan.DataSource = bus_tk.TimTaiKhoan_TheoChucVu(cboChucVu.SelectedValue.ToString());
         }
     }
 }

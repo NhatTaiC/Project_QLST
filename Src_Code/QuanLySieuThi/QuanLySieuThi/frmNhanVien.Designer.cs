@@ -53,11 +53,14 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
             this.tableDGVNhanVien = new System.Windows.Forms.TableLayoutPanel();
+            this.tableButton2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnTim = new System.Windows.Forms.Button();
             this.tableForm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.tableDGVNhanVien.SuspendLayout();
+            this.tableButton2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -274,7 +277,7 @@
             this.tableButton.Controls.Add(this.btnSua, 2, 0);
             this.tableButton.Controls.Add(this.btnXoa, 1, 0);
             this.tableButton.Controls.Add(this.btnThem, 0, 0);
-            this.tableButton.Location = new System.Drawing.Point(140, 561);
+            this.tableButton.Location = new System.Drawing.Point(140, 527);
             this.tableButton.Name = "tableButton";
             this.tableButton.RowCount = 1;
             this.tableButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -370,12 +373,38 @@
             this.tableDGVNhanVien.Size = new System.Drawing.Size(978, 203);
             this.tableDGVNhanVien.TabIndex = 5;
             // 
+            // tableButton2
+            // 
+            this.tableButton2.ColumnCount = 1;
+            this.tableButton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableButton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableButton2.Controls.Add(this.btnTim, 0, 0);
+            this.tableButton2.Location = new System.Drawing.Point(259, 587);
+            this.tableButton2.Name = "tableButton2";
+            this.tableButton2.RowCount = 1;
+            this.tableButton2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableButton2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableButton2.Size = new System.Drawing.Size(467, 73);
+            this.tableButton2.TabIndex = 6;
+            // 
+            // btnTim
+            // 
+            this.btnTim.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTim.Location = new System.Drawing.Point(3, 3);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(461, 67);
+            this.btnTim.TabIndex = 0;
+            this.btnTim.Text = "Tìm Nhân Viên Theo Tên Nhân Viên";
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 881);
             this.ControlBox = false;
+            this.Controls.Add(this.tableButton2);
             this.Controls.Add(this.tableDGVNhanVien);
             this.Controls.Add(this.tableButton);
             this.Controls.Add(this.groupBox1);
@@ -393,6 +422,7 @@
             this.tableButton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).EndInit();
             this.tableDGVNhanVien.ResumeLayout(false);
+            this.tableButton2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,5 +455,7 @@
         private System.Windows.Forms.ComboBox cboTaiKhoan;
         private System.Windows.Forms.ComboBox cboGioiTinh;
         private System.Windows.Forms.TableLayoutPanel tableDGVNhanVien;
+        private System.Windows.Forms.TableLayoutPanel tableButton2;
+        private System.Windows.Forms.Button btnTim;
     }
 }

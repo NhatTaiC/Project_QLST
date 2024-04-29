@@ -56,5 +56,15 @@ namespace BUS
         {
             return dal_nv.LayDSNV_TheoMaNV2(nv);
         }
+
+        // TimNV_TheoTenNV()
+        public IQueryable TimNV_TheoTenNV(string tenNV) {
+            return dal_nv.TimNV_TheoTenNV(tenNV);
+        }
+
+        // TimNV_TheoMaNV()
+        public IQueryable TimNV_TheoMaNV(string maNV) {
+            return dal_nv.TimNV_TheoMaNV(maNV);
+        }
     }
 }

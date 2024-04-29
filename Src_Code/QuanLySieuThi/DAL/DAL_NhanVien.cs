@@ -150,7 +150,7 @@ namespace DAL
                         MessageBox.Show($"Nhân viên +{nv.MaNV}+ đã có trong danh sách nhân viên!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
-                    } 
+                    }
                 }
                 else
                 {
@@ -305,19 +305,56 @@ namespace DAL
         {
             // Lấy DSNV theo MaNV
             var temp = from n in db.NhanViens
-                              where n.MaNV == nv
-                              select new
-                              {
-                                  MaNV = n.MaNV,
-                                  HoTenNV = n.TenNV,
-                                  NgaySinh = n.NgaySinh,
-                                  GioiTinh = n.GioiTinh,
-                                  DiaChi = n.DiaChi,
-                                  SDT = n.Sdt,
-                                  TaiKhoan = n.TaiKhoan
-                              };
+                       where n.MaNV == nv
+                       select new
+                       {
+                           MaNV = n.MaNV,
+                           HoTenNV = n.TenNV,
+                           NgaySinh = n.NgaySinh,
+                           GioiTinh = n.GioiTinh,
+                           DiaChi = n.DiaChi,
+                           SDT = n.Sdt,
+                           TaiKhoan = n.TaiKhoan
+                       };
 
             return temp.Count();
+        }
+
+        // TimNV_TheoTenNV()
+        public IQueryable TimNV_TheoTenNV(string tenNV)
+        {
+            // Lấy DSNV
+            IQueryable temp = from nv in Db.NhanViens
+                              where nv.TenNV.Contains(tenNV)
+                              select new
+                              {
+                                  MaNV = nv.MaNV,
+                                  HoTenNV = nv.TenNV,
+                                  NgaySinh = nv.NgaySinh,
+                                  GioiTinh = nv.GioiTinh,
+                                  DiaChi = nv.DiaChi,
+                                  SDT = nv.Sdt,
+                                  TaiKhoan = nv.TaiKhoan
+                              };
+            return temp;
+        }
+
+        // TimNV_TheoMaNV()
+        public IQueryable TimNV_TheoMaNV(string maNV) {
+            // Lấy DSNV
+            IQueryable temp = from nv in Db.NhanViens
+                              where nv.MaNV == maNV
+                              select new
+                              {
+                                  MaNV = nv.MaNV,
+                                  HoTenNV = nv.TenNV,
+                                  NgaySinh = nv.NgaySinh,
+                                  GioiTinh = nv.GioiTinh,
+                                  DiaChi = nv.DiaChi,
+                                  SDT = nv.Sdt,
+                                  TaiKhoan = nv.TaiKhoan
+                              };
+            return temp;
         }
     }
 }

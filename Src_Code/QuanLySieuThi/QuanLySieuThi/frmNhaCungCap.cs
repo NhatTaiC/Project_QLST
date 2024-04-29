@@ -155,5 +155,23 @@ namespace QuanLySieuThi
                 MessageBoxIcon.Warning);
             }
         }
+
+        // btnTim_Click
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            // Check tenNCC có != null hay không?
+            if (txtTenNCC.Text != string.Empty)
+            {
+                // Tìm tenNCC 
+                dgvNCC.DataSource = bus_ncc.TimNCC_TheoTenNCC(txtTenNCC.Text);
+            }
+            else
+            {
+                // Thông báo
+                MessageBox.Show("Vui lòng không để trống tên nhà cung cấp!", "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
+        }
     }
 }

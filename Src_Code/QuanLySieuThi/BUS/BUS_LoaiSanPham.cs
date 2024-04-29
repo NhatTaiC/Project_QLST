@@ -50,5 +50,15 @@ namespace BUS
         public IQueryable LayDSLSP_TheoTenLSP(string maLSP) {
             return dal_lsp.LayDSLSP_TheoTenLSP(maLSP);
         }
+
+        // TimLSP_TheoTenLSP()
+        public IQueryable TimLSP_TheoTenLSP(string tenLSP) {
+            return dal_lsp.TimLSP_TheoTenLSP(tenLSP);
+        }
+
+        // TimLSP_TheoMaLSP()
+        public IQueryable TimLSP_TheoMaLSP(string maLSP) {
+            return dal_lsp.TimLSP_TheoMaLSP(maLSP);
+        }
     }
 }

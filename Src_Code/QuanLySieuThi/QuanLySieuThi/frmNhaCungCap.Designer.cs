@@ -47,18 +47,21 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.dgvNCC = new System.Windows.Forms.DataGridView();
             this.tableDGVNhaCungCap = new System.Windows.Forms.TableLayoutPanel();
+            this.tableButton2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnTim = new System.Windows.Forms.Button();
             this.gbTaiKhoan.SuspendLayout();
             this.tableForm.SuspendLayout();
             this.tableButton.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
             this.tableDGVNhaCungCap.SuspendLayout();
+            this.tableButton2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(479, 68);
+            this.label1.Location = new System.Drawing.Point(259, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(445, 45);
             this.label1.TabIndex = 1;
@@ -67,7 +70,7 @@
             // gbTaiKhoan
             // 
             this.gbTaiKhoan.Controls.Add(this.tableForm);
-            this.gbTaiKhoan.Location = new System.Drawing.Point(306, 165);
+            this.gbTaiKhoan.Location = new System.Drawing.Point(86, 165);
             this.gbTaiKhoan.Name = "gbTaiKhoan";
             this.gbTaiKhoan.Size = new System.Drawing.Size(735, 264);
             this.gbTaiKhoan.TabIndex = 3;
@@ -195,7 +198,7 @@
             this.tableButton.Controls.Add(this.btnSua, 2, 0);
             this.tableButton.Controls.Add(this.btnXoa, 1, 0);
             this.tableButton.Controls.Add(this.btnThem, 0, 0);
-            this.tableButton.Location = new System.Drawing.Point(336, 449);
+            this.tableButton.Location = new System.Drawing.Point(116, 449);
             this.tableButton.Name = "tableButton";
             this.tableButton.RowCount = 1;
             this.tableButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -273,7 +276,7 @@
             this.dgvNCC.RowHeadersWidth = 51;
             this.dgvNCC.RowTemplate.Height = 24;
             this.dgvNCC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvNCC.Size = new System.Drawing.Size(1344, 303);
+            this.dgvNCC.Size = new System.Drawing.Size(917, 238);
             this.dgvNCC.TabIndex = 0;
             this.dgvNCC.Click += new System.EventHandler(this.dgvNCC_Click);
             // 
@@ -284,20 +287,46 @@
             this.tableDGVNhaCungCap.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableDGVNhaCungCap.Controls.Add(this.dgvNCC, 0, 0);
             this.tableDGVNhaCungCap.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableDGVNhaCungCap.Location = new System.Drawing.Point(0, 572);
+            this.tableDGVNhaCungCap.Location = new System.Drawing.Point(0, 637);
             this.tableDGVNhaCungCap.Name = "tableDGVNhaCungCap";
             this.tableDGVNhaCungCap.RowCount = 1;
             this.tableDGVNhaCungCap.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableDGVNhaCungCap.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableDGVNhaCungCap.Size = new System.Drawing.Size(1350, 309);
+            this.tableDGVNhaCungCap.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 244F));
+            this.tableDGVNhaCungCap.Size = new System.Drawing.Size(923, 244);
             this.tableDGVNhaCungCap.TabIndex = 8;
+            // 
+            // tableButton2
+            // 
+            this.tableButton2.ColumnCount = 1;
+            this.tableButton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableButton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableButton2.Controls.Add(this.btnTim, 0, 0);
+            this.tableButton2.Location = new System.Drawing.Point(288, 536);
+            this.tableButton2.Name = "tableButton2";
+            this.tableButton2.RowCount = 1;
+            this.tableButton2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableButton2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableButton2.Size = new System.Drawing.Size(355, 70);
+            this.tableButton2.TabIndex = 9;
+            // 
+            // btnTim
+            // 
+            this.btnTim.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTim.Location = new System.Drawing.Point(3, 3);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(349, 64);
+            this.btnTim.TabIndex = 0;
+            this.btnTim.Text = "Tìm Nhà Cung Cấp Theo Tên Nhà Cung Cấp";
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // frmNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 881);
+            this.ClientSize = new System.Drawing.Size(923, 881);
             this.ControlBox = false;
+            this.Controls.Add(this.tableButton2);
             this.Controls.Add(this.tableDGVNhaCungCap);
             this.Controls.Add(this.tableButton);
             this.Controls.Add(this.gbTaiKhoan);
@@ -313,6 +342,7 @@
             this.tableButton.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).EndInit();
             this.tableDGVNhaCungCap.ResumeLayout(false);
+            this.tableButton2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,5 +369,7 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.DataGridView dgvNCC;
         private System.Windows.Forms.TableLayoutPanel tableDGVNhaCungCap;
+        private System.Windows.Forms.TableLayoutPanel tableButton2;
+        private System.Windows.Forms.Button btnTim;
     }
 }

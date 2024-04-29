@@ -45,5 +45,15 @@ namespace BUS
         public bool SuaSP(DTO_SanPham sp) {
             return dal_sp.SuaSP(sp);
         }
+
+        // TimSP_TheoTenSP()
+        public IQueryable TimSP_TheoTenSP(string tenSP) {
+            return dal_sp.TimSP_TheoTenSP(tenSP);
+        }
+
+        // TimSP_TheoMaSP()
+        public IQueryable TimSP_TheoMaSP(string maSP) {
+            return dal_sp.TimSP_TheoMaSP(maSP);
+        }
     }
 }

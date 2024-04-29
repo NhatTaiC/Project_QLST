@@ -34,6 +34,7 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.btnTim = new System.Windows.Forms.Button();
             this.gbTaiKhoan = new System.Windows.Forms.GroupBox();
             this.tableForm = new System.Windows.Forms.TableLayoutPanel();
             this.txtNoiSanXuat = new System.Windows.Forms.TextBox();
@@ -68,31 +69,32 @@
             // 
             // tableButton
             // 
-            this.tableButton.ColumnCount = 5;
-            this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableButton.ColumnCount = 6;
+            this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableButton.Controls.Add(this.btnThoat, 4, 0);
             this.tableButton.Controls.Add(this.btnLamMoi, 3, 0);
             this.tableButton.Controls.Add(this.btnSua, 2, 0);
             this.tableButton.Controls.Add(this.btnXoa, 1, 0);
             this.tableButton.Controls.Add(this.btnThem, 0, 0);
-            this.tableButton.Location = new System.Drawing.Point(108, 627);
+            this.tableButton.Controls.Add(this.btnTim, 5, 0);
+            this.tableButton.Location = new System.Drawing.Point(37, 610);
             this.tableButton.Name = "tableButton";
             this.tableButton.RowCount = 1;
             this.tableButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableButton.Size = new System.Drawing.Size(672, 60);
+            this.tableButton.Size = new System.Drawing.Size(842, 87);
             this.tableButton.TabIndex = 9;
             // 
             // btnThoat
             // 
             this.btnThoat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnThoat.Location = new System.Drawing.Point(539, 3);
+            this.btnThoat.Location = new System.Drawing.Point(563, 3);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(130, 54);
+            this.btnThoat.Size = new System.Drawing.Size(134, 81);
             this.btnThoat.TabIndex = 4;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
@@ -101,9 +103,9 @@
             // btnLamMoi
             // 
             this.btnLamMoi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLamMoi.Location = new System.Drawing.Point(405, 3);
+            this.btnLamMoi.Location = new System.Drawing.Point(423, 3);
             this.btnLamMoi.Name = "btnLamMoi";
-            this.btnLamMoi.Size = new System.Drawing.Size(128, 54);
+            this.btnLamMoi.Size = new System.Drawing.Size(134, 81);
             this.btnLamMoi.TabIndex = 3;
             this.btnLamMoi.Text = "Làm Mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
@@ -112,9 +114,9 @@
             // btnSua
             // 
             this.btnSua.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSua.Location = new System.Drawing.Point(271, 3);
+            this.btnSua.Location = new System.Drawing.Point(283, 3);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(128, 54);
+            this.btnSua.Size = new System.Drawing.Size(134, 81);
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -123,9 +125,9 @@
             // btnXoa
             // 
             this.btnXoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnXoa.Location = new System.Drawing.Point(137, 3);
+            this.btnXoa.Location = new System.Drawing.Point(143, 3);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(128, 54);
+            this.btnXoa.Size = new System.Drawing.Size(134, 81);
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -136,11 +138,22 @@
             this.btnThem.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnThem.Location = new System.Drawing.Point(3, 3);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(128, 54);
+            this.btnThem.Size = new System.Drawing.Size(134, 81);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnTim
+            // 
+            this.btnTim.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTim.Location = new System.Drawing.Point(703, 3);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(136, 81);
+            this.btnTim.TabIndex = 5;
+            this.btnTim.Text = "Tìm Sản Phẩm Theo Tên Sản Phẩm";
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // gbTaiKhoan
             // 
@@ -511,5 +524,6 @@
         private System.Windows.Forms.ComboBox cboNhaCungCap;
         private System.Windows.Forms.DateTimePicker dtpHanSuDung;
         private System.Windows.Forms.TextBox txtMaSP;
+        private System.Windows.Forms.Button btnTim;
     }
 }

@@ -202,5 +202,23 @@ namespace QuanLySieuThi
         {
             cboTaiKhoan.Text = txtMaNV.Text;
         }
+
+        // btnTim_Click
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            // Check tenNV có != null hay không?
+            if (txtTenNV.Text != string.Empty)
+            {
+                // Tìm tenNV
+                dgvNhanVien.DataSource = bus_nv.TimNV_TheoTenNV(txtTenNV.Text);
+            }
+            else
+            {
+                // Thông báo
+                MessageBox.Show("Vui lòng không để trống tên nhân viên!", "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
+        }
     }
 }

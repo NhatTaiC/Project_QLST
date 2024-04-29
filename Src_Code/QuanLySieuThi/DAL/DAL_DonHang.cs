@@ -189,5 +189,36 @@ namespace DAL
             }
             return false;
         }
+
+        // TimDonHang_TheoMaDH()
+        public IQueryable TimDonHang_TheoMaDH(string maDH) {
+            IQueryable temp = from dh in db.DonHangs
+                              where dh.MaDon == maDH
+                              select new
+                              {
+                                  MaDon = dh.MaDon,
+                                  NgayBan = dh.NgayBan,
+                                  TongGiaTri = dh.TongGiaTri,
+                                  MaNV = dh.MaNV
+                              };
+            return temp;
+        }
+
+        // TimDonHang_TheoMaNV()
+        public IQueryable TimDonHang_TheoMaNV(string maNV)
+        {
+            IQueryable temp = from dh in db.DonHangs
+                              join nv in db.NhanViens
+                              on dh.MaNV equals nv.MaNV
+                              where nv.MaNV == maNV
+                              select new
+                              {
+                                  MaDon = dh.MaDon,
+                                  NgayBan = dh.NgayBan,
+                                  TongGiaTri = dh.TongGiaTri,
+                                  MaNV = nv.MaNV
+                              };
+            return temp;
+        }
     }
 }
