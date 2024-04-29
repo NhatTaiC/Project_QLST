@@ -101,7 +101,7 @@ namespace QuanLySieuThi
         // btnXoa_Click
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult r = MessageBox.Show($"Bạn có chắc muốn xóa +{txtMaNCC.Text}+ không?", "Thông báo",
+            DialogResult r = MessageBox.Show($"Bạn có chắc muốn xóa Nhà Cung Cấp có mã là: +{txtMaNCC.Text}+ không?", "Thông báo",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
 
@@ -116,7 +116,7 @@ namespace QuanLySieuThi
         // btnSua_Click
         private void btnSua_Click(object sender, EventArgs e)
         {
-            DialogResult r = MessageBox.Show($"Bạn có chắc muốn sửa +{txtMaNCC.Text}+ không?", "Thông báo",
+            DialogResult r = MessageBox.Show($"Bạn có chắc muốn sửa thông tin của Nhà Cung Cấp có mã là: +{txtMaNCC.Text}+ không?", "Thông báo",
                MessageBoxButtons.YesNo,
                MessageBoxIcon.Warning);
 

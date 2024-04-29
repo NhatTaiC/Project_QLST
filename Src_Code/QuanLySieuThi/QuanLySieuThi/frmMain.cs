@@ -142,5 +142,20 @@ namespace QuanLySieuThi
                 ActForm("frmNhaCungCap");
             }
         }
+        
+        // loaiSanPhamMNS_Click
+        private void loaiSanPhamMNS_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmLoaiSanPham"))
+            {
+                frmLoaiSanPham f = new frmLoaiSanPham();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmLoaiSanPham");
+            }
+        }
     }
 }

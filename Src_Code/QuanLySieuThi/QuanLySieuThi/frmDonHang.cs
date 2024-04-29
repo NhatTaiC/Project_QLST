@@ -179,7 +179,7 @@ namespace QuanLySieuThi
             // Check txtTongGiaTriDH = Number
             if (CheckNumber(txtTongGiaTriDH.Text))
             {
-                DialogResult r = MessageBox.Show($"Bạn có chắc muốn xóa thông tin Đơn Hàng +{txtMaDon.Text}+ không?",
+                DialogResult r = MessageBox.Show($"Bạn có chắc muốn xóa Đơn Hàng có mã là: +{txtMaDon.Text}+ không?",
     "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (r == DialogResult.Yes)
@@ -202,7 +202,7 @@ namespace QuanLySieuThi
             // Check txtTongGiaTriDH = Number
             if (CheckNumber(txtTongGiaTriDH.Text))
             {
-                DialogResult r = MessageBox.Show($"Bạn có chắc muốn sửa thông tin Đơn Hàng +{txtMaDon.Text}+ không?",
+                DialogResult r = MessageBox.Show($"Bạn có chắc muốn sửa thông tin Đơn Hàng có mã là: +{txtMaDon.Text}+ không?",
 "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (r == DialogResult.Yes)

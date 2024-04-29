@@ -108,6 +108,7 @@
             this.loaiSanPhamMNS.Name = "loaiSanPhamMNS";
             this.loaiSanPhamMNS.Size = new System.Drawing.Size(180, 22);
             this.loaiSanPhamMNS.Text = "Loại Sản Phẩm";
+            this.loaiSanPhamMNS.Click += new System.EventHandler(this.loaiSanPhamMNS_Click);
             // 
             // sanPhamMNS
             // 
