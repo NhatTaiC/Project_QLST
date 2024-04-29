@@ -64,7 +64,6 @@ namespace DAL
                               {
                                   MaLoaiSP = lsp.MaLoaiSP,
                                   TenLoaiSP = lsp.TenLoaiSP,
-                                  MoTa = lsp.MoTa
                               };
             return temp;
         }
@@ -199,6 +198,17 @@ namespace DAL
                 MessageBox.Show(ex.Message);
             }
             return false;
+        }
+
+        // LayDSLSP_TheoTenLSP
+        public IQueryable LayDSLSP_TheoTenLSP() {
+            IQueryable temp = from lsp in db.LoaiSanPhams
+                              select new
+                              {
+                                  MaLoaiSP = lsp.MaLoaiSP,
+                                  TenLoaiSP = lsp.TenLoaiSP,
+                              };
+            return temp;
         }
      }
 }

@@ -157,5 +157,20 @@ namespace QuanLySieuThi
                 ActForm("frmLoaiSanPham");
             }
         }
+
+        // sanPhamMNS_Click
+        private void sanPhamMNS_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmSanPham"))
+            {
+                frmSanPham f = new frmSanPham();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmSanPham");
+            }
+        }
     }
 }

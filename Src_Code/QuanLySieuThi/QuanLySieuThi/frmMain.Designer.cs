@@ -115,6 +115,7 @@
             this.sanPhamMNS.Name = "sanPhamMNS";
             this.sanPhamMNS.Size = new System.Drawing.Size(180, 22);
             this.sanPhamMNS.Text = "Sản Phẩm";
+            this.sanPhamMNS.Click += new System.EventHandler(this.sanPhamMNS_Click);
             // 
             // nhanVienMNS
             // 

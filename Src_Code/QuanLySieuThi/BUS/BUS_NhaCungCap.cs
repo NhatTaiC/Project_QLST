@@ -45,5 +45,10 @@ namespace BUS
         public bool SuaNCC(DTO_NhaCungCap ncc) {
             return dal_ncc.SuaNCC(ncc);
         }
+
+        // LayDSNCC_TheoTenNCC()
+        public IQueryable LayDSNCC_TheoTenNCC() {
+            return dal_ncc.LayDSNCC_TheoTenNCC();
+        }
     }
 }

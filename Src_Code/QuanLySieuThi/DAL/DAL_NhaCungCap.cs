@@ -126,7 +126,8 @@ namespace DAL
         }
 
         // XoaNCC()
-        public bool XoaNCC(string maNCC) {
+        public bool XoaNCC(string maNCC)
+        {
             try
             {
                 // Check ncc.MaNCC có != null hay không?
@@ -165,7 +166,8 @@ namespace DAL
         }
 
         // SuaNCC()
-        public bool SuaNCC(DTO_NhaCungCap ncc) {
+        public bool SuaNCC(DTO_NhaCungCap ncc)
+        {
             try
             {
                 // Check ncc.MaNCC có != null hay không?
@@ -201,6 +203,18 @@ namespace DAL
                 throw;
             }
             return false;
+        }
+
+        // LayDSNCC_TheoTenNCC()
+        public IQueryable LayDSNCC_TheoTenNCC()
+        {
+            IQueryable temp = from nc in db.NhaCungCaps
+                              select new
+                              {
+                                  MaNCC = nc.MaNCC,
+                                  TenNCC = nc.TenNCC,
+                              };
+            return temp;
         }
     }
 }

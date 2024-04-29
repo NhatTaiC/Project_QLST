@@ -45,5 +45,10 @@ namespace BUS
         public bool SuaLSP(DTO_LoaiSanPham lsp) {
             return dal_lsp.SuaLSP(lsp);
         }
+
+        // LayDSLSP_TheoTenLSP()
+        public IQueryable LayDSLSP_TheoTenLSP() {
+            return dal_lsp.LayDSLSP_TheoTenLSP();
+        }
     }
 }

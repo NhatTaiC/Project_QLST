@@ -23,7 +23,7 @@ namespace QuanLySieuThi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLoaiSanPham());
+            Application.Run(new frmMain());
         }
     }
 }
