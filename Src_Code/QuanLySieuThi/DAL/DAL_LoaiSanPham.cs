@@ -201,12 +201,12 @@ namespace DAL
         }
 
         // LayDSLSP_TheoTenLSP
-        public IQueryable LayDSLSP_TheoTenLSP() {
+        public IQueryable LayDSLSP_TheoTenLSP(string maLSP) {
             IQueryable temp = from lsp in db.LoaiSanPhams
+                              where lsp.MaLoaiSP == maLSP
                               select new
                               {
-                                  MaLoaiSP = lsp.MaLoaiSP,
-                                  TenLoaiSP = lsp.TenLoaiSP,
+                                  TenLoaiSP = lsp.TenLoaiSP
                               };
             return temp;
         }

@@ -7,16 +7,20 @@
       "RelativeMoniker": "D:0:0:{EF5D5CB5-A90B-4AA7-84C6-1D23F146BC23}|QuanLySieuThi\\GUI.csproj|solutionrelative:quanlysieuthi\\frmsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF5D5CB5-A90B-4AA7-84C6-1D23F146BC23}|QuanLySieuThi\\GUI.csproj|d:\\study\\cn.net\\project_qlst\\src_code\\quanlysieuthi\\quanlysieuthi\\frmsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{EF5D5CB5-A90B-4AA7-84C6-1D23F146BC23}|QuanLySieuThi\\GUI.csproj|solutionrelative:quanlysieuthi\\frmsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{CC382281-8474-4E9F-B52A-1EF2725C3023}|DAL\\DAL.csproj|d:\\study\\cn.net\\project_qlst\\src_code\\quanlysieuthi\\dal\\dal_loaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC382281-8474-4E9F-B52A-1EF2725C3023}|DAL\\DAL.csproj|solutionrelative:dal\\dal_loaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC382281-8474-4E9F-B52A-1EF2725C3023}|DAL\\DAL.csproj|d:\\study\\cn.net\\project_qlst\\src_code\\quanlysieuthi\\dal\\dal_nhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC382281-8474-4E9F-B52A-1EF2725C3023}|DAL\\DAL.csproj|solutionrelative:dal\\dal_nhacungcap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EF5D5CB5-A90B-4AA7-84C6-1D23F146BC23}|QuanLySieuThi\\GUI.csproj|D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\quanlysieuthi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EF5D5CB5-A90B-4AA7-84C6-1D23F146BC23}|QuanLySieuThi\\GUI.csproj|solutionrelative:quanlysieuthi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CC382281-8474-4E9F-B52A-1EF2725C3023}|DAL\\DAL.csproj|d:\\study\\cn.net\\project_qlst\\src_code\\quanlysieuthi\\dal\\dal_loaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC382281-8474-4E9F-B52A-1EF2725C3023}|DAL\\DAL.csproj|solutionrelative:dal\\dal_loaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EF5D5CB5-A90B-4AA7-84C6-1D23F146BC23}|QuanLySieuThi\\GUI.csproj|d:\\study\\cn.net\\project_qlst\\src_code\\quanlysieuthi\\quanlysieuthi\\frmsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{EF5D5CB5-A90B-4AA7-84C6-1D23F146BC23}|QuanLySieuThi\\GUI.csproj|solutionrelative:quanlysieuthi\\frmsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EF5D5CB5-A90B-4AA7-84C6-1D23F146BC23}|QuanLySieuThi\\GUI.csproj|D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\quanlysieuthi\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,17 +38,17 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\Program.cs",
               "RelativeDocumentMoniker": "QuanLySieuThi\\Program.cs",
               "ToolTip": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\Program.cs",
               "RelativeToolTip": "QuanLySieuThi\\Program.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABkAAAAnAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABkAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-22T15:20:42.548Z",
               "IsPinned": true,
@@ -52,7 +56,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "frmMain.cs [Design]",
               "DocumentMoniker": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\frmMain.cs",
               "RelativeDocumentMoniker": "QuanLySieuThi\\frmMain.cs",
@@ -65,7 +69,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "frmMain.cs",
               "DocumentMoniker": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\frmMain.cs",
               "RelativeDocumentMoniker": "QuanLySieuThi\\frmMain.cs",
@@ -99,15 +103,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "DAL_NhaCungCap.cs",
+              "DocumentMoniker": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\DAL\\DAL_NhaCungCap.cs",
+              "RelativeDocumentMoniker": "DAL\\DAL_NhaCungCap.cs",
+              "ToolTip": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\DAL\\DAL_NhaCungCap.cs",
+              "RelativeToolTip": "DAL\\DAL_NhaCungCap.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAA6wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T18:15:18.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "DAL_LoaiSanPham.cs",
               "DocumentMoniker": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\DAL\\DAL_LoaiSanPham.cs",
               "RelativeDocumentMoniker": "DAL\\DAL_LoaiSanPham.cs",
               "ToolTip": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\DAL\\DAL_LoaiSanPham.cs",
               "RelativeToolTip": "DAL\\DAL_LoaiSanPham.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAAAqwNQAAAAGAAAA",
+              "ViewState": "AQIAAKMAAAAAAAAAAAAAAMsAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T15:45:04.203Z",
+              "WhenOpened": "2024-04-29T18:10:36.912Z",
               "EditorCaption": ""
             },
             {
@@ -116,21 +133,21 @@
               "Title": "frmSanPham.cs",
               "DocumentMoniker": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\frmSanPham.cs",
               "RelativeDocumentMoniker": "QuanLySieuThi\\frmSanPham.cs",
-              "ToolTip": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\frmSanPham.cs*",
-              "RelativeToolTip": "QuanLySieuThi\\frmSanPham.cs*",
-              "ViewState": "AQIAAMwAAAAAAAAAAAAAANQAAAA8AAAA",
+              "ToolTip": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\frmSanPham.cs",
+              "RelativeToolTip": "QuanLySieuThi\\frmSanPham.cs",
+              "ViewState": "AQIAAMAAAAAAAAAAAAAgwNwAAAAWAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-29T15:20:07.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "frmSanPham.cs [Design]",
               "DocumentMoniker": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\frmSanPham.cs",
               "RelativeDocumentMoniker": "QuanLySieuThi\\frmSanPham.cs",
-              "ToolTip": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\frmSanPham.cs [Design]*",
-              "RelativeToolTip": "QuanLySieuThi\\frmSanPham.cs [Design]*",
+              "ToolTip": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\frmSanPham.cs [Design]",
+              "RelativeToolTip": "QuanLySieuThi\\frmSanPham.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-29T15:05:48.557Z",
               "EditorCaption": " [Design]"

@@ -44,13 +44,13 @@ namespace QuanLySieuThi
             dtpHanSuDung.Value = DateTime.Now;
 
             // cboNhaCungCap
-            cboNhaCungCap.DataSource = bus_ncc.LayDSNCC_TheoTenNCC();
+            cboNhaCungCap.DataSource = bus_ncc.LayDSNCC();
             cboNhaCungCap.DisplayMember = "TenNCC";
             cboNhaCungCap.ValueMember = "MaNCC";
             cboNhaCungCap.SelectedIndex = 0;
 
             // cboLoaiSanPham
-            cboLoaiSanPham.DataSource = bus_lsp.LayDSLSP_TheoTenLSP();
+            cboLoaiSanPham.DataSource = bus_lsp.LayDSLSP();
             cboLoaiSanPham.DisplayMember = "TenLoaiSP";
             cboLoaiSanPham.ValueMember = "MaLoaiSP";
             cboLoaiSanPham.SelectedIndex = 0;
@@ -204,20 +204,40 @@ namespace QuanLySieuThi
                 // dtpHanSuDung
                 dtpHanSuDung.Value = DateTime.Parse(dgvSP.Rows[n].Cells[7].Value.ToString());
 
-                //// cboNhaCungCap
-                //cboNhaCungCap.DataSource = bus_ncc.LayDSNCC_TheoMaNCC(dgvSP.Rows[n].Cells[8].Value.ToString());
-                //cboNhaCungCap.DisplayMember = "TenNCC";
-                //cboNhaCungCap.ValueMember = "MaNCC";
-
                 // cboNhaCungCap
+                // Tìm tenNCC theoTenNCC
+                cboNhaCungCap.DataSource = bus_ncc.LayDSNCC_TheoTenNCC(dgvSP.Rows[n].Cells[8].Value.ToString());
+                cboNhaCungCap.DisplayMember = "TenNCC";
+                cboNhaCungCap.ValueMember = "TenNCC";
+
+                // Lưu lại tên NCC = strNCC
+                string strNCC = cboNhaCungCap.SelectedValue.ToString();
+
+                // Lấy lại hết NCC
                 cboNhaCungCap.DataSource = bus_ncc.LayDSNCC();
                 cboNhaCungCap.DisplayMember = "TenNCC";
                 cboNhaCungCap.ValueMember = "MaNCC";
 
+                // Tìm vị trí tenNCC
+                cboNhaCungCap.SelectedIndex = cboNhaCungCap.FindStringExact(strNCC);
+
                 // cboLoaiSanPham
-                cboLoaiSanPham.DataSource = bus_lsp.LayDSLSP_TheoMaLSP(dgvSP.Rows[n].Cells[9].Value.ToString());
+                // Tìm tenLSP theo maLSP
+                cboLoaiSanPham.DataSource = bus_lsp.LayDSLSP_TheoTenLSP(dgvSP.Rows[n].Cells[9].Value.ToString());
+                cboLoaiSanPham.DisplayMember = "TenLoaiSP";
+                cboLoaiSanPham.ValueMember = "TenLoaiSP";
+
+                // Lưu lại tenLSP = strLSP
+                string strLSP = cboLoaiSanPham.SelectedValue.ToString();
+
+                // Lấy lại hết tenLSP
+                cboLoaiSanPham.DataSource = bus_lsp.LayDSLSP();
                 cboLoaiSanPham.DisplayMember = "TenLoaiSP";
                 cboLoaiSanPham.ValueMember = "MaLoaiSP";
+
+                // Tìm vị trí strLSP
+                cboLoaiSanPham.SelectedIndex = cboLoaiSanPham.FindStringExact(strLSP);
+
             }
             else
             {

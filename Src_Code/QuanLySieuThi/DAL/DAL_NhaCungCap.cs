@@ -206,13 +206,13 @@ namespace DAL
         }
 
         // LayDSNCC_TheoTenNCC()
-        public IQueryable LayDSNCC_TheoTenNCC()
+        public IQueryable LayDSNCC_TheoTenNCC(string maNCC)
         {
             IQueryable temp = from nc in db.NhaCungCaps
+                              where nc.MaNCC == maNCC
                               select new
                               {
-                                  MaNCC = nc.MaNCC,
-                                  TenNCC = nc.TenNCC,
+                                  TenNCC = nc.TenNCC
                               };
             return temp;
         }
