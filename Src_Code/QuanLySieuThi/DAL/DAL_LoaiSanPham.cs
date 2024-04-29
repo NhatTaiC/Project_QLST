@@ -96,7 +96,7 @@ namespace DAL
                         db.SubmitChanges(); // Xác nhận thay đổi DB LoaiSanPham
 
                         // Thông báo
-                        MessageBox.Show("Thêm Loại Sản Phẩm mới thành công!", "Thông báo",
+                        MessageBox.Show($"Thêm loại sản phẩm +{lsp.MaLoaiSP}+ thành công!", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         return true;
@@ -104,14 +104,14 @@ namespace DAL
                     else
                     {
                         // Thông báo
-                        MessageBox.Show("Loại Sản Phẩm đã có trong DB LoaiSanPham!", "Thông báo",
+                        MessageBox.Show($"Loại sản phẩm +{lsp.MaLoaiSP}+ đã có trong danh sách loại sản phẩm!", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Mã Loại Sản Phẩm không hợp lệ!", "Thông báo",
+                    MessageBox.Show("Mã loại sản phẩm không hợp lệ!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
@@ -143,7 +143,7 @@ namespace DAL
                     }
 
                     // Thông báo
-                    MessageBox.Show($"Xóa Loại Sản Phẩm +{maLSP}+ thành công!", "Thông báo",
+                    MessageBox.Show($"Xóa loại sản phẩm +{maLSP}+ thành công!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     return true;
@@ -151,7 +151,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Mã Loại Sản Phẩm không hợp lệ!", "Thông báo",
+                    MessageBox.Show("Mã loại sản phẩm không hợp lệ!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
@@ -181,7 +181,7 @@ namespace DAL
                     db.SubmitChanges();
 
                     // Thông báo
-                    MessageBox.Show($"Sửa thông tin Loại Sản Phẩm +{lsp.MaLoaiSP}+ thành công!", "Thông báo",
+                    MessageBox.Show($"Sửa thông tin loại sản phẩm +{lsp.MaLoaiSP}+ thành công!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     return true;
@@ -189,7 +189,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Mã Loại Sản Phẩm không hợp lệ!", "Thông báo",
+                    MessageBox.Show("Mã loại sản phẩm không hợp lệ!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }

@@ -123,7 +123,7 @@ namespace DAL
                                 db.SubmitChanges(); // Xác nhận lưu xuống DB NhanVien
 
                                 // Thông báo
-                                MessageBox.Show("Thêm Nhân Viên mới thành công!", "Thông báo",
+                                MessageBox.Show($"Thêm nhân viên +{nv.MaNV}+ thành công!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                                 return true;
@@ -131,7 +131,7 @@ namespace DAL
                             else
                             {
                                 // Thông báo
-                                MessageBox.Show("Mã Nhân Viên không hợp lệ, không thể thêm NhanVien mới!", "Thông báo",
+                                MessageBox.Show("Mã nhân viên không hợp lệ!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                             }
@@ -139,7 +139,7 @@ namespace DAL
                         else
                         {
                             // Thông báo
-                            MessageBox.Show("Tài Khoản không hợp lệ, không thể thêm NhanVien mới!", "Thông báo",
+                            MessageBox.Show("Tài khoản không hợp lệ!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                         }
@@ -147,7 +147,7 @@ namespace DAL
                     else
                     {
                         // Thông báo
-                        MessageBox.Show("Đã có Nhân Viên trong DB NhanVien!", "Thông báo",
+                        MessageBox.Show($"Nhân viên +{nv.MaNV}+ đã có trong danh sách nhân viên!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     } 
@@ -155,7 +155,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Đã có Tài Khoản trong DB TaiKhoan!", "Thông báo",
+                    MessageBox.Show($"Tài Khoản +{nv.MaNV}+ đã có trong danh sách tài khoản!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
@@ -201,7 +201,7 @@ namespace DAL
                         }
 
                         // Thông báo
-                        MessageBox.Show($"Xóa Nhân Viên +{nv}+ thành công!", "Thông báo",
+                        MessageBox.Show($"Xóa nhân viên +{nv}+ thành công!", "Thông báo",
                                MessageBoxButtons.OK,
                                MessageBoxIcon.Information);
                         return true;
@@ -209,7 +209,7 @@ namespace DAL
                     else
                     {
                         // Thông báo
-                        MessageBox.Show("Tài Khoản không hợp lệ, không thể xóa Tài Khoản!", "Thông báo",
+                        MessageBox.Show("Tài khoản không hợp lệ, không thể xóa tài khoản!", "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                     }
@@ -217,7 +217,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Mã Nhân Viên không hợp lệ, Không thể xóa Nhân Viên!", "Thông báo",
+                    MessageBox.Show("Mã nhân viên không hợp lệ, Không thể xóa nhân viên!", "Thông báo",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
                 }
@@ -260,7 +260,7 @@ namespace DAL
                     db.SubmitChanges();
 
                     // Thông báo
-                    MessageBox.Show($"Sửa thông tin Nhân Viên +{nv.MaNV}+ thành công!", "Thông báo",
+                    MessageBox.Show($"Sửa thông tin nhân viên +{nv.MaNV}+ thành công!", "Thông báo",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
                     return true;
@@ -268,7 +268,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Mã Nhân Viên không hợp lệ, không thể sửa thông tin Nhân Viên", "Thông báo",
+                    MessageBox.Show("Mã nhân viên không hợp lệ, không thể sửa thông tin nhân viên", "Thông báo",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
                 }

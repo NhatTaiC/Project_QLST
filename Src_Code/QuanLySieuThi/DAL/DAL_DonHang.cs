@@ -84,7 +84,7 @@ namespace DAL
                         db.SubmitChanges(); // Xác nhận thêm Đơn Hàng vào DB DonHang
 
                         // Thông báo
-                        MessageBox.Show("Thêm Đơn Hàng mới thành công!", "Thông báo",
+                        MessageBox.Show($"Thêm đơn hàng +{dh.MaDon}+ thành công!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                         return true;
@@ -92,13 +92,13 @@ namespace DAL
                     else
                     {
                         // Thông báo
-                        MessageBox.Show("Đã có Đơn Hàng trong DB DonHang, không thể thêm!", "Thông báo",
+                        MessageBox.Show($"Đơn hàng +{dh.MaDon}+ đã có trong danh sách đơn hàng!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     } 
                 }
                 // Thông báo
-                MessageBox.Show("Mã Đơn Hàng không hợp lệ, Không thể thêm!", "Thông báo",
+                MessageBox.Show("Mã đơn hàng không hợp lệ!", "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
@@ -129,7 +129,7 @@ namespace DAL
                     }
 
                     // Thông báo
-                    MessageBox.Show($"Xóa Đơn Hàng +{maDonHang}+ thành công!", "Thông báo",
+                    MessageBox.Show($"Xóa đơn hàng +{maDonHang}+ thành công!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                     return true; 
@@ -137,7 +137,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Mã Đơn Hàng không hợp lệ, không thể xóa Đơn Hàng!", "Thông báo",
+                    MessageBox.Show("Mã đơn hàng không hợp lệ!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
@@ -169,7 +169,7 @@ namespace DAL
                     db.SubmitChanges();
 
                     // Thông báo
-                    MessageBox.Show($"Sửa thông tin Đơn Hàng +{dh.MaDon}+ thành công!", "Thông báo",
+                    MessageBox.Show($"Sửa thông tin đơn hàng +{dh.MaDon}+ thành công!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                     return true;
@@ -177,7 +177,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Mã Đơn Hàng không hợp lệ, không thể Sửa Đơn Hàng!", "Thông báo",
+                    MessageBox.Show("Mã đơn hàng không hợp lệ!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }

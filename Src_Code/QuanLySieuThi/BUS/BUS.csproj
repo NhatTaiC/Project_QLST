@@ -54,6 +54,7 @@
     <Compile Include="BUS_LoaiSanPham.cs" />
     <Compile Include="BUS_NhaCungCap.cs" />
     <Compile Include="BUS_NhanVien.cs" />
+    <Compile Include="BUS_SanPham.cs" />
     <Compile Include="BUS_TaiKhoan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

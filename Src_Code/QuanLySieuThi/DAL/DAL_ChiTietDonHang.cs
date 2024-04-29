@@ -93,7 +93,7 @@ namespace DAL
                         db.SubmitChanges(); // Xác nhận thay đổi DB ChiTietDonHang
 
                         // Thông báo
-                        MessageBox.Show("Thêm Chi Tiết Đơn Hàng mới thành công!", "Thông báo",
+                        MessageBox.Show($"Thêm chi tiết đơn hàng +{ctdh.MaChiTiet}+ thành công!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
 
@@ -102,7 +102,7 @@ namespace DAL
                     else
                     {
                         // Thông báo
-                        MessageBox.Show("Chi Tiết Đơn Hàng đã có trong DB ChiTietDonHang!", "Thông báo",
+                        MessageBox.Show($"Chi tiết đơn hàng +{ctdh.MaDon}+ đã có trong danh sách chi tiết đơn hàng!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
@@ -110,7 +110,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Mã Chi Tiết Đơn Hàng không hợp lệ, Không thể thêm!", "Thông báo",
+                    MessageBox.Show("Mã chi tiết đơn hàng không hợp lệ!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
@@ -143,7 +143,7 @@ namespace DAL
                     }
 
                     // Thông báo
-                    MessageBox.Show($"Xóa Chi Tiết Đơn Hàng +{maCTDH}+ thành công!", "Thông báo",
+                    MessageBox.Show($"Xóa chi tiết đơn hàng +{maCTDH}+ thành công!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 
@@ -153,7 +153,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Mã Chi Tiết Đơn Hàng không hợp lệ, Không thể thêm!", "Thông báo",
+                    MessageBox.Show("Mã chi tiết đơn hàng không hợp lệ!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
@@ -187,7 +187,7 @@ namespace DAL
                     db.SubmitChanges();
 
                     // Thông báo
-                    MessageBox.Show($"Sửa thông tin Chi Tiết Đơn Hàng +{ctdh.MaChiTiet}+ thành công!", "Thông báo",
+                    MessageBox.Show($"Sửa thông tin chi tiết đơn hàng +{ctdh.MaChiTiet}+ thành công!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 
@@ -197,7 +197,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Mã Chi Tiết Đơn Hàng không hợp lệ, Không thể thêm!", "Thông báo",
+                    MessageBox.Show("Mã chi tiết đơn hàng không hợp lệ!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }

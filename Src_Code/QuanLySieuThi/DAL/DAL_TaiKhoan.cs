@@ -87,7 +87,7 @@ namespace DAL
                         db.SubmitChanges(); // Xác nhận thay đổi DB TaiKhoan
 
                         // Thông báo
-                        MessageBox.Show("Thêm Tài Khoản mới thành công!", "Thông báo",
+                        MessageBox.Show($"Thêm tài khoản +{tk.TaiKhoan}+ thành công!", "Thông báo",
                            MessageBoxButtons.OK,
                            MessageBoxIcon.Information);
                         return true;
@@ -96,7 +96,7 @@ namespace DAL
                     else
                     {
                         // Thông báo
-                        MessageBox.Show("Đã có Tài Khoản trong DB TaiKhoan!", "Thông báo",
+                        MessageBox.Show($"Tài khoản +{tk.TaiKhoan}+ đã có trong danh sách tài khoản!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     } 
@@ -104,7 +104,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Tài Khoản không hợp lệ, không thể thêm Tài Khoản mới!", "Thông báo",
+                    MessageBox.Show("Tài khoản không hợp lệ!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Error);
                 }
@@ -150,7 +150,7 @@ namespace DAL
                     }
 
                     // Thông báo
-                    MessageBox.Show($"Xóa Tài Khoản +{tk}+ thành công!", "Thông báo",
+                    MessageBox.Show($"Xóa tài khoản +{tk}+ thành công!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Information);
                     return true;
@@ -158,7 +158,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Tài khoản không hợp lệ, không thể xóa Tài Khoản!", "Thông báo",
+                    MessageBox.Show("Tài khoản không hợp lệ!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Error);
                 }
@@ -191,7 +191,7 @@ namespace DAL
                     db.SubmitChanges();
 
                     // Thông báo
-                    MessageBox.Show($"Sửa thông tin Tài Khoản +{tk.TaiKhoan}+ thành công!", "Thông báo",
+                    MessageBox.Show($"Sửa thông tin tài khoản +{tk.TaiKhoan}+ thành công!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Information);
                     return true; 
@@ -199,7 +199,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Tài khoản không hợp lệ, không thể sửa thông tin Tài Khoản!", "Thông báo",
+                    MessageBox.Show("Tài khoản không hợp lệ!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Error);
                 }

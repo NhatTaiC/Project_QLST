@@ -98,21 +98,21 @@ namespace DAL
                         db.SubmitChanges(); // Xác nhận thay đổi DB NCC
 
                         // Thông báo
-                        MessageBox.Show("Thêm Nhà Cung Cấp mới thành công!", "Thông báo",
+                        MessageBox.Show($"Thêm nhà cung cấp +{ncc.MaNCC}+ thành công!", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return true;
                     }
                     else
                     {
                         // Thông báo
-                        MessageBox.Show("Đã có Nhà Cung Cấp trong DB NCC, không thể thêm!", "Thông báo",
+                        MessageBox.Show($"Nhà cung cấp +{ncc.MaNCC}+ đã có trong danh sách nhà cung cấp!", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Mã Nhà Cung Cấp không hợp lệ!", "Thông báo",
+                    MessageBox.Show("Mã nhà cung cấp không hợp lệ!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -144,14 +144,14 @@ namespace DAL
                     }
 
                     // Thông báo
-                    MessageBox.Show($"Xóa thông tin Nhà Cung Cấp +{maNCC}+ thành công!", "Thông báo",
+                    MessageBox.Show($"Xóa nhà cung cấp +{maNCC}+ thành công!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Mã Nhà Cung Cấp không hợp lệ!", "Thông báo",
+                    MessageBox.Show("Mã nhà cung cấp không hợp lệ!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -183,14 +183,14 @@ namespace DAL
                     db.SubmitChanges();
 
                     // Thông báo
-                    MessageBox.Show($"Sửa thông tin Nhà Cung Cấp +{ncc.MaNCC}+ thành công!", "Thông báo",
+                    MessageBox.Show($"Sửa thông tin nhà cung cấp +{ncc.MaNCC}+ thành công!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return true;
                 }
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Mã Nhà Cung Cấp không hợp lệ!", "Thông báo",
+                    MessageBox.Show("Mã nhà cung cấp không hợp lệ!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

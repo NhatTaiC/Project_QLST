@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EF5D5CB5-A90B-4AA7-84C6-1D23F146BC23}|QuanLySieuThi\\GUI.csproj|d:\\study\\cn.net\\project_qlst\\src_code\\quanlysieuthi\\quanlysieuthi\\frmloaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF5D5CB5-A90B-4AA7-84C6-1D23F146BC23}|QuanLySieuThi\\GUI.csproj|solutionrelative:quanlysieuthi\\frmloaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCE1FB7C-4517-40CF-A0C5-E2A06764EA4C}|BUS\\BUS.csproj|d:\\study\\cn.net\\project_qlst\\src_code\\quanlysieuthi\\bus\\bus_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCE1FB7C-4517-40CF-A0C5-E2A06764EA4C}|BUS\\BUS.csproj|solutionrelative:bus\\bus_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CC382281-8474-4E9F-B52A-1EF2725C3023}|DAL\\DAL.csproj|d:\\study\\cn.net\\project_qlst\\src_code\\quanlysieuthi\\dal\\dal_loaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC382281-8474-4E9F-B52A-1EF2725C3023}|DAL\\DAL.csproj|solutionrelative:dal\\dal_loaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CC382281-8474-4E9F-B52A-1EF2725C3023}|DAL\\DAL.csproj|d:\\study\\cn.net\\project_qlst\\src_code\\quanlysieuthi\\dal\\dal_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC382281-8474-4E9F-B52A-1EF2725C3023}|DAL\\DAL.csproj|solutionrelative:dal\\dal_sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EF5D5CB5-A90B-4AA7-84C6-1D23F146BC23}|QuanLySieuThi\\GUI.csproj|D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\quanlysieuthi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -74,6 +74,32 @@
               "EditorCaption": ""
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DAL_SanPham.cs",
+              "DocumentMoniker": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\DAL\\DAL_SanPham.cs",
+              "RelativeDocumentMoniker": "DAL\\DAL_SanPham.cs",
+              "ToolTip": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\DAL\\DAL_SanPham.cs",
+              "RelativeToolTip": "DAL\\DAL_SanPham.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T14:50:24.637Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BUS_SanPham.cs",
+              "DocumentMoniker": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\BUS\\BUS_SanPham.cs",
+              "RelativeDocumentMoniker": "BUS\\BUS_SanPham.cs",
+              "ToolTip": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\BUS\\BUS_SanPham.cs",
+              "RelativeToolTip": "BUS\\BUS_SanPham.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-29T14:50:16.438Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
             },
@@ -92,32 +118,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:134:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DAL_LoaiSanPham.cs",
-              "DocumentMoniker": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\DAL\\DAL_LoaiSanPham.cs",
-              "RelativeDocumentMoniker": "DAL\\DAL_LoaiSanPham.cs",
-              "ToolTip": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\DAL\\DAL_LoaiSanPham.cs",
-              "RelativeToolTip": "DAL\\DAL_LoaiSanPham.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAIwBUAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T11:02:26.557Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmLoaiSanPham.cs",
-              "DocumentMoniker": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\frmLoaiSanPham.cs",
-              "RelativeDocumentMoniker": "QuanLySieuThi\\frmLoaiSanPham.cs",
-              "ToolTip": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\frmLoaiSanPham.cs",
-              "RelativeToolTip": "QuanLySieuThi\\frmLoaiSanPham.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAAACAAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-29T10:47:46.205Z",
-              "EditorCaption": ""
             }
           ]
         }
