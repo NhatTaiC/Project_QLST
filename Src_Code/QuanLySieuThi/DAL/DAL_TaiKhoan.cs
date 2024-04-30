@@ -66,16 +66,6 @@ namespace DAL
                 // Check TaiKhoan có # null ko mới add vào DB TaiKhoan
                 if (tk.TaiKhoan != string.Empty)
                 {
-                    // Tạo đối tượng TaiKhoan
-                    TaiKhoan t_insert = new TaiKhoan
-                    {
-                        TaiKhoan1 = tk.TaiKhoan,
-                        MatKhau = tk.MatKhau,
-                        HoTen = tk.HoTen,
-                        NgayTao = tk.NgayTao,
-                        ChucVu = tk.ChucVu
-                    };
-
                     // Check xem đã có TaiKhoan trong DB TaiKhoan chưa?
                     var temp = from t in db.TaiKhoans
                                where t.TaiKhoan1 == tk.TaiKhoan
@@ -83,11 +73,21 @@ namespace DAL
 
                     if (temp.Count() != 1)
                     {
+                        // Tạo đối tượng TaiKhoan
+                        TaiKhoan t_insert = new TaiKhoan
+                        {
+                            TaiKhoan1 = tk.TaiKhoan,
+                            MatKhau = tk.MatKhau,
+                            HoTen = tk.HoTen,
+                            NgayTao = tk.NgayTao,
+                            ChucVu = tk.ChucVu
+                        };
+
                         db.TaiKhoans.InsertOnSubmit(t_insert); // Thêm DB TaiKhoan
                         db.SubmitChanges(); // Xác nhận thay đổi DB TaiKhoan
 
                         // Thông báo
-                        MessageBox.Show("Thêm Tài Khoản mới thành công!", "Thông báo",
+                        MessageBox.Show($"Thêm tài khoản +{tk.TaiKhoan}+ thành công!", "Thông báo",
                            MessageBoxButtons.OK,
                            MessageBoxIcon.Information);
                         return true;
@@ -96,7 +96,7 @@ namespace DAL
                     else
                     {
                         // Thông báo
-                        MessageBox.Show("Đã có Tài Khoản trong DB TaiKhoan!", "Thông báo",
+                        MessageBox.Show($"Tài khoản +{tk.TaiKhoan}+ đã có trong danh sách tài khoản!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     } 
@@ -104,7 +104,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Tài Khoản không hợp lệ, không thể thêm Tài Khoản mới!", "Thông báo",
+                    MessageBox.Show("Tài khoản không hợp lệ!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Error);
                 }
@@ -150,7 +150,7 @@ namespace DAL
                     }
 
                     // Thông báo
-                    MessageBox.Show("Xóa Tài Khoản thành công!", "Thông báo",
+                    MessageBox.Show($"Xóa tài khoản +{tk}+ thành công!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Information);
                     return true;
@@ -158,7 +158,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Tài khoản không hợp lệ, không thể xóa Tài Khoản!", "Thông báo",
+                    MessageBox.Show("Tài khoản không hợp lệ!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Error);
                 }
@@ -191,7 +191,7 @@ namespace DAL
                     db.SubmitChanges();
 
                     // Thông báo
-                    MessageBox.Show("Sửa thông tin Tài Khoản thành công!", "Thông báo",
+                    MessageBox.Show($"Sửa thông tin tài khoản +{tk.TaiKhoan}+ thành công!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Information);
                     return true; 
@@ -199,7 +199,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Tài khoản không hợp lệ, không thể sửa thông tin Tài Khoản!", "Thông báo",
+                    MessageBox.Show("Tài khoản không hợp lệ!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Error);
                 }
@@ -234,6 +234,55 @@ namespace DAL
                               select new
                               {
                                   ChucVu = cv.Key,
+                              };
+            return temp;
+        }
+
+        // TimTaiKhoan_TheoTenNV()
+        public IQueryable TimTaiKhoan_TheoTenNV(string tenNV) {
+            // Lấy DSTK
+            IQueryable temp = from t in db.TaiKhoans
+                              where t.HoTen.Contains(tenNV)
+                              select new
+                              {
+                                  TaiKhoan = t.TaiKhoan1,
+                                  MatKhau = t.MatKhau,
+                                  HoTen = t.HoTen,
+                                  NgayTao = t.NgayTao,
+                                  ChucVu = t.ChucVu
+                              };
+            return temp;
+        }
+
+        // TimTaiKhoan_TheoTaiKhoan()
+        public IQueryable TimTaiKhoan_TheoTaiKhoan(string taiKhoan)
+        {
+            // Lấy DSTK
+            IQueryable temp = from t in db.TaiKhoans
+                              where t.TaiKhoan1 == taiKhoan
+                              select new
+                              {
+                                  TaiKhoan = t.TaiKhoan1,
+                                  MatKhau = t.MatKhau,
+                                  HoTen = t.HoTen,
+                                  NgayTao = t.NgayTao,
+                                  ChucVu = t.ChucVu
+                              };
+            return temp;
+        }
+
+        // TimTaiKhoan_TheoChucVu()
+        public IQueryable TimTaiKhoan_TheoChucVu(string chucVu) {
+            // Lấy DSTK
+            IQueryable temp = from t in db.TaiKhoans
+                              where t.ChucVu.Contains(chucVu)
+                              select new
+                              {
+                                  TaiKhoan = t.TaiKhoan1,
+                                  MatKhau = t.MatKhau,
+                                  HoTen = t.HoTen,
+                                  NgayTao = t.NgayTao,
+                                  ChucVu = t.ChucVu
                               };
             return temp;
         }

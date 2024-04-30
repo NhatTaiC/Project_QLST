@@ -61,17 +61,9 @@ namespace DAL
         {
             try
             {
+                // Check dh.MaDon có != null hay không?
                 if (dh.MaDon != string.Empty)
                 {
-                    // Tạo đối tượng Đơn Hàng
-                    DonHang dh_insert = new DonHang
-                    {
-                        MaDon = dh.MaDon,
-                        NgayBan = dh.NgayBan,
-                        TongGiaTri = dh.TongGiaTri,
-                        MaNV = dh.MaNV
-                    };
-
                     // Check xem Đơn Hàng đã có trong DB DonHang hay chưa?
                     var temp = from d in db.DonHangs
                                where d.MaDon == dh.MaDon
@@ -79,11 +71,20 @@ namespace DAL
 
                     if (temp.Count() != 1)
                     {
+                        // Tạo đối tượng Đơn Hàng
+                        DonHang dh_insert = new DonHang
+                        {
+                            MaDon = dh.MaDon,
+                            NgayBan = dh.NgayBan,
+                            TongGiaTri = dh.TongGiaTri,
+                            MaNV = dh.MaNV
+                        };
+
                         db.DonHangs.InsertOnSubmit(dh_insert); // Thêm Đơn Hàng vào DB DonHang
                         db.SubmitChanges(); // Xác nhận thêm Đơn Hàng vào DB DonHang
 
                         // Thông báo
-                        MessageBox.Show("Thêm Đơn Hàng mới thành công!", "Thông báo",
+                        MessageBox.Show($"Thêm đơn hàng +{dh.MaDon}+ thành công!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                         return true;
@@ -91,13 +92,13 @@ namespace DAL
                     else
                     {
                         // Thông báo
-                        MessageBox.Show("Đã có Đơn Hàng trong DB DonHang, không thể thêm!", "Thông báo",
+                        MessageBox.Show($"Đơn hàng +{dh.MaDon}+ đã có trong danh sách đơn hàng!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     } 
                 }
                 // Thông báo
-                MessageBox.Show("Mã Đơn Hàng không hợp lệ, Không thể thêm!", "Thông báo",
+                MessageBox.Show("Mã đơn hàng không hợp lệ!", "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
@@ -128,7 +129,7 @@ namespace DAL
                     }
 
                     // Thông báo
-                    MessageBox.Show("Xóa Đơn Hàng thành công!", "Thông báo",
+                    MessageBox.Show($"Xóa đơn hàng +{maDonHang}+ thành công!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                     return true; 
@@ -136,7 +137,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Mã Đơn Hàng không hợp lệ, không thể xóa Đơn Hàng!", "Thông báo",
+                    MessageBox.Show("Mã đơn hàng không hợp lệ!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
@@ -168,7 +169,7 @@ namespace DAL
                     db.SubmitChanges();
 
                     // Thông báo
-                    MessageBox.Show("Sửa thông tin Đơn Hàng thành công!", "Thông báo",
+                    MessageBox.Show($"Sửa thông tin đơn hàng +{dh.MaDon}+ thành công!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
                     return true;
@@ -176,7 +177,7 @@ namespace DAL
                 else
                 {
                     // Thông báo
-                    MessageBox.Show("Mã Đơn Hàng không hợp lệ, không thể Sửa Đơn Hàng!", "Thông báo",
+                    MessageBox.Show("Mã đơn hàng không hợp lệ!", "Thông báo",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
@@ -187,6 +188,37 @@ namespace DAL
                 MessageBox.Show(ex.Message);
             }
             return false;
+        }
+
+        // TimDonHang_TheoMaDH()
+        public IQueryable TimDonHang_TheoMaDH(string maDH) {
+            IQueryable temp = from dh in db.DonHangs
+                              where dh.MaDon == maDH
+                              select new
+                              {
+                                  MaDon = dh.MaDon,
+                                  NgayBan = dh.NgayBan,
+                                  TongGiaTri = dh.TongGiaTri,
+                                  MaNV = dh.MaNV
+                              };
+            return temp;
+        }
+
+        // TimDonHang_TheoMaNV()
+        public IQueryable TimDonHang_TheoMaNV(string maNV)
+        {
+            IQueryable temp = from dh in db.DonHangs
+                              join nv in db.NhanViens
+                              on dh.MaNV equals nv.MaNV
+                              where nv.MaNV == maNV
+                              select new
+                              {
+                                  MaDon = dh.MaDon,
+                                  NgayBan = dh.NgayBan,
+                                  TongGiaTri = dh.TongGiaTri,
+                                  MaNV = nv.MaNV
+                              };
+            return temp;
         }
     }
 }

@@ -127,5 +127,50 @@ namespace QuanLySieuThi
                 ActForm("frmChiTietDonHang");
             }
         }
+
+        // nhaCungCapMNS_Click
+        private void nhaCungCapMNS_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmNhaCungCap"))
+            {
+                frmNhaCungCap f = new frmNhaCungCap();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmNhaCungCap");
+            }
+        }
+        
+        // loaiSanPhamMNS_Click
+        private void loaiSanPhamMNS_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmLoaiSanPham"))
+            {
+                frmLoaiSanPham f = new frmLoaiSanPham();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmLoaiSanPham");
+            }
+        }
+
+        // sanPhamMNS_Click
+        private void sanPhamMNS_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmSanPham"))
+            {
+                frmSanPham f = new frmSanPham();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmSanPham");
+            }
+        }
     }
 }

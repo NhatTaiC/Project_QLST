@@ -47,11 +47,15 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.tableDataGridView = new System.Windows.Forms.TableLayoutPanel();
             this.dgvDonHang = new System.Windows.Forms.DataGridView();
+            this.tableButton2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnTimTenNV = new System.Windows.Forms.Button();
+            this.btnTim = new System.Windows.Forms.Button();
             this.tableForm.SuspendLayout();
             this.gbDonHang.SuspendLayout();
             this.tableButton.SuspendLayout();
             this.tableDataGridView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonHang)).BeginInit();
+            this.tableButton2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -185,16 +189,16 @@
             this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableButton.Controls.Add(this.btnThoat, 4, 0);
             this.tableButton.Controls.Add(this.btnLamMoi, 3, 0);
             this.tableButton.Controls.Add(this.btnSua, 2, 0);
             this.tableButton.Controls.Add(this.btnXoa, 1, 0);
             this.tableButton.Controls.Add(this.btnThem, 0, 0);
-            this.tableButton.Location = new System.Drawing.Point(124, 511);
+            this.tableButton.Location = new System.Drawing.Point(124, 489);
             this.tableButton.Name = "tableButton";
             this.tableButton.RowCount = 1;
             this.tableButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.tableButton.Size = new System.Drawing.Size(826, 66);
             this.tableButton.TabIndex = 3;
             // 
@@ -264,7 +268,7 @@
             this.tableDataGridView.Name = "tableDataGridView";
             this.tableDataGridView.RowCount = 1;
             this.tableDataGridView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableDataGridView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableDataGridView.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 223F));
             this.tableDataGridView.Size = new System.Drawing.Size(1052, 223);
             this.tableDataGridView.TabIndex = 4;
             // 
@@ -285,11 +289,50 @@
             this.dgvDonHang.TabIndex = 0;
             this.dgvDonHang.Click += new System.EventHandler(this.dgvDonHang_Click);
             // 
+            // tableButton2
+            // 
+            this.tableButton2.ColumnCount = 2;
+            this.tableButton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableButton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableButton2.Controls.Add(this.btnTimTenNV, 0, 0);
+            this.tableButton2.Controls.Add(this.btnTim, 0, 0);
+            this.tableButton2.Location = new System.Drawing.Point(224, 572);
+            this.tableButton2.Name = "tableButton2";
+            this.tableButton2.RowCount = 1;
+            this.tableButton2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableButton2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableButton2.Size = new System.Drawing.Size(572, 65);
+            this.tableButton2.TabIndex = 5;
+            // 
+            // btnTimTenNV
+            // 
+            this.btnTimTenNV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTimTenNV.Location = new System.Drawing.Point(289, 3);
+            this.btnTimTenNV.Name = "btnTimTenNV";
+            this.btnTimTenNV.Size = new System.Drawing.Size(280, 59);
+            this.btnTimTenNV.TabIndex = 7;
+            this.btnTimTenNV.Text = "Tìm Đơn Hàng Theo Tên Nhân Viên";
+            this.btnTimTenNV.UseVisualStyleBackColor = true;
+            this.btnTimTenNV.Click += new System.EventHandler(this.btnTimTenNV_Click);
+            // 
+            // btnTim
+            // 
+            this.btnTim.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTim.Location = new System.Drawing.Point(3, 3);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(280, 59);
+            this.btnTim.TabIndex = 6;
+            this.btnTim.Text = "Tìm Đơn Hàng Theo Mã Đơn Hàng";
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
             // frmDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 881);
+            this.ControlBox = false;
+            this.Controls.Add(this.tableButton2);
             this.Controls.Add(this.tableDataGridView);
             this.Controls.Add(this.tableButton);
             this.Controls.Add(this.gbDonHang);
@@ -307,6 +350,7 @@
             this.tableButton.ResumeLayout(false);
             this.tableDataGridView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonHang)).EndInit();
+            this.tableButton2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,5 +377,8 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.TableLayoutPanel tableDataGridView;
         private System.Windows.Forms.DataGridView dgvDonHang;
+        private System.Windows.Forms.TableLayoutPanel tableButton2;
+        private System.Windows.Forms.Button btnTimTenNV;
+        private System.Windows.Forms.Button btnTim;
     }
 }

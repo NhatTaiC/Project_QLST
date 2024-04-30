@@ -146,7 +146,7 @@ namespace QuanLySieuThi
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn 1 dòng để sửa hoặc xóa!", "Thông báo",
+                MessageBox.Show("Vui lòng chọn 1 dòng để xóa hoặc sửa thông tin!", "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
@@ -166,7 +166,7 @@ namespace QuanLySieuThi
         // btnXoa_Click
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult r = MessageBox.Show($"Bạn có chắc muốn xóa thông tin Nhân Viên +{txtTenNV.Text}+ không?",
+            DialogResult r = MessageBox.Show($"Bạn có chắc muốn xóa Nhân Viên có mã là: +{txtTenNV.Text}+ không?",
                 "Thông báo",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
@@ -181,7 +181,7 @@ namespace QuanLySieuThi
         // btnSua_Click
         private void btnSua_Click(object sender, EventArgs e)
         {
-            DialogResult r = MessageBox.Show($"Bạn có chắc muốn sửa thông tin Nhân Viên +{txtTenNV.Text}+ không?",
+            DialogResult r = MessageBox.Show($"Bạn có chắc muốn sửa thông tin Nhân Viên có mã là: +{txtTenNV.Text}+ không?",
                 "Thông báo",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
@@ -201,6 +201,24 @@ namespace QuanLySieuThi
         private void txtMaNV_TextChanged(object sender, EventArgs e)
         {
             cboTaiKhoan.Text = txtMaNV.Text;
+        }
+
+        // btnTim_Click
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            // Check tenNV có != null hay không?
+            if (txtTenNV.Text != string.Empty)
+            {
+                // Tìm tenNV
+                dgvNhanVien.DataSource = bus_nv.TimNV_TheoTenNV(txtTenNV.Text);
+            }
+            else
+            {
+                // Thông báo
+                MessageBox.Show("Vui lòng không để trống tên nhân viên!", "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
         }
     }
 }

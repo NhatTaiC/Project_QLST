@@ -148,7 +148,7 @@ namespace QuanLySieuThi
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn 1 dòng để xóa hoặc sửa thông tin Đơn Hàng!",
+                MessageBox.Show("Vui lòng chọn 1 dòng để xóa hoặc sửa thông tin!",
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
@@ -179,7 +179,7 @@ namespace QuanLySieuThi
             // Check txtTongGiaTriDH = Number
             if (CheckNumber(txtTongGiaTriDH.Text))
             {
-                DialogResult r = MessageBox.Show($"Bạn có chắc muốn xóa thông tin Đơn Hàng +{txtMaDon.Text}+ không?",
+                DialogResult r = MessageBox.Show($"Bạn có chắc muốn xóa Đơn Hàng có mã là: +{txtMaDon.Text}+ không?",
     "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (r == DialogResult.Yes)
@@ -202,7 +202,7 @@ namespace QuanLySieuThi
             // Check txtTongGiaTriDH = Number
             if (CheckNumber(txtTongGiaTriDH.Text))
             {
-                DialogResult r = MessageBox.Show($"Bạn có chắc muốn sửa thông tin Đơn Hàng +{txtMaDon.Text}+ không?",
+                DialogResult r = MessageBox.Show($"Bạn có chắc muốn sửa thông tin Đơn Hàng có mã là: +{txtMaDon.Text}+ không?",
 "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (r == DialogResult.Yes)
@@ -220,6 +220,31 @@ namespace QuanLySieuThi
                 MessageBox.Show("Tổng Giá Trị Đơn Hàng phải là số!",
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        // btnTim_Click
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            // Check maDH có != null hay không?
+            if (txtMaDon.Text != string.Empty)
+            {
+                // Tìm SP theo tenSP
+                dgvDonHang.DataSource = bus_dh.TimDonHang_TheoMaDonHang(txtMaDon.Text);
+            }
+            else
+            {
+                // Thông báo
+                MessageBox.Show("Vui lòng không để trống mã đơn hàng!", "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
+        }
+
+        // btnTimTenNV_Click
+        private void btnTimTenNV_Click(object sender, EventArgs e)
+        {
+            // Tìm SP theo tenNV
+            dgvDonHang.DataSource = bus_dh.TimDonHang_TheoMaNV(cboMaNV.SelectedValue.ToString());
         }
     }
 }
