@@ -55,5 +55,15 @@ namespace BUS
         public IQueryable TimSP_TheoMaSP(string maSP) {
             return dal_sp.TimSP_TheoMaSP(maSP);
         }
+
+        // NhomSP_TheoGiaBan()
+        public IQueryable NhomSP_TheoGiaBan() {
+            return dal_sp.NhomSP_TheoGiaBan();
+        }
+
+        // NhomSP_TheoDonViTinh()
+        public IQueryable NhomSP_TheoDonViTinh() {
+            return dal_sp.NhomSP_TheoDonViTinh();
+        }
     }
 }

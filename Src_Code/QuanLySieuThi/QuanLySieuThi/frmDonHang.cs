@@ -148,7 +148,7 @@ namespace QuanLySieuThi
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn 1 dòng để xóa hoặc sửa thông tin Đơn Hàng!",
+                MessageBox.Show("Vui lòng chọn 1 dòng để xóa hoặc sửa thông tin!",
                     "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }

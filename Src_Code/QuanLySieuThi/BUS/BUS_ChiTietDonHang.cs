@@ -32,13 +32,23 @@ namespace BUS
         }
 
         // XoaChiTietDonHang()
-        public bool XoaChiTietDonHang(string ctdh) {
+        public bool XoaChiTietDonHang(DTO_ChiTietDonHang ctdh) {
             return dal_ctdh.XoaChiTietDonHang(ctdh);
         }
 
         // SuaChiTietDonHang()
         public bool SuaChiTietDonHang(DTO_ChiTietDonHang ctdh) {
             return dal_ctdh.SuaChiTietDonHang(ctdh);
+        }
+
+        // TimDonHang_TheoMaCT()
+        public IQueryable TimDonHang_TheoMaCT(string maCT) {
+            return dal_ctdh.TimDonHang_TheoMaCT(maCT);
+        }
+
+        // TimDonHang_TheoMaDon()
+        public IQueryable TimDonHang_TheoMaDon(string maDon) {
+            return dal_ctdh.TimDonHang_TheoMaDon(maDon);
         }
     }
 }

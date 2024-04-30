@@ -252,7 +252,8 @@ namespace DAL
         }
 
         // TimSP_TheoMaSP()
-        public IQueryable TimSP_TheoMaSP(string maSP) {
+        public IQueryable TimSP_TheoMaSP(string maSP)
+        {
             IQueryable temp = from sp in db.SanPhams
                               where sp.MaSP == maSP
                               select new
@@ -267,6 +268,30 @@ namespace DAL
                                   HanSuDung = sp.HanSuDung,
                                   MaNCC = sp.MaNCC,
                                   MaLoaiSP = sp.MaLoaiSP
+                              };
+            return temp;
+        }
+
+        // NhomSP_TheoGiaBan()
+        public IQueryable NhomSP_TheoGiaBan()
+        {
+            IQueryable temp = from sp in db.SanPhams
+                              group sp by sp.GiaBan into result
+                              select new
+                              {
+                                  GiaBan = result.Key
+                              };
+            return temp;
+
+        }
+
+        // NhomSP_TheoDonViTinh()
+        public IQueryable NhomSP_TheoDonViTinh() {
+            IQueryable temp = from sp in db.SanPhams
+                              group sp by sp.DonViTinh into result
+                              select new
+                              {
+                                  DonViTinh = result.Key
                               };
             return temp;
         }

@@ -146,7 +146,7 @@ namespace QuanLySieuThi
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn 1 dòng để sửa hoặc xóa!", "Thông báo",
+                MessageBox.Show("Vui lòng chọn 1 dòng để xóa hoặc sửa thông tin!", "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
