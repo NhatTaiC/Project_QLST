@@ -172,5 +172,26 @@ namespace QuanLySieuThi
                 ActForm("frmSanPham");
             }
         }
+
+        // gioiThieuMNS_Click
+        private void gioiThieuMNS_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmGioiThieu"))
+            {
+                frmGioiThieu f = new frmGioiThieu();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmGioiThieu");
+            }
+        }
+
+        // timer1_Tick - Hiện thời gian
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            statusLabelHienThoiGian.Text = DateTime.Now.ToString();
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.MNS = new System.Windows.Forms.MenuStrip();
             this.heThongMNS = new System.Windows.Forms.ToolStripMenuItem();
             this.thoatMNS = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +43,12 @@
             this.banHangMNS = new System.Windows.Forms.ToolStripMenuItem();
             this.traCuuMNS = new System.Windows.Forms.ToolStripMenuItem();
             this.inAnMNS = new System.Windows.Forms.ToolStripMenuItem();
+            this.gioiThieuMNS = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.statusLabelHienThoiGian = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.MNS.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MNS
@@ -63,6 +69,7 @@
             // heThongMNS
             // 
             this.heThongMNS.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gioiThieuMNS,
             this.thoatMNS});
             this.heThongMNS.Name = "heThongMNS";
             this.heThongMNS.Size = new System.Drawing.Size(71, 20);
@@ -71,7 +78,7 @@
             // thoatMNS
             // 
             this.thoatMNS.Name = "thoatMNS";
-            this.thoatMNS.Size = new System.Drawing.Size(104, 22);
+            this.thoatMNS.Size = new System.Drawing.Size(180, 22);
             this.thoatMNS.Text = "Thoát";
             this.thoatMNS.Click += new System.EventHandler(this.thoatMNS_Click);
             // 
@@ -92,49 +99,49 @@
             // taiKhoanMNS
             // 
             this.taiKhoanMNS.Name = "taiKhoanMNS";
-            this.taiKhoanMNS.Size = new System.Drawing.Size(180, 22);
+            this.taiKhoanMNS.Size = new System.Drawing.Size(171, 22);
             this.taiKhoanMNS.Text = "Tài Khoản";
             this.taiKhoanMNS.Click += new System.EventHandler(this.taiKhoanMNS_Click);
             // 
             // nhaCungCapMNS
             // 
             this.nhaCungCapMNS.Name = "nhaCungCapMNS";
-            this.nhaCungCapMNS.Size = new System.Drawing.Size(180, 22);
+            this.nhaCungCapMNS.Size = new System.Drawing.Size(171, 22);
             this.nhaCungCapMNS.Text = "Nhà Cung Cấp";
             this.nhaCungCapMNS.Click += new System.EventHandler(this.nhaCungCapMNS_Click);
             // 
             // loaiSanPhamMNS
             // 
             this.loaiSanPhamMNS.Name = "loaiSanPhamMNS";
-            this.loaiSanPhamMNS.Size = new System.Drawing.Size(180, 22);
+            this.loaiSanPhamMNS.Size = new System.Drawing.Size(171, 22);
             this.loaiSanPhamMNS.Text = "Loại Sản Phẩm";
             this.loaiSanPhamMNS.Click += new System.EventHandler(this.loaiSanPhamMNS_Click);
             // 
             // sanPhamMNS
             // 
             this.sanPhamMNS.Name = "sanPhamMNS";
-            this.sanPhamMNS.Size = new System.Drawing.Size(180, 22);
+            this.sanPhamMNS.Size = new System.Drawing.Size(171, 22);
             this.sanPhamMNS.Text = "Sản Phẩm";
             this.sanPhamMNS.Click += new System.EventHandler(this.sanPhamMNS_Click);
             // 
             // nhanVienMNS
             // 
             this.nhanVienMNS.Name = "nhanVienMNS";
-            this.nhanVienMNS.Size = new System.Drawing.Size(180, 22);
+            this.nhanVienMNS.Size = new System.Drawing.Size(171, 22);
             this.nhanVienMNS.Text = "Nhân Viên";
             this.nhanVienMNS.Click += new System.EventHandler(this.nhanVienMNS_Click);
             // 
             // donHangMNS
             // 
             this.donHangMNS.Name = "donHangMNS";
-            this.donHangMNS.Size = new System.Drawing.Size(180, 22);
+            this.donHangMNS.Size = new System.Drawing.Size(171, 22);
             this.donHangMNS.Text = "Đơn Hàng";
             this.donHangMNS.Click += new System.EventHandler(this.donHangMNS_Click);
             // 
             // chiTietDonHangMNS
             // 
             this.chiTietDonHangMNS.Name = "chiTietDonHangMNS";
-            this.chiTietDonHangMNS.Size = new System.Drawing.Size(180, 22);
+            this.chiTietDonHangMNS.Size = new System.Drawing.Size(171, 22);
             this.chiTietDonHangMNS.Text = "Chi Tiết Đơn Hàng";
             this.chiTietDonHangMNS.Click += new System.EventHandler(this.chiTietDonHangMNS_Click);
             // 
@@ -156,11 +163,41 @@
             this.inAnMNS.Size = new System.Drawing.Size(47, 20);
             this.inAnMNS.Text = "In Ấn";
             // 
+            // gioiThieuMNS
+            // 
+            this.gioiThieuMNS.Name = "gioiThieuMNS";
+            this.gioiThieuMNS.Size = new System.Drawing.Size(180, 22);
+            this.gioiThieuMNS.Text = "Giới thiệu";
+            this.gioiThieuMNS.Click += new System.EventHandler(this.gioiThieuMNS_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusLabelHienThoiGian});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 601);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1200, 22);
+            this.statusStrip1.TabIndex = 2;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // statusLabelHienThoiGian
+            // 
+            this.statusLabelHienThoiGian.Name = "statusLabelHienThoiGian";
+            this.statusLabelHienThoiGian.Size = new System.Drawing.Size(85, 17);
+            this.statusLabelHienThoiGian.Text = "Hiện Thời Gian";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 623);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.MNS);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -173,6 +210,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.MNS.ResumeLayout(false);
             this.MNS.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,6 +233,10 @@
         private System.Windows.Forms.ToolStripMenuItem nhanVienMNS;
         private System.Windows.Forms.ToolStripMenuItem donHangMNS;
         private System.Windows.Forms.ToolStripMenuItem chiTietDonHangMNS;
+        private System.Windows.Forms.ToolStripMenuItem gioiThieuMNS;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel statusLabelHienThoiGian;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
