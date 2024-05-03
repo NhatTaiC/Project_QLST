@@ -2,8 +2,8 @@
  * Châu Nhật Tài, Lê Văn Toàn
  * Project CN.NET
  * Quản Lý Siêu Thị
- * 29/04/2024
- * DTO_SanPham.cs
+ * 28/04/2024
+ * DTO_ChiTietDonHang.cs
  */
 using System;
 using System.Collections.Generic;
@@ -13,45 +13,39 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class DTO_SanPham
+    public class DTO_ChiTietDonHang
     {
         // Fields
+        private string maChiTiet;
+        private string maDon;
         private string maSP;
         private string tenSP;
-        private int giaNhap;
         private int giaBan;
         private int soLuong;
+        private int thanhTien;
         private string donViTinh;
-        private string noiSanXuat;
-        private DateTime hanSuDung;
-        private string maNCC;
-        private string maLoaiSP;
 
         // Constructors
-        public DTO_SanPham(string maSP, string tenSP, int giaNhap, int giaBan, int soLuong, string donViTinh, string noiSanXuat, DateTime hanSuDung, string maNCC, string maLoaiSP)
+        public DTO_ChiTietDonHang(string maChiTiet, string maDon, string maSP, string tenSP, int giaBan, int soLuong, int thanhTien, string donViTinh)
         {
+            this.maChiTiet = maChiTiet;
+            this.maDon = maDon;
             this.maSP = maSP;
             this.tenSP = tenSP;
-            this.giaNhap = giaNhap;
             this.giaBan = giaBan;
             this.soLuong = soLuong;
+            this.thanhTien = thanhTien;
             this.donViTinh = donViTinh;
-            this.noiSanXuat = noiSanXuat;
-            this.hanSuDung = hanSuDung;
-            this.maNCC = maNCC;
-            this.maLoaiSP = maLoaiSP;
         }
 
         // Properties
+        public string MaChiTiet { get => maChiTiet; set => maChiTiet = value; }
+        public string MaDon { get => maDon; set => maDon = value; }
         public string MaSP { get => maSP; set => maSP = value; }
         public string TenSP { get => tenSP; set => tenSP = value; }
-        public int GiaNhap { get => giaNhap; set => giaNhap = value; }
         public int GiaBan { get => giaBan; set => giaBan = value; }
         public int SoLuong { get => soLuong; set => soLuong = value; }
+        public int ThanhTien { get => thanhTien; set => thanhTien = value; }
         public string DonViTinh { get => donViTinh; set => donViTinh = value; }
-        public string NoiSanXuat { get => noiSanXuat; set => noiSanXuat = value; }
-        public DateTime HanSuDung { get => hanSuDung; set => hanSuDung = value; }
-        public string MaNCC { get => maNCC; set => maNCC = value; }
-        public string MaLoaiSP { get => maLoaiSP; set => maLoaiSP = value; }
     }
 }
