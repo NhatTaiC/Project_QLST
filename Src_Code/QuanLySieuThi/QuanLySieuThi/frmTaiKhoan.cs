@@ -26,16 +26,29 @@ namespace QuanLySieuThi
             InitializeComponent();
         }
 
-        // Initialize Variable
-        private BUS_SQL bus = new BUS_SQL();
+        // Initialize Variables
+        private BUS_TaiKhoan bus_tk = new BUS_TaiKhoan();
+        private BUS_NhanVien bus_nv = new BUS_NhanVien();
 
         // Function LoadData
-        private void LoadData() {
-            dgvTaiKhoan.DataSource = bus.LayDSTK();
-            dgvTaiKhoan.Columns["NgayTao"].DefaultCellStyle.Format = "dd-MM-yyyy";
-            txtTaiKhoan.Focus();
+        private void LoadData()
+        {
+            // dgvTaiKhoan
+            dgvTaiKhoan.DataSource = bus_tk.LayDSTK();
+
+            // Columns["NgayTao"]
+            dgvTaiKhoan.Columns["NgayTao"].DefaultCellStyle.Format = "dd/MM/yyyy";
+
+            // dtpTaiKhoan
             dtpTaiKhoan.Value = DateTime.Now;
-            cboChucVu.SelectedIndex = 0;
+
+            // cboChucVu
+            cboChucVu.DataSource = bus_tk.LayDSTK_TheoChucVuAll();
+            cboChucVu.DisplayMember = "ChucVu";
+            cboChucVu.ValueMember = "ChucVu";
+
+            // Others
+            txtTaiKhoan.Focus();
             txtTaiKhoan.Enabled = true;
             btnThem.Enabled = true;
             btnXoa.Enabled = false;
@@ -45,16 +58,19 @@ namespace QuanLySieuThi
         // Function Reset
         private void Reset()
         {
+            // Reset Text
             txtTaiKhoan.Text = string.Empty;
             txtMatKhau.Text = string.Empty;
             txtHoTen.Text = string.Empty;
 
+            // Called LoadData()
             LoadData();
         }
 
         // Form Closing
         private void frmTaiKhoan_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Thông báo
             DialogResult r = MessageBox.Show("Bạn có chắc muốn thoát không?", "Thông báo",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
@@ -86,10 +102,12 @@ namespace QuanLySieuThi
         // DgvTaiKhoan_Click
         private void dgvTaiKhoan_Click(object sender, EventArgs e)
         {
+            // Get Index Row Selected
             int n = dgvTaiKhoan.CurrentCell.RowIndex;
 
             if (n >= 0)
             {
+                // Others
                 txtTaiKhoan.Enabled = false;
                 btnThem.Enabled = false;
                 btnXoa.Enabled = true;
@@ -103,62 +121,108 @@ namespace QuanLySieuThi
                 dtpTaiKhoan.Value = DateTime.Parse(dgvTaiKhoan.Rows[n].Cells[3].Value.ToString());
 
                 //Xử lý ComboBox
-                if (dgvTaiKhoan.Rows[n].Cells[4].Value.ToString() == "0")
-                {
-                    cboChucVu.SelectedIndex = 0;
-                }
-                else
-                {
-                    cboChucVu.SelectedIndex = 1;
-                }
+                cboChucVu.DataSource = bus_tk.LayDSTK_TheoChucVuAll();
+                cboChucVu.DisplayMember = "ChucVu";
+                cboChucVu.ValueMember = "ChucVu";
+
+                // Lưu lại giá trị chucVu = strChucVu
+                string strChucVu = dgvTaiKhoan.Rows[n].Cells[4].Value.ToString();
+
+                // Tìm vị trí chức vụ trong cboChucVu
+                cboChucVu.SelectedIndex = cboChucVu.FindStringExact(strChucVu);
             }
             else
             {
-                MessageBox.Show("Vui lòng chọn 1 dòng để xóa/sửa!", "Thông báo",
+                // Thông báo
+                MessageBox.Show("Vui lòng chọn 1 dòng để xóa hoặc sửa thông tin!", "Thông báo",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
             }
         }
-        
+
         // BtnThem_CLick
         private void btnThem_Click(object sender, EventArgs e)
         {
             DTO_TaiKhoan tk = new DTO_TaiKhoan(txtTaiKhoan.Text, txtMatKhau.Text,
-            txtHoTen.Text, dtpTaiKhoan.Value.ToString(), int.Parse(cboChucVu.SelectedIndex.ToString()));
+            txtHoTen.Text, dtpTaiKhoan.Value, cboChucVu.SelectedValue.ToString());
 
-            bus.ThemTK(tk);
+            bus_tk.ThemTK(tk);
             Reset();
         }
 
         // BtnXoa_Click
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DialogResult r = MessageBox.Show("Bạn có chắc muốn xóa không?", "Thông báo",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
+            // Check TaiKhoan muốn xóa có gắn với NhanVien nào ko?
+            int tk_nv = bus_nv.LayDSNV_TheoMaNV2(txtTaiKhoan.Text);
 
-            if (r == DialogResult.Yes)
+            if (tk_nv == 1)
             {
-                bus.XoaTK(txtTaiKhoan.Text);
-                Reset();
+                DialogResult r = MessageBox.Show("Xóa Tài Khoản sẽ xóa luôn thông tin Nhân Viên gắn với Tài Khoản\n" +
+                        $"\nBạn có chắc muốn xóa Tài Khoản +{txtTaiKhoan.Text}+ không?", "Thông báo",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning);
+
+                if (r == DialogResult.Yes)
+                {
+                    bus_tk.XoaTK(txtTaiKhoan.Text);
+                    Reset();
+                }
+            }
+            else
+            {
+                DialogResult r = MessageBox.Show($"Bạn có chắc muốn xóa Tài Khoản +{txtTaiKhoan.Text}+ không?", "Thông báo",
+                       MessageBoxButtons.YesNo,
+                       MessageBoxIcon.Warning);
+
+                if (r == DialogResult.Yes)
+                {
+                    bus_tk.XoaTK(txtTaiKhoan.Text);
+                    Reset();
+                }
             }
         }
 
         // BtnSua_Click
         private void btnSua_Click(object sender, EventArgs e)
         {
-            DialogResult r = MessageBox.Show("Bạn có chắc muốn sửa không?", "Thông báo",
+            DialogResult r = MessageBox.Show($"Bạn có chắc muốn sửa thông tin Tài Khoản +{txtTaiKhoan.Text}+ không?", "Thông báo",
                MessageBoxButtons.YesNo,
                MessageBoxIcon.Warning);
 
             if (r == DialogResult.Yes)
             {
                 DTO_TaiKhoan tk = new DTO_TaiKhoan(txtTaiKhoan.Text, txtMatKhau.Text,
-                txtHoTen.Text, dtpTaiKhoan.Value.ToString(), int.Parse(cboChucVu.SelectedIndex.ToString()));
+                txtHoTen.Text, dtpTaiKhoan.Value, cboChucVu.SelectedValue.ToString());
 
-                bus.SuaTK(tk);
+                bus_tk.SuaTK(tk);
                 Reset();
             }
+        }
+
+        // btnTimTKTheoTenNV_Click
+        private void btnTimTKTheoTenNV_Click(object sender, EventArgs e)
+        {
+            // Check tenNV có != null hay không?
+            if (txtHoTen.Text != string.Empty)
+            {
+                // Tìm taiKhoan theo tenNV
+                dgvTaiKhoan.DataSource = bus_tk.TimTaiKhoan_TheoTenNV(txtHoTen.Text);
+            }
+            else
+            {
+                // Thông báo
+                MessageBox.Show("Vui lòng không để trống tên nhân viên!", "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Warning);
+            }
+        }
+
+        // btnTimTKTheoCV_Click
+        private void btnTimTKTheoCV_Click(object sender, EventArgs e)
+        {
+            // Tìm taiKhoan theo tenNV
+            dgvTaiKhoan.DataSource = bus_tk.TimTaiKhoan_TheoChucVu(cboChucVu.SelectedValue.ToString());
         }
     }
 }

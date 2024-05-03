@@ -56,7 +56,7 @@
             this.inAnMNS});
             this.MNS.Location = new System.Drawing.Point(0, 0);
             this.MNS.Name = "MNS";
-            this.MNS.Size = new System.Drawing.Size(1200, 28);
+            this.MNS.Size = new System.Drawing.Size(1200, 24);
             this.MNS.TabIndex = 0;
             this.MNS.Text = "menuStrip1";
             // 
@@ -65,13 +65,13 @@
             this.heThongMNS.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thoatMNS});
             this.heThongMNS.Name = "heThongMNS";
-            this.heThongMNS.Size = new System.Drawing.Size(88, 24);
+            this.heThongMNS.Size = new System.Drawing.Size(71, 20);
             this.heThongMNS.Text = "Hệ Thống";
             // 
             // thoatMNS
             // 
             this.thoatMNS.Name = "thoatMNS";
-            this.thoatMNS.Size = new System.Drawing.Size(130, 26);
+            this.thoatMNS.Size = new System.Drawing.Size(104, 22);
             this.thoatMNS.Text = "Thoát";
             this.thoatMNS.Click += new System.EventHandler(this.thoatMNS_Click);
             // 
@@ -86,76 +86,79 @@
             this.donHangMNS,
             this.chiTietDonHangMNS});
             this.qlyMNS.Name = "qlyMNS";
-            this.qlyMNS.Size = new System.Drawing.Size(75, 24);
+            this.qlyMNS.Size = new System.Drawing.Size(62, 20);
             this.qlyMNS.Text = "Quản Lý";
             // 
             // taiKhoanMNS
             // 
             this.taiKhoanMNS.Name = "taiKhoanMNS";
-            this.taiKhoanMNS.Size = new System.Drawing.Size(224, 26);
+            this.taiKhoanMNS.Size = new System.Drawing.Size(180, 22);
             this.taiKhoanMNS.Text = "Tài Khoản";
             this.taiKhoanMNS.Click += new System.EventHandler(this.taiKhoanMNS_Click);
             // 
             // nhaCungCapMNS
             // 
             this.nhaCungCapMNS.Name = "nhaCungCapMNS";
-            this.nhaCungCapMNS.Size = new System.Drawing.Size(224, 26);
+            this.nhaCungCapMNS.Size = new System.Drawing.Size(180, 22);
             this.nhaCungCapMNS.Text = "Nhà Cung Cấp";
             this.nhaCungCapMNS.Click += new System.EventHandler(this.nhaCungCapMNS_Click);
             // 
             // loaiSanPhamMNS
             // 
             this.loaiSanPhamMNS.Name = "loaiSanPhamMNS";
-            this.loaiSanPhamMNS.Size = new System.Drawing.Size(224, 26);
+            this.loaiSanPhamMNS.Size = new System.Drawing.Size(180, 22);
             this.loaiSanPhamMNS.Text = "Loại Sản Phẩm";
             this.loaiSanPhamMNS.Click += new System.EventHandler(this.loaiSanPhamMNS_Click);
             // 
             // sanPhamMNS
             // 
             this.sanPhamMNS.Name = "sanPhamMNS";
-            this.sanPhamMNS.Size = new System.Drawing.Size(224, 26);
+            this.sanPhamMNS.Size = new System.Drawing.Size(180, 22);
             this.sanPhamMNS.Text = "Sản Phẩm";
             this.sanPhamMNS.Click += new System.EventHandler(this.sanPhamMNS_Click);
             // 
             // nhanVienMNS
             // 
             this.nhanVienMNS.Name = "nhanVienMNS";
-            this.nhanVienMNS.Size = new System.Drawing.Size(224, 26);
+            this.nhanVienMNS.Size = new System.Drawing.Size(180, 22);
             this.nhanVienMNS.Text = "Nhân Viên";
+            this.nhanVienMNS.Click += new System.EventHandler(this.nhanVienMNS_Click);
             // 
             // donHangMNS
             // 
             this.donHangMNS.Name = "donHangMNS";
-            this.donHangMNS.Size = new System.Drawing.Size(224, 26);
+            this.donHangMNS.Size = new System.Drawing.Size(180, 22);
             this.donHangMNS.Text = "Đơn Hàng";
+            this.donHangMNS.Click += new System.EventHandler(this.donHangMNS_Click);
             // 
             // chiTietDonHangMNS
             // 
             this.chiTietDonHangMNS.Name = "chiTietDonHangMNS";
-            this.chiTietDonHangMNS.Size = new System.Drawing.Size(224, 26);
+            this.chiTietDonHangMNS.Size = new System.Drawing.Size(180, 22);
             this.chiTietDonHangMNS.Text = "Chi Tiết Đơn Hàng";
+            this.chiTietDonHangMNS.Click += new System.EventHandler(this.chiTietDonHangMNS_Click);
             // 
             // banHangMNS
             // 
             this.banHangMNS.Name = "banHangMNS";
-            this.banHangMNS.Size = new System.Drawing.Size(88, 24);
+            this.banHangMNS.Size = new System.Drawing.Size(71, 20);
             this.banHangMNS.Text = "Bán Hàng";
             // 
             // traCuuMNS
             // 
             this.traCuuMNS.Name = "traCuuMNS";
-            this.traCuuMNS.Size = new System.Drawing.Size(73, 24);
+            this.traCuuMNS.Size = new System.Drawing.Size(59, 20);
             this.traCuuMNS.Text = "Tra Cứu";
             // 
             // inAnMNS
             // 
             this.inAnMNS.Name = "inAnMNS";
-            this.inAnMNS.Size = new System.Drawing.Size(57, 24);
+            this.inAnMNS.Size = new System.Drawing.Size(47, 20);
             this.inAnMNS.Text = "In Ấn";
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 623);
             this.Controls.Add(this.MNS);

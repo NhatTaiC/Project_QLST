@@ -83,37 +83,82 @@ namespace QuanLySieuThi
             }
         }
 
-        //NhaCungCapMNS_Click
-        private void nhaCungCapMNS_Click(object sender, EventArgs e)
+        // nhanVienMNS_Click
+        private void nhanVienMNS_Click(object sender, EventArgs e)
         {
-            if (!CheckFormExist("frmNCC"))
+            if (!CheckFormExist("frmNhanVien"))
             {
-                frmNCC f = new frmNCC();
+                frmNhanVien f = new frmNhanVien();
                 f.MdiParent = this;
                 f.Show();
             }
             else
             {
-                ActForm("frmNCC");
-            }
-        }
-        
-        //LoaiSanPhamNMS_Click
-        private void loaiSanPhamMNS_Click(object sender, EventArgs e)
-        {
-            if (!CheckFormExist("frmLoaiSP"))
-            {
-                frmLoaiSP f = new frmLoaiSP();
-                f.MdiParent = this;
-                f.Show();
-            }
-            else
-            {
-                ActForm("frmLoaiSP");
+                ActForm("frmNhanVien");
             }
         }
 
-        //SanPhamMNS_Click
+        // donHangMNS_Click
+        private void donHangMNS_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmDonHang"))
+            {
+                frmDonHang f = new frmDonHang();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmDonHang");
+            }
+        }
+
+        // chiTietDonHangMNS_Click
+        private void chiTietDonHangMNS_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmChiTietDonHang"))
+            {
+                frmChiTietDonHang f = new frmChiTietDonHang();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmChiTietDonHang");
+            }
+        }
+
+        // nhaCungCapMNS_Click
+        private void nhaCungCapMNS_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmNhaCungCap"))
+            {
+                frmNhaCungCap f = new frmNhaCungCap();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmNhaCungCap");
+            }
+        }
+        
+        // loaiSanPhamMNS_Click
+        private void loaiSanPhamMNS_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmLoaiSanPham"))
+            {
+                frmLoaiSanPham f = new frmLoaiSanPham();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmLoaiSanPham");
+            }
+        }
+
+        // sanPhamMNS_Click
         private void sanPhamMNS_Click(object sender, EventArgs e)
         {
             if (!CheckFormExist("frmSanPham"))

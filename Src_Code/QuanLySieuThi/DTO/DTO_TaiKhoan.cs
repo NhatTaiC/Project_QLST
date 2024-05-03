@@ -19,11 +19,11 @@ namespace DTO
         private string taiKhoan;
         private string matKhau;
         private string hoTen;
-        private string ngayTao;
-        private int chucVu;
+        private DateTime ngayTao;
+        private string chucVu;
 
         //Constructors
-        public DTO_TaiKhoan(string taiKhoan, string matKhau, string hoTen, string ngayTao, int chucVu)
+        public DTO_TaiKhoan(string taiKhoan, string matKhau, string hoTen, DateTime ngayTao, string chucVu)
         {
             this.TaiKhoan = taiKhoan;
             this.MatKhau = matKhau;
@@ -36,7 +36,7 @@ namespace DTO
         public string TaiKhoan { get => taiKhoan; set => taiKhoan = value; }
         public string MatKhau { get => matKhau; set => matKhau = value; }
         public string HoTen { get => hoTen; set => hoTen = value; }
-        public string NgayTao { get => ngayTao; set => ngayTao = value; }
-        public int ChucVu { get => chucVu; set => chucVu = value; }
+        public DateTime NgayTao { get => ngayTao; set => ngayTao = value; }
+        public string ChucVu { get => chucVu; set => chucVu = value; }
     }
 }
