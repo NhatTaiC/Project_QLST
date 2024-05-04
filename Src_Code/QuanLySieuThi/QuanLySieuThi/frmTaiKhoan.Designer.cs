@@ -50,8 +50,8 @@
             this.dgvTaiKhoan = new System.Windows.Forms.DataGridView();
             this.tableDGVTaiKhoan = new System.Windows.Forms.TableLayoutPanel();
             this.tableButton2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnTimTKTheoTenNV = new System.Windows.Forms.Button();
             this.btnTimTKTheoCV = new System.Windows.Forms.Button();
+            this.btnTimTKTheoTenNV = new System.Windows.Forms.Button();
             this.tableForm.SuspendLayout();
             this.gbTaiKhoan.SuspendLayout();
             this.tableButton.SuspendLayout();
@@ -313,7 +313,7 @@
             this.tableDGVTaiKhoan.Name = "tableDGVTaiKhoan";
             this.tableDGVTaiKhoan.RowCount = 1;
             this.tableDGVTaiKhoan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableDGVTaiKhoan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableDGVTaiKhoan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 263F));
             this.tableDGVTaiKhoan.Size = new System.Drawing.Size(861, 263);
             this.tableDGVTaiKhoan.TabIndex = 4;
             // 
@@ -332,17 +332,6 @@
             this.tableButton2.Size = new System.Drawing.Size(592, 64);
             this.tableButton2.TabIndex = 5;
             // 
-            // btnTimTKTheoTenNV
-            // 
-            this.btnTimTKTheoTenNV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTimTKTheoTenNV.Location = new System.Drawing.Point(3, 3);
-            this.btnTimTKTheoTenNV.Name = "btnTimTKTheoTenNV";
-            this.btnTimTKTheoTenNV.Size = new System.Drawing.Size(290, 58);
-            this.btnTimTKTheoTenNV.TabIndex = 0;
-            this.btnTimTKTheoTenNV.Text = "Tìm Tài Khoản Theo Tên Nhân Viên";
-            this.btnTimTKTheoTenNV.UseVisualStyleBackColor = true;
-            this.btnTimTKTheoTenNV.Click += new System.EventHandler(this.btnTimTKTheoTenNV_Click);
-            // 
             // btnTimTKTheoCV
             // 
             this.btnTimTKTheoCV.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -353,6 +342,17 @@
             this.btnTimTKTheoCV.Text = "Tìm Tài Khoản Theo Chức Vụ";
             this.btnTimTKTheoCV.UseVisualStyleBackColor = true;
             this.btnTimTKTheoCV.Click += new System.EventHandler(this.btnTimTKTheoCV_Click);
+            // 
+            // btnTimTKTheoTenNV
+            // 
+            this.btnTimTKTheoTenNV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTimTKTheoTenNV.Location = new System.Drawing.Point(3, 3);
+            this.btnTimTKTheoTenNV.Name = "btnTimTKTheoTenNV";
+            this.btnTimTKTheoTenNV.Size = new System.Drawing.Size(290, 58);
+            this.btnTimTKTheoTenNV.TabIndex = 0;
+            this.btnTimTKTheoTenNV.Text = "Tìm Tài Khoản Theo Tên Nhân Viên";
+            this.btnTimTKTheoTenNV.UseVisualStyleBackColor = true;
+            this.btnTimTKTheoTenNV.Click += new System.EventHandler(this.btnTimTKTheoTenNV_Click);
             // 
             // frmTaiKhoan
             // 

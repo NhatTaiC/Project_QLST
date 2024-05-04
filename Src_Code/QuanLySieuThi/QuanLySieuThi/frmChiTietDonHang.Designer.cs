@@ -71,7 +71,7 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(267, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(519, 45);
+            this.label1.Size = new System.Drawing.Size(658, 57);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản Lý Chi Tiết Đơn Hàng";
             // 
@@ -117,7 +117,7 @@
             this.cboDonViTinh.FormattingEnabled = true;
             this.cboDonViTinh.Location = new System.Drawing.Point(322, 227);
             this.cboDonViTinh.Name = "cboDonViTinh";
-            this.cboDonViTinh.Size = new System.Drawing.Size(313, 26);
+            this.cboDonViTinh.Size = new System.Drawing.Size(313, 31);
             this.cboDonViTinh.TabIndex = 6;
             // 
             // cboGiaBan
@@ -127,7 +127,7 @@
             this.cboGiaBan.FormattingEnabled = true;
             this.cboGiaBan.Location = new System.Drawing.Point(322, 131);
             this.cboGiaBan.Name = "cboGiaBan";
-            this.cboGiaBan.Size = new System.Drawing.Size(313, 26);
+            this.cboGiaBan.Size = new System.Drawing.Size(313, 31);
             this.cboGiaBan.TabIndex = 4;
             // 
             // txtThanhTien
@@ -135,7 +135,7 @@
             this.txtThanhTien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtThanhTien.Location = new System.Drawing.Point(322, 195);
             this.txtThanhTien.Name = "txtThanhTien";
-            this.txtThanhTien.Size = new System.Drawing.Size(313, 26);
+            this.txtThanhTien.Size = new System.Drawing.Size(313, 30);
             this.txtThanhTien.TabIndex = 7;
             // 
             // txtSoLuong
@@ -143,7 +143,7 @@
             this.txtSoLuong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSoLuong.Location = new System.Drawing.Point(322, 163);
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(313, 26);
+            this.txtSoLuong.Size = new System.Drawing.Size(313, 30);
             this.txtSoLuong.TabIndex = 5;
             this.txtSoLuong.TextChanged += new System.EventHandler(this.txtSoLuong_TextChanged);
             // 
@@ -242,7 +242,7 @@
             this.cboMaDonHang.FormattingEnabled = true;
             this.cboMaDonHang.Location = new System.Drawing.Point(322, 35);
             this.cboMaDonHang.Name = "cboMaDonHang";
-            this.cboMaDonHang.Size = new System.Drawing.Size(313, 26);
+            this.cboMaDonHang.Size = new System.Drawing.Size(313, 31);
             this.cboMaDonHang.TabIndex = 1;
             // 
             // cboMaSanPham
@@ -252,7 +252,7 @@
             this.cboMaSanPham.FormattingEnabled = true;
             this.cboMaSanPham.Location = new System.Drawing.Point(322, 67);
             this.cboMaSanPham.Name = "cboMaSanPham";
-            this.cboMaSanPham.Size = new System.Drawing.Size(313, 26);
+            this.cboMaSanPham.Size = new System.Drawing.Size(313, 31);
             this.cboMaSanPham.TabIndex = 2;
             this.cboMaSanPham.SelectedValueChanged += new System.EventHandler(this.cboMaSanPham_SelectedValueChanged);
             // 
@@ -261,7 +261,7 @@
             this.txtMaChiTiet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtMaChiTiet.Location = new System.Drawing.Point(322, 3);
             this.txtMaChiTiet.Name = "txtMaChiTiet";
-            this.txtMaChiTiet.Size = new System.Drawing.Size(313, 26);
+            this.txtMaChiTiet.Size = new System.Drawing.Size(313, 30);
             this.txtMaChiTiet.TabIndex = 0;
             // 
             // cboTenSanPham
@@ -271,7 +271,7 @@
             this.cboTenSanPham.FormattingEnabled = true;
             this.cboTenSanPham.Location = new System.Drawing.Point(322, 99);
             this.cboTenSanPham.Name = "cboTenSanPham";
-            this.cboTenSanPham.Size = new System.Drawing.Size(313, 26);
+            this.cboTenSanPham.Size = new System.Drawing.Size(313, 31);
             this.cboTenSanPham.TabIndex = 3;
             // 
             // gbChiTietDonHang
@@ -372,7 +372,7 @@
             this.tableDGVChiTietDonHang.Name = "tableDGVChiTietDonHang";
             this.tableDGVChiTietDonHang.RowCount = 1;
             this.tableDGVChiTietDonHang.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableDGVChiTietDonHang.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableDGVChiTietDonHang.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 278F));
             this.tableDGVChiTietDonHang.Size = new System.Drawing.Size(979, 278);
             this.tableDGVChiTietDonHang.TabIndex = 4;
             // 
@@ -421,7 +421,7 @@
             // 
             // frmChiTietDonHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 881);
             this.ControlBox = false;

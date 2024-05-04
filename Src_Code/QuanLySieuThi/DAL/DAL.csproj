@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_BanHang.cs" />
     <Compile Include="DAL_ChiTietDonHang.cs" />
     <Compile Include="DAL_DonHang.cs" />
     <Compile Include="DAL_LoaiSanPham.cs" />
