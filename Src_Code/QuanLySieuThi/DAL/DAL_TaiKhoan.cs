@@ -286,5 +286,19 @@ namespace DAL
                               };
             return temp;
         }
+
+        // CheckTaiKhoan()
+        public bool CheckTaiKhoan(string taiKhoan, string matKhau, string chucVu) {
+            var temp = from tk in db.TaiKhoans
+                       where tk.TaiKhoan1 == taiKhoan && tk.MatKhau == matKhau
+                       && tk.ChucVu == chucVu
+                       select tk;
+
+            if (temp.Count() == 1)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

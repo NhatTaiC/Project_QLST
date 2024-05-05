@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhanVien));
             this.label1 = new System.Windows.Forms.Label();
             this.tableForm = new System.Windows.Forms.TableLayoutPanel();
             this.txtSoDT = new System.Windows.Forms.TextBox();
@@ -65,6 +66,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(340, 46);
@@ -256,6 +258,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.tableForm);
             this.groupBox1.Location = new System.Drawing.Point(140, 137);
             this.groupBox1.Name = "groupBox1";
@@ -266,6 +269,7 @@
             // 
             // tableButton
             // 
+            this.tableButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableButton.ColumnCount = 5;
             this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -288,55 +292,65 @@
             // btnThoat
             // 
             this.btnThoat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThoat.Image = global::QuanLySieuThi.Properties.Resources.logout;
             this.btnThoat.Location = new System.Drawing.Point(571, 3);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(138, 48);
             this.btnThoat.TabIndex = 4;
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLamMoi
             // 
             this.btnLamMoi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLamMoi.Image = global::QuanLySieuThi.Properties.Resources.reset;
             this.btnLamMoi.Location = new System.Drawing.Point(429, 3);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(136, 48);
             this.btnLamMoi.TabIndex = 3;
             this.btnLamMoi.Text = "Làm Mới";
+            this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLamMoi.UseVisualStyleBackColor = true;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnSua
             // 
             this.btnSua.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSua.Image = global::QuanLySieuThi.Properties.Resources.loop;
             this.btnSua.Location = new System.Drawing.Point(287, 3);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(136, 48);
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnXoa.Image = global::QuanLySieuThi.Properties.Resources.bin;
             this.btnXoa.Location = new System.Drawing.Point(145, 3);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(136, 48);
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
             this.btnThem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.Location = new System.Drawing.Point(3, 3);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(136, 48);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -346,7 +360,7 @@
             this.dgvNhanVien.AllowUserToDeleteRows = false;
             this.dgvNhanVien.AllowUserToResizeColumns = false;
             this.dgvNhanVien.AllowUserToResizeRows = false;
-            this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvNhanVien.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
@@ -360,41 +374,44 @@
             // 
             // tableDGVNhanVien
             // 
+            this.tableDGVNhanVien.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableDGVNhanVien.ColumnCount = 1;
             this.tableDGVNhanVien.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableDGVNhanVien.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableDGVNhanVien.Controls.Add(this.dgvNhanVien, 0, 0);
-            this.tableDGVNhanVien.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableDGVNhanVien.Location = new System.Drawing.Point(0, 678);
             this.tableDGVNhanVien.Name = "tableDGVNhanVien";
             this.tableDGVNhanVien.RowCount = 1;
             this.tableDGVNhanVien.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableDGVNhanVien.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableDGVNhanVien.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 203F));
             this.tableDGVNhanVien.Size = new System.Drawing.Size(978, 203);
             this.tableDGVNhanVien.TabIndex = 5;
             // 
             // tableButton2
             // 
+            this.tableButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableButton2.ColumnCount = 1;
             this.tableButton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableButton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableButton2.Controls.Add(this.btnTim, 0, 0);
-            this.tableButton2.Location = new System.Drawing.Point(259, 587);
+            this.tableButton2.Location = new System.Drawing.Point(326, 587);
             this.tableButton2.Name = "tableButton2";
             this.tableButton2.RowCount = 1;
             this.tableButton2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableButton2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableButton2.Size = new System.Drawing.Size(467, 73);
+            this.tableButton2.Size = new System.Drawing.Size(312, 73);
             this.tableButton2.TabIndex = 6;
             // 
             // btnTim
             // 
             this.btnTim.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTim.Image = global::QuanLySieuThi.Properties.Resources.research1;
             this.btnTim.Location = new System.Drawing.Point(3, 3);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(461, 67);
+            this.btnTim.Size = new System.Drawing.Size(306, 67);
             this.btnTim.TabIndex = 0;
             this.btnTim.Text = "Tìm Nhân Viên Theo Tên Nhân Viên";
+            this.btnTim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTim.UseVisualStyleBackColor = true;
             this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
@@ -411,6 +428,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmNhanVien";
             this.Text = "frmNhanVien";

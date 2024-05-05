@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGioiThieu));
             this.label1 = new System.Windows.Forms.Label();
             this.btnThoat = new System.Windows.Forms.Button();
             this.tableButton = new System.Windows.Forms.TableLayoutPanel();
@@ -36,6 +37,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(47, 63);
@@ -58,6 +60,7 @@
             // 
             // tableButton
             // 
+            this.tableButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableButton.ColumnCount = 1;
             this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
@@ -80,7 +83,8 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmGioiThieu";
             this.Text = "frmGioiThieu";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmGioiThieu_FormClosing);

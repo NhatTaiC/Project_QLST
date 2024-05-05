@@ -50,5 +50,16 @@ namespace BUS
         public IQueryable TimDonHang_TheoMaDon(string maDon) {
             return dal_ctdh.TimDonHang_TheoMaDon(maDon);
         }
+
+        // TimDonHang_TheoMaNV()
+        public IQueryable TimDonHang_TheoMaNV(string maNV) {
+            return dal_ctdh.TimDonHang_TheoMaNV(maNV);
+        }
+
+        // TimDonHang_TheoTenNV()
+        public IQueryable TimDonHang_TheoTenNV(string tenNV)
+        {
+            return dal_ctdh.TimDonHang_TheoTenNV(tenNV);
+        }
     }
 }

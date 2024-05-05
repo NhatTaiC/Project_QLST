@@ -65,5 +65,32 @@ namespace BUS
         public IQueryable NhomSP_TheoDonViTinh() {
             return dal_sp.NhomSP_TheoDonViTinh();
         }
+
+        // TimSP_TheoGiaBan()
+        public IQueryable TimSP_TheoGiaBan(string giaBan) {
+            return dal_sp.TimSP_TheoGiaBan(giaBan);
+        }
+
+        // TimSP_TheoDonViTinh
+        public IQueryable TimSP_TheoDonViTinh(string donViTinh) {
+            return dal_sp.TimSP_TheoDonViTinh(donViTinh);
+        }
+
+        // LayDSSP_2()
+        public IQueryable LayDSSP_2() {
+            return dal_sp.LayDSSP_2();
+        }
+
+        // TimSP_TheoTenSP_2()
+        public IQueryable TimSP_TheoTenSP_2(string tenSP)
+        {
+            return dal_sp.TimSP_TheoTenSP_2(tenSP);
+        }
+
+        // TimSP_TheoMaSP_2()
+        public IQueryable TimSP_TheoMaSP_2(string maSP)
+        {
+            return dal_sp.TimSP_TheoMaSP_2(maSP);
+        }
     }
 }
