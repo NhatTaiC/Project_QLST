@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTaiKhoan));
             this.label1 = new System.Windows.Forms.Label();
             this.tableForm = new System.Windows.Forms.TableLayoutPanel();
             this.txtHoTen = new System.Windows.Forms.TextBox();
@@ -50,8 +51,8 @@
             this.dgvTaiKhoan = new System.Windows.Forms.DataGridView();
             this.tableDGVTaiKhoan = new System.Windows.Forms.TableLayoutPanel();
             this.tableButton2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnTimTKTheoTenNV = new System.Windows.Forms.Button();
             this.btnTimTKTheoCV = new System.Windows.Forms.Button();
+            this.btnTimTKTheoTenNV = new System.Windows.Forms.Button();
             this.tableForm.SuspendLayout();
             this.gbTaiKhoan.SuspendLayout();
             this.tableButton.SuspendLayout();
@@ -62,6 +63,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(273, 43);
@@ -200,6 +202,7 @@
             // 
             // gbTaiKhoan
             // 
+            this.gbTaiKhoan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbTaiKhoan.Controls.Add(this.tableForm);
             this.gbTaiKhoan.Location = new System.Drawing.Point(103, 128);
             this.gbTaiKhoan.Name = "gbTaiKhoan";
@@ -210,6 +213,7 @@
             // 
             // tableButton
             // 
+            this.tableButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableButton.ColumnCount = 5;
             this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -232,55 +236,65 @@
             // btnThoat
             // 
             this.btnThoat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThoat.Image = global::QuanLySieuThi.Properties.Resources.logout;
             this.btnThoat.Location = new System.Drawing.Point(479, 3);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(116, 46);
             this.btnThoat.TabIndex = 4;
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnLamMoi
             // 
             this.btnLamMoi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLamMoi.Image = global::QuanLySieuThi.Properties.Resources.reset;
             this.btnLamMoi.Location = new System.Drawing.Point(360, 3);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(113, 46);
             this.btnLamMoi.TabIndex = 3;
             this.btnLamMoi.Text = "Làm Mới";
+            this.btnLamMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLamMoi.UseVisualStyleBackColor = true;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
             // btnSua
             // 
             this.btnSua.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSua.Image = global::QuanLySieuThi.Properties.Resources.loop;
             this.btnSua.Location = new System.Drawing.Point(241, 3);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(113, 46);
             this.btnSua.TabIndex = 2;
             this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnXoa.Image = global::QuanLySieuThi.Properties.Resources.bin;
             this.btnXoa.Location = new System.Drawing.Point(122, 3);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(113, 46);
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
             this.btnThem.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.Location = new System.Drawing.Point(3, 3);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(113, 46);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -304,21 +318,22 @@
             // 
             // tableDGVTaiKhoan
             // 
+            this.tableDGVTaiKhoan.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableDGVTaiKhoan.ColumnCount = 1;
             this.tableDGVTaiKhoan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableDGVTaiKhoan.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableDGVTaiKhoan.Controls.Add(this.dgvTaiKhoan, 0, 0);
-            this.tableDGVTaiKhoan.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.tableDGVTaiKhoan.Location = new System.Drawing.Point(0, 558);
             this.tableDGVTaiKhoan.Name = "tableDGVTaiKhoan";
             this.tableDGVTaiKhoan.RowCount = 1;
             this.tableDGVTaiKhoan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableDGVTaiKhoan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableDGVTaiKhoan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 263F));
             this.tableDGVTaiKhoan.Size = new System.Drawing.Size(861, 263);
             this.tableDGVTaiKhoan.TabIndex = 4;
             // 
             // tableButton2
             // 
+            this.tableButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableButton2.ColumnCount = 2;
             this.tableButton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableButton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -332,27 +347,31 @@
             this.tableButton2.Size = new System.Drawing.Size(592, 64);
             this.tableButton2.TabIndex = 5;
             // 
-            // btnTimTKTheoTenNV
-            // 
-            this.btnTimTKTheoTenNV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTimTKTheoTenNV.Location = new System.Drawing.Point(3, 3);
-            this.btnTimTKTheoTenNV.Name = "btnTimTKTheoTenNV";
-            this.btnTimTKTheoTenNV.Size = new System.Drawing.Size(290, 58);
-            this.btnTimTKTheoTenNV.TabIndex = 0;
-            this.btnTimTKTheoTenNV.Text = "Tìm Tài Khoản Theo Tên Nhân Viên";
-            this.btnTimTKTheoTenNV.UseVisualStyleBackColor = true;
-            this.btnTimTKTheoTenNV.Click += new System.EventHandler(this.btnTimTKTheoTenNV_Click);
-            // 
             // btnTimTKTheoCV
             // 
             this.btnTimTKTheoCV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTimTKTheoCV.Image = ((System.Drawing.Image)(resources.GetObject("btnTimTKTheoCV.Image")));
             this.btnTimTKTheoCV.Location = new System.Drawing.Point(299, 3);
             this.btnTimTKTheoCV.Name = "btnTimTKTheoCV";
             this.btnTimTKTheoCV.Size = new System.Drawing.Size(290, 58);
             this.btnTimTKTheoCV.TabIndex = 1;
             this.btnTimTKTheoCV.Text = "Tìm Tài Khoản Theo Chức Vụ";
+            this.btnTimTKTheoCV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTimTKTheoCV.UseVisualStyleBackColor = true;
             this.btnTimTKTheoCV.Click += new System.EventHandler(this.btnTimTKTheoCV_Click);
+            // 
+            // btnTimTKTheoTenNV
+            // 
+            this.btnTimTKTheoTenNV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTimTKTheoTenNV.Image = ((System.Drawing.Image)(resources.GetObject("btnTimTKTheoTenNV.Image")));
+            this.btnTimTKTheoTenNV.Location = new System.Drawing.Point(3, 3);
+            this.btnTimTKTheoTenNV.Name = "btnTimTKTheoTenNV";
+            this.btnTimTKTheoTenNV.Size = new System.Drawing.Size(290, 58);
+            this.btnTimTKTheoTenNV.TabIndex = 0;
+            this.btnTimTKTheoTenNV.Text = "Tìm Tài Khoản Theo Tên Nhân Viên";
+            this.btnTimTKTheoTenNV.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTimTKTheoTenNV.UseVisualStyleBackColor = true;
+            this.btnTimTKTheoTenNV.Click += new System.EventHandler(this.btnTimTKTheoTenNV_Click);
             // 
             // frmTaiKhoan
             // 
@@ -367,6 +386,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmTaiKhoan";
             this.Text = "frmTaiKhoan";

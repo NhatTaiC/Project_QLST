@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,40 @@ namespace QuanLySieuThi
 {
     public partial class frmMain : Form
     {
+        // Initialize Variables
+        public static SqlConnection Con;
+        private string taiKhoan = string.Empty;
+        private string chucVu = string.Empty;
+
         public frmMain()
         {
             InitializeComponent();
+        }
+
+        public frmMain(string taiKhoan, string chucVu)
+        {
+            InitializeComponent();
+            this.taiKhoan = taiKhoan;
+            this.chucVu = chucVu;
+        }
+
+        // Function OpenConnect()
+        public void OpenConnect() {
+            // Mở kết nối DB
+            Con = new SqlConnection();
+            Con.ConnectionString = Properties.Settings.Default.tspConnect;
+            Con.Open();
+        }
+
+        // Function CloseConnect()
+        public void CloseConnect()
+        {
+            if (Con.State == ConnectionState.Open)
+            {
+                Con.Close(); // Đóng kết nối DB
+                Con.Dispose(); // Giải phóng tài nguyên
+                Con = null;
+            }
         }
 
         // Function CheckFormExist
@@ -65,7 +97,11 @@ namespace QuanLySieuThi
         // ThoatMNS_Click
         private void thoatMNS_Click(object sender, EventArgs e)
         {
-            this.Close();
+            // Đóng kết nối DB
+            CloseConnect();
+
+            // Đóng App
+            Application.Exit();
         }
 
         // TaiKhoanMNS_Click
@@ -170,6 +206,99 @@ namespace QuanLySieuThi
             else
             {
                 ActForm("frmSanPham");
+            }
+        }
+
+        // gioiThieuMNS_Click
+        private void gioiThieuMNS_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmGioiThieu"))
+            {
+                frmGioiThieu f = new frmGioiThieu();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmGioiThieu");
+            }
+        }
+
+        // timer1_Tick - Hiện thời gian
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            statusLabelHienThoiGian.Text = DateTime.Now.ToString();
+        }
+
+        // frmMain_Load
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            // Mở kết nối DB
+            OpenConnect();
+
+            // Hiện tên người dùng
+            statusLabelUserName.Text = $"Xin chào {taiKhoan}";
+
+            // Phân quyền
+            if (chucVu == "Nhân Viên" || chucVu == "User")
+            {
+                qlyMNS.Enabled = false;
+            }
+            else
+            {
+                qlyMNS.Enabled = true;
+            }
+        }
+
+        // dangXuatMNS_Click
+        private void dangXuatMNS_Click(object sender, EventArgs e)
+        {
+            frmDangNhap f = new frmDangNhap();
+            f.ShowDialog();
+        }
+
+        // nhanVienTraCuuMNSI_Click
+        private void nhanVienTraCuuMNSI_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmTraCuuNhanVien"))
+            {
+                frmTraCuuNhanVien f = new frmTraCuuNhanVien();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmTraCuuNhanVien");
+            }
+        }
+
+        // donHangTraCuuMNSI_Click
+        private void donHangTraCuuMNSI_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmTraCuuDonHang"))
+            {
+                frmTraCuuDonHang f = new frmTraCuuDonHang();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmTraCuuDonHang");
+            }
+        }
+
+        // sanPhamTraCuuMNSI_Click
+        private void sanPhamTraCuuMNSI_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmTraCuuSanPham"))
+            {
+                frmTraCuuSanPham f = new frmTraCuuSanPham();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmTraCuuSanPham");
             }
         }
     }

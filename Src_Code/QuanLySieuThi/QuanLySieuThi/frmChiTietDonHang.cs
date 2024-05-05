@@ -37,18 +37,6 @@ namespace QuanLySieuThi
             // dgvChiTietDonHang
             dgvCTDH.DataSource = bus_ctdh.LayDSCTDH();
 
-            // cboMaDonHang
-            cboMaDonHang.DataSource = bus_dh.LayDSDH();
-            cboMaDonHang.DisplayMember = "MaDon";
-            cboMaDonHang.ValueMember = "MaDon";
-            cboMaDonHang.SelectedIndex = 0;
-
-            // cboMaSanPham
-            cboMaSanPham.DataSource = bus_sp.LayDSSP();
-            cboMaSanPham.DisplayMember = "MaSP";
-            cboMaSanPham.ValueMember = "MaSP";
-            cboMaSanPham.SelectedIndex = 0;
-
             // cboTenSanPham
             cboTenSanPham.DataSource = bus_sp.LayDSSP();
             cboTenSanPham.DisplayMember = "TenSP";
@@ -70,10 +58,15 @@ namespace QuanLySieuThi
             // Others
             txtMaChiTiet.Focus();
             txtMaChiTiet.Enabled = true;
+            txtMaDonHang.Enabled = true;
+            txtMaSanPham.Enabled = true;
             btnThem.Enabled = true;
             btnXoa.Enabled = false;
             btnSua.Enabled = false;
             txtThanhTien.Enabled = false;
+            cboTenSanPham.Enabled = false;
+            cboGiaBan.Enabled = false;
+            cboDonViTinh.Enabled = false;
         }
 
         // Function Reset()
@@ -81,6 +74,8 @@ namespace QuanLySieuThi
         {
             // Reset text
             txtMaChiTiet.Text = string.Empty;
+            txtMaDonHang.Text = string.Empty;
+            txtMaSanPham.Text = string.Empty;
             txtSoLuong.Text = "0";
             txtThanhTien.Text = string.Empty;
 
@@ -137,19 +132,24 @@ namespace QuanLySieuThi
             if (n >= 0)
             {
                 txtMaChiTiet.Enabled = false;
+                txtMaChiTiet.Enabled = false;
+                txtMaDonHang.Enabled = false;
+                txtMaSanPham.Enabled = false;
+                cboTenSanPham.Enabled = false;
+                cboGiaBan.Enabled = false;
+                cboDonViTinh.Enabled = false;
                 btnThem.Enabled = false;
                 btnXoa.Enabled = true;
                 btnSua.Enabled = true;
-
+                
                 // txtMaChiTiet
                 txtMaChiTiet.Text = dgvCTDH.Rows[n].Cells[0].Value.ToString();
 
+                // txtMaChiTiet
+                txtMaDonHang.Text = dgvCTDH.Rows[n].Cells[1].Value.ToString();
 
-                // cboMaDonHang
-                cboMaDonHang.SelectedIndex = cboMaDonHang.FindStringExact(dgvCTDH.Rows[n].Cells[1].Value.ToString());
-
-                // cboMaSanPham
-                cboMaSanPham.SelectedIndex = cboMaSanPham.FindStringExact(dgvCTDH.Rows[n].Cells[2].Value.ToString());
+                // txtMaSanPham
+                txtMaSanPham.Text = dgvCTDH.Rows[n].Cells[2].Value.ToString();
 
                 // cboTenSanPham
                 cboTenSanPham.SelectedIndex = cboTenSanPham.FindStringExact(dgvCTDH.Rows[n].Cells[3].Value.ToString());
@@ -171,25 +171,6 @@ namespace QuanLySieuThi
                 // Thông báo
                 MessageBox.Show("Vui lòng chọn 1 dòng để xóa hoặc sửa thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-        }
-
-        // cboMaSanPham_SelectedValueChanged
-        private void cboMaSanPham_SelectedValueChanged(object sender, EventArgs e)
-        {
-            // cboTenSanPham
-            cboTenSanPham.DataSource = bus_sp.LayDSSP_TheoMaSP(cboMaSanPham.SelectedValue.ToString());
-            cboTenSanPham.DisplayMember = "TenSP";
-            cboTenSanPham.ValueMember = "TenSP";
-
-            // cboGiaBan
-            cboGiaBan.DataSource = bus_sp.LayDSSP_TheoMaSP(cboMaSanPham.SelectedValue.ToString());
-            cboGiaBan.DisplayMember = "GiaBan";
-            cboGiaBan.ValueMember = "GiaBan";
-
-            // cboDonViTinh
-            cboDonViTinh.DataSource = bus_sp.LayDSSP_TheoMaSP(cboMaSanPham.SelectedValue.ToString());
-            cboDonViTinh.DisplayMember = "DonViTinh";
-            cboDonViTinh.ValueMember = "DonViTinh";
         }
 
         // txtSoLuong_TextChanged
@@ -218,7 +199,7 @@ namespace QuanLySieuThi
             if (CheckNumber(txtSoLuong.Text))
             {
                 DTO_ChiTietDonHang ctdh = new DTO_ChiTietDonHang(txtMaChiTiet.Text,
-                cboMaDonHang.SelectedValue.ToString(), cboMaSanPham.SelectedValue.ToString(),
+                txtMaDonHang.Text, txtMaSanPham.Text,
                 cboTenSanPham.SelectedValue.ToString(), int.Parse(cboGiaBan.SelectedValue.ToString()),
                 int.Parse(txtSoLuong.Text), int.Parse(txtThanhTien.Text), cboDonViTinh.SelectedValue.ToString());
 
@@ -242,9 +223,9 @@ namespace QuanLySieuThi
             if (r == DialogResult.Yes)
             {
                 DTO_ChiTietDonHang ctdh = new DTO_ChiTietDonHang(txtMaChiTiet.Text,
-               cboMaDonHang.SelectedValue.ToString(), cboMaSanPham.SelectedValue.ToString(),
-               cboTenSanPham.SelectedValue.ToString(), int.Parse(cboGiaBan.SelectedValue.ToString()),
-               int.Parse(txtSoLuong.Text), int.Parse(txtThanhTien.Text), cboDonViTinh.SelectedValue.ToString());
+                txtMaDonHang.Text, txtMaSanPham.Text,
+                cboTenSanPham.SelectedValue.ToString(), int.Parse(cboGiaBan.SelectedValue.ToString()),
+                int.Parse(txtSoLuong.Text), int.Parse(txtThanhTien.Text), cboDonViTinh.SelectedValue.ToString());
 
                 bus_ctdh.XoaChiTietDonHang(ctdh);
 
@@ -261,9 +242,9 @@ namespace QuanLySieuThi
             if (r == DialogResult.Yes)
             {
                 DTO_ChiTietDonHang ctdh = new DTO_ChiTietDonHang(txtMaChiTiet.Text,
-               cboMaDonHang.SelectedValue.ToString(), cboMaSanPham.SelectedValue.ToString(),
-               cboTenSanPham.SelectedValue.ToString(), int.Parse(cboGiaBan.SelectedValue.ToString()),
-               int.Parse(txtSoLuong.Text), int.Parse(txtThanhTien.Text), cboDonViTinh.SelectedValue.ToString());
+                txtMaDonHang.Text, txtMaSanPham.Text,
+                cboTenSanPham.SelectedValue.ToString(), int.Parse(cboGiaBan.SelectedValue.ToString()),
+                int.Parse(txtSoLuong.Text), int.Parse(txtThanhTien.Text), cboDonViTinh.SelectedValue.ToString());
 
                 bus_ctdh.SuaChiTietDonHang(ctdh);
 
@@ -275,7 +256,51 @@ namespace QuanLySieuThi
         private void btnTim_Click(object sender, EventArgs e)
         {
             // dgvCTDH
-            dgvCTDH.DataSource = bus_ctdh.TimDonHang_TheoMaDon(cboMaDonHang.SelectedValue.ToString());
+            dgvCTDH.DataSource = bus_ctdh.TimDonHang_TheoMaDon(txtMaDonHang.Text);
         }
+
+        // txtMaSanPham_TextChanged
+        private void txtMaSanPham_TextChanged(object sender, EventArgs e)
+        {
+            // CheckMaSanPham có != null hay không? Tránh lỗi Thành Tiền
+            if (txtMaSanPham.Text != string.Empty)
+            {
+                // cboTenSanPham
+                cboTenSanPham.DataSource = bus_sp.LayDSSP_TheoMaSP(txtMaSanPham.Text);
+                cboTenSanPham.DisplayMember = "TenSP";
+                cboTenSanPham.ValueMember = "TenSP";
+
+                // cboGiaBan
+                cboGiaBan.DataSource = bus_sp.LayDSSP_TheoMaSP(txtMaSanPham.Text);
+                cboGiaBan.DisplayMember = "GiaBan";
+                cboGiaBan.ValueMember = "GiaBan";
+
+                // cboDonViTinh
+                cboDonViTinh.DataSource = bus_sp.LayDSSP_TheoMaSP(txtMaSanPham.Text);
+                cboDonViTinh.DisplayMember = "DonViTinh";
+                cboDonViTinh.ValueMember = "DonViTinh";
+            }
+            else
+            {
+                // cboTenSanPham
+                cboTenSanPham.DataSource = bus_sp.LayDSSP();
+                cboTenSanPham.DisplayMember = "TenSP";
+                cboTenSanPham.ValueMember = "TenSP";
+                cboTenSanPham.SelectedIndex = 0;
+
+                // cboGiaBan
+                cboGiaBan.DataSource = bus_sp.NhomSP_TheoGiaBan();
+                cboGiaBan.DisplayMember = "GiaBan";
+                cboGiaBan.ValueMember = "GiaBan";
+                cboGiaBan.SelectedIndex = 0;
+
+                // cboDonViTinh
+                cboDonViTinh.DataSource = bus_sp.NhomSP_TheoDonViTinh();
+                cboDonViTinh.DisplayMember = "DonViTinh";
+                cboDonViTinh.ValueMember = "DonViTinh";
+                cboDonViTinh.SelectedIndex = 0;
+            }
+        }
+
     }
 }

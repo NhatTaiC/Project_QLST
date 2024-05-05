@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -54,11 +69,29 @@
     <Compile Include="frmChiTietDonHang.Designer.cs">
       <DependentUpon>frmChiTietDonHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmDonHang.Designer.cs">
       <DependentUpon>frmDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFlashForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFlashForm.Designer.cs">
+      <DependentUpon>frmFlashForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGioiThieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGioiThieu.Designer.cs">
+      <DependentUpon>frmGioiThieu.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLoaiSanPham.cs">
       <SubType>Form</SubType>
@@ -96,13 +129,40 @@
     <Compile Include="frmTaiKhoan.Designer.cs">
       <DependentUpon>frmTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTraCuuDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTraCuuDonHang.Designer.cs">
+      <DependentUpon>frmTraCuuDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTraCuuNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTraCuuNhanVien.Designer.cs">
+      <DependentUpon>frmTraCuuNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTraCuuSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTraCuuSanPham.Designer.cs">
+      <DependentUpon>frmTraCuuSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmChiTietDonHang.resx">
       <DependentUpon>frmChiTietDonHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDonHang.resx">
       <DependentUpon>frmDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFlashForm.resx">
+      <DependentUpon>frmFlashForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGioiThieu.resx">
+      <DependentUpon>frmGioiThieu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoaiSanPham.resx">
       <DependentUpon>frmLoaiSanPham.cs</DependentUpon>
@@ -122,6 +182,15 @@
     <EmbeddedResource Include="frmTaiKhoan.resx">
       <DependentUpon>frmTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTraCuuDonHang.resx">
+      <DependentUpon>frmTraCuuDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTraCuuNhanVien.resx">
+      <DependentUpon>frmTraCuuNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTraCuuSanPham.resx">
+      <DependentUpon>frmTraCuuSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -130,6 +199,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -153,6 +223,49 @@
       <Project>{b94590e7-4a62-418e-a501-6e4051fe2206}</Project>
       <Name>DTO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="IMG\Supermarket_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB_Backup\QLST.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB_Backup\QLST_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="IMG\bin.ico" />
+    <Content Include="IMG\bin.png" />
+    <Content Include="IMG\enter.ico" />
+    <Content Include="IMG\enter.png" />
+    <Content Include="IMG\logout.ico" />
+    <Content Include="IMG\logout.png" />
+    <Content Include="IMG\loop.ico" />
+    <Content Include="IMG\loop.png" />
+    <Content Include="IMG\plus.ico" />
+    <Content Include="IMG\plus.png" />
+    <Content Include="IMG\research.ico" />
+    <Content Include="IMG\research.png" />
+    <Content Include="IMG\reset.ico" />
+    <Content Include="IMG\reset.png" />
+    <Content Include="IMG\Supermarket.jpg" />
+    <Content Include="IMG\Supermarket_icon.ico" />
+    <Content Include="IMG\Supermarket_icon.jpg" />
+    <Content Include="IMG\Supermarket_icon_2.ico" />
+    <Content Include="IMG\Supermarket_icon_2.jpg" />
+    <Content Include="Text\Note.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

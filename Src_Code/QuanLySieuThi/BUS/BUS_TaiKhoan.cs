@@ -71,5 +71,10 @@ namespace BUS
         public IQueryable TimTaiKhoan_TheoChucVu(string chucVu) {
             return dal_tk.TimTaiKhoan_TheoChucVu(chucVu);
         }
+
+        // CheckTaiKhoan()
+        public bool CheckTaiKhoan(string taiKhoan, string matKhau, string chucVu) {
+            return dal_tk.CheckTaiKhoan(taiKhoan, matKhau, chucVu);
+        }
     }
 }

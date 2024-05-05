@@ -295,5 +295,97 @@ namespace DAL
                               };
             return temp;
         }
+
+        // TimSP_TheoGiaBan()
+        public IQueryable TimSP_TheoGiaBan(string giaBan) {
+            IQueryable temp = from sp in db.SanPhams
+                              where sp.GiaBan == int.Parse(giaBan)
+                              select new
+                              {
+                                  MaSP = sp.MaSP,
+                                  TenSP = sp.TenSP,
+                                  GiaNhap = sp.GiaNhap,
+                                  GiaBan = sp.GiaBan,
+                                  SoLuong = sp.SoLuong,
+                                  DonViTinh = sp.DonViTinh,
+                                  NoiSanXuat = sp.NoiSanXuat,
+                                  HanSuDung = sp.HanSuDung,
+                              };
+            return temp;
+        }
+
+        // TimSP_TheoDonViTinh()
+        public IQueryable TimSP_TheoDonViTinh(string donViTinh) {
+            IQueryable temp = from sp in db.SanPhams
+                              where sp.DonViTinh.Contains(donViTinh)
+                              select new
+                              {
+                                  MaSP = sp.MaSP,
+                                  TenSP = sp.TenSP,
+                                  GiaNhap = sp.GiaNhap,
+                                  GiaBan = sp.GiaBan,
+                                  SoLuong = sp.SoLuong,
+                                  DonViTinh = sp.DonViTinh,
+                                  NoiSanXuat = sp.NoiSanXuat,
+                                  HanSuDung = sp.HanSuDung,
+                              };
+            return temp;
+        }
+
+        // LayDSSP_2()
+        public IQueryable LayDSSP_2()
+        {
+            IQueryable temp = from sp in db.SanPhams
+                              select new
+                              {
+                                  MaSP = sp.MaSP,
+                                  TenSP = sp.TenSP,
+                                  GiaNhap = sp.GiaNhap,
+                                  GiaBan = sp.GiaBan,
+                                  SoLuong = sp.SoLuong,
+                                  DonViTinh = sp.DonViTinh,
+                                  NoiSanXuat = sp.NoiSanXuat,
+                                  HanSuDung = sp.HanSuDung,
+                              };
+            return temp;
+        }
+
+        // TimSP_TheoTenSP_2()
+        public IQueryable TimSP_TheoTenSP_2(string tenSP)
+        {
+            IQueryable temp = from sp in db.SanPhams
+                              where sp.TenSP.Contains(tenSP)
+                              select new
+                              {
+                                  MaSP = sp.MaSP,
+                                  TenSP = sp.TenSP,
+                                  GiaNhap = sp.GiaNhap,
+                                  GiaBan = sp.GiaBan,
+                                  SoLuong = sp.SoLuong,
+                                  DonViTinh = sp.DonViTinh,
+                                  NoiSanXuat = sp.NoiSanXuat,
+                                  HanSuDung = sp.HanSuDung,
+                              };
+            return temp;
+        }
+
+        // TimSP_TheoMaSP_2()
+        public IQueryable TimSP_TheoMaSP_2(string maSP)
+        {
+            IQueryable temp = from sp in db.SanPhams
+                              where sp.MaSP == maSP
+                              select new
+                              {
+                                  MaSP = sp.MaSP,
+                                  TenSP = sp.TenSP,
+                                  GiaNhap = sp.GiaNhap,
+                                  GiaBan = sp.GiaBan,
+                                  SoLuong = sp.SoLuong,
+                                  DonViTinh = sp.DonViTinh,
+                                  NoiSanXuat = sp.NoiSanXuat,
+                                  HanSuDung = sp.HanSuDung,
+                              };
+            return temp;
+        }
     }
 }

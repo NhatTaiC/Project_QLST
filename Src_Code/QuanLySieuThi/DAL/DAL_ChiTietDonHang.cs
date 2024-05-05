@@ -92,6 +92,9 @@ namespace DAL
                             // Cập nhật số lượng sản phẩm trong DB SanPham
                             int soLuongSPConLai = (int)(temp3.SoLuong - ctdh.SoLuong);
 
+                            // Lưu giá trị soLuongSP đầu tiên
+                            SoLuongSP += ctdh.SoLuong;
+
                             if (soLuongSPConLai >= 0)
                             {
                                 temp3.SoLuong = soLuongSPConLai;
@@ -167,9 +170,10 @@ namespace DAL
                 // Check xem MaChiTiet != null không? mới Xóa
                 if (ctdh.MaChiTiet != string.Empty)
                 {
-                    // Cập nhật số lượng Sản Phẩm trước khi xóa ChiTietDonHang khỏi DB
+                    // Cập nhật số lượng Sản Phẩm trước khi xóa ChiTietDonHang khỏi DB (Reset Số lượng sp)
                     var temp = db.SanPhams.Single(sp => sp.MaSP == ctdh.MaSP);
-                    temp.SoLuong = temp.SoLuong + ctdh.SoLuong;
+                    temp.SoLuong = temp.SoLuong + SoLuongSP;
+                    SoLuongSP = 0;
 
                     // Tìm maCTDH để xóa = maCTDH
                     var ctdh_delete = from ct in db.ChiTietDonHangs
@@ -221,11 +225,16 @@ namespace DAL
 
                     if (ctdh.SoLuong <= tongSP)
                     {
+                        // Lưu lại giá trị số lượng mỗi lần sửa SLSP
+                        SoLuongSP += ctdh.SoLuong;
+
+                        // Tính tổng số lượng SP còn lại
                         int soLuongSPConLai = (int)(tongSP - ctdh.SoLuong);
 
+                        // Cập nhật tổng sl SP trong DB SanPham
                         temp.SoLuong = soLuongSPConLai;
 
-                        // Tìm CTDH trong DB CTDH
+                        // Tìm CTDH trong DB CTDH để cập nhật số lượng
                         var ctdh_update = db.ChiTietDonHangs.Single(ct => ct.MaChiTiet == ctdh.MaChiTiet);
 
                         // Cập nhật thông tin CTDH
@@ -304,6 +313,53 @@ namespace DAL
                                   SoLuong = ct.SoLuong,
                                   ThanhTien = ct.ThanhTien,
                                   DonViTinh = ct.DonViTinh
+                              };
+            return temp;
+        }
+
+        // TimDonHang_TheoMaNV()
+        public IQueryable TimDonHang_TheoMaNV(string maNV) {
+            IQueryable temp = from nv in db.NhanViens
+                              join dh in db.DonHangs
+                              on nv.MaNV equals dh.MaNV
+                              join ctdh in db.ChiTietDonHangs
+                              on dh.MaDon equals ctdh.MaDon
+                              where nv.MaNV == maNV
+                              select new
+                              {
+                                  MaChiTiet = ctdh.MaChiTiet,
+                                  MaDon = ctdh.MaDon,
+                                  MaSP = ctdh.MaSP,
+                                  TenSP = ctdh.TenSP,
+                                  GiaBan = ctdh.GiaBan,
+                                  SoLuong = ctdh.SoLuong,
+                                  ThanhTien = ctdh.ThanhTien,
+                                  DonViTinh = ctdh.DonViTinh,
+                                  MaNhanVien = nv.MaNV
+                              };
+            return temp;
+        }
+
+        // TimDonHang_TheoTenNV()
+        public IQueryable TimDonHang_TheoTenNV(string tenNV)
+        {
+            IQueryable temp = from nv in db.NhanViens
+                              join dh in db.DonHangs
+                              on nv.MaNV equals dh.MaNV
+                              join ctdh in db.ChiTietDonHangs
+                              on dh.MaDon equals ctdh.MaDon
+                              where nv.TenNV == tenNV
+                              select new
+                              {
+                                  MaChiTiet = ctdh.MaChiTiet,
+                                  MaDon = ctdh.MaDon,
+                                  MaSP = ctdh.MaSP,
+                                  TenSP = ctdh.TenSP,
+                                  GiaBan = ctdh.GiaBan,
+                                  SoLuong = ctdh.SoLuong,
+                                  ThanhTien = ctdh.ThanhTien,
+                                  DonViTinh = ctdh.DonViTinh,
+                                  TenNhanVien = nv.TenNV
                               };
             return temp;
         }
