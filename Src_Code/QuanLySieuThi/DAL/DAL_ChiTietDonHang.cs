@@ -79,12 +79,12 @@ namespace DAL
 
                     if (temp.Count() != 1)
                     {
-                        // Check Mã Sản Phẩm đã có trong DB ChiTietDonHang hay chưa?
+                        //// Check Mã Sản Phẩm đã có trong DB ChiTietDonHang hay chưa?
                         var temp2 = from ct in db.ChiTietDonHangs
-                                    where ct.MaSP == ctdh.MaSP
+                                    where ct.MaSP == ctdh.MaSP 
                                     select ct;
 
-                        if (temp2.Count() != 1)
+                        if (temp2.Count() == 1)
                         {
                             // Tìm MaSP để cập nhật lại số lượng cho Sản Phẩm đó trước khi thêm vào DB ChiTietDonHang
                             var temp3 = db.SanPhams.Single(sp => sp.MaSP == ctdh.MaSP);
@@ -130,7 +130,7 @@ namespace DAL
                         else
                         {
                             // Thông báo
-                            MessageBox.Show($"Mã sản phẩm +{ctdh.MaSP}+ đã có trong danh sách chi tiết đơn hàng!", "Thông báo",
+                            MessageBox.Show($"Mã sản phẩm +{ctdh.MaSP}+ đã có trong đơn hàng!", "Thông báo",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                         }

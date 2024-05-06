@@ -24,7 +24,7 @@ namespace BUS
             return dal_bh.LayDSSP();
         }
 
-        public IQueryable TimSP_TheoMaSP(string maSP)
+        public IQueryable LayDSSP_TheoMaSP(string maSP)
         {
             return dal_bh.LayDSSP_TheoMaSP(maSP);
         }
@@ -40,15 +40,20 @@ namespace BUS
             return dal_bh.XoaChiTietDonHang(ctdh);
         }
 
-        public IQueryable LayDSCTDH()
+        public IQueryable LayDSCTDH(string maDon)
         {
-            return dal_bh.LayDSChiTietDonHang();
+            return dal_bh.LayDSChiTietDonHang(maDon);
         }
 
         // SuaChiTietDonHang()
         public bool SuaChiTietDonHang(DTO_ChiTietDonHang ctdh)
         {
             return dal_bh.SuaChiTietDonHang(ctdh);
+        }
+
+        public void CapNhatGiaTriTongTien(string maDon, string tongTien)
+        {
+            dal_bh.CapNhatGiaTriTongTien(maDon, tongTien);
         }
     }
 }

@@ -18,11 +18,13 @@ namespace QuanLySieuThi
         {
             InitializeComponent();
         }
-
+        int sum = 0;
         BUS_SanPham bus_sp = new BUS_SanPham();
         BUS_NhaCungCap bus_ncc = new BUS_NhaCungCap();
         BUS_LoaiSanPham bus_lsp = new BUS_LoaiSanPham();
         BUS_BanHang bus_bh = new BUS_BanHang();
+        BUS_DonHang bus_dh = new BUS_DonHang();
+        BUS_NhanVien bus_nv = new BUS_NhanVien();
 
         // Function Reset()
         public void Reset()
@@ -64,8 +66,24 @@ namespace QuanLySieuThi
         {
             // dgvSP
             dgvSP.DataSource = bus_sp.LayDSSP();
-            dgvMuaHang.DataSource = bus_bh.LayDSCTDH();
-
+            txtTongTien.Enabled = false;
+            txtTongGiaTriDH.Text = "0";
+            txtGiaBan.Text = "0";
+            txtSoLuong.Text="0";
+            dgvMuaHang.DataSource = bus_bh.LayDSCTDH(txtMaDonHang.Text);
+            txtMaChiTiet.Enabled = false;
+            txtMaDonHang.Enabled = false;
+            txtMaSP.Enabled = false;
+            txtTenSP.Enabled = false;
+            txtGiaBan.Enabled = false;
+            txtSoLuong.Enabled = false;
+            txtThanhTien.Enabled = false;
+            txtDonViTinh.Enabled = false;
+            btnThem.Enabled = false;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
+            btnLamMoi.Enabled = false;
+            btnThanhToan.Enabled = false;
         }
         
 
@@ -76,29 +94,10 @@ namespace QuanLySieuThi
 
         private void frmBanHang_Load(object sender, EventArgs e)
         {
-            LoadData();
-        }
-
-        private void btnTim_Click(object sender, EventArgs e)
-        {
-            // Check TenSP có != null hay không?
-            if (txtMaSPCanTim.Text != string.Empty)
-            {
-                // Tìm SP theo tenSP
-                dgvSP.DataSource = bus_bh.TimSP_TheoMaSP(txtMaSPCanTim.Text);
-            }
-            else
-            {
-                // Thông báo
-                MessageBox.Show("Vui lòng không để trống tên sản phẩm!", "Thông báo",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning);
-            }
-        }
-
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            txtMaSPCanTim.Text = string.Empty;
+            // cboMaNV
+            cboMaNV.DataSource = bus_nv.LayDSNV();
+            cboMaNV.DisplayMember = "HoTenNV";
+            cboMaNV.ValueMember = "MaNV";
             LoadData();
         }
 
@@ -153,8 +152,11 @@ namespace QuanLySieuThi
                 int.Parse(txtSoLuong.Text), int.Parse(txtThanhTien.Text), txtDonViTinh.Text);
 
                 bus_bh.ThemChiTietDonHang(ctdh);
-
+                sum+=int.Parse(txtThanhTien.Text);
+                txtTongTien.Text = $"{sum}";
                 Reset();
+                btnThanhToan.Enabled = true;
+                
             }
             else
             {
@@ -168,8 +170,18 @@ namespace QuanLySieuThi
             // Check soLuong có != null hay không?
             if (CheckNumber(txtSoLuong.Text))
             {
-                int thanhTien = int.Parse(txtSoLuong.Text) * int.Parse(txtGiaBan.Text);
-                txtThanhTien.Text = $"{thanhTien}";
+                
+                if(txtSoLuong.Text != null)
+                {
+                    int thanhTien = int.Parse(txtSoLuong.Text) * int.Parse(txtGiaBan.Text);
+                    txtThanhTien.Text = $"{thanhTien}";
+                }
+                else
+                {
+                    txtSoLuong.Text = "0";
+                    txtGiaBan.Text = "0";
+                    txtThanhTien.Text = "0";
+                }
             }
             else
             {
@@ -198,30 +210,27 @@ namespace QuanLySieuThi
                 btnXoa.Enabled = true;
                 btnSua.Enabled = true;
 
-                // txtMaChiTiet
-                txtMaChiTiet.Text = dgvMuaHang.Rows[n].Cells[0].Value.ToString();
-
 
                 // cboMaDonHang
-                txtMaDonHang.Text = dgvMuaHang.Rows[n].Cells[1].Value.ToString();
+                txtMaDonHang.Text = dgvMuaHang.Rows[n].Cells[0].Value.ToString();
 
                 // cboMaSanPham
-                txtMaSP.Text = dgvMuaHang.Rows[n].Cells[2].Value.ToString();
+                txtMaSP.Text = dgvMuaHang.Rows[n].Cells[1].Value.ToString();
 
                 // cboTenSanPham
-                txtTenSP.Text = dgvMuaHang.Rows[n].Cells[3].Value.ToString();
+                txtTenSP.Text = dgvMuaHang.Rows[n].Cells[2].Value.ToString();
 
                 // cboGiaBan
-                txtGiaBan.Text = dgvMuaHang.Rows[n].Cells[4].Value.ToString();
+                txtGiaBan.Text = dgvMuaHang.Rows[n].Cells[3].Value.ToString();
 
                 // txtSoLuong
-                txtSoLuong.Text = dgvMuaHang.Rows[n].Cells[5].Value.ToString();
+                txtSoLuong.Text = dgvMuaHang.Rows[n].Cells[4].Value.ToString();
 
                 // txtThanhTien
-                txtThanhTien.Text = dgvMuaHang.Rows[n].Cells[6].Value.ToString();
+                txtThanhTien.Text = dgvMuaHang.Rows[n].Cells[5].Value.ToString();
 
                 // cboDonViTinh
-                txtDonViTinh.Text = dgvMuaHang.Rows[n].Cells[7].Value.ToString();
+                txtDonViTinh.Text = dgvMuaHang.Rows[n].Cells[6].Value.ToString();
             }
             else
             {
@@ -269,6 +278,49 @@ namespace QuanLySieuThi
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnThemDH_Click(object sender, EventArgs e)
+        {
+            // Check txtTongGiaTriDH = Number
+            if (CheckNumber(txtTongGiaTriDH.Text))
+            {
+                DTO_DonHang dh = new DTO_DonHang(txtMaDon.Text, dtpNgayBan.Value,
+                int.Parse(txtTongGiaTriDH.Text), cboMaNV.SelectedValue.ToString());
+                bus_dh.ThemDH(dh);
+
+                Reset();
+                txtMaDon.Enabled = false;
+                dtpNgayBan.Enabled = false;
+                txtTongGiaTriDH.Enabled = false;
+                cboMaNV.Enabled = false;
+                txtMaChiTiet.Enabled = true;
+                txtMaDonHang.Enabled = true;
+                txtMaSP.Enabled = true;
+                txtTenSP.Enabled = true;
+                txtGiaBan.Enabled = true;
+                txtSoLuong.Enabled = true;
+                txtThanhTien.Enabled = true;
+                txtDonViTinh.Enabled = true;
+                btnThemDH.Enabled = false;
+                btnThem.Enabled = true;
+                btnXoa.Enabled = true;
+                btnSua.Enabled = true;
+                btnLamMoi.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Tổng Giá Trị Đơn Hàng phải là số!",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            bus_bh.CapNhatGiaTriTongTien(txtMaDon.Text, txtTongTien.Text);
+            txtTongTien.Text = "";
+            dgvMuaHang.DataSource = null;
+            MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

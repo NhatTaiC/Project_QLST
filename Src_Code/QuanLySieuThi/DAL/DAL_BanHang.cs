@@ -45,12 +45,13 @@ namespace DAL
         public int SoLuongSP { get => soLuongSP; set => soLuongSP = value; }
 
         // LayDSChiTietDonHang()
-        public IQueryable LayDSChiTietDonHang()
+        public IQueryable LayDSChiTietDonHang(string maDon)
         {
             IQueryable temp = from ct in db.ChiTietDonHangs
+                              where ct.MaDon == maDon
                               select new
                               {
-                                  MaChiTiet = ct.MaChiTiet,
+                                  //MaChiTiet = ct.MaChiTiet,
                                   MaDon = ct.MaDon,
                                   MaSP = ct.MaSP,
                                   TenSP = ct.TenSP,
@@ -62,9 +63,11 @@ namespace DAL
             return temp;
         }
 
-        public IQueryable LayDSSP()
+        // LayDSSP_TheoMaSP()
+        public IQueryable LayDSSP_TheoMaSP(string maSP)
         {
             IQueryable temp = from sp in db.SanPhams
+                              where sp.MaSP == maSP
                               select new
                               {
                                   MaSP = sp.MaSP,
@@ -81,10 +84,9 @@ namespace DAL
             return temp;
         }
 
-        public IQueryable LayDSSP_TheoMaSP(string maSP)
+        public IQueryable LayDSSP()
         {
             IQueryable temp = from sp in db.SanPhams
-                              where sp.MaSP == maSP
                               select new
                               {
                                   MaSP = sp.MaSP,
@@ -305,5 +307,19 @@ namespace DAL
             }
             return false;
         }
+
+        public void CapNhatGiaTriTongTien(string maDon, string tongTien)
+        {
+            var temp = db.DonHangs.Single(d => d.MaDon == maDon);
+
+            //if (temp != null)
+            //{
+                temp.TongGiaTri += int.Parse(tongTien);
+                //return true;
+            //}
+            //return false ;
+            db.SubmitChanges();
+        }
+
     }
 }
