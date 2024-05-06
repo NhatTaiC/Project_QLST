@@ -1,0 +1,10 @@
+GIỚI THIỆU
+"Ứng dụng quản lý siêu thị" là một ứng dụng được thiết kế để giúp các chủ cửa hàng và nhà quản lý siêu thị quản lý và vận hành cửa hàng một cách hiệu quả hơn. Với giao diện thân thiện và tính năng đa dạng, ứng dụng này giúp người dùng quản lý hàng hóa, quản lý nhà cung cấp, loại sản phẩm, hóa đơn, theo dõi doanh thu và lợi nhuận, quản lý nhân viên, và tương tác với khách hàng một cách thông minh. Từ việc quản lý hàng tồn kho đến việc tối ưu hóa trải nghiệm mua sắm, ứng dụng này hứa hẹn mang lại sự tiện ích và hiệu quả cho các doanh nghiệp trong ngành bán lẻ.
+
+MÔ TẢ
+Phần mềm được viết trên ngon ngữ C#, bao gồm các chức năng:
+_Quản lý tài khoản
+_Quản lý đơn hàng
+_Quản lý nhà cung cấp
+_Quản lý nhân viên
+_Quản lý loại sản phẩm

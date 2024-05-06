@@ -81,4 +81,35 @@
       <Association Name="NhaCungCap_SanPham" Member="NhaCungCap" ThisKey="MaNCC" OtherKey="MaNCC" Type="NhaCungCap" IsForeignKey="true" />
     </Type>
   </Table>
+  <Function Name="dbo.sp_LayDSDH_TheoNgayBan" Method="sp_LayDSDH_TheoNgayBan">
+    <Parameter Name="ngayBan" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="sp_LayDSDH_TheoNgayBanResult">
+      <Column Name="MaDon" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayBan" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TongGiaTri" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_LayDSSP_TheoTenSP" Method="sp_LayDSSP_TheoTenSP">
+    <Parameter Name="tenSP" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="sp_LayDSSP_TheoTenSPResult">
+      <Column Name="MaSP" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenSP" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="GiaNhap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GiaBan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DonViTinh" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NoiSanXuat" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="HanSuDung" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_LayDSDH_TheoTenNV" Method="sp_LayDSDH_TheoTenNV">
+    <Parameter Name="tenNV" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="sp_LayDSDH_TheoTenNVResult">
+      <Column Name="MaDon" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayBan" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TongGiaTri" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

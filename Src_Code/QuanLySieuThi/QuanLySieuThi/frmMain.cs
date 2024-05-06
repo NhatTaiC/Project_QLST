@@ -237,7 +237,7 @@ namespace QuanLySieuThi
             OpenConnect();
 
             // Hiện tên người dùng
-            statusLabelUserName.Text = $"Xin chào {taiKhoan}";
+            statusLabelUserName.Text = $"Xin Chào {taiKhoan}!";
 
             // Phân quyền
             if (chucVu == "Nhân Viên" || chucVu == "User")
@@ -299,6 +299,51 @@ namespace QuanLySieuThi
             else
             {
                 ActForm("frmTraCuuSanPham");
+            }
+        }
+
+        // dSSP_TheoTenSPMNSI_Click
+        private void dSSP_TheoTenSPMNSI_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmInDanhSachSanPham_TheoTenSanPham"))
+            {
+                frmInDanhSachSanPham_TheoTenSanPham f = new frmInDanhSachSanPham_TheoTenSanPham();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmInDanhSachSanPham_TheoTenSanPham");
+            }
+        }
+
+        // DSDH_TheoTenNVMNSI_Click
+        private void DSDH_TheoTenNVMNSI_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmInDSDH_TheoTenNV"))
+            {
+                frmInDSDH_TheoTenNV f = new frmInDSDH_TheoTenNV();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmInDSDH_TheoTenNV");
+            }
+        }
+
+        // DSDH_TheoNgayBanMNSI_Click
+        private void DSDH_TheoNgayBanMNSI_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmInDSDH_TheoNgayBan"))
+            {
+                frmInDSDH_TheoNgayBan f = new frmInDSDH_TheoNgayBan();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmInDSDH_TheoNgayBan");
             }
         }
     }
