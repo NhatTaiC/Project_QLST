@@ -36,7 +36,7 @@ namespace QuanLySieuThi
                 f1.ShowDialog();
             }
 
-            //Application.Run(new frmFlashForm());
+            //Application.Run(new frmTraCuuSanPham());
         }
     }
 }
