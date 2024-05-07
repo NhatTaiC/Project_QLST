@@ -30,7 +30,7 @@ namespace DAL
             this.db = db;
             this.serverName = serverName;
             this.dbName = dbName;
-            this.soLuongSP= soLuongSP;
+            this.soLuongSP = soLuongSP;
         }
 
         public DAL_ChiTietDonHang()
@@ -69,7 +69,7 @@ namespace DAL
         {
             try
             {
-                // Check xem MaChiTiet, MaDon, MaSP có != null không?
+                // Check xem MaChiTiet có != null không?
                 if (ctdh.MaChiTiet != string.Empty)
                 {
                     // Check Chi Tiết Đơn Hàng đã có trong DB ChiTietDonHang hay chưa?
@@ -79,13 +79,15 @@ namespace DAL
 
                     if (temp.Count() != 1)
                     {
-                        // Check Mã Sản Phẩm đã có trong DB ChiTietDonHang hay chưa?
-                        var temp2 = from ct in db.ChiTietDonHangs
-                                    where ct.MaSP == ctdh.MaSP
+                        // Check Mã Đơn Hàng đã có trong DB ChiTietDonHang hay chưa?
+                        var temp4 = from ct in db.ChiTietDonHangs
+                                    where ct.MaDon == ctdh.MaDon
                                     select ct;
 
-                        if (temp2.Count() != 1)
+                        // Chưa Có MDH trong DB ChiTietDonHang, cho trùng MaSP
+                        if (temp4.Count() != 1)
                         {
+
                             // Tìm MaSP để cập nhật lại số lượng cho Sản Phẩm đó trước khi thêm vào DB ChiTietDonHang
                             var temp3 = db.SanPhams.Single(sp => sp.MaSP == ctdh.MaSP);
 
@@ -130,12 +132,67 @@ namespace DAL
                                     MessageBoxIcon.Error);
                             }
                         }
+                        // Có MDH trong DB ChiTietDonHang, ko cho trùng MaSP
                         else
                         {
-                            // Thông báo
-                            MessageBox.Show($"Mã sản phẩm +{ctdh.MaSP}+ đã có trong danh sách chi tiết đơn hàng!", "Thông báo",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
+                            // Check Mã Sản Phẩm đã có trong DB ChiTietDonHang hay chưa?
+                            var temp5 = from ct in db.ChiTietDonHangs
+                                        where ct.MaSP == ctdh.MaSP
+                                        select ct;
+
+                            if (temp5.Count() != 1)
+                            {
+                                // Tìm MaSP để cập nhật lại số lượng cho Sản Phẩm đó trước khi thêm vào DB ChiTietDonHang
+                                var temp3 = db.SanPhams.Single(sp => sp.MaSP == ctdh.MaSP);
+
+                                // Cập nhật số lượng sản phẩm trong DB SanPham
+                                int soLuongSPConLai = (int)(temp3.SoLuong - ctdh.SoLuong);
+
+                                // Lưu giá trị soLuongSP đầu tiên
+                                SoLuongSP += ctdh.SoLuong;
+
+                                if (soLuongSPConLai >= 0)
+                                {
+                                    temp3.SoLuong = soLuongSPConLai;
+
+                                    // Tạo đối tượng Chi Tiết Đơn Hàng
+                                    ChiTietDonHang ct_insert = new ChiTietDonHang
+                                    {
+                                        MaChiTiet = ctdh.MaChiTiet,
+                                        MaDon = ctdh.MaDon,
+                                        MaSP = ctdh.MaSP,
+                                        TenSP = ctdh.TenSP,
+                                        GiaBan = ctdh.GiaBan,
+                                        SoLuong = ctdh.SoLuong,
+                                        ThanhTien = ctdh.ThanhTien,
+                                        DonViTinh = ctdh.DonViTinh
+                                    };
+
+                                    db.ChiTietDonHangs.InsertOnSubmit(ct_insert); // Thêm Chi Tiết Đơn Hàng vào DB ChiTietDonHang
+                                    db.SubmitChanges(); // Xác nhận thay đổi DB ChiTietDonHang
+
+                                    // Thông báo
+                                    MessageBox.Show($"Thêm chi tiết đơn hàng +{ctdh.MaChiTiet}+ thành công!", "Thông báo",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+
+                                    return true;
+                                }
+                                else
+                                {
+                                    // Thông báo
+                                    MessageBox.Show($"Số lượng sản phẩm +{ctdh.MaSP}+ vừa nhập nhiều hơn Sản Phẩm có trong danh sách Sản Phẩm, không thể thêm Chi Tiết Đơn Hàng!", "Thông báo",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+                                }
+                            }
+                            else
+                            {
+                                // Thông báo
+                                MessageBox.Show($"Mã sản phẩm +{ctdh.MaSP}+ đã có trong danh sách chi tiết đơn hàng!", "Thông báo",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                            }
                         }
                     }
                     else
@@ -153,6 +210,7 @@ namespace DAL
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
+
             }
             catch (Exception ex)
             {
@@ -318,7 +376,8 @@ namespace DAL
         }
 
         // TimDonHang_TheoMaNV()
-        public IQueryable TimDonHang_TheoMaNV(string maNV) {
+        public IQueryable TimDonHang_TheoMaNV(string maNV)
+        {
             IQueryable temp = from nv in db.NhanViens
                               join dh in db.DonHangs
                               on nv.MaNV equals dh.MaNV
