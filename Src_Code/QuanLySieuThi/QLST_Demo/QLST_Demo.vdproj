@@ -533,7 +533,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:QLST_Demo"
         "ProductCode" = "8:{DC4483DE-794B-4101-BAA8-FEC5A5AB8B12}"
-        "PackageCode" = "8:{6697FA82-06A0-47F9-9618-46C192679059}"
+        "PackageCode" = "8:{6AB7B836-E5EF-470B-BF05-DB52C93E7E65}"
         "UpgradeCode" = "8:{CAE80892-F232-4CA4-84E7-4D44CFFE9688}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -655,7 +655,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B3358A55734446FEA2C647757E087376"
             {
-            "Name" = "8:Shortcut to Primary output from GUI (Active)"
+            "Name" = "8:QLST_Demo"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
