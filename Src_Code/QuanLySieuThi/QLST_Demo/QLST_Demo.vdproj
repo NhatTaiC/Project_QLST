@@ -21,6 +21,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_31351D888CDB44C4B4260722D90D2509"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_46596F6228EC851107335A8DB60FC156"
         "OwnerKey" = "8:_7A8F6788214441CC9862155654716933"
         "MsmSig" = "8:_UNDEFINED"
@@ -64,6 +70,12 @@
         "Entry"
         {
         "MsmKey" = "8:_9E5B1222985B48D385C121D6302F9FB1"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A02DA5728C7C40818DF148A5950F46B2"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -248,6 +260,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_31351D888CDB44C4B4260722D90D2509"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\DB_Backup\\QLST.mdf"
+            "TargetName" = "8:QLST.mdf"
+            "Tag" = "8:"
+            "Folder" = "8:_75A5011DC411407BB7DEEE4B1A08B26C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_46596F6228EC851107335A8DB60FC156"
             {
             "AssemblyRegister" = "3:1"
@@ -376,6 +408,26 @@
             {
             "SourcePath" = "8:..\\QuanLySieuThi\\IMG\\Supermarket_icon_2.ico"
             "TargetName" = "8:Supermarket_icon_2.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_75A5011DC411407BB7DEEE4B1A08B26C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A02DA5728C7C40818DF148A5950F46B2"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\DB_Backup\\QLST_log.ldf"
+            "TargetName" = "8:QLST_log.ldf"
             "Tag" = "8:"
             "Folder" = "8:_75A5011DC411407BB7DEEE4B1A08B26C"
             "Condition" = "8:"
@@ -533,7 +585,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:QLST_Demo"
         "ProductCode" = "8:{DC4483DE-794B-4101-BAA8-FEC5A5AB8B12}"
-        "PackageCode" = "8:{6AB7B836-E5EF-470B-BF05-DB52C93E7E65}"
+        "PackageCode" = "8:{E43B42C5-E950-4B1A-9075-8CBACB768C30}"
         "UpgradeCode" = "8:{CAE80892-F232-4CA4-84E7-4D44CFFE9688}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
