@@ -56,6 +56,7 @@ namespace QuanLySieuThi
             cboDonViTinh.SelectedIndex = 0;
 
             // Others
+            txtSoLuong.Text = "0";
             txtMaChiTiet.Focus();
             txtMaChiTiet.Enabled = true;
             txtMaDonHang.Enabled = true;
