@@ -92,5 +92,16 @@ namespace BUS
         {
             return dal_sp.TimSP_TheoMaSP_2(maSP);
         }
+
+        // TimSP_TheoMaSP_3()
+        public int TimSP_TheoMaSP_3(string maSP) {
+            return dal_sp.TimSP_TheoMaSP_3(maSP);
+        }
+
+        // TimSP_TheoTenSP_3()
+        public int TimSP_TheoTenSP_3(string tenSP)
+        {
+            return dal_sp.TimSP_TheoTenSP_3(tenSP);
+        }
     }
 }

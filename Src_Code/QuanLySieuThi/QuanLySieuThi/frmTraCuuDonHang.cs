@@ -88,31 +88,42 @@ namespace QuanLySieuThi
         // btnTraCuu_Click
         private void btnTraCuu_Click(object sender, EventArgs e)
         {
-            // Tra Cứu
-            if (dgvTraCuuDonHang.RowCount != 0)
+            // Check NoiDung đã được nhập chưa trước khi tra cứu
+            if (txtNoiDung.Text != string.Empty)
             {
-                if (cboTraCuu.SelectedItem.ToString() == "Mã Đơn Hàng")
+                // Tra Cứu
+                if (dgvTraCuuDonHang.RowCount != 0)
                 {
-                    dgvTraCuuDonHang.DataSource = bus_ctdh.TimDonHang_TheoMaDon(txtNoiDung.Text);
-                    gbDGVTraCuuDonHang.Text = $"Kết Quả Tra Cứu: {dgvTraCuuDonHang.RowCount}";
-                }
-                else if (cboTraCuu.SelectedItem.ToString() == "Mã Nhân Viên")
-                {
-                    dgvTraCuuDonHang.DataSource = bus_ctdh.TimDonHang_TheoMaNV(txtNoiDung.Text);
-                    gbDGVTraCuuDonHang.Text = $"Kết Quả Tra Cứu: {dgvTraCuuDonHang.RowCount}";
+                    if (cboTraCuu.SelectedItem.ToString() == "Mã Đơn Hàng")
+                    {
+                        dgvTraCuuDonHang.DataSource = bus_ctdh.TimDonHang_TheoMaDon(txtNoiDung.Text);
+                        gbDGVTraCuuDonHang.Text = $"Kết Quả Tra Cứu: {dgvTraCuuDonHang.RowCount}";
+                    }
+                    else if (cboTraCuu.SelectedItem.ToString() == "Mã Nhân Viên")
+                    {
+                        dgvTraCuuDonHang.DataSource = bus_ctdh.TimDonHang_TheoMaNV(txtNoiDung.Text);
+                        gbDGVTraCuuDonHang.Text = $"Kết Quả Tra Cứu: {dgvTraCuuDonHang.RowCount}";
+                    }
+                    else
+                    {
+                        dgvTraCuuDonHang.DataSource = bus_ctdh.TimDonHang_TheoTenNV(txtNoiDung.Text);
+                        gbDGVTraCuuDonHang.Text = $"Kết Quả Tra Cứu: {dgvTraCuuDonHang.RowCount}";
+                    }
                 }
                 else
                 {
-                    dgvTraCuuDonHang.DataSource = bus_ctdh.TimDonHang_TheoTenNV(txtNoiDung.Text);
-                    gbDGVTraCuuDonHang.Text = $"Kết Quả Tra Cứu: {dgvTraCuuDonHang.RowCount}";
-                }
+                    // Thông báo
+                    MessageBox.Show("Nội dung bạn tìm không có trong dữ liệu!",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                    Reset();
+                } 
             }
             else
             {
-                MessageBox.Show("Nội dung bạn tìm không có trong dữ liệu!",
-                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-
-                Reset();
+                // Thông báo
+                MessageBox.Show("Vui lòng không để trống nội dung cần tra cứu!",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

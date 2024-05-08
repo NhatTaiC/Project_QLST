@@ -79,109 +79,75 @@ namespace DAL
 
                     if (temp.Count() != 1)
                     {
-                        // Check Mã Đơn Hàng đã có trong DB ChiTietDonHang hay chưa?
-                        var temp4 = from ct in db.ChiTietDonHangs
-                                    where ct.MaDon == ctdh.MaDon
-                                    select ct;
+                        // Check Mã Đơn Hàng đã có trong DB DonHang hay chưa?
+                        var temp2 = from dh in db.DonHangs
+                                    where dh.MaDon == ctdh.MaDon
+                                    select dh;
 
-                        // Chưa Có MDH trong DB ChiTietDonHang, cho trùng MaSP
-                        if (temp4.Count() != 1)
+                        if (temp2.Count() == 1)
                         {
+                            // Check Mã Sản Phẩm đã có trong DB SanPham hay chưa?
+                            var temp3 = from sp in db.SanPhams
+                                        where sp.MaSP == ctdh.MaSP
+                                        select sp;
 
-                            // Tìm MaSP để cập nhật lại số lượng cho Sản Phẩm đó trước khi thêm vào DB ChiTietDonHang
-                            var temp3 = db.SanPhams.Single(sp => sp.MaSP == ctdh.MaSP);
-
-                            // Cập nhật số lượng sản phẩm trong DB SanPham
-                            int soLuongSPConLai = (int)(temp3.SoLuong - ctdh.SoLuong);
-
-                            // Lưu giá trị soLuongSP đầu tiên
-                            SoLuongSP += ctdh.SoLuong;
-
-                            if (soLuongSPConLai >= 0)
+                            if (temp3.Count() == 1)
                             {
-                                temp3.SoLuong = soLuongSPConLai;
+                                // Check MaSP có trong DB ChiTietDonHang hay chưa?
+                                var temp4 = from ct in db.ChiTietDonHangs
+                                            where ct.MaDon == ctdh.MaDon && ct.MaSP == ctdh.MaSP
+                                            select ct;
 
-                                // Tạo đối tượng Chi Tiết Đơn Hàng
-                                ChiTietDonHang ct_insert = new ChiTietDonHang
+                                if (temp4.Count() != 1)
                                 {
-                                    MaChiTiet = ctdh.MaChiTiet,
-                                    MaDon = ctdh.MaDon,
-                                    MaSP = ctdh.MaSP,
-                                    TenSP = ctdh.TenSP,
-                                    GiaBan = ctdh.GiaBan,
-                                    SoLuong = ctdh.SoLuong,
-                                    ThanhTien = ctdh.ThanhTien,
-                                    DonViTinh = ctdh.DonViTinh
-                                };
+                                    // Tìm MaSP để cập nhật lại số lượng cho Sản Phẩm đó trước khi thêm vào DB ChiTietDonHang
+                                    var temp5 = db.SanPhams.Single(sp => sp.MaSP == ctdh.MaSP);
 
-                                db.ChiTietDonHangs.InsertOnSubmit(ct_insert); // Thêm Chi Tiết Đơn Hàng vào DB ChiTietDonHang
-                                db.SubmitChanges(); // Xác nhận thay đổi DB ChiTietDonHang
+                                    // Cập nhật số lượng sản phẩm trong DB SanPham
+                                    int soLuongSPConLai = (int)(temp5.SoLuong - ctdh.SoLuong);
 
-                                // Thông báo
-                                MessageBox.Show($"Thêm chi tiết đơn hàng +{ctdh.MaChiTiet}+ thành công!", "Thông báo",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
+                                    // Lưu giá trị soLuongSP đầu tiên
+                                    SoLuongSP += ctdh.SoLuong;
 
-                                return true;
-                            }
-                            else
-                            {
-                                // Thông báo
-                                MessageBox.Show($"Số lượng sản phẩm +{ctdh.MaSP}+ vừa nhập nhiều hơn Sản Phẩm có trong danh sách Sản Phẩm, không thể thêm Chi Tiết Đơn Hàng!", "Thông báo",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Error);
-                            }
-                        }
-                        // Có MDH trong DB ChiTietDonHang, ko cho trùng MaSP
-                        else
-                        {
-                            // Check Mã Sản Phẩm đã có trong DB ChiTietDonHang hay chưa?
-                            var temp5 = from ct in db.ChiTietDonHangs
-                                        where ct.MaSP == ctdh.MaSP
-                                        select ct;
-
-                            if (temp5.Count() != 1)
-                            {
-                                // Tìm MaSP để cập nhật lại số lượng cho Sản Phẩm đó trước khi thêm vào DB ChiTietDonHang
-                                var temp3 = db.SanPhams.Single(sp => sp.MaSP == ctdh.MaSP);
-
-                                // Cập nhật số lượng sản phẩm trong DB SanPham
-                                int soLuongSPConLai = (int)(temp3.SoLuong - ctdh.SoLuong);
-
-                                // Lưu giá trị soLuongSP đầu tiên
-                                SoLuongSP += ctdh.SoLuong;
-
-                                if (soLuongSPConLai >= 0)
-                                {
-                                    temp3.SoLuong = soLuongSPConLai;
-
-                                    // Tạo đối tượng Chi Tiết Đơn Hàng
-                                    ChiTietDonHang ct_insert = new ChiTietDonHang
+                                    if (soLuongSPConLai >= 0)
                                     {
-                                        MaChiTiet = ctdh.MaChiTiet,
-                                        MaDon = ctdh.MaDon,
-                                        MaSP = ctdh.MaSP,
-                                        TenSP = ctdh.TenSP,
-                                        GiaBan = ctdh.GiaBan,
-                                        SoLuong = ctdh.SoLuong,
-                                        ThanhTien = ctdh.ThanhTien,
-                                        DonViTinh = ctdh.DonViTinh
-                                    };
+                                        temp5.SoLuong = soLuongSPConLai;
 
-                                    db.ChiTietDonHangs.InsertOnSubmit(ct_insert); // Thêm Chi Tiết Đơn Hàng vào DB ChiTietDonHang
-                                    db.SubmitChanges(); // Xác nhận thay đổi DB ChiTietDonHang
+                                        // Tạo đối tượng Chi Tiết Đơn Hàng
+                                        ChiTietDonHang ct_insert = new ChiTietDonHang
+                                        {
+                                            MaChiTiet = ctdh.MaChiTiet,
+                                            MaDon = ctdh.MaDon,
+                                            MaSP = ctdh.MaSP,
+                                            TenSP = ctdh.TenSP,
+                                            GiaBan = ctdh.GiaBan,
+                                            SoLuong = ctdh.SoLuong,
+                                            ThanhTien = ctdh.ThanhTien,
+                                            DonViTinh = ctdh.DonViTinh
+                                        };
 
-                                    // Thông báo
-                                    MessageBox.Show($"Thêm chi tiết đơn hàng +{ctdh.MaChiTiet}+ thành công!", "Thông báo",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information);
+                                        db.ChiTietDonHangs.InsertOnSubmit(ct_insert); // Thêm Chi Tiết Đơn Hàng vào DB ChiTietDonHang
+                                        db.SubmitChanges(); // Xác nhận thay đổi DB ChiTietDonHang
 
-                                    return true;
+                                        // Thông báo
+                                        MessageBox.Show($"Thêm chi tiết đơn hàng +{ctdh.MaChiTiet}+ thành công!", "Thông báo",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Information);
+
+                                        return true;
+                                    }
+                                    else
+                                    {
+                                        // Thông báo
+                                        MessageBox.Show($"Số lượng sản phẩm +{ctdh.MaSP}+ vừa nhập nhiều hơn Sản Phẩm có trong danh sách Sản Phẩm, không thể thêm Chi Tiết Đơn Hàng!", "Thông báo",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                                    }  
                                 }
                                 else
                                 {
                                     // Thông báo
-                                    MessageBox.Show($"Số lượng sản phẩm +{ctdh.MaSP}+ vừa nhập nhiều hơn Sản Phẩm có trong danh sách Sản Phẩm, không thể thêm Chi Tiết Đơn Hàng!", "Thông báo",
+                                    MessageBox.Show($"Thông tin +{ctdh.MaSP}+ đã có trong đơn hàng +{ctdh.MaDon}+!", "Thông báo",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Error);
                                 }
@@ -189,16 +155,24 @@ namespace DAL
                             else
                             {
                                 // Thông báo
-                                MessageBox.Show($"Mã sản phẩm +{ctdh.MaSP}+ đã có trong danh sách chi tiết đơn hàng!", "Thông báo",
+                                MessageBox.Show($"Mã sản phẩm +{ctdh.MaSP}+ chưa có trong danh sách sản phẩm!", "Thông báo",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Error);
                             }
                         }
+                        else
+                        {
+                            // Thông báo
+                            MessageBox.Show($"Mã đơn hàng +{ctdh.MaDon}+ chưa có trong danh sách đơn hàng!", "Thông báo",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                        }
+
                     }
                     else
                     {
                         // Thông báo
-                        MessageBox.Show($"Chi tiết đơn hàng +{ctdh.MaDon}+ đã có trong danh sách chi tiết đơn hàng!", "Thông báo",
+                        MessageBox.Show($"Mã chi tiết đơn hàng +{ctdh.MaChiTiet}+ đã có trong danh sách chi tiết đơn hàng!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }

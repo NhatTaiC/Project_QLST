@@ -5,6 +5,7 @@
  * 07/05/2024
  * frmInDSDH_TheoNgayBan.cs
  */
+using BUS;
 using CrystalDecisions.Shared;
 using QuanLySieuThi.Report;
 using System;
@@ -25,6 +26,9 @@ namespace QuanLySieuThi
         {
             InitializeComponent();
         }
+
+        // Initialize Variables
+        BUS_DonHang bus_dh = new BUS_DonHang();
 
         // Function LoadData()
         public void LoadData()
@@ -77,26 +81,35 @@ namespace QuanLySieuThi
         // btnIn_Click
         private void btnIn_Click(object sender, EventArgs e)
         {
-            // Khởi tạo đối tượng rpt
-            DSDH_TheoNgayBan rpt = new DSDH_TheoNgayBan();
+            if (bus_dh.TimDonHang_TheoNgayBan(dtpNgayBan.Value) >= 1)
+            {
+                // Khởi tạo đối tượng rpt
+                DSDH_TheoNgayBan rpt = new DSDH_TheoNgayBan();
 
-            // Khởi tạo ParameterValues
-            ParameterValues para = new ParameterValues();
+                // Khởi tạo ParameterValues
+                ParameterValues para = new ParameterValues();
 
-            // Khởi tạo ParameterDiscreteValue
-            ParameterDiscreteValue val = new ParameterDiscreteValue();
+                // Khởi tạo ParameterDiscreteValue
+                ParameterDiscreteValue val = new ParameterDiscreteValue();
 
-            // Gán giá trị cho ParameterDiscreteValue
-            val.Value = dtpNgayBan.Value.ToString();
+                // Gán giá trị cho ParameterDiscreteValue
+                val.Value = dtpNgayBan.Value.ToString();
 
-            // Thêm val vào para
-            para.Add(val);
+                // Thêm val vào para
+                para.Add(val);
 
-            // Định nghĩa biến tham gia cho rpt
-            rpt.DataDefinition.ParameterFields["@ngayBan"].ApplyCurrentValues(para);
+                // Định nghĩa biến tham gia cho rpt
+                rpt.DataDefinition.ParameterFields["@ngayBan"].ApplyCurrentValues(para);
 
-            // Gọi rpt
-            crvDSDH_TheoNgayBan.ReportSource = rpt;
+                // Gọi rpt
+                crvDSDH_TheoNgayBan.ReportSource = rpt; 
+            }
+            else
+            {
+                // Thông báo
+                MessageBox.Show("Ngày bán không có trong Database!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

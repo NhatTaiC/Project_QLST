@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BUS;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using QuanLySieuThi.Report;
@@ -26,6 +27,9 @@ namespace QuanLySieuThi
         {
             InitializeComponent();
         }
+
+        // Initialize Variables
+        BUS_SanPham bus_sp = new BUS_SanPham();
 
         // Function LoadData()
         public void LoadData() { 
@@ -79,26 +83,44 @@ namespace QuanLySieuThi
         // btnIn_Click
         private void btnIn_Click(object sender, EventArgs e)
         {
-            // Khởi tạo đối tượng rpt
-            DSSP_TheoTenSanPham rpt = new DSSP_TheoTenSanPham();
+            if (txtTenSanPham.Text != string.Empty)
+            {
+                if (bus_sp.TimSP_TheoTenSP_3(txtTenSanPham.Text) >= 1)
+                {
+                    // Khởi tạo đối tượng rpt
+                    DSSP_TheoTenSanPham rpt = new DSSP_TheoTenSanPham();
 
-            // Khởi tạo ParameterValues
-            ParameterValues para = new ParameterValues();
+                    // Khởi tạo ParameterValues
+                    ParameterValues para = new ParameterValues();
 
-            // Khởi tạo ParameterDiscreteValue
-            ParameterDiscreteValue val = new ParameterDiscreteValue();
+                    // Khởi tạo ParameterDiscreteValue
+                    ParameterDiscreteValue val = new ParameterDiscreteValue();
 
-            // Gán giá trị cho ParameterDiscreteValue
-            val.Value = txtTenSanPham.Text;
+                    // Gán giá trị cho ParameterDiscreteValue
+                    val.Value = txtTenSanPham.Text;
 
-            // Thêm val vào para
-            para.Add(val);
+                    // Thêm val vào para
+                    para.Add(val);
 
-            // Định nghĩa biến tham gia cho rpt
-            rpt.DataDefinition.ParameterFields["@tenSP"].ApplyCurrentValues(para);
+                    // Định nghĩa biến tham gia cho rpt
+                    rpt.DataDefinition.ParameterFields["@tenSP"].ApplyCurrentValues(para);
 
-            // Gọi rpt
-            crvDSSP_TheoTenSP.ReportSource = rpt;
+                    // Gọi rpt
+                    crvDSSP_TheoTenSP.ReportSource = rpt;
+                }
+                else
+                {
+                    // Thông báo
+                    MessageBox.Show("Không có tên sản phẩm trong Database!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                } 
+            }
+            else
+            {
+                // Thông báo
+                MessageBox.Show("Vui lòng không để trống tên sản phẩm!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

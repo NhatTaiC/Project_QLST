@@ -90,36 +90,46 @@ namespace QuanLySieuThi
         // btnTim_Click
         private void btnTim_Click(object sender, EventArgs e)
         {
-            // Tra Cứu
-            if (dgvTraCuuSanPham.RowCount != 0)
+            // Check NoiDung đã được nhập chưa trước khi tra cứu
+            if (txtNoiDung.Text != string.Empty)
             {
-                if (cboTraCuu.SelectedItem.ToString() == "Tên Sản Phẩm")
+                // Tra Cứu
+                if (dgvTraCuuSanPham.RowCount != 0)
                 {
-                    dgvTraCuuSanPham.DataSource = bus_sp.TimSP_TheoTenSP_2(txtNoiDung.Text);
-                    gbDGVTraCuuSanPham.Text = $"Kết Quả Tra Cứu: {dgvTraCuuSanPham.RowCount}";
-                }
-                else if (cboTraCuu.SelectedItem.ToString() == "Mã Sản Phẩm")
-                {
-                    dgvTraCuuSanPham.DataSource = bus_sp.TimSP_TheoMaSP_2(txtNoiDung.Text);
-                    gbDGVTraCuuSanPham.Text = $"Kết Quả Tra Cứu: {dgvTraCuuSanPham.RowCount}";
-                }
-                else if (cboTraCuu.SelectedItem.ToString() == "Giá Bán Sản Phẩm")
-                {
-                    dgvTraCuuSanPham.DataSource = bus_sp.TimSP_TheoGiaBan(txtNoiDung.Text);
-                    gbDGVTraCuuSanPham.Text = $"Kết Quả Tra Cứu: {dgvTraCuuSanPham.RowCount}";
+                    if (cboTraCuu.SelectedItem.ToString() == "Tên Sản Phẩm")
+                    {
+                        dgvTraCuuSanPham.DataSource = bus_sp.TimSP_TheoTenSP_2(txtNoiDung.Text);
+                        gbDGVTraCuuSanPham.Text = $"Kết Quả Tra Cứu: {dgvTraCuuSanPham.RowCount}";
+                    }
+                    else if (cboTraCuu.SelectedItem.ToString() == "Mã Sản Phẩm")
+                    {
+                        dgvTraCuuSanPham.DataSource = bus_sp.TimSP_TheoMaSP_2(txtNoiDung.Text);
+                        gbDGVTraCuuSanPham.Text = $"Kết Quả Tra Cứu: {dgvTraCuuSanPham.RowCount}";
+                    }
+                    else if (cboTraCuu.SelectedItem.ToString() == "Giá Bán Sản Phẩm")
+                    {
+                        dgvTraCuuSanPham.DataSource = bus_sp.TimSP_TheoGiaBan(txtNoiDung.Text);
+                        gbDGVTraCuuSanPham.Text = $"Kết Quả Tra Cứu: {dgvTraCuuSanPham.RowCount}";
+                    }
+                    else
+                    {
+                        dgvTraCuuSanPham.DataSource = bus_sp.TimSP_TheoDonViTinh(txtNoiDung.Text);
+                        gbDGVTraCuuSanPham.Text = $"Kết Quả Tra Cứu: {dgvTraCuuSanPham.RowCount}";
+                    }
                 }
                 else
                 {
-                    dgvTraCuuSanPham.DataSource = bus_sp.TimSP_TheoDonViTinh(txtNoiDung.Text);
-                    gbDGVTraCuuSanPham.Text = $"Kết Quả Tra Cứu: {dgvTraCuuSanPham.RowCount}";
-                }
+                    MessageBox.Show("Nội dung bạn tìm không có trong dữ liệu!",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+
+                    Reset();
+                } 
             }
             else
             {
-                MessageBox.Show("Nội dung bạn tìm không có trong dữ liệu!",
-                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-
-                Reset();
+                // Thông báo
+                MessageBox.Show("Vui lòng không để trống nội dung cần tra cứu!",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

@@ -220,5 +220,42 @@ namespace DAL
                               };
             return temp;
         }
+
+        // TimDonHang_TheoNgayBan()
+        public int TimDonHang_TheoNgayBan(DateTime ngayBan)
+        {
+            var temp = from dh in db.DonHangs
+                       where dh.NgayBan == ngayBan
+                       select dh;
+            return temp.Count();
+        }
+
+        // TimDonHang_TheoTenNV()
+        public int TimDonHang_TheoTenNV(string tenNV)
+        {
+            var temp = from nv in db.NhanViens
+                       join dh in db.DonHangs
+                       on nv.MaNV equals dh.MaNV
+                       where nv.TenNV.Contains(tenNV)
+                       select new {
+                           TenNV = nv.TenNV
+                       };
+            return temp.Count();
+        }
+
+        // TimDonHang_TheoMaDH_2()
+        public int TimDonHang_TheoMaDH_2(string maDH)
+        {
+            var temp = from dh in db.DonHangs
+                              where dh.MaDon == maDH
+                              select new
+                              {
+                                  MaDon = dh.MaDon,
+                                  NgayBan = dh.NgayBan,
+                                  TongGiaTri = dh.TongGiaTri,
+                                  MaNV = dh.MaNV
+                              };
+            return temp.Count();
+        }
     }
 }

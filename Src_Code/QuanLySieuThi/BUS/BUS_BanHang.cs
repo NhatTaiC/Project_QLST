@@ -2,8 +2,8 @@
  * Châu Nhật Tài, Lê Văn Toàn
  * Project CN.NET
  * Quản Lý Siêu Thị
- * 28/04/2024
- * BUS_ChiTietDonHang.cs
+ * 09/05/2024
+ * BUS_BanHang.cs
  */
 using DAL;
 using DTO;
@@ -17,18 +17,23 @@ namespace BUS
 {
     public class BUS_BanHang
     {
+        // Fields
         private DAL_BanHang dal_bh = new DAL_BanHang();
 
+        // Methods
+        // LayDSSP()
         public IQueryable LayDSSP()
         {
             return dal_bh.LayDSSP();
         }
 
+        // LayDSSP_TheoMaSP
         public IQueryable LayDSSP_TheoMaSP(string maSP)
         {
             return dal_bh.LayDSSP_TheoMaSP(maSP);
         }
 
+        // ThemChiTietDonHang
         public bool ThemChiTietDonHang(DTO_ChiTietDonHang ctdh)
         {
             return dal_bh.ThemChiTietDonHang(ctdh);
@@ -40,6 +45,7 @@ namespace BUS
             return dal_bh.XoaChiTietDonHang(ctdh);
         }
 
+        // LayDSCTDH
         public IQueryable LayDSCTDH(string maDon)
         {
             return dal_bh.LayDSChiTietDonHang(maDon);
@@ -51,6 +57,7 @@ namespace BUS
             return dal_bh.SuaChiTietDonHang(ctdh);
         }
 
+        // CapNhatGiaTriTongTien
         public void CapNhatGiaTriTongTien(string maDon, string tongTien)
         {
             dal_bh.CapNhatGiaTriTongTien(maDon, tongTien);

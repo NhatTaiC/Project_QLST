@@ -2,8 +2,8 @@
  * Châu Nhật Tài, Lê Văn Toàn
  * Project CN.NET
  * Quản Lý Siêu Thị
- * 28/04/2024
- * DAL_ChiTietDonHang.cs
+ * 09/05/2024
+ * DAL_BanHang.cs
  */
 using DTO;
 using System;
@@ -51,7 +51,7 @@ namespace DAL
                               where ct.MaDon == maDon
                               select new
                               {
-                                  //MaChiTiet = ct.MaChiTiet,
+                                  MaChiTiet = ct.MaChiTiet,
                                   MaDon = ct.MaDon,
                                   MaSP = ct.MaSP,
                                   TenSP = ct.TenSP,
@@ -109,7 +109,7 @@ namespace DAL
         {
             try
             {
-                // Check xem MaChiTiet, MaDon, MaSP có != null không?
+                // Check xem MaChiTiet có != null không?
                 if (ctdh.MaChiTiet != string.Empty)
                 {
                     // Check Chi Tiết Đơn Hàng đã có trong DB ChiTietDonHang hay chưa?
@@ -119,51 +119,83 @@ namespace DAL
 
                     if (temp.Count() != 1)
                     {
+                        // Check Mã Đơn Hàng đã có trong DB DonHang hay chưa?
+                        var temp2 = from dh in db.DonHangs
+                                    where dh.MaDon == ctdh.MaDon
+                                    select dh;
 
-                        // Check Mã Sản Phẩm đã có trong DB ChiTietDonHang hay chưa?
-                        var temp2 = from ct in db.ChiTietDonHangs
-                                    where ct.MaSP == ctdh.MaSP
-                                    select ct;
-
-                        if (temp2.Count() != 1)
+                        if (temp2.Count() == 1)
                         {
-                            // Tìm MaSP để cập nhật lại số lượng cho Sản Phẩm đó trước khi thêm vào DB ChiTietDonHang
-                            var temp3 = db.SanPhams.Single(sp => sp.MaSP == ctdh.MaSP);
+                            // Check Mã Sản Phẩm đã có trong DB SanPham hay chưa?
+                            var temp3 = from sp in db.SanPhams
+                                        where sp.MaSP == ctdh.MaSP
+                                        select sp;
 
-                            // Cập nhật số lượng sản phẩm trong DB SanPham
-                            int soLuongSPConLai = (int)(temp3.SoLuong - ctdh.SoLuong);
-
-                            if (soLuongSPConLai >= 0)
+                            if (temp3.Count() == 1)
                             {
-                                temp3.SoLuong = soLuongSPConLai;
+                                // Check MaSP có trong DB ChiTietDonHang hay chưa?
+                                var temp4 = from ct in db.ChiTietDonHangs
+                                            where ct.MaDon == ctdh.MaDon && ct.MaSP == ctdh.MaSP
+                                            select ct;
 
-                                // Tạo đối tượng Chi Tiết Đơn Hàng
-                                ChiTietDonHang ct_insert = new ChiTietDonHang
+                                if (temp4.Count() != 1)
                                 {
-                                    MaChiTiet = ctdh.MaChiTiet,
-                                    MaDon = ctdh.MaDon,
-                                    MaSP = ctdh.MaSP,
-                                    TenSP = ctdh.TenSP,
-                                    GiaBan = ctdh.GiaBan,
-                                    SoLuong = ctdh.SoLuong,
-                                    ThanhTien = ctdh.ThanhTien,
-                                    DonViTinh = ctdh.DonViTinh
-                                };
+                                    // Tìm MaSP để cập nhật lại số lượng cho Sản Phẩm đó trước khi thêm vào DB ChiTietDonHang
+                                    var temp5 = db.SanPhams.Single(sp => sp.MaSP == ctdh.MaSP);
 
-                                db.ChiTietDonHangs.InsertOnSubmit(ct_insert); // Thêm Chi Tiết Đơn Hàng vào DB ChiTietDonHang
-                                db.SubmitChanges(); // Xác nhận thay đổi DB ChiTietDonHang
+                                    // Cập nhật số lượng sản phẩm trong DB SanPham
+                                    int soLuongSPConLai = (int)(temp5.SoLuong - ctdh.SoLuong);
 
-                                // Thông báo
-                                MessageBox.Show($"Thêm chi tiết đơn hàng +{ctdh.MaChiTiet}+ thành công!", "Thông báo",
-                                    MessageBoxButtons.OK,
-                                    MessageBoxIcon.Information);
+                                    // Lưu giá trị soLuongSP đầu tiên
+                                    SoLuongSP += ctdh.SoLuong;
 
-                                return true;
+                                    if (soLuongSPConLai >= 0)
+                                    {
+                                        temp5.SoLuong = soLuongSPConLai;
+
+                                        // Tạo đối tượng Chi Tiết Đơn Hàng
+                                        ChiTietDonHang ct_insert = new ChiTietDonHang
+                                        {
+                                            MaChiTiet = ctdh.MaChiTiet,
+                                            MaDon = ctdh.MaDon,
+                                            MaSP = ctdh.MaSP,
+                                            TenSP = ctdh.TenSP,
+                                            GiaBan = ctdh.GiaBan,
+                                            SoLuong = ctdh.SoLuong,
+                                            ThanhTien = ctdh.ThanhTien,
+                                            DonViTinh = ctdh.DonViTinh
+                                        };
+
+                                        db.ChiTietDonHangs.InsertOnSubmit(ct_insert); // Thêm Chi Tiết Đơn Hàng vào DB ChiTietDonHang
+                                        db.SubmitChanges(); // Xác nhận thay đổi DB ChiTietDonHang
+
+                                        // Thông báo
+                                        MessageBox.Show($"Thêm chi tiết đơn hàng +{ctdh.MaChiTiet}+ thành công!", "Thông báo",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Information);
+
+                                        return true;
+                                    }
+                                    else
+                                    {
+                                        // Thông báo
+                                        MessageBox.Show($"Số lượng sản phẩm +{ctdh.MaSP}+ vừa nhập nhiều hơn Sản Phẩm có trong danh sách Sản Phẩm, không thể thêm Chi Tiết Đơn Hàng!", "Thông báo",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                                    }
+                                }
+                                else
+                                {
+                                    // Thông báo
+                                    MessageBox.Show($"Thông tin +{ctdh.MaSP}+ đã có trong đơn hàng +{ctdh.MaDon}+!", "Thông báo",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Error);
+                                }
                             }
                             else
                             {
                                 // Thông báo
-                                MessageBox.Show($"Số lượng sản phẩm +{ctdh.MaSP}+ vừa nhập nhiều hơn Sản Phẩm có trong danh sách Sản Phẩm, không thể thêm Chi Tiết Đơn Hàng!", "Thông báo",
+                                MessageBox.Show($"Mã sản phẩm +{ctdh.MaSP}+ chưa có trong danh sách sản phẩm!", "Thông báo",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Error);
                             }
@@ -171,26 +203,20 @@ namespace DAL
                         else
                         {
                             // Thông báo
-                            MessageBox.Show($"Mã sản phẩm +{ctdh.MaSP}+ đã có trong danh sách chi tiết đơn hàng!", "Thông báo",
+                            MessageBox.Show($"Mã đơn hàng +{ctdh.MaDon}+ chưa có trong danh sách đơn hàng!", "Thông báo",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                         }
+
                     }
                     else
                     {
                         // Thông báo
-                        MessageBox.Show($"Chi tiết đơn hàng +{ctdh.MaDon}+ đã có trong danh sách chi tiết đơn hàng!", "Thông báo",
+                        MessageBox.Show($"Mã chi tiết đơn hàng +{ctdh.MaChiTiet}+ đã có trong danh sách chi tiết đơn hàng!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
                 }
-                //else
-                //{
-                //    // Thông báo
-                //    MessageBox.Show($"Chi tiết đơn hàng +{ctdh.MaDon}+ đã có trong danh sách chi tiết đơn hàng!", "Thông báo",
-                //        MessageBoxButtons.OK,
-                //        MessageBoxIcon.Error);
-                //}
                 else
                 {
                     // Thông báo
@@ -198,6 +224,7 @@ namespace DAL
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                 }
+
             }
             catch (Exception ex)
             {
@@ -215,9 +242,10 @@ namespace DAL
                 // Check xem MaChiTiet != null không? mới Xóa
                 if (ctdh.MaChiTiet != string.Empty)
                 {
-                    // Cập nhật số lượng Sản Phẩm trước khi xóa ChiTietDonHang khỏi DB
+                    // Cập nhật số lượng Sản Phẩm trước khi xóa ChiTietDonHang khỏi DB (Reset Số lượng sp)
                     var temp = db.SanPhams.Single(sp => sp.MaSP == ctdh.MaSP);
-                    temp.SoLuong = temp.SoLuong + ctdh.SoLuong;
+                    temp.SoLuong = temp.SoLuong + SoLuongSP;
+                    SoLuongSP = 0;
 
                     // Tìm maCTDH để xóa = maCTDH
                     var ctdh_delete = from ct in db.ChiTietDonHangs
@@ -269,11 +297,16 @@ namespace DAL
 
                     if (ctdh.SoLuong <= tongSP)
                     {
+                        // Lưu lại giá trị số lượng mỗi lần sửa SLSP
+                        SoLuongSP += ctdh.SoLuong;
+
+                        // Tính tổng số lượng SP còn lại
                         int soLuongSPConLai = (int)(tongSP - ctdh.SoLuong);
 
+                        // Cập nhật tổng sl SP trong DB SanPham
                         temp.SoLuong = soLuongSPConLai;
 
-                        // Tìm CTDH trong DB CTDH
+                        // Tìm CTDH trong DB CTDH để cập nhật số lượng
                         var ctdh_update = db.ChiTietDonHangs.Single(ct => ct.MaChiTiet == ctdh.MaChiTiet);
 
                         // Cập nhật thông tin CTDH
@@ -322,13 +355,7 @@ namespace DAL
         public void CapNhatGiaTriTongTien(string maDon, string tongTien)
         {
             var temp = db.DonHangs.Single(d => d.MaDon == maDon);
-
-            //if (temp != null)
-            //{
             temp.TongGiaTri += int.Parse(tongTien);
-            //return true;
-            //}
-            //return false ;
             db.SubmitChanges();
         }
 

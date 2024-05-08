@@ -1,4 +1,11 @@
-﻿using BUS;
+﻿/*
+ * Châu Nhật Tài, Lê Văn Toàn
+ * Project CN.NET
+ * Quản Lý Siêu Thị
+ * 09/05/2024
+ * frmBanHang.cs
+ */
+using BUS;
 using DTO;
 using System;
 using System.Collections.Generic;
@@ -27,20 +34,13 @@ namespace QuanLySieuThi
         // Function Reset()
         public void Reset()
         {
-            txtMaChiTiet.Enabled = true;
-            txtMaDonHang.Enabled = true;
-            txtMaSP.Enabled = true;
-            txtTenSP.Enabled = true;
-            txtGiaBan.Enabled = true;
-            txtThanhTien.Enabled = true;
-            txtDonViTinh.Enabled = true;
-            btnThem.Enabled = true;
-            btnXoa.Enabled = true;
-            btnSua.Enabled = true;
-            // Reset text
+            // turnOffRight
+            turnOffRight();
+
+            // Reset right
             txtMaChiTiet.Text = string.Empty;
             txtSoLuong.Text = "0";
-            txtThanhTien.Text = string.Empty;
+            txtThanhTien.Text = "0";
 
             // Called LoadData()
             LoadData();
@@ -50,19 +50,20 @@ namespace QuanLySieuThi
         public void Reset2()
         {
             txtMaChiTiet.Enabled = true;
-            txtMaDonHang.Enabled = true;
+            txtMaDonHang.Enabled = false;
             txtMaSP.Enabled = true;
-            txtTenSP.Enabled = true;
-            txtGiaBan.Enabled = true;
-            txtThanhTien.Enabled = true;
-            txtDonViTinh.Enabled = true;
+            txtTenSP.Enabled = false;
+            txtGiaBan.Enabled = false;
+            txtThanhTien.Enabled = false;
+            txtDonViTinh.Enabled = false;
             btnThem.Enabled = true;
             btnXoa.Enabled = true;
             btnSua.Enabled = true;
+
             // Reset text
-            txtMaChiTiet.Text = string.Empty;
+            //txtMaChiTiet.Text = string.Empty;
             txtSoLuong.Text = "0";
-            txtThanhTien.Text = string.Empty;
+            txtThanhTien.Text = "0";
 
             //// Called LoadData()
             //LoadData();
@@ -70,29 +71,38 @@ namespace QuanLySieuThi
             dgvMuaHang.DataSource = bus_bh.LayDSCTDH(txtMaDonHang.Text);
         }
 
-        // CheckNumber
-        public bool CheckNumber(string text)
+        // Function Reset3()
+        public void Reset3()
         {
-            for (int i = 0; i < text.Length; i++)
-            {
-                if (text[i] >= '0' && text[i] <= '9')
-                {
-                    return true;
-                }
-            }
-            return false;
+            txtMaChiTiet.Enabled = true;
+            txtMaDonHang.Enabled = false;
+            txtMaSP.Enabled = false;
+            txtTenSP.Enabled = false;
+            txtGiaBan.Enabled = false;
+            txtSoLuong.Text = "0";
+            txtThanhTien.Text = "0";
+            txtDonViTinh.Enabled = false;
+            btnThem.Enabled = true;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
+            btnThanhToan.Enabled = true;
+
+            // Called LoadData()
+            LoadData();
         }
 
-        // Function LoadData()
-        private void LoadData()
+        // Function turnOffLeft()
+        public void turnOffLeft()
         {
-            // dgvSP
-            dgvSP.DataSource = bus_sp.LayDSSP();
-            txtTongTien.Enabled = false;
-            txtTongGiaTriDH.Text = "0";
-            txtGiaBan.Text = "0";
-            txtSoLuong.Text="0";
-            dgvMuaHang.DataSource = bus_bh.LayDSCTDH(txtMaDonHang.Text);
+            txtMaDon.Enabled = false;
+            dtpNgayBan.Enabled = false;
+            txtTongGiaTriDH.Enabled = false;
+            cboMaNV.Enabled = false;
+        }
+
+        // Function turnOffRight()
+        public void turnOffRight()
+        {
             txtMaChiTiet.Enabled = false;
             txtMaDonHang.Enabled = false;
             txtMaSP.Enabled = false;
@@ -108,10 +118,60 @@ namespace QuanLySieuThi
             btnThanhToan.Enabled = false;
         }
 
+        // CheckNumber
+        public bool CheckNumber(string text)
+        {
+            if (text == string.Empty)
+            {
+                return false;
+            }
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (text[i] >= '0' && text[i] <= '9')
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Function LoadData()
+        private void LoadData()
+        {
+            // left
+            txtMaDon.Focus();
+            dtpNgayBan.Value = DateTime.Now;
+            txtTongGiaTriDH.Text = "0";
+            txtTongGiaTriDH.Enabled = false;
+            cboMaNV.SelectedIndex = 0;
+
+            // dgvSP
+            dgvSP.DataSource = bus_sp.LayDSSP();
+            txtTongTien.Enabled = false;
+            txtGiaBan.Text = "0";
+            txtSoLuong.Text = "0";
+            txtThanhTien.Text = "0";
+            dgvMuaHang.DataSource = bus_bh.LayDSCTDH(txtMaDonHang.Text);
+
+            txtMaChiTiet.Enabled = true;
+            txtMaDonHang.Enabled = true;
+            txtMaSP.Enabled = false;
+            txtTenSP.Enabled = false;
+            txtGiaBan.Enabled = false;
+            txtSoLuong.Enabled = true;
+            txtThanhTien.Enabled = false;
+            txtDonViTinh.Enabled = false;
+            btnThem.Enabled = true;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
+            btnLamMoi.Enabled = true;
+            btnThanhToan.Enabled = true;
+        }
+
         // btnLamMoi_Click
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            Reset();
+            Reset3();
         }
 
         // frmBanHang_Load
@@ -132,6 +192,8 @@ namespace QuanLySieuThi
             if (n >= 0)
             {
                 txtMaChiTiet.Enabled = true;
+                txtMaDonHang.Enabled = true;
+                txtMaSP.Enabled = true;
                 btnThem.Enabled = true;
                 btnXoa.Enabled = true;
                 btnSua.Enabled = true;
@@ -152,6 +214,8 @@ namespace QuanLySieuThi
                 // cboGiaBan
                 txtGiaBan.Text = dgvSP.Rows[n].Cells[3].Value.ToString();
 
+                // txtSoLuong
+                txtSoLuong.Text = dgvSP.Rows[n].Cells[4].Value.ToString();
 
                 // cboDonViTinh
                 txtDonViTinh.Text = dgvSP.Rows[n].Cells[5].Value.ToString();
@@ -169,17 +233,36 @@ namespace QuanLySieuThi
             // Check soLuong có != null hay không?
             if (CheckNumber(txtSoLuong.Text))
             {
-                DTO_ChiTietDonHang ctdh = new DTO_ChiTietDonHang(txtMaChiTiet.Text,
-                txtMaDonHang.Text, txtMaSP.Text,
-                txtTenSP.Text, int.Parse(txtGiaBan.Text),
-                int.Parse(txtSoLuong.Text), int.Parse(txtThanhTien.Text), txtDonViTinh.Text);
+                // Check MaSP có hợp lệ hay không?
+                if (bus_sp.TimSP_TheoMaSP_3(txtMaSP.Text) == 1)
+                {
+                    if (txtThanhTien.Text != string.Empty)
+                    {
+                        DTO_ChiTietDonHang ctdh = new DTO_ChiTietDonHang(txtMaChiTiet.Text,
+                                           txtMaDonHang.Text, txtMaSP.Text,
+                                           txtTenSP.Text, int.Parse(txtGiaBan.Text),
+                                           int.Parse(txtSoLuong.Text), int.Parse(txtThanhTien.Text), txtDonViTinh.Text);
 
-                bus_bh.ThemChiTietDonHang(ctdh);
-                sum+=int.Parse(txtThanhTien.Text);
-                txtTongTien.Text = $"{sum}";
-                Reset2();
-                btnThanhToan.Enabled = true;
-                
+                        if (bus_bh.ThemChiTietDonHang(ctdh))
+                        {
+                            sum += int.Parse(txtThanhTien.Text);
+                            txtTongTien.Text = $"{sum}";
+                            Reset3();
+                            btnThanhToan.Enabled = true;
+                        }
+                    }
+                    else
+                    {
+                        // Thông báo
+                        MessageBox.Show("Thành tiền không hợp lệ!", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    // Thông báo
+                    MessageBox.Show("Mã sản phẩm không hợp lệ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
@@ -194,8 +277,8 @@ namespace QuanLySieuThi
             // Check soLuong có != null hay không?
             if (CheckNumber(txtSoLuong.Text))
             {
-                
-                if(txtSoLuong.Text != null)
+
+                if (txtSoLuong.Text != null)
                 {
                     int thanhTien = int.Parse(txtSoLuong.Text) * int.Parse(txtGiaBan.Text);
                     txtThanhTien.Text = $"{thanhTien}";
@@ -235,27 +318,28 @@ namespace QuanLySieuThi
                 btnXoa.Enabled = true;
                 btnSua.Enabled = true;
 
+                txtMaChiTiet.Text = dgvMuaHang.Rows[n].Cells[0].Value.ToString();
 
                 // cboMaDonHang
-                txtMaDonHang.Text = dgvMuaHang.Rows[n].Cells[0].Value.ToString();
+                txtMaDonHang.Text = dgvMuaHang.Rows[n].Cells[1].Value.ToString();
 
                 // cboMaSanPham
-                txtMaSP.Text = dgvMuaHang.Rows[n].Cells[1].Value.ToString();
+                txtMaSP.Text = dgvMuaHang.Rows[n].Cells[2].Value.ToString();
 
                 // cboTenSanPham
-                txtTenSP.Text = dgvMuaHang.Rows[n].Cells[2].Value.ToString();
+                txtTenSP.Text = dgvMuaHang.Rows[n].Cells[3].Value.ToString();
 
                 // cboGiaBan
-                txtGiaBan.Text = dgvMuaHang.Rows[n].Cells[3].Value.ToString();
+                txtGiaBan.Text = dgvMuaHang.Rows[n].Cells[4].Value.ToString();
 
                 // txtSoLuong
-                txtSoLuong.Text = dgvMuaHang.Rows[n].Cells[4].Value.ToString();
+                txtSoLuong.Text = dgvMuaHang.Rows[n].Cells[5].Value.ToString();
 
                 // txtThanhTien
-                txtThanhTien.Text = dgvMuaHang.Rows[n].Cells[5].Value.ToString();
+                txtThanhTien.Text = dgvMuaHang.Rows[n].Cells[6].Value.ToString();
 
                 // cboDonViTinh
-                txtDonViTinh.Text = dgvMuaHang.Rows[n].Cells[6].Value.ToString();
+                txtDonViTinh.Text = dgvMuaHang.Rows[n].Cells[7].Value.ToString();
             }
             else
             {
@@ -279,7 +363,7 @@ namespace QuanLySieuThi
 
                 bus_bh.XoaChiTietDonHang(ctdh);
 
-                Reset();
+                Reset3();
             }
         }
 
@@ -298,7 +382,7 @@ namespace QuanLySieuThi
 
                 bus_bh.SuaChiTietDonHang(ctdh);
 
-                Reset();
+                Reset3();
             }
         }
 
@@ -314,28 +398,34 @@ namespace QuanLySieuThi
             // Check txtTongGiaTriDH = Number
             if (CheckNumber(txtTongGiaTriDH.Text))
             {
-                DTO_DonHang dh = new DTO_DonHang(txtMaDon.Text, dtpNgayBan.Value,
-                int.Parse(txtTongGiaTriDH.Text), cboMaNV.SelectedValue.ToString());
-                bus_dh.ThemDH(dh);
+                if (bus_dh.TimDonHang_TheoMaDH_2(txtMaDon.Text) != 1)
+                {
+                    DTO_DonHang dh = new DTO_DonHang(txtMaDon.Text, dtpNgayBan.Value,
+                            int.Parse(txtTongGiaTriDH.Text), cboMaNV.SelectedValue.ToString());
+                    bus_dh.ThemDH(dh);
 
-                Reset();
-                txtMaDon.Enabled = false;
-                dtpNgayBan.Enabled = false;
-                txtTongGiaTriDH.Enabled = false;
-                cboMaNV.Enabled = false;
-                txtMaChiTiet.Enabled = true;
-                txtMaDonHang.Enabled = true;
-                txtMaSP.Enabled = true;
-                txtTenSP.Enabled = true;
-                txtGiaBan.Enabled = true;
-                txtSoLuong.Enabled = true;
-                txtThanhTien.Enabled = true;
-                txtDonViTinh.Enabled = true;
-                btnThemDH.Enabled = false;
-                btnThem.Enabled = true;
-                btnXoa.Enabled = true;
-                btnSua.Enabled = true;
-                btnLamMoi.Enabled = true;
+                    Reset();
+
+                    txtMaChiTiet.Enabled = true;
+                    txtMaDonHang.Text = txtMaDon.Text;
+                    txtMaDonHang.Enabled = false;
+                    txtMaSP.Enabled = false;
+                    txtTenSP.Enabled = false;
+                    txtGiaBan.Enabled = false;
+                    txtSoLuong.Enabled = true;
+                    txtThanhTien.Enabled = false;
+                    txtDonViTinh.Enabled = false;
+                    btnThemDH.Enabled = false;
+                    btnThem.Enabled = true;
+                    btnXoa.Enabled = true;
+                    btnSua.Enabled = true;
+                    btnLamMoi.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show($"Đã có +{txtMaDon.Text}+ trong database!",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
@@ -350,7 +440,7 @@ namespace QuanLySieuThi
             bus_bh.CapNhatGiaTriTongTien(txtMaDon.Text, txtTongTien.Text);
             txtTongTien.Text = "";
             dgvMuaHang.DataSource = null;
-            MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -387,5 +387,22 @@ namespace DAL
                               };
             return temp;
         }
+
+        // TimSP_TheoMaSP_3()
+        public int TimSP_TheoMaSP_3(string maSP) {
+            var temp = from sp in db.SanPhams
+                       where sp.MaSP == maSP
+                       select sp;
+            return temp.Count();
+        }
+
+        // TimSP_TheoTenSP_3()
+        public int TimSP_TheoTenSP_3(string tenSP)
+        {
+            var temp = from sp in db.SanPhams
+                       where sp.TenSP.Contains(tenSP)
+                       select sp;
+            return temp.Count();
+        }
     }
 }
