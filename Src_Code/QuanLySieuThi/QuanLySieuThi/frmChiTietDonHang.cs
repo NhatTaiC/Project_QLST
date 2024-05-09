@@ -192,7 +192,7 @@ namespace QuanLySieuThi
                 MessageBox.Show("Vui lòng nhập số lượng là số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 // Reset Value
-                txtThanhTien.Text = string.Empty;
+                txtThanhTien.Text = "0";
             }
         }
 

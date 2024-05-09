@@ -70,7 +70,7 @@
             this.dtpNgayBan = new System.Windows.Forms.DateTimePicker();
             this.cboMaNV = new System.Windows.Forms.ComboBox();
             this.btnThemDH = new System.Windows.Forms.Button();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lbTongTien = new System.Windows.Forms.Label();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.tableSanPham = new System.Windows.Forms.TableLayoutPanel();
@@ -624,16 +624,16 @@
             this.btnThemDH.UseVisualStyleBackColor = true;
             this.btnThemDH.Click += new System.EventHandler(this.btnThemDH_Click);
             // 
-            // label17
+            // lbTongTien
             // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(1199, 476);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(97, 19);
-            this.label17.TabIndex = 11;
-            this.label17.Text = "Tổng Tiền:";
+            this.lbTongTien.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbTongTien.AutoSize = true;
+            this.lbTongTien.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTongTien.Location = new System.Drawing.Point(1199, 476);
+            this.lbTongTien.Name = "lbTongTien";
+            this.lbTongTien.Size = new System.Drawing.Size(97, 19);
+            this.lbTongTien.TabIndex = 11;
+            this.lbTongTien.Text = "Tổng Tiền:";
             // 
             // txtTongTien
             // 
@@ -695,7 +695,7 @@
             this.Controls.Add(this.tableSanPham);
             this.Controls.Add(this.btnThanhToan);
             this.Controls.Add(this.txtTongTien);
-            this.Controls.Add(this.label17);
+            this.Controls.Add(this.lbTongTien);
             this.Controls.Add(this.btnThemDH);
             this.Controls.Add(this.gbDonHang);
             this.Controls.Add(this.tableButton);
@@ -770,7 +770,7 @@
         private System.Windows.Forms.DateTimePicker dtpNgayBan;
         private System.Windows.Forms.ComboBox cboMaNV;
         private System.Windows.Forms.Button btnThemDH;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lbTongTien;
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.TableLayoutPanel tableSanPham;

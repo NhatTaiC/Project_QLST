@@ -81,11 +81,33 @@ namespace QuanLySieuThi
             txtGiaBan.Enabled = false;
             txtSoLuong.Text = "0";
             txtThanhTien.Text = "0";
+            txtTongTien.Text = "0";
             txtDonViTinh.Enabled = false;
             btnThem.Enabled = true;
             btnXoa.Enabled = false;
             btnSua.Enabled = false;
             btnThanhToan.Enabled = true;
+
+            // Called LoadData()
+            LoadData();
+        }
+
+        // Function Reset3()
+        public void Reset4()
+        {
+            txtMaChiTiet.Enabled = true;
+            txtMaDonHang.Enabled = false;
+            txtMaSP.Enabled = false;
+            txtTenSP.Enabled = false;
+            txtGiaBan.Enabled = false;
+            txtSoLuong.Text = "0";
+            txtThanhTien.Text = "0";
+            txtDonViTinh.Enabled = false;
+            btnThem.Enabled = true;
+            btnXoa.Enabled = false;
+            btnSua.Enabled = false;
+            btnThanhToan.Enabled = true;
+            btnThemDH.Enabled = true;
 
             // Called LoadData()
             LoadData();
@@ -171,7 +193,7 @@ namespace QuanLySieuThi
         // btnLamMoi_Click
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            Reset3();
+            Reset4();
         }
 
         // frmBanHang_Load
@@ -195,8 +217,8 @@ namespace QuanLySieuThi
                 txtMaDonHang.Enabled = true;
                 txtMaSP.Enabled = true;
                 btnThem.Enabled = true;
-                btnXoa.Enabled = true;
-                btnSua.Enabled = true;
+                btnXoa.Enabled = false;
+                btnSua.Enabled = false;
 
                 // txtMaChiTiet
                 //txtMaChiTiet.Text = dgvSP.Rows[n].Cells[0].Value.ToString();
@@ -215,7 +237,10 @@ namespace QuanLySieuThi
                 txtGiaBan.Text = dgvSP.Rows[n].Cells[3].Value.ToString();
 
                 // txtSoLuong
-                txtSoLuong.Text = dgvSP.Rows[n].Cells[4].Value.ToString();
+                txtSoLuong.Text = "0";
+
+                // txtThanhTien
+                txtThanhTien.Text = "0";
 
                 // cboDonViTinh
                 txtDonViTinh.Text = dgvSP.Rows[n].Cells[5].Value.ToString();
@@ -247,7 +272,7 @@ namespace QuanLySieuThi
                         {
                             sum += int.Parse(txtThanhTien.Text);
                             txtTongTien.Text = $"{sum}";
-                            Reset3();
+                            Reset4();
                             btnThanhToan.Enabled = true;
                         }
                     }
@@ -315,8 +340,8 @@ namespace QuanLySieuThi
                 txtThanhTien.Enabled = false;
                 txtDonViTinh.Enabled = false;
                 btnThem.Enabled = false;
-                btnXoa.Enabled = true;
-                btnSua.Enabled = true;
+                btnXoa.Enabled = false;
+                btnSua.Enabled = false;
 
                 txtMaChiTiet.Text = dgvMuaHang.Rows[n].Cells[0].Value.ToString();
 
@@ -417,8 +442,8 @@ namespace QuanLySieuThi
                     txtDonViTinh.Enabled = false;
                     btnThemDH.Enabled = false;
                     btnThem.Enabled = true;
-                    btnXoa.Enabled = true;
-                    btnSua.Enabled = true;
+                    btnXoa.Enabled = false;
+                    btnSua.Enabled = false;
                     btnLamMoi.Enabled = true;
                 }
                 else

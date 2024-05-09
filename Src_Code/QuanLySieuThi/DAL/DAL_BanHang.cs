@@ -242,10 +242,13 @@ namespace DAL
                 // Check xem MaChiTiet != null không? mới Xóa
                 if (ctdh.MaChiTiet != string.Empty)
                 {
-                    // Cập nhật số lượng Sản Phẩm trước khi xóa ChiTietDonHang khỏi DB (Reset Số lượng sp)
-                    var temp = db.SanPhams.Single(sp => sp.MaSP == ctdh.MaSP);
-                    temp.SoLuong = temp.SoLuong + SoLuongSP;
-                    SoLuongSP = 0;
+                    if (SoLuongSP != 0)
+                    {
+                        // Cập nhật số lượng Sản Phẩm trước khi xóa ChiTietDonHang khỏi DB (Reset Số lượng sp)
+                        var temp = db.SanPhams.Single(sp => sp.MaSP == ctdh.MaSP);
+                        temp.SoLuong = temp.SoLuong + SoLuongSP;
+                        SoLuongSP = 0; 
+                    }
 
                     // Tìm maCTDH để xóa = maCTDH
                     var ctdh_delete = from ct in db.ChiTietDonHangs
@@ -297,8 +300,11 @@ namespace DAL
 
                     if (ctdh.SoLuong <= tongSP)
                     {
-                        // Lưu lại giá trị số lượng mỗi lần sửa SLSP
-                        SoLuongSP += ctdh.SoLuong;
+                        if (soLuongSP != 0)
+                        {
+                            // Lưu lại giá trị số lượng mỗi lần sửa SLSP
+                            SoLuongSP += ctdh.SoLuong; 
+                        }
 
                         // Tính tổng số lượng SP còn lại
                         int soLuongSPConLai = (int)(tongSP - ctdh.SoLuong);
