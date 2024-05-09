@@ -346,5 +346,20 @@ namespace QuanLySieuThi
                 ActForm("frmInDSDH_TheoNgayBan");
             }
         }
+
+        // banHangMNSI_Click
+        private void banHangMNSI_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmBanHang"))
+            {
+                frmBanHang f = new frmBanHang();
+                //f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmBanHang");
+            }
+        }
     }
 }

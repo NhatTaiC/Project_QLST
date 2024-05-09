@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -130,22 +131,33 @@ namespace DAL
                 // Check lsp.MaLoaiSP có != null không?
                 if (maLSP != string.Empty)
                 {
-                    // Tìm LoaiSanPham cần xóa = maLSP
-                    var lsp_delete = from l in db.LoaiSanPhams
-                               where l.MaLoaiSP == maLSP
-                               select l;
-
-                    foreach (var item in lsp_delete)
+                    // Check MaLSP có trong DB SanPham hay không trước khí xóa!
+                    if (CheckLSP_TheoMaLSP(maLSP) == 1)
                     {
-                        db.LoaiSanPhams.DeleteOnSubmit(item); // Xóa LoaiSanPham trong DB LoaiSanPham
-                        db.SubmitChanges(); // Xác nhận thay đổi DB LoaiSanPham
+                        // Tìm LoaiSanPham cần xóa = maLSP
+                        var lsp_delete = from l in db.LoaiSanPhams
+                                         where l.MaLoaiSP == maLSP
+                                         select l;
+
+                        foreach (var item in lsp_delete)
+                        {
+                            db.LoaiSanPhams.DeleteOnSubmit(item); // Xóa LoaiSanPham trong DB LoaiSanPham
+                            db.SubmitChanges(); // Xác nhận thay đổi DB LoaiSanPham
+                        }
+
+                        // Thông báo
+                        MessageBox.Show($"Xóa loại sản phẩm +{maLSP}+ thành công!", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        return true;
                     }
-
-                    // Thông báo
-                    MessageBox.Show($"Xóa loại sản phẩm +{maLSP}+ thành công!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    return true;
+                    else
+                    {
+                        // Thông báo
+                        MessageBox.Show($"Mã loại sản phẩm +{maLSP}+ có liên quan đến SanPham\nKhông thể xóa!", "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
@@ -163,7 +175,8 @@ namespace DAL
         }
 
         // SuaLSP()
-        public bool SuaLSP(DTO_LoaiSanPham lsp) {
+        public bool SuaLSP(DTO_LoaiSanPham lsp)
+        {
             try
             {
                 // Check lsp.MaLoaiSP có != null không?
@@ -200,8 +213,9 @@ namespace DAL
             return false;
         }
 
-        // LayDSLSP_TheoTenLSP
-        public IQueryable LayDSLSP_TheoTenLSP(string maLSP) {
+        // LayDSLSP_TheoTenLSP()
+        public IQueryable LayDSLSP_TheoTenLSP(string maLSP)
+        {
             IQueryable temp = from lsp in db.LoaiSanPhams
                               where lsp.MaLoaiSP == maLSP
                               select new
@@ -211,8 +225,9 @@ namespace DAL
             return temp;
         }
 
-        // TimLSP_TheoTenLSP
-        public IQueryable TimLSP_TheoTenLSP(string tenLSP) {
+        // TimLSP_TheoTenLSP()
+        public IQueryable TimLSP_TheoTenLSP(string tenLSP)
+        {
             IQueryable temp = from lsp in db.LoaiSanPhams
                               where lsp.TenLoaiSP.Contains(tenLSP)
                               select new
@@ -224,8 +239,9 @@ namespace DAL
             return temp;
         }
 
-        // TimLSP_TheoMaLSP
-        public IQueryable TimLSP_TheoMaLSP(string maLSP) {
+        // TimLSP_TheoMaLSP()
+        public IQueryable TimLSP_TheoMaLSP(string maLSP)
+        {
             IQueryable temp = from lsp in db.LoaiSanPhams
                               where lsp.MaLoaiSP == maLSP
                               select new
@@ -236,5 +252,17 @@ namespace DAL
                               };
             return temp;
         }
-     }
+
+        // CheckLSP_TheoMaLSP()
+        public int CheckLSP_TheoMaLSP(string maLSP)
+        {
+            var temp = from lsp in db.LoaiSanPhams
+                       join sp in db.SanPhams
+                       on lsp.MaLoaiSP equals sp.MaLoaiSP
+                       where sp.MaLoaiSP == maLSP
+                       select lsp;
+
+            return temp.Count();
+        }
+    }
 }

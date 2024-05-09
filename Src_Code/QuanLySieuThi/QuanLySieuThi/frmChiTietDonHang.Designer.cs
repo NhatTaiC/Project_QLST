@@ -444,6 +444,8 @@
             this.Controls.Add(this.gbChiTietDonHang);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmChiTietDonHang";
             this.Text = "frmChiTietDonHang";

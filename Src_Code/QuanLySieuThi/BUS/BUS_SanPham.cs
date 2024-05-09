@@ -22,62 +22,74 @@ namespace BUS
 
         // Methods
         // LayDSSP()
-        public IQueryable LayDSSP() {
+        public IQueryable LayDSSP()
+        {
             return dal_sp.LayDSSP();
         }
 
         // LayDSSP_TheoMaSP()
-        public IQueryable LayDSSP_TheoMaSP(string maSP) {
+        public IQueryable LayDSSP_TheoMaSP(string maSP)
+        {
             return dal_sp.LayDSSP_TheoMaSP(maSP);
         }
 
         // ThemSP()
-        public bool ThemSP(DTO_SanPham sp) {
+        public bool ThemSP(DTO_SanPham sp)
+        {
             return dal_sp.ThemSP(sp);
         }
 
         // XoaSP()
-        public bool XoaSP(string maSP) {
+        public bool XoaSP(string maSP)
+        {
             return dal_sp.XoaSP(maSP);
         }
 
         // SuaSP()
-        public bool SuaSP(DTO_SanPham sp) {
+        public bool SuaSP(DTO_SanPham sp)
+        {
             return dal_sp.SuaSP(sp);
         }
 
         // TimSP_TheoTenSP()
-        public IQueryable TimSP_TheoTenSP(string tenSP) {
+        public IQueryable TimSP_TheoTenSP(string tenSP)
+        {
             return dal_sp.TimSP_TheoTenSP(tenSP);
         }
 
         // TimSP_TheoMaSP()
-        public IQueryable TimSP_TheoMaSP(string maSP) {
+        public IQueryable TimSP_TheoMaSP(string maSP)
+        {
             return dal_sp.TimSP_TheoMaSP(maSP);
         }
 
         // NhomSP_TheoGiaBan()
-        public IQueryable NhomSP_TheoGiaBan() {
+        public IQueryable NhomSP_TheoGiaBan()
+        {
             return dal_sp.NhomSP_TheoGiaBan();
         }
 
         // NhomSP_TheoDonViTinh()
-        public IQueryable NhomSP_TheoDonViTinh() {
+        public IQueryable NhomSP_TheoDonViTinh()
+        {
             return dal_sp.NhomSP_TheoDonViTinh();
         }
 
         // TimSP_TheoGiaBan()
-        public IQueryable TimSP_TheoGiaBan(string giaBan) {
+        public IQueryable TimSP_TheoGiaBan(string giaBan)
+        {
             return dal_sp.TimSP_TheoGiaBan(giaBan);
         }
 
-        // TimSP_TheoDonViTinh
-        public IQueryable TimSP_TheoDonViTinh(string donViTinh) {
+        // TimSP_TheoDonViTinh()
+        public IQueryable TimSP_TheoDonViTinh(string donViTinh)
+        {
             return dal_sp.TimSP_TheoDonViTinh(donViTinh);
         }
 
         // LayDSSP_2()
-        public IQueryable LayDSSP_2() {
+        public IQueryable LayDSSP_2()
+        {
             return dal_sp.LayDSSP_2();
         }
 
@@ -91,6 +103,23 @@ namespace BUS
         public IQueryable TimSP_TheoMaSP_2(string maSP)
         {
             return dal_sp.TimSP_TheoMaSP_2(maSP);
+        }
+
+        // TimSP_TheoMaSP_3()
+        public int TimSP_TheoMaSP_3(string maSP)
+        {
+            return dal_sp.TimSP_TheoMaSP_3(maSP);
+        }
+
+        // TimSP_TheoTenSP_3()
+        public int TimSP_TheoTenSP_3(string tenSP)
+        {
+            return dal_sp.TimSP_TheoTenSP_3(tenSP);
+        }
+
+        // CheckSP_TheoMaSP()
+        public int CheckSP_TheoMaSP(string maSP) {
+            return dal_sp.CheckSP_TheoMaSP(maSP);
         }
     }
 }

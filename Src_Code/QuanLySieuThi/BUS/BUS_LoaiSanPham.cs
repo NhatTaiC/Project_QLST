@@ -60,5 +60,10 @@ namespace BUS
         public IQueryable TimLSP_TheoMaLSP(string maLSP) {
             return dal_lsp.TimLSP_TheoMaLSP(maLSP);
         }
+
+        // CheckLSP_TheoMaLSP()
+        public int CheckLSP_TheoMaLSP(string maLSP) {
+            return dal_lsp.CheckLSP_TheoMaLSP(maLSP);
+        }
     }
 }

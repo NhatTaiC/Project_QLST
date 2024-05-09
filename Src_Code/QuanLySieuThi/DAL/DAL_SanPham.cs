@@ -152,22 +152,29 @@ namespace DAL
                 // Check sp.MaSP có != null hay không?
                 if (maSP != string.Empty)
                 {
-                    // Tìm sản phẩm muốn xóa == maSP
-                    var sp_delete = from sp in db.SanPhams
-                                    where sp.MaSP == maSP
-                                    select sp;
-
-                    foreach (var item in sp_delete)
+                    // Check MaSP có trong DB ChiTietDonHang hay không? trước khi xóa
+                    if (CheckSP_TheoMaSP(maSP) == 1)
                     {
-                        db.SanPhams.DeleteOnSubmit(item); // Xóa Sản Phẩm trong DB SanPham
-                        db.SubmitChanges(); // Xác nhận thay đổi DB SanPham
+                        // Tìm sản phẩm muốn xóa == maSP
+                        var sp_delete = from sp in db.SanPhams
+                                        where sp.MaSP == maSP
+                                        select sp;
+
+                        foreach (var item in sp_delete)
+                        {
+                            db.SanPhams.DeleteOnSubmit(item); // Xóa Sản Phẩm trong DB SanPham
+                            db.SubmitChanges(); // Xác nhận thay đổi DB SanPham
+                        }
+
+                        // Thông báo
+                        MessageBox.Show($"Xóa sản phẩm +{maSP}+ thành công!", "Thông báo", MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        return true;
                     }
-
                     // Thông báo
-                    MessageBox.Show($"Xóa sản phẩm +{maSP}+ thành công!", "Thông báo", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    return true;
-
+                    MessageBox.Show($"Mã sản phẩm +{maSP}+ có liên quan đến ChiTietDonHang\nKhông thể xóa!", "Thông báo",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -286,7 +293,8 @@ namespace DAL
         }
 
         // NhomSP_TheoDonViTinh()
-        public IQueryable NhomSP_TheoDonViTinh() {
+        public IQueryable NhomSP_TheoDonViTinh()
+        {
             IQueryable temp = from sp in db.SanPhams
                               group sp by sp.DonViTinh into result
                               select new
@@ -297,7 +305,8 @@ namespace DAL
         }
 
         // TimSP_TheoGiaBan()
-        public IQueryable TimSP_TheoGiaBan(string giaBan) {
+        public IQueryable TimSP_TheoGiaBan(string giaBan)
+        {
             IQueryable temp = from sp in db.SanPhams
                               where sp.GiaBan == int.Parse(giaBan)
                               select new
@@ -315,7 +324,8 @@ namespace DAL
         }
 
         // TimSP_TheoDonViTinh()
-        public IQueryable TimSP_TheoDonViTinh(string donViTinh) {
+        public IQueryable TimSP_TheoDonViTinh(string donViTinh)
+        {
             IQueryable temp = from sp in db.SanPhams
                               where sp.DonViTinh.Contains(donViTinh)
                               select new
@@ -386,6 +396,36 @@ namespace DAL
                                   HanSuDung = sp.HanSuDung,
                               };
             return temp;
+        }
+
+        // TimSP_TheoMaSP_3()
+        public int TimSP_TheoMaSP_3(string maSP)
+        {
+            var temp = from sp in db.SanPhams
+                       where sp.MaSP == maSP
+                       select sp;
+            return temp.Count();
+        }
+
+        // TimSP_TheoTenSP_3()
+        public int TimSP_TheoTenSP_3(string tenSP)
+        {
+            var temp = from sp in db.SanPhams
+                       where sp.TenSP.Contains(tenSP)
+                       select sp;
+            return temp.Count();
+        }
+
+        // CheckSP_TheoMaSP()
+        public int CheckSP_TheoMaSP(string maSP)
+        {
+            var temp = from sp in db.SanPhams
+                       join ctdh in db.ChiTietDonHangs
+                       on sp.MaSP equals ctdh.MaSP
+                       where ctdh.MaSP == maSP
+                       select sp;
+
+            return temp.Count();
         }
     }
 }

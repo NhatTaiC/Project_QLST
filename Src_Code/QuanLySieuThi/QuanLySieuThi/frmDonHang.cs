@@ -47,6 +47,9 @@ namespace QuanLySieuThi
             cboMaNV.DisplayMember = "HoTenNV";
             cboMaNV.ValueMember = "MaNV";
 
+            // txtTongGiaTriDH
+            txtTongGiaTriDH.Text = "0";
+
             // Others
             txtMaDon.Focus();
             cboMaNV.Enabled = true;
@@ -184,9 +187,17 @@ namespace QuanLySieuThi
 
                 if (r == DialogResult.Yes)
                 {
-                    bus_dh.XoaDH(txtMaDon.Text);
+                    if (CheckNumber(txtTongGiaTriDH.Text))
+                    {
+                        bus_dh.XoaDH(txtMaDon.Text);
 
-                    Reset();
+                        Reset(); 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tổng Giá Trị Đơn Hàng phải là số!",
+                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
@@ -207,12 +218,20 @@ namespace QuanLySieuThi
 
                 if (r == DialogResult.Yes)
                 {
-                    DTO_DonHang dh = new DTO_DonHang(txtMaDon.Text, dtpNgayBan.Value,
-                            int.Parse(txtTongGiaTriDH.Text), cboMaNV.ValueMember.ToString());
+                    if (CheckNumber(txtTongGiaTriDH.Text))
+                    {
+                        DTO_DonHang dh = new DTO_DonHang(txtMaDon.Text, dtpNgayBan.Value,
+                                           int.Parse(txtTongGiaTriDH.Text), cboMaNV.ValueMember.ToString());
 
-                    bus_dh.SuaDH(dh);
+                        bus_dh.SuaDH(dh);
 
-                    Reset();
+                        Reset(); 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tổng Giá Trị Đơn Hàng phải là số!",
+                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else

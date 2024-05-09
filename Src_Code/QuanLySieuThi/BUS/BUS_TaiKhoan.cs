@@ -58,22 +58,26 @@ namespace BUS
         }
 
         // TimTaiKhoan_TheoTenNV()
-        public IQueryable TimTaiKhoan_TheoTenNV(string tenNV) {
+        public IQueryable TimTaiKhoan_TheoTenNV(string tenNV)
+        {
             return dal_tk.TimTaiKhoan_TheoTenNV(tenNV);
         }
 
         // TimTaiKhoan_TheoTaiKhoan()
-        public IQueryable TimTaiKhoan_TheoTaiKhoan(string taiKhoan) {
+        public IQueryable TimTaiKhoan_TheoTaiKhoan(string taiKhoan)
+        {
             return dal_tk.TimTaiKhoan_TheoTaiKhoan(taiKhoan);
         }
 
         // TimTaiKhoan_TheoChucVu()
-        public IQueryable TimTaiKhoan_TheoChucVu(string chucVu) {
+        public IQueryable TimTaiKhoan_TheoChucVu(string chucVu)
+        {
             return dal_tk.TimTaiKhoan_TheoChucVu(chucVu);
         }
 
         // CheckTaiKhoan()
-        public bool CheckTaiKhoan(string taiKhoan, string matKhau, string chucVu) {
+        public bool CheckTaiKhoan(string taiKhoan, string matKhau, string chucVu)
+        {
             return dal_tk.CheckTaiKhoan(taiKhoan, matKhau, chucVu);
         }
     }

@@ -55,6 +55,11 @@ namespace QuanLySieuThi
             cboLoaiSanPham.ValueMember = "MaLoaiSP";
             cboLoaiSanPham.SelectedIndex = 0;
 
+            // txtGiaNhap, txtGiaBan, txtSoLuong
+            txtGiaNhap.Text = "0";
+            txtGiaBan.Text = "0";
+            txtSoLuong.Text = "0";
+
             // Others
             txtMaSP.Focus();
             txtMaSP.Enabled = true;
@@ -156,8 +161,17 @@ namespace QuanLySieuThi
 
             if (r == DialogResult.Yes)
             {
-                bus_sp.XoaSP(txtMaSP.Text);
-                Reset();
+                if (CheckNumber(txtGiaNhap.Text) && CheckNumber(txtGiaBan.Text) && CheckNumber(txtSoLuong.Text))
+                {
+                    bus_sp.XoaSP(txtMaSP.Text);
+                    Reset(); 
+                }
+                else
+                {
+                    // Thông báo
+                    MessageBox.Show("Giá nhập, giá bán, số lượng phải là số và không để trống!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -170,12 +184,21 @@ namespace QuanLySieuThi
 
             if (r == DialogResult.Yes)
             {
-                DTO_SanPham sp = new DTO_SanPham(txtMaSP.Text, txtTenSP.Text,
-            int.Parse(txtGiaNhap.Text), int.Parse(txtGiaBan.Text), int.Parse(txtSoLuong.Text), txtDonViTinh.Text, txtNoiSanXuat.Text,
-            dtpHanSuDung.Value, cboNhaCungCap.SelectedValue.ToString(), cboLoaiSanPham.SelectedValue.ToString());
+                if (CheckNumber(txtGiaNhap.Text) && CheckNumber(txtGiaBan.Text) && CheckNumber(txtSoLuong.Text))
+                {
+                    DTO_SanPham sp = new DTO_SanPham(txtMaSP.Text, txtTenSP.Text,
+                        int.Parse(txtGiaNhap.Text), int.Parse(txtGiaBan.Text), int.Parse(txtSoLuong.Text), txtDonViTinh.Text, txtNoiSanXuat.Text,
+                        dtpHanSuDung.Value, cboNhaCungCap.SelectedValue.ToString(), cboLoaiSanPham.SelectedValue.ToString());
 
-                bus_sp.SuaSP(sp);
-                Reset();
+                    bus_sp.SuaSP(sp);
+                    Reset(); 
+                }
+                else
+                {
+                    // Thông báo
+                    MessageBox.Show("Giá nhập, giá bán, số lượng phải là số và không để trống!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

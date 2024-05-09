@@ -71,6 +71,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBanHang.Designer.cs">
+      <DependentUpon>frmBanHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChiTietDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +199,9 @@
       <DependentUpon>DSSP_TheoTenSanPham.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="frmBanHang.resx">
+      <DependentUpon>frmBanHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChiTietDonHang.resx">
       <DependentUpon>frmChiTietDonHang.cs</DependentUpon>
     </EmbeddedResource>

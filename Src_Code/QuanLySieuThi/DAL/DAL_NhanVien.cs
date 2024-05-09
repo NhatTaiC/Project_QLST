@@ -176,40 +176,51 @@ namespace DAL
                 // Check MaNV có != null hay ko? => Thêm vào DB
                 if (nv != string.Empty)
                 {
-                    // Truy vấn MaNV có tồn tại trong Table NhanVien ko?
-                    var n_delete = from n in db.NhanViens
-                                   where n.MaNV == nv && n.TaiKhoan == tk
-                                   select n;
-
-                    foreach (var item in n_delete)
+                    // Check MaNV có trong DB DonHang hay không? trước khi xóa nv
+                    if (CheckNV_TheoMaNV(nv) == 1)
                     {
-                        db.NhanViens.DeleteOnSubmit(item); // Xóa NhanVien
-                        db.SubmitChanges(); // Xác nhận lưu vào DB NhanVien
-                    }
+                        // Truy vấn MaNV có tồn tại trong Table NhanVien ko?
+                        var n_delete = from n in db.NhanViens
+                                       where n.MaNV == nv && n.TaiKhoan == tk
+                                       select n;
 
-                    // Check tk của NV có tồn tại ko?
-                    if (tk != string.Empty)
-                    {
-                        var t_delete = from t in db.TaiKhoans
-                                       where t.TaiKhoan1 == tk
-                                       select t;
-
-                        foreach (var item in t_delete)
+                        foreach (var item in n_delete)
                         {
-                            db.TaiKhoans.DeleteOnSubmit(item); // Xóa TaiKhoan trong DB
-                            db.SubmitChanges(); // Xác nhận xóa
+                            db.NhanViens.DeleteOnSubmit(item); // Xóa NhanVien
+                            db.SubmitChanges(); // Xác nhận lưu vào DB NhanVien
                         }
 
-                        // Thông báo
-                        MessageBox.Show($"Xóa nhân viên +{nv}+ thành công!", "Thông báo",
-                               MessageBoxButtons.OK,
-                               MessageBoxIcon.Information);
-                        return true;
+                        // Check tk của NV có tồn tại ko?
+                        if (tk != string.Empty)
+                        {
+                            var t_delete = from t in db.TaiKhoans
+                                           where t.TaiKhoan1 == tk
+                                           select t;
+
+                            foreach (var item in t_delete)
+                            {
+                                db.TaiKhoans.DeleteOnSubmit(item); // Xóa TaiKhoan trong DB
+                                db.SubmitChanges(); // Xác nhận xóa
+                            }
+
+                            // Thông báo
+                            MessageBox.Show($"Xóa nhân viên +{nv}+ thành công!", "Thông báo",
+                                   MessageBoxButtons.OK,
+                                   MessageBoxIcon.Information);
+                            return true;
+                        }
+                        else
+                        {
+                            // Thông báo
+                            MessageBox.Show("Tài khoản không hợp lệ, không thể xóa tài khoản!", "Thông báo",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
                         // Thông báo
-                        MessageBox.Show("Tài khoản không hợp lệ, không thể xóa tài khoản!", "Thông báo",
+                        MessageBox.Show($"Mã NV +{nv}+ có liên quan đến DonHang\nKhông thể xóa!", "Thông báo",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                     }
@@ -340,7 +351,8 @@ namespace DAL
         }
 
         // TimNV_TheoMaNV()
-        public IQueryable TimNV_TheoMaNV(string maNV) {
+        public IQueryable TimNV_TheoMaNV(string maNV)
+        {
             // Lấy DSNV
             IQueryable temp = from nv in Db.NhanViens
                               where nv.MaNV == maNV
@@ -358,10 +370,12 @@ namespace DAL
         }
 
         // TimNV_TheoGioiTinh()
-        public IQueryable TimNV_TheoGioiTinh(string gioiTinh) {
+        public IQueryable TimNV_TheoGioiTinh(string gioiTinh)
+        {
             IQueryable temp = from nv in db.NhanViens
                               where nv.GioiTinh.Contains(gioiTinh)
-                              select new {
+                              select new
+                              {
                                   MaNV = nv.MaNV,
                                   HoTenNV = nv.TenNV,
                                   NgaySinh = nv.NgaySinh,
@@ -373,7 +387,8 @@ namespace DAL
         }
 
         // TimNV_TheoNamSinh()
-        public IQueryable TimNV_TheoNamSinh(string namSinh) {
+        public IQueryable TimNV_TheoNamSinh(string namSinh)
+        {
             IQueryable temp = from nv in db.NhanViens
                               where nv.NgaySinh.Value.Year.ToString().Contains(namSinh)
                               select new
@@ -422,6 +437,18 @@ namespace DAL
                                   SDT = nv.Sdt,
                               };
             return temp;
+        }
+
+        // CheckNV_TheoMaNV()
+        public int CheckNV_TheoMaNV(string maNV)
+        {
+            var temp = from nv in db.NhanViens
+                       join dh in db.DonHangs
+                       on nv.MaNV equals dh.MaNV
+                       where dh.MaNV == maNV
+                       select nv;
+
+            return temp.Count();
         }
     }
 }

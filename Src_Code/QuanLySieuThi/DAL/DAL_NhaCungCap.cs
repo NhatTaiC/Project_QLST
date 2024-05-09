@@ -133,21 +133,32 @@ namespace DAL
                 // Check ncc.MaNCC có != null hay không?
                 if (maNCC != string.Empty)
                 {
-                    // Tìm NCC muốn xóa = maNCC
-                    var ncc_delete = from nc in db.NhaCungCaps
-                                     where nc.MaNCC == maNCC
-                                     select nc;
-
-                    foreach (var item in ncc_delete)
+                    // Check MaNCC có trong DB SanPham hay không?
+                    if (CheckNCC_TheoMaNCC(maNCC) == 1)
                     {
-                        db.NhaCungCaps.DeleteOnSubmit(item); // Xóa NCC 
-                        db.SubmitChanges(); // Xác nhận xóa NCC khỏi DB NCC
-                    }
+                        // Tìm NCC muốn xóa = maNCC
+                        var ncc_delete = from nc in db.NhaCungCaps
+                                         where nc.MaNCC == maNCC
+                                         select nc;
 
-                    // Thông báo
-                    MessageBox.Show($"Xóa nhà cung cấp +{maNCC}+ thành công!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return true;
+                        foreach (var item in ncc_delete)
+                        {
+                            db.NhaCungCaps.DeleteOnSubmit(item); // Xóa NCC 
+                            db.SubmitChanges(); // Xác nhận xóa NCC khỏi DB NCC
+                        }
+
+                        // Thông báo
+                        MessageBox.Show($"Xóa nhà cung cấp +{maNCC}+ thành công!", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return true;
+                    }
+                    else
+                    {
+                        // Thông báo
+                        MessageBox.Show($"Mã nhà cung cấp +{maNCC}+ có liên quan đến SanPham\nKhông thể xóa!", "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
@@ -233,7 +244,8 @@ namespace DAL
         }
 
         // TimNCC_TheoMaNCC()
-        public IQueryable TimNCC_TheoMaNCC(string maNCC) {
+        public IQueryable TimNCC_TheoMaNCC(string maNCC)
+        {
             IQueryable temp = from nc in db.NhaCungCaps
                               where nc.MaNCC == maNCC
                               select new
@@ -244,6 +256,18 @@ namespace DAL
                                   SdtNCC = nc.SdtNCC
                               };
             return temp;
+        }
+
+        // CheckNCC_TheoMaNCC()
+        public int CheckNCC_TheoMaNCC(string maNCC)
+        {
+            var temp = from ncc in db.NhaCungCaps
+                       join sp in db.SanPhams
+                       on ncc.MaNCC equals sp.MaNCC
+                       where sp.MaNCC == maNCC
+                       select ncc;
+
+            return temp.Count();
         }
     }
 }

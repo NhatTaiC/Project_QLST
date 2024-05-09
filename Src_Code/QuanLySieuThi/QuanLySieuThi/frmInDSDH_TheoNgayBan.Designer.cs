@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInDSDH_TheoNgayBan));
             this.label1 = new System.Windows.Forms.Label();
             this.tableForm = new System.Windows.Forms.TableLayoutPanel();
-            this.tableButton = new System.Windows.Forms.TableLayoutPanel();
-            this.tableReport = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.crvDSDH_TheoNgayBan = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.dtpNgayBan = new System.Windows.Forms.DateTimePicker();
+            this.tableButton = new System.Windows.Forms.TableLayoutPanel();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnIn = new System.Windows.Forms.Button();
+            this.tableReport = new System.Windows.Forms.TableLayoutPanel();
+            this.crvDSDH_TheoNgayBan = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.tableForm.SuspendLayout();
             this.tableButton.SuspendLayout();
             this.tableReport.SuspendLayout();
@@ -71,6 +71,28 @@
             this.tableForm.Size = new System.Drawing.Size(354, 61);
             this.tableForm.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(189, 61);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Chọn Ngày Bán:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dtpNgayBan
+            // 
+            this.dtpNgayBan.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayBan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtpNgayBan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayBan.Location = new System.Drawing.Point(198, 15);
+            this.dtpNgayBan.Margin = new System.Windows.Forms.Padding(3, 15, 3, 15);
+            this.dtpNgayBan.Name = "dtpNgayBan";
+            this.dtpNgayBan.Size = new System.Drawing.Size(153, 26);
+            this.dtpNgayBan.TabIndex = 0;
+            // 
             // tableButton
             // 
             this.tableButton.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -88,54 +110,6 @@
             this.tableButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableButton.Size = new System.Drawing.Size(442, 54);
             this.tableButton.TabIndex = 2;
-            // 
-            // tableReport
-            // 
-            this.tableReport.ColumnCount = 1;
-            this.tableReport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableReport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableReport.Controls.Add(this.crvDSDH_TheoNgayBan, 0, 0);
-            this.tableReport.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableReport.Location = new System.Drawing.Point(0, 412);
-            this.tableReport.Name = "tableReport";
-            this.tableReport.RowCount = 1;
-            this.tableReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 392F));
-            this.tableReport.Size = new System.Drawing.Size(896, 392);
-            this.tableReport.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(189, 61);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Chọn Ngày Bán:";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // crvDSDH_TheoNgayBan
-            // 
-            this.crvDSDH_TheoNgayBan.ActiveViewIndex = -1;
-            this.crvDSDH_TheoNgayBan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crvDSDH_TheoNgayBan.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crvDSDH_TheoNgayBan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crvDSDH_TheoNgayBan.Location = new System.Drawing.Point(3, 3);
-            this.crvDSDH_TheoNgayBan.Name = "crvDSDH_TheoNgayBan";
-            this.crvDSDH_TheoNgayBan.Size = new System.Drawing.Size(890, 386);
-            this.crvDSDH_TheoNgayBan.TabIndex = 0;
-            // 
-            // dtpNgayBan
-            // 
-            this.dtpNgayBan.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayBan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtpNgayBan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayBan.Location = new System.Drawing.Point(198, 15);
-            this.dtpNgayBan.Margin = new System.Windows.Forms.Padding(3, 15, 3, 15);
-            this.dtpNgayBan.Name = "dtpNgayBan";
-            this.dtpNgayBan.Size = new System.Drawing.Size(153, 26);
-            this.dtpNgayBan.TabIndex = 0;
             // 
             // btnThoat
             // 
@@ -176,6 +150,32 @@
             this.btnIn.UseVisualStyleBackColor = true;
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
+            // tableReport
+            // 
+            this.tableReport.ColumnCount = 1;
+            this.tableReport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableReport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableReport.Controls.Add(this.crvDSDH_TheoNgayBan, 0, 0);
+            this.tableReport.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableReport.Location = new System.Drawing.Point(0, 412);
+            this.tableReport.Name = "tableReport";
+            this.tableReport.RowCount = 1;
+            this.tableReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 392F));
+            this.tableReport.Size = new System.Drawing.Size(896, 392);
+            this.tableReport.TabIndex = 3;
+            // 
+            // crvDSDH_TheoNgayBan
+            // 
+            this.crvDSDH_TheoNgayBan.ActiveViewIndex = -1;
+            this.crvDSDH_TheoNgayBan.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crvDSDH_TheoNgayBan.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crvDSDH_TheoNgayBan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crvDSDH_TheoNgayBan.Location = new System.Drawing.Point(3, 3);
+            this.crvDSDH_TheoNgayBan.Name = "crvDSDH_TheoNgayBan";
+            this.crvDSDH_TheoNgayBan.Size = new System.Drawing.Size(890, 386);
+            this.crvDSDH_TheoNgayBan.TabIndex = 0;
+            // 
             // frmInDSDH_TheoNgayBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -188,7 +188,7 @@
             this.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmInDSDH_TheoNgayBan";
             this.Text = "frmInDSDH_TheoNgayBan";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmInDSDH_TheoNgayBan_FormClosing);
