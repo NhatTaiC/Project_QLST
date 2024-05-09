@@ -107,9 +107,7 @@ namespace DAL
                                     int soLuongSPConLai = (int)(temp5.SoLuong - ctdh.SoLuong);
 
                                     // Lưu giá trị soLuongSP đầu tiên
-                                    //SoLuongSP += ctdh.SoLuong;
-                                    //ctdh.TempSoLuong = SoLuongSP;
-                                    ctdh.TempSoLuong += ctdh.SoLuong;
+                                    SoLuongSP += ctdh.SoLuong;
 
                                     if (soLuongSPConLai >= 0)
                                     {
@@ -144,7 +142,7 @@ namespace DAL
                                         MessageBox.Show($"Số lượng sản phẩm +{ctdh.MaSP}+ vừa nhập nhiều hơn Sản Phẩm có trong danh sách Sản Phẩm, không thể thêm Chi Tiết Đơn Hàng!", "Thông báo",
                                             MessageBoxButtons.OK,
                                             MessageBoxIcon.Error);
-                                    }  
+                                    }
                                 }
                                 else
                                 {
@@ -207,7 +205,7 @@ namespace DAL
                     // Cập nhật số lượng Sản Phẩm trước khi xóa ChiTietDonHang khỏi DB (Reset Số lượng sp)
                     var temp = db.SanPhams.Single(sp => sp.MaSP == ctdh.MaSP);
                     temp.SoLuong = temp.SoLuong + ctdh.SoLuong;
-                    ctdh.TempSoLuong = 0;
+                    SoLuongSP = 0;
 
                     // Tìm maCTDH để xóa = maCTDH
                     var ctdh_delete = from ct in db.ChiTietDonHangs
@@ -260,10 +258,11 @@ namespace DAL
                     if (ctdh.SoLuong <= tongSP)
                     {
                         // Lưu lại giá trị số lượng mỗi lần sửa SLSP
-                        int tempSoLuong = ctdh.SoLuong - ctdh.TempSoLuong;
-                        //SoLuongSP += ctdh.SoLuong;
-                        //ctdh.TempSoLuong = SoLuongSP;
-                        ctdh.TempSoLuong += ctdh.SoLuong;
+                        int tempSoLuong = ctdh.SoLuong - SoLuongSP;
+
+                        // Reset value soLuongSP
+                        SoLuongSP = 0;
+                        SoLuongSP += ctdh.SoLuong;
 
                         // Tính tổng số lượng SP còn lại
                         int soLuongSPConLai = (int)(tongSP - tempSoLuong);

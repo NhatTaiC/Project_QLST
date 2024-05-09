@@ -25,119 +25,104 @@ namespace QuanLySieuThi
         {
             InitializeComponent();
         }
-        int sum = 0;
         BUS_SanPham bus_sp = new BUS_SanPham();
         BUS_BanHang bus_bh = new BUS_BanHang();
         BUS_DonHang bus_dh = new BUS_DonHang();
         BUS_NhanVien bus_nv = new BUS_NhanVien();
+        BUS_ChiTietDonHang bus_ctdh = new BUS_ChiTietDonHang();
+
+        // Function LoadData()
+        private void LoadData()
+        {
+            // Left
+            txtMaDon.Focus();
+            txtMaDon.Text = string.Empty;
+            dtpNgayBan.Value = DateTime.Now;
+            txtTongGiaTriDH.Text = "0";
+            txtTongGiaTriDH.Enabled = false;
+            btnThemDH.Enabled = true;
+
+            // cboMaNV
+            cboMaNV.DataSource = bus_nv.LayDSNV();
+            cboMaNV.DisplayMember = "HoTenNV";
+            cboMaNV.ValueMember = "MaNV";
+            cboMaNV.SelectedIndex = 0;
+
+            // dgvSP
+            dgvSP.DataSource = bus_sp.LayDSSP();
+
+            // Right
+            txtMaChiTiet.Enabled = true;
+            txtMaDonHang.Enabled = true;
+            txtMaSP.Enabled = false;
+            txtTenSP.Enabled = false;
+            txtGiaBan.Enabled = false;
+            txtSoLuong.Enabled = true;
+            txtThanhTien.Enabled = false;
+            txtDonViTinh.Enabled = false;
+            btnThem.Enabled = true;
+            btnXoa.Enabled = false;
+            txtTongTien.Enabled = false;
+
+            // dgvMuaHang
+            dgvMuaHang.DataSource = bus_bh.LayDSCTDH(txtMaDonHang.Text);
+
+            // Others
+            txtMaChiTiet.Text = string.Empty;
+            txtMaDonHang.Text = string.Empty;
+            txtMaSP.Text = string.Empty;
+            txtGiaBan.Text = "0";
+            txtSoLuong.Text = "0";
+            txtThanhTien.Text = "0";
+            txtTongTien.Text = "0";
+        }
 
         // Function Reset()
         public void Reset()
         {
-            // turnOffRight
-            turnOffRight();
-
-            // Reset right
-            txtMaChiTiet.Text = string.Empty;
-            txtSoLuong.Text = "0";
-            txtThanhTien.Text = "0";
-
             // Called LoadData()
             LoadData();
         }
 
         // Function Reset2()
-        public void Reset2()
-        {
-            txtMaChiTiet.Enabled = true;
-            txtMaDonHang.Enabled = false;
-            txtMaSP.Enabled = true;
-            txtTenSP.Enabled = false;
-            txtGiaBan.Enabled = false;
-            txtThanhTien.Enabled = false;
-            txtDonViTinh.Enabled = false;
-            btnThem.Enabled = true;
-            btnXoa.Enabled = true;
-            btnSua.Enabled = true;
-
-            // Reset text
-            //txtMaChiTiet.Text = string.Empty;
-            txtSoLuong.Text = "0";
-            txtThanhTien.Text = "0";
-
-            //// Called LoadData()
-            //LoadData();
-
-            dgvMuaHang.DataSource = bus_bh.LayDSCTDH(txtMaDonHang.Text);
-        }
-
-        // Function Reset3()
-        public void Reset3()
-        {
-            txtMaChiTiet.Enabled = true;
-            txtMaDonHang.Enabled = false;
-            txtMaSP.Enabled = false;
-            txtTenSP.Enabled = false;
-            txtGiaBan.Enabled = false;
-            txtSoLuong.Text = "0";
-            txtThanhTien.Text = "0";
-            txtTongTien.Text = "0";
-            txtDonViTinh.Enabled = false;
-            btnThem.Enabled = true;
-            btnXoa.Enabled = false;
-            btnSua.Enabled = false;
-            btnThanhToan.Enabled = true;
-
-            // Called LoadData()
-            LoadData();
-        }
-
-        // Function Reset3()
-        public void Reset4()
-        {
-            txtMaChiTiet.Enabled = true;
-            txtMaDonHang.Enabled = false;
-            txtMaSP.Enabled = false;
-            txtTenSP.Enabled = false;
-            txtGiaBan.Enabled = false;
-            txtSoLuong.Text = "0";
-            txtThanhTien.Text = "0";
-            txtDonViTinh.Enabled = false;
-            btnThem.Enabled = true;
-            btnXoa.Enabled = false;
-            btnSua.Enabled = false;
-            btnThanhToan.Enabled = true;
+        public void Reset2() {
+            // Left
+            txtMaDon.Focus();
+            txtMaDon.Text = string.Empty;
+            dtpNgayBan.Value = DateTime.Now;
+            txtTongGiaTriDH.Text = "0";
+            txtTongGiaTriDH.Enabled = false;
             btnThemDH.Enabled = true;
 
-            // Called LoadData()
-            LoadData();
-        }
+            // cboMaNV
+            cboMaNV.DataSource = bus_nv.LayDSNV();
+            cboMaNV.DisplayMember = "HoTenNV";
+            cboMaNV.ValueMember = "MaNV";
+            cboMaNV.SelectedIndex = 0;
 
-        // Function turnOffLeft()
-        public void turnOffLeft()
-        {
-            txtMaDon.Enabled = false;
-            dtpNgayBan.Enabled = false;
-            txtTongGiaTriDH.Enabled = false;
-            cboMaNV.Enabled = false;
-        }
+            // dgvSP
+            dgvSP.DataSource = bus_sp.LayDSSP();
 
-        // Function turnOffRight()
-        public void turnOffRight()
-        {
-            txtMaChiTiet.Enabled = false;
-            txtMaDonHang.Enabled = false;
+            // Right
+            txtMaChiTiet.Enabled = true;
+            txtMaDonHang.Enabled = true;
             txtMaSP.Enabled = false;
             txtTenSP.Enabled = false;
             txtGiaBan.Enabled = false;
-            txtSoLuong.Enabled = false;
+            txtSoLuong.Enabled = true;
             txtThanhTien.Enabled = false;
             txtDonViTinh.Enabled = false;
-            btnThem.Enabled = false;
+            btnThem.Enabled = true;
             btnXoa.Enabled = false;
-            btnSua.Enabled = false;
-            btnLamMoi.Enabled = true;
-            btnThanhToan.Enabled = false;
+            txtTongTien.Enabled = false;
+
+            // dgvMuaHang
+            dgvMuaHang.DataSource = bus_bh.LayDSCTDH(txtMaDonHang.Text);
+
+            // Others
+            txtGiaBan.Text = "0";
+            txtSoLuong.Text = "0";
+            txtThanhTien.Text = "0";
         }
 
         // CheckNumber
@@ -157,52 +142,15 @@ namespace QuanLySieuThi
             return false;
         }
 
-        // Function LoadData()
-        private void LoadData()
-        {
-            // left
-            txtMaDon.Focus();
-            dtpNgayBan.Value = DateTime.Now;
-            txtTongGiaTriDH.Text = "0";
-            txtTongGiaTriDH.Enabled = false;
-            cboMaNV.SelectedIndex = 0;
-
-            // dgvSP
-            dgvSP.DataSource = bus_sp.LayDSSP();
-            txtTongTien.Enabled = false;
-            txtGiaBan.Text = "0";
-            txtSoLuong.Text = "0";
-            txtThanhTien.Text = "0";
-            dgvMuaHang.DataSource = bus_bh.LayDSCTDH(txtMaDonHang.Text);
-
-            txtMaChiTiet.Enabled = true;
-            txtMaDonHang.Enabled = true;
-            txtMaSP.Enabled = false;
-            txtTenSP.Enabled = false;
-            txtGiaBan.Enabled = false;
-            txtSoLuong.Enabled = true;
-            txtThanhTien.Enabled = false;
-            txtDonViTinh.Enabled = false;
-            btnThem.Enabled = true;
-            btnXoa.Enabled = false;
-            btnSua.Enabled = false;
-            btnLamMoi.Enabled = true;
-            btnThanhToan.Enabled = true;
-        }
-
         // btnLamMoi_Click
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-            Reset4();
+            Reset();
         }
 
         // frmBanHang_Load
         private void frmBanHang_Load(object sender, EventArgs e)
         {
-            // cboMaNV
-            cboMaNV.DataSource = bus_nv.LayDSNV();
-            cboMaNV.DisplayMember = "HoTenNV";
-            cboMaNV.ValueMember = "MaNV";
             LoadData();
         }
 
@@ -213,27 +161,13 @@ namespace QuanLySieuThi
 
             if (n >= 0)
             {
-                txtMaChiTiet.Enabled = true;
-                txtMaDonHang.Enabled = true;
-                txtMaSP.Enabled = true;
-                btnThem.Enabled = true;
-                btnXoa.Enabled = false;
-                btnSua.Enabled = false;
-
-                // txtMaChiTiet
-                //txtMaChiTiet.Text = dgvSP.Rows[n].Cells[0].Value.ToString();
-
-
-                // cboMaDonHang
-                //txtMaDonHang.Text = dgvSP.Rows[n].Cells[1].Value.ToString();
-
-                // cboMaSanPham
+                // txtMaSP
                 txtMaSP.Text = dgvSP.Rows[n].Cells[0].Value.ToString();
 
-                // cboTenSanPham
+                // txtTenSP
                 txtTenSP.Text = dgvSP.Rows[n].Cells[1].Value.ToString();
 
-                // cboGiaBan
+                // txtGiaBan
                 txtGiaBan.Text = dgvSP.Rows[n].Cells[3].Value.ToString();
 
                 // txtSoLuong
@@ -270,10 +204,10 @@ namespace QuanLySieuThi
 
                         if (bus_bh.ThemChiTietDonHang(ctdh))
                         {
-                            sum += int.Parse(txtThanhTien.Text);
-                            txtTongTien.Text = $"{sum}";
-                            Reset4();
-                            btnThanhToan.Enabled = true;
+                            // Tính tổng tiền
+                            txtTongTien.Text = $"{bus_bh.TinhTongTien(txtMaDonHang.Text)}";
+
+                            Reset2();
                         }
                     }
                     else
@@ -340,21 +274,24 @@ namespace QuanLySieuThi
                 txtThanhTien.Enabled = false;
                 txtDonViTinh.Enabled = false;
                 btnThem.Enabled = false;
-                btnXoa.Enabled = false;
-                btnSua.Enabled = false;
+                btnXoa.Enabled = true;
 
+                // txtMaChiTiet
                 txtMaChiTiet.Text = dgvMuaHang.Rows[n].Cells[0].Value.ToString();
 
-                // cboMaDonHang
+                // txtMaDonHang
                 txtMaDonHang.Text = dgvMuaHang.Rows[n].Cells[1].Value.ToString();
 
-                // cboMaSanPham
+                // Tính tổng tiền
+                txtTongTien.Text = $"{bus_bh.TinhTongTien(txtMaDonHang.Text)}";
+
+                // txtMaSP
                 txtMaSP.Text = dgvMuaHang.Rows[n].Cells[2].Value.ToString();
 
-                // cboTenSanPham
+                // txtTenSP
                 txtTenSP.Text = dgvMuaHang.Rows[n].Cells[3].Value.ToString();
 
-                // cboGiaBan
+                // txtGiaBan
                 txtGiaBan.Text = dgvMuaHang.Rows[n].Cells[4].Value.ToString();
 
                 // txtSoLuong
@@ -388,26 +325,10 @@ namespace QuanLySieuThi
 
                 bus_bh.XoaChiTietDonHang(ctdh);
 
-                Reset3();
-            }
-        }
+                // Tính tổng tiền
+                txtTongTien.Text = $"{bus_bh.TinhTongTien(txtMaDonHang.Text)}";
 
-        // btnSua_Click
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            DialogResult r = MessageBox.Show($"Bạn có chắc muốn sửa thông tin chi tiết đơn hàng +{txtMaChiTiet.Text}+ không?",
-                "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (r == DialogResult.Yes)
-            {
-                DTO_ChiTietDonHang ctdh = new DTO_ChiTietDonHang(txtMaChiTiet.Text,
-                txtMaDonHang.Text, txtMaSP.Text,
-                txtTenSP.Text, int.Parse(txtGiaBan.Text),
-                int.Parse(txtSoLuong.Text), int.Parse(txtThanhTien.Text), txtDonViTinh.Text);
-
-                bus_bh.SuaChiTietDonHang(ctdh);
-
-                Reset3();
+                Reset();
             }
         }
 
@@ -427,24 +348,10 @@ namespace QuanLySieuThi
                 {
                     DTO_DonHang dh = new DTO_DonHang(txtMaDon.Text, dtpNgayBan.Value,
                             int.Parse(txtTongGiaTriDH.Text), cboMaNV.SelectedValue.ToString());
+
                     bus_dh.ThemDH(dh);
 
-                    Reset();
-
-                    txtMaChiTiet.Enabled = true;
                     txtMaDonHang.Text = txtMaDon.Text;
-                    txtMaDonHang.Enabled = false;
-                    txtMaSP.Enabled = false;
-                    txtTenSP.Enabled = false;
-                    txtGiaBan.Enabled = false;
-                    txtSoLuong.Enabled = true;
-                    txtThanhTien.Enabled = false;
-                    txtDonViTinh.Enabled = false;
-                    btnThemDH.Enabled = false;
-                    btnThem.Enabled = true;
-                    btnXoa.Enabled = false;
-                    btnSua.Enabled = false;
-                    btnLamMoi.Enabled = true;
                 }
                 else
                 {
@@ -462,10 +369,36 @@ namespace QuanLySieuThi
         // btnThanhToan_Click
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            bus_bh.CapNhatGiaTriTongTien(txtMaDon.Text, txtTongTien.Text);
-            txtTongTien.Text = "";
-            dgvMuaHang.DataSource = null;
+            bus_bh.CapNhatGiaTriTongTien(txtMaDonHang.Text, txtTongTien.Text);
+            txtMaDon.Text = txtMaDonHang.Text;
+            txtTongGiaTriDH.Text = txtTongTien.Text;
+            txtTongTien.Text = "0";
+            txtMaDonHang.Text = string.Empty;
+
+            // Thông báo
             MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            Reset();
+        }
+
+        // btnTim_Click
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            // Check Mã Đơn có != null hay ko?
+            if (txtMaDonHang.Text != string.Empty)
+            {
+                // dgvMuaHang
+                dgvMuaHang.DataSource = bus_ctdh.TimDonHang_TheoMaDon(txtMaDonHang.Text);
+
+                // Tính tổng tiền
+                txtTongTien.Text = $"{bus_bh.TinhTongTien(txtMaDonHang.Text)}"; 
+            }
+            else
+            {
+                // Thông báo
+                MessageBox.Show("Vui lòng không để trống mã đơn hàng (phải) trước khi tìm theo mã đơn!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

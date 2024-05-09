@@ -56,9 +56,9 @@
             this.tableButton = new System.Windows.Forms.TableLayoutPanel();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.btnTim = new System.Windows.Forms.Button();
             this.gbDonHang = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label13 = new System.Windows.Forms.Label();
@@ -69,12 +69,13 @@
             this.txtTongGiaTriDH = new System.Windows.Forms.TextBox();
             this.dtpNgayBan = new System.Windows.Forms.DateTimePicker();
             this.cboMaNV = new System.Windows.Forms.ComboBox();
-            this.btnThemDH = new System.Windows.Forms.Button();
             this.lbTongTien = new System.Windows.Forms.Label();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.tableSanPham = new System.Windows.Forms.TableLayoutPanel();
             this.tableMuaHang = new System.Windows.Forms.TableLayoutPanel();
+            this.tableButton2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnThemDH = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMuaHang)).BeginInit();
             this.gbBanHang.SuspendLayout();
@@ -84,6 +85,7 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableSanPham.SuspendLayout();
             this.tableMuaHang.SuspendLayout();
+            this.tableButton2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -410,9 +412,9 @@
             this.tableButton.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableButton.Controls.Add(this.btnThoat, 4, 0);
             this.tableButton.Controls.Add(this.btnLamMoi, 3, 0);
-            this.tableButton.Controls.Add(this.btnSua, 2, 0);
             this.tableButton.Controls.Add(this.btnXoa, 1, 0);
             this.tableButton.Controls.Add(this.btnThem, 0, 0);
+            this.tableButton.Controls.Add(this.btnTim, 2, 0);
             this.tableButton.Location = new System.Drawing.Point(583, 476);
             this.tableButton.Margin = new System.Windows.Forms.Padding(4);
             this.tableButton.Name = "tableButton";
@@ -450,20 +452,6 @@
             this.btnLamMoi.UseVisualStyleBackColor = true;
             this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click);
             // 
-            // btnSua
-            // 
-            this.btnSua.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSua.Image = global::QuanLySieuThi.Properties.Resources.loop;
-            this.btnSua.Location = new System.Drawing.Point(240, 4);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(110, 64);
-            this.btnSua.TabIndex = 2;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
             // btnXoa
             // 
             this.btnXoa.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -491,6 +479,19 @@
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnTim
+            // 
+            this.btnTim.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTim.Image = global::QuanLySieuThi.Properties.Resources.research1;
+            this.btnTim.Location = new System.Drawing.Point(239, 3);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(112, 66);
+            this.btnTim.TabIndex = 5;
+            this.btnTim.Text = "Tìm Mã Đơn";
+            this.btnTim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // gbDonHang
             // 
@@ -610,20 +611,6 @@
             this.cboMaNV.Size = new System.Drawing.Size(255, 26);
             this.cboMaNV.TabIndex = 3;
             // 
-            // btnThemDH
-            // 
-            this.btnThemDH.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnThemDH.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemDH.Image = global::QuanLySieuThi.Properties.Resources.plus;
-            this.btnThemDH.Location = new System.Drawing.Point(355, 364);
-            this.btnThemDH.Name = "btnThemDH";
-            this.btnThemDH.Size = new System.Drawing.Size(176, 45);
-            this.btnThemDH.TabIndex = 0;
-            this.btnThemDH.Text = "Tạo Đơn Hàng";
-            this.btnThemDH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThemDH.UseVisualStyleBackColor = true;
-            this.btnThemDH.Click += new System.EventHandler(this.btnThemDH_Click);
-            // 
             // lbTongTien
             // 
             this.lbTongTien.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -685,18 +672,46 @@
             this.tableMuaHang.Size = new System.Drawing.Size(817, 281);
             this.tableMuaHang.TabIndex = 15;
             // 
+            // tableButton2
+            // 
+            this.tableButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tableButton2.ColumnCount = 1;
+            this.tableButton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableButton2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableButton2.Controls.Add(this.btnThemDH, 0, 0);
+            this.tableButton2.Location = new System.Drawing.Point(315, 368);
+            this.tableButton2.Name = "tableButton2";
+            this.tableButton2.RowCount = 1;
+            this.tableButton2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableButton2.Size = new System.Drawing.Size(216, 61);
+            this.tableButton2.TabIndex = 16;
+            // 
+            // btnThemDH
+            // 
+            this.btnThemDH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnThemDH.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemDH.Image = global::QuanLySieuThi.Properties.Resources.plus;
+            this.btnThemDH.Location = new System.Drawing.Point(3, 3);
+            this.btnThemDH.Name = "btnThemDH";
+            this.btnThemDH.Size = new System.Drawing.Size(210, 55);
+            this.btnThemDH.TabIndex = 0;
+            this.btnThemDH.Text = "Tạo Đơn Hàng";
+            this.btnThemDH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThemDH.UseVisualStyleBackColor = true;
+            this.btnThemDH.Click += new System.EventHandler(this.btnThemDH_Click);
+            // 
             // frmBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1444, 881);
+            this.Controls.Add(this.tableButton2);
             this.Controls.Add(this.tableMuaHang);
             this.Controls.Add(this.gbBanHang);
             this.Controls.Add(this.tableSanPham);
             this.Controls.Add(this.btnThanhToan);
             this.Controls.Add(this.txtTongTien);
             this.Controls.Add(this.lbTongTien);
-            this.Controls.Add(this.btnThemDH);
             this.Controls.Add(this.gbDonHang);
             this.Controls.Add(this.tableButton);
             this.Controls.Add(this.label4);
@@ -722,6 +737,7 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableSanPham.ResumeLayout(false);
             this.tableMuaHang.ResumeLayout(false);
+            this.tableButton2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -750,7 +766,6 @@
         private System.Windows.Forms.TableLayoutPanel tableButton;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnLamMoi;
-        private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Label label12;
@@ -769,11 +784,13 @@
         private System.Windows.Forms.TextBox txtTongGiaTriDH;
         private System.Windows.Forms.DateTimePicker dtpNgayBan;
         private System.Windows.Forms.ComboBox cboMaNV;
-        private System.Windows.Forms.Button btnThemDH;
         private System.Windows.Forms.Label lbTongTien;
         private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Button btnThanhToan;
         private System.Windows.Forms.TableLayoutPanel tableSanPham;
         private System.Windows.Forms.TableLayoutPanel tableMuaHang;
+        private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.TableLayoutPanel tableButton2;
+        private System.Windows.Forms.Button btnThemDH;
     }
 }

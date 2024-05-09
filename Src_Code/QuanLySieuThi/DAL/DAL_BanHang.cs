@@ -242,13 +242,10 @@ namespace DAL
                 // Check xem MaChiTiet != null không? mới Xóa
                 if (ctdh.MaChiTiet != string.Empty)
                 {
-                    if (SoLuongSP != 0)
-                    {
-                        // Cập nhật số lượng Sản Phẩm trước khi xóa ChiTietDonHang khỏi DB (Reset Số lượng sp)
-                        var temp = db.SanPhams.Single(sp => sp.MaSP == ctdh.MaSP);
-                        temp.SoLuong = temp.SoLuong + SoLuongSP;
-                        SoLuongSP = 0; 
-                    }
+                    // Cập nhật số lượng Sản Phẩm trước khi xóa ChiTietDonHang khỏi DB (Reset Số lượng sp)
+                    var temp = db.SanPhams.Single(sp => sp.MaSP == ctdh.MaSP);
+                    temp.SoLuong = temp.SoLuong + ctdh.SoLuong;
+                    SoLuongSP = 0;
 
                     // Tìm maCTDH để xóa = maCTDH
                     var ctdh_delete = from ct in db.ChiTietDonHangs
@@ -300,14 +297,15 @@ namespace DAL
 
                     if (ctdh.SoLuong <= tongSP)
                     {
-                        if (soLuongSP != 0)
-                        {
-                            // Lưu lại giá trị số lượng mỗi lần sửa SLSP
-                            SoLuongSP += ctdh.SoLuong; 
-                        }
+                        // Lưu lại giá trị số lượng mỗi lần sửa SLSP
+                        int tempSoLuong = ctdh.SoLuong - SoLuongSP;
+
+                        // Reset value soLuongSP
+                        SoLuongSP = 0;
+                        SoLuongSP += ctdh.SoLuong;
 
                         // Tính tổng số lượng SP còn lại
-                        int soLuongSPConLai = (int)(tongSP - ctdh.SoLuong);
+                        int soLuongSPConLai = (int)(tongSP - tempSoLuong);
 
                         // Cập nhật tổng sl SP trong DB SanPham
                         temp.SoLuong = soLuongSPConLai;
@@ -360,9 +358,33 @@ namespace DAL
         // CapNhatGiaTriTongTien()
         public void CapNhatGiaTriTongTien(string maDon, string tongTien)
         {
-            var temp = db.DonHangs.Single(d => d.MaDon == maDon);
-            temp.TongGiaTri += int.Parse(tongTien);
-            db.SubmitChanges();
+            // Check Mã Đơn có trong DSDH trước khi cập nhật tổng tiền cho DH đó
+            var temp = from dh in db.DonHangs
+                       where dh.MaDon == maDon
+                       select dh;
+
+            if (temp.Count() == 1)
+            {
+                var tongTienUpdate = db.DonHangs.Single(d => d.MaDon == maDon);
+                tongTienUpdate.TongGiaTri += int.Parse(tongTien);
+                db.SubmitChanges();
+            }
+            else
+            {
+                // Thông báo
+                MessageBox.Show("Mã đơn hàng trong form không hợp lệ! Không thể thanh toán!\nVui lòng kiểm tra lại mã đơn hàng trước khí bấm thanh toán!",
+                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // TinhTongTien()
+        public int TinhTongTien(string maDon)
+        {
+            var temp = from ct in db.ChiTietDonHangs
+                       where ct.MaDon == maDon
+                       select ct.ThanhTien;
+
+            return Convert.ToInt32(temp.Sum());
         }
 
     }

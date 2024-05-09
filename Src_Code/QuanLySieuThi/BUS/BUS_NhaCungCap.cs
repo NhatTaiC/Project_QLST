@@ -22,43 +22,57 @@ namespace BUS
 
         // Methods
         // LayDSNCC()
-        public IQueryable LayDSNCC() {
+        public IQueryable LayDSNCC()
+        {
             return dal_ncc.LayDSNCC();
         }
 
         // LayDSNCC_TheoMaNCC()
-        public IQueryable LayDSNCC_TheoMaNCC(string maNCC) {
+        public IQueryable LayDSNCC_TheoMaNCC(string maNCC)
+        {
             return dal_ncc.LayDSNCC_TheoMaNCC(maNCC);
         }
 
         // ThemNCC()
-        public bool ThemNCC(DTO_NhaCungCap ncc) {
+        public bool ThemNCC(DTO_NhaCungCap ncc)
+        {
             return dal_ncc.ThemNCC(ncc);
         }
 
         // XoaNCC()
-        public bool XoaNCC(string maNCC) {
+        public bool XoaNCC(string maNCC)
+        {
             return dal_ncc.XoaNCC(maNCC);
         }
 
         // SuaNCC()
-        public bool SuaNCC(DTO_NhaCungCap ncc) {
+        public bool SuaNCC(DTO_NhaCungCap ncc)
+        {
             return dal_ncc.SuaNCC(ncc);
         }
 
         // LayDSNCC_TheoTenNCC()
-        public IQueryable LayDSNCC_TheoTenNCC(string maNCC) {
+        public IQueryable LayDSNCC_TheoTenNCC(string maNCC)
+        {
             return dal_ncc.LayDSNCC_TheoTenNCC(maNCC);
         }
 
         // TimNCC_TheoTenNCC()
-        public IQueryable TimNCC_TheoTenNCC(string tenNCC) {
+        public IQueryable TimNCC_TheoTenNCC(string tenNCC)
+        {
             return dal_ncc.TimNCC_TheoTenNCC(tenNCC);
         }
 
         // TimNCC_TheoMaNCC()
-        public IQueryable TimNCC_TheoMaNCC(string maNCC) {
+        public IQueryable TimNCC_TheoMaNCC(string maNCC)
+        {
             return dal_ncc.TimNCC_TheoMaNCC(maNCC);
+        }
+
+        // CheckNCC_TheoMaNCC()
+        public int CheckNCC_TheoMaNCC(string maNCC)
+        {
+            return dal_ncc.CheckNCC_TheoMaNCC(maNCC);
         }
     }
 }

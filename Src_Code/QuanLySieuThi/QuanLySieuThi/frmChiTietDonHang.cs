@@ -308,6 +308,9 @@ namespace QuanLySieuThi
                 cboDonViTinh.DataSource = bus_sp.LayDSSP_TheoMaSP(txtMaSanPham.Text);
                 cboDonViTinh.DisplayMember = "DonViTinh";
                 cboDonViTinh.ValueMember = "DonViTinh";
+
+                // txtThanhTien
+                txtThanhTien.Text = "0";
             }
             else
             {
@@ -328,6 +331,9 @@ namespace QuanLySieuThi
                 cboDonViTinh.DisplayMember = "DonViTinh";
                 cboDonViTinh.ValueMember = "DonViTinh";
                 cboDonViTinh.SelectedIndex = 0;
+
+                // txtThanhTien
+                txtThanhTien.Text = "0";
             }
         }
 

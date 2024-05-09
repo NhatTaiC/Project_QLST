@@ -92,5 +92,10 @@ namespace BUS
             return dal_nv.TimNV_TheoMaNV_2(maNV);
         }
 
+        // CheckNV_TheoMaNV()
+        public int CheckNV_TheoMaNV(string maNV) {
+            return dal_nv.CheckNV_TheoMaNV(maNV);
+        }
+
     }
 }

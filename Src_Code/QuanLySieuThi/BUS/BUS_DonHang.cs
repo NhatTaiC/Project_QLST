@@ -73,5 +73,10 @@ namespace BUS
         public int TimDonHang_TheoMaDH_2(string maDH) {
             return dal_dh.TimDonHang_TheoMaDH_2(maDH);
         }
+
+        // CheckDH_TheoMaDH()
+        public int CheckDH_TheoMaDH(string maDon) {
+            return dal_dh.CheckDH_TheoMaDH(maDon);
+        }
     }
 }

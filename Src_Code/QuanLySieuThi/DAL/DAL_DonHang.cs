@@ -95,7 +95,7 @@ namespace DAL
                         MessageBox.Show($"Đơn hàng +{dh.MaDon}+ đã có trong danh sách đơn hàng!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
-                    } 
+                    }
                 }
                 // Thông báo
                 MessageBox.Show("Mã đơn hàng không hợp lệ!", "Thông báo",
@@ -111,28 +111,40 @@ namespace DAL
         }
 
         // XoaDonHang()
-        public bool XoaDonHang(string maDonHang){
+        public bool XoaDonHang(string maDonHang)
+        {
             try
             {
                 // Check xoaDonHang có != null không mới xóa
                 if (maDonHang != string.Empty)
                 {
-                    // Tìm Đơn Hàng Cần Xóa = Mã Đơn Hàng
-                    var d_delete = from d in db.DonHangs
-                                   where d.MaDon == maDonHang
-                                   select d;
-
-                    foreach (var item in d_delete)
+                    // Check MaDH có trong DB CTDH hay không? trước khi xóa
+                    if (CheckDH_TheoMaDH(maDonHang) == 1)
                     {
-                        db.DonHangs.DeleteOnSubmit(item); // Xóa Đơn Hàng
-                        db.SubmitChanges(); // Xác nhận Xóa Đơn Hàng trong DB DonHang
-                    }
+                        // Tìm Đơn Hàng Cần Xóa = Mã Đơn Hàng
+                        var d_delete = from d in db.DonHangs
+                                       where d.MaDon == maDonHang
+                                       select d;
 
-                    // Thông báo
-                    MessageBox.Show($"Xóa đơn hàng +{maDonHang}+ thành công!", "Thông báo",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                    return true; 
+                        foreach (var item in d_delete)
+                        {
+                            db.DonHangs.DeleteOnSubmit(item); // Xóa Đơn Hàng
+                            db.SubmitChanges(); // Xác nhận Xóa Đơn Hàng trong DB DonHang
+                        }
+
+                        // Thông báo
+                        MessageBox.Show($"Xóa đơn hàng +{maDonHang}+ thành công!", "Thông báo",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                        return true;
+                    }
+                    else
+                    {
+                        // Thông báo
+                        MessageBox.Show($"Mã đơn hàng +{maDonHang}+ có liên quan đến ChiTietDonHang\nKhông thể xóa!", "Thông báo",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
@@ -152,7 +164,8 @@ namespace DAL
         }
 
         // SuaDonHang()
-        public bool SuaDonHang(DTO_DonHang dh) {
+        public bool SuaDonHang(DTO_DonHang dh)
+        {
             try
             {
                 // Check dh.MaDon có != null không mới sửa thông tin
@@ -191,7 +204,8 @@ namespace DAL
         }
 
         // TimDonHang_TheoMaDH()
-        public IQueryable TimDonHang_TheoMaDH(string maDH) {
+        public IQueryable TimDonHang_TheoMaDH(string maDH)
+        {
             IQueryable temp = from dh in db.DonHangs
                               where dh.MaDon == maDH
                               select new
@@ -237,7 +251,8 @@ namespace DAL
                        join dh in db.DonHangs
                        on nv.MaNV equals dh.MaNV
                        where nv.TenNV.Contains(tenNV)
-                       select new {
+                       select new
+                       {
                            TenNV = nv.TenNV
                        };
             return temp.Count();
@@ -247,14 +262,26 @@ namespace DAL
         public int TimDonHang_TheoMaDH_2(string maDH)
         {
             var temp = from dh in db.DonHangs
-                              where dh.MaDon == maDH
-                              select new
-                              {
-                                  MaDon = dh.MaDon,
-                                  NgayBan = dh.NgayBan,
-                                  TongGiaTri = dh.TongGiaTri,
-                                  MaNV = dh.MaNV
-                              };
+                       where dh.MaDon == maDH
+                       select new
+                       {
+                           MaDon = dh.MaDon,
+                           NgayBan = dh.NgayBan,
+                           TongGiaTri = dh.TongGiaTri,
+                           MaNV = dh.MaNV
+                       };
+            return temp.Count();
+        }
+
+        // CheckDH_TheoMaDH
+        public int CheckDH_TheoMaDH(string maDon)
+        {
+            var temp = from dh in db.DonHangs
+                       join ctdh in db.ChiTietDonHangs
+                       on dh.MaDon equals ctdh.MaDon
+                       where ctdh.MaDon == maDon
+                       select dh;
+
             return temp.Count();
         }
     }

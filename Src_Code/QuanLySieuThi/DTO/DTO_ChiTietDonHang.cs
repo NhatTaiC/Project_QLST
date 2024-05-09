@@ -24,7 +24,6 @@ namespace DTO
         private int soLuong;
         private int thanhTien;
         private string donViTinh;
-        private int tempSoLuong;
 
         // Constructors
         public DTO_ChiTietDonHang(string maChiTiet, string maDon, string maSP, string tenSP, int giaBan, int soLuong, int thanhTien, string donViTinh)
@@ -48,6 +47,5 @@ namespace DTO
         public int SoLuong { get => soLuong; set => soLuong = value; }
         public int ThanhTien { get => thanhTien; set => thanhTien = value; }
         public string DonViTinh { get => donViTinh; set => donViTinh = value; }
-        public int TempSoLuong { get => tempSoLuong; set => tempSoLuong = value; }
     }
 }
