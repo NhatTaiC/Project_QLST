@@ -1,3 +1,28 @@
 C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn
 
 C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\Resources\1033
+
+sqlcmd -E -S .\SQLEXPRESS -i qlst_data_script.sql
+
+sqlcmd -S Server\Instance
+
+USE [master]
+GO
+CREATE DATABASE [QLST] ON 
+( FILENAME = N'D:\PROGRAM\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\QLST.mdf' ),
+( FILENAME = N'D:\PROGRAM\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA\QLST_log.ldf' )
+ FOR ATTACH ;
+GO
+
+
+USE [master]
+GO
+CREATE DATABASE [database_name] ON 
+( FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\Data\<database name>.mdf' ),
+( FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\Data\<database name>.ldf' )
+ FOR ATTACH ;
+GO
+
+D:\PROGRAM\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA
+
+D:\STUDY\CN.NET\Project_QLST\Src_Code\Data
