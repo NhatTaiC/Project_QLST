@@ -1,0 +1,3 @@
+C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn
+
+C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\Resources\1033

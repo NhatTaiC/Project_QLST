@@ -35,6 +35,11 @@ namespace QuanLySieuThi
         {
             // dgvTaiKhoan
             dgvTaiKhoan.DataSource = bus_tk.LayDSTK();
+            dgvTaiKhoan.Columns[0].HeaderText = "Tài Khoản";
+            dgvTaiKhoan.Columns[1].HeaderText = "Mật Khẩu";
+            dgvTaiKhoan.Columns[2].HeaderText = "Họ Tên";
+            dgvTaiKhoan.Columns[3].HeaderText = "Ngày Tạo";
+            dgvTaiKhoan.Columns[4].HeaderText = "Chức Vụ";
 
             // Columns["NgayTao"]
             dgvTaiKhoan.Columns["NgayTao"].DefaultCellStyle.Format = "dd/MM/yyyy";

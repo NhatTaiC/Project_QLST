@@ -50,6 +50,16 @@ namespace QuanLySieuThi
 
             // dgvSP
             dgvSP.DataSource = bus_sp.LayDSSP();
+            dgvSP.Columns[0].HeaderText = "Mã Sản Phẩm";
+            dgvSP.Columns[1].HeaderText = "Tên Sản Phẩm";
+            dgvSP.Columns[2].HeaderText = "Giá Nhập";
+            dgvSP.Columns[3].HeaderText = "Giá Bán";
+            dgvSP.Columns[4].HeaderText = "Số Lượng";
+            dgvSP.Columns[5].HeaderText = "Đơn Vị Tính";
+            dgvSP.Columns[6].HeaderText = "Nơi Sản Xuất";
+            dgvSP.Columns[7].HeaderText = "Hạn Sử Dụng";
+            dgvSP.Columns[8].HeaderText = "Mã Nhà Cung Cấp";
+            dgvSP.Columns[9].HeaderText = "Mã Loại Sản Phẩm";
 
             // Right
             txtMaChiTiet.Enabled = true;
@@ -66,6 +76,14 @@ namespace QuanLySieuThi
 
             // dgvMuaHang
             dgvMuaHang.DataSource = bus_bh.LayDSCTDH(txtMaDonHang.Text);
+            dgvMuaHang.Columns[0].HeaderText = "Mã Chi Tiết";
+            dgvMuaHang.Columns[1].HeaderText = "Mã Đơn";
+            dgvMuaHang.Columns[2].HeaderText = "Mã Sản Phẩm";
+            dgvMuaHang.Columns[3].HeaderText = "Tên Sản Phẩm";
+            dgvMuaHang.Columns[4].HeaderText = "Giá Bán";
+            dgvMuaHang.Columns[5].HeaderText = "Số Lượng";
+            dgvMuaHang.Columns[6].HeaderText = "Thành Tiền";
+            dgvMuaHang.Columns[7].HeaderText = "Đơn Vị Tính";
 
             // Others
             txtMaChiTiet.Text = string.Empty;

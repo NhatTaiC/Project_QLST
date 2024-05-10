@@ -40,7 +40,14 @@ namespace QuanLySieuThi
 
             // dgvTraCuuNV 
             dgvTraCuuDonHang.DataSource = bus_ctdh.LayDSCTDH();
-
+            dgvTraCuuDonHang.Columns[0].HeaderText = "Mã Chi Tiết";
+            dgvTraCuuDonHang.Columns[1].HeaderText = "Mã Đơn";
+            dgvTraCuuDonHang.Columns[2].HeaderText = "Mã Sản Phẩm";
+            dgvTraCuuDonHang.Columns[3].HeaderText = "Tên Sản Phẩm";
+            dgvTraCuuDonHang.Columns[4].HeaderText = "Giá Bán";
+            dgvTraCuuDonHang.Columns[5].HeaderText = "Số Lượng";
+            dgvTraCuuDonHang.Columns[6].HeaderText = "Thành Tiền";
+            dgvTraCuuDonHang.Columns[7].HeaderText = "Đơn Vị Tính";
         }
 
         // Function Reset()
@@ -102,11 +109,29 @@ namespace QuanLySieuThi
                     else if (cboTraCuu.SelectedItem.ToString() == "Mã Nhân Viên")
                     {
                         dgvTraCuuDonHang.DataSource = bus_ctdh.TimDonHang_TheoMaNV(txtNoiDung.Text);
+                        dgvTraCuuDonHang.Columns[0].HeaderText = "Mã Chi Tiết";
+                        dgvTraCuuDonHang.Columns[1].HeaderText = "Mã Đơn";
+                        dgvTraCuuDonHang.Columns[2].HeaderText = "Mã Sản Phẩm";
+                        dgvTraCuuDonHang.Columns[3].HeaderText = "Tên Sản Phẩm";
+                        dgvTraCuuDonHang.Columns[4].HeaderText = "Giá Bán";
+                        dgvTraCuuDonHang.Columns[5].HeaderText = "Số Lượng";
+                        dgvTraCuuDonHang.Columns[6].HeaderText = "Thành Tiền";
+                        dgvTraCuuDonHang.Columns[7].HeaderText = "Đơn Vị Tính";
+                        dgvTraCuuDonHang.Columns[8].HeaderText = "Mã Nhân Viên";
                         gbDGVTraCuuDonHang.Text = $"Kết Quả Tra Cứu: {dgvTraCuuDonHang.RowCount}";
                     }
                     else
                     {
                         dgvTraCuuDonHang.DataSource = bus_ctdh.TimDonHang_TheoTenNV(txtNoiDung.Text);
+                        dgvTraCuuDonHang.Columns[0].HeaderText = "Mã Chi Tiết";
+                        dgvTraCuuDonHang.Columns[1].HeaderText = "Mã Đơn";
+                        dgvTraCuuDonHang.Columns[2].HeaderText = "Mã Sản Phẩm";
+                        dgvTraCuuDonHang.Columns[3].HeaderText = "Tên Sản Phẩm";
+                        dgvTraCuuDonHang.Columns[4].HeaderText = "Giá Bán";
+                        dgvTraCuuDonHang.Columns[5].HeaderText = "Số Lượng";
+                        dgvTraCuuDonHang.Columns[6].HeaderText = "Thành Tiền";
+                        dgvTraCuuDonHang.Columns[7].HeaderText = "Đơn Vị Tính";
+                        dgvTraCuuDonHang.Columns[8].HeaderText = "Tên Nhân Viên";
                         gbDGVTraCuuDonHang.Text = $"Kết Quả Tra Cứu: {dgvTraCuuDonHang.RowCount}";
                     }
                 }

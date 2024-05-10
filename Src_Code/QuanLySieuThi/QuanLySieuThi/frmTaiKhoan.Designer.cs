@@ -68,7 +68,7 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(273, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(368, 45);
+            this.label1.Size = new System.Drawing.Size(731, 89);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quản Lý Tài Khoản";
             // 
@@ -103,7 +103,7 @@
             this.txtHoTen.Location = new System.Drawing.Point(226, 98);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(369, 26);
+            this.txtHoTen.Size = new System.Drawing.Size(369, 44);
             this.txtHoTen.TabIndex = 2;
             // 
             // txtMatKhau
@@ -111,7 +111,7 @@
             this.txtMatKhau.Location = new System.Drawing.Point(226, 54);
             this.txtMatKhau.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(369, 26);
+            this.txtMatKhau.Size = new System.Drawing.Size(369, 44);
             this.txtMatKhau.TabIndex = 1;
             // 
             // label2
@@ -174,7 +174,7 @@
             this.txtTaiKhoan.Location = new System.Drawing.Point(226, 10);
             this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(369, 26);
+            this.txtTaiKhoan.Size = new System.Drawing.Size(369, 44);
             this.txtTaiKhoan.TabIndex = 0;
             // 
             // dtpTaiKhoan
@@ -184,7 +184,7 @@
             this.dtpTaiKhoan.Location = new System.Drawing.Point(226, 142);
             this.dtpTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.dtpTaiKhoan.Name = "dtpTaiKhoan";
-            this.dtpTaiKhoan.Size = new System.Drawing.Size(369, 26);
+            this.dtpTaiKhoan.Size = new System.Drawing.Size(369, 44);
             this.dtpTaiKhoan.TabIndex = 3;
             // 
             // cboChucVu
@@ -197,7 +197,7 @@
             this.cboChucVu.Location = new System.Drawing.Point(226, 186);
             this.cboChucVu.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.cboChucVu.Name = "cboChucVu";
-            this.cboChucVu.Size = new System.Drawing.Size(369, 26);
+            this.cboChucVu.Size = new System.Drawing.Size(369, 44);
             this.cboChucVu.TabIndex = 4;
             // 
             // gbTaiKhoan
@@ -375,7 +375,7 @@
             // 
             // frmTaiKhoan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 821);
             this.ControlBox = false;

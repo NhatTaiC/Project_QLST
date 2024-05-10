@@ -35,6 +35,10 @@ namespace QuanLySieuThi
         {
             // dgvDonHang
             dgvDonHang.DataSource = bus_dh.LayDSDH();
+            dgvDonHang.Columns[0].HeaderText = "Mã Đơn";
+            dgvDonHang.Columns[1].HeaderText = "Ngày Bán";
+            dgvDonHang.Columns[2].HeaderText = "Tổng Giá Trị";
+            dgvDonHang.Columns[3].HeaderText = "Mã Nhân Viên";
 
             // Columns["NgayBan"]
             dgvDonHang.Columns["NgayBan"].DefaultCellStyle.Format = "dd/MM/yyyy";

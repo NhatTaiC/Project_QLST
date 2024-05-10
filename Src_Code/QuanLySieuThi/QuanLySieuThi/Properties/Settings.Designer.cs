@@ -26,10 +26,21 @@ namespace QuanLySieuThi.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KOH-LAPTOP\\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True;")]
         public string tspConnect {
             get {
                 return ((string)(this["tspConnect"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KOH-LAPTOP\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\QLST.mdf;Integ" +
+            "rated Security=True;User Instance=True")]
+        public string mdfConnect {
+            get {
+                return ((string)(this["mdfConnect"]));
             }
         }
     }
