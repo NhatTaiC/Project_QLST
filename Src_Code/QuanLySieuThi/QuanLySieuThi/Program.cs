@@ -23,7 +23,20 @@ namespace QuanLySieuThi
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+
+            // Mở frmFlashForm trước
+            frmFlashForm f = new frmFlashForm();
+            f.ShowDialog();
+
+            // Xác thực frmFlash == OK
+            if (f.DialogResult == DialogResult.OK)
+            {
+                // Mở frmDangNhap
+                frmDangNhap f1 = new frmDangNhap();
+                f1.ShowDialog();
+            }
+
+            //Application.Run(new frmMain());
         }
     }
 }

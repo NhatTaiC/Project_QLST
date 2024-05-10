@@ -58,13 +58,44 @@ namespace BUS
         }
 
         // TimNV_TheoTenNV()
-        public IQueryable TimNV_TheoTenNV(string tenNV) {
+        public IQueryable TimNV_TheoTenNV(string tenNV)
+        {
             return dal_nv.TimNV_TheoTenNV(tenNV);
         }
 
         // TimNV_TheoMaNV()
-        public IQueryable TimNV_TheoMaNV(string maNV) {
+        public IQueryable TimNV_TheoMaNV(string maNV)
+        {
             return dal_nv.TimNV_TheoMaNV(maNV);
         }
+
+        // TimNV_TheoGioiTinh()
+        public IQueryable TimNV_TheoGioiTinh(string gioiTinh)
+        {
+            return dal_nv.TimNV_TheoGioiTinh(gioiTinh);
+        }
+
+        // TimNV_TheoNamSinh()
+        public IQueryable TimNV_TheoNamSinh(string namSinh) {
+            return dal_nv.TimNV_TheoNamSinh(namSinh);
+        }
+
+        // TimNV_TheoTenNV_2()
+        public IQueryable TimNV_TheoTenNV_2(string tenNV)
+        {
+            return dal_nv.TimNV_TheoTenNV_2(tenNV);
+        }
+
+        // TimNV_TheoMaNV_2()
+        public IQueryable TimNV_TheoMaNV_2(string maNV)
+        {
+            return dal_nv.TimNV_TheoMaNV_2(maNV);
+        }
+
+        // CheckNV_TheoMaNV()
+        public int CheckNV_TheoMaNV(string maNV) {
+            return dal_nv.CheckNV_TheoMaNV(maNV);
+        }
+
     }
 }

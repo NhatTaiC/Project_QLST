@@ -1,5 +1,0 @@
-serverName = ".\\SQLEXPRESS";
-
-dbName = "QLST";
-
-Data Source=" + ServerName + ";Initial Catalog=" + DbName + ";Integrated Security=True;

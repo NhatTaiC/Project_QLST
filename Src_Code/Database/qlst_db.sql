@@ -9,14 +9,14 @@ CREATE
 --CREATE DATABASE
 --DROP DATABASE [QLST]
 CREATE DATABASE QLST;
-go
+GO
 
 --USE DATABASE
 USE [QLST];
-go
+GO
 
 SET DATEFORMAT dmy;
-go
+GO
 
 --CREATE TABLES
 CREATE TABLE [dbo].[TaiKhoan]
@@ -94,4 +94,4 @@ CREATE TABLE [dbo].[ChiTietDonHang]
 	CONSTRAINT FK_DonHang_ChiTietDonHang FOREIGN KEY([MaDon]) REFERENCES [dbo].[DonHang]([MaDon]),
 	CONSTRAINT FK_SanPham_ChiTietDonHang FOREIGN KEY([MaSP]) REFERENCES [dbo].[SanPham]([MaSP])
 );
-go
+GO

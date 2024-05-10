@@ -99,7 +99,7 @@ namespace DAL
                         MessageBox.Show($"Tài khoản +{tk.TaiKhoan}+ đã có trong danh sách tài khoản!", "Thông báo",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
-                    } 
+                    }
                 }
                 else
                 {
@@ -194,7 +194,7 @@ namespace DAL
                     MessageBox.Show($"Sửa thông tin tài khoản +{tk.TaiKhoan}+ thành công!", "Thông báo",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Information);
-                    return true; 
+                    return true;
                 }
                 else
                 {
@@ -239,7 +239,8 @@ namespace DAL
         }
 
         // TimTaiKhoan_TheoTenNV()
-        public IQueryable TimTaiKhoan_TheoTenNV(string tenNV) {
+        public IQueryable TimTaiKhoan_TheoTenNV(string tenNV)
+        {
             // Lấy DSTK
             IQueryable temp = from t in db.TaiKhoans
                               where t.HoTen.Contains(tenNV)
@@ -272,7 +273,8 @@ namespace DAL
         }
 
         // TimTaiKhoan_TheoChucVu()
-        public IQueryable TimTaiKhoan_TheoChucVu(string chucVu) {
+        public IQueryable TimTaiKhoan_TheoChucVu(string chucVu)
+        {
             // Lấy DSTK
             IQueryable temp = from t in db.TaiKhoans
                               where t.ChucVu.Contains(chucVu)
@@ -285,6 +287,21 @@ namespace DAL
                                   ChucVu = t.ChucVu
                               };
             return temp;
+        }
+
+        // CheckTaiKhoan()
+        public bool CheckTaiKhoan(string taiKhoan, string matKhau, string chucVu)
+        {
+            var temp = from tk in db.TaiKhoans
+                       where tk.TaiKhoan1 == taiKhoan && tk.MatKhau == matKhau
+                       && tk.ChucVu == chucVu
+                       select tk;
+
+            if (temp.Count() == 1)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

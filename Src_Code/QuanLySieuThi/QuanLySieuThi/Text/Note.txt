@@ -1,0 +1,13 @@
+﻿serverName = ".\\SQLEXPRESS";
+
+dbName = "QLST";
+
+Data Source=" + ServerName + ";Initial Catalog=" + DbName + ";Integrated Security=True;
+
+Data Source=.\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True;Trust Server Certificate=True
+
+Data Source=KOH-LAPTOP\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True;Trust Server Certificate=True
+
+Data Source=.\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True;
+
+D:\PROGRAM\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\Backup

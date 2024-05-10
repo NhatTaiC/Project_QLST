@@ -34,6 +34,10 @@ namespace QuanLySieuThi
         {
             // dgvNCC
             dgvNCC.DataSource = bus_ncc.LayDSNCC();
+            dgvNCC.Columns[0].HeaderText = "Mã Nhà Cung Cấp";
+            dgvNCC.Columns[1].HeaderText = "Tên Nhà Cung Cấp";
+            dgvNCC.Columns[2].HeaderText = "Địa Chỉ Nhà Cung Cấp";
+            dgvNCC.Columns[3].HeaderText = "Sđt Nhà Cung Cấp";
 
             // Others
             txtMaNCC.Focus();
