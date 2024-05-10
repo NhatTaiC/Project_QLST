@@ -58,7 +58,7 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(217, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(363, 45);
+            this.label1.Size = new System.Drawing.Size(723, 89);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tra Cứu Sản Phẩm";
             // 
@@ -108,7 +108,7 @@
             this.txtNoiDung.Location = new System.Drawing.Point(261, 25);
             this.txtNoiDung.Margin = new System.Windows.Forms.Padding(3, 25, 3, 25);
             this.txtNoiDung.Name = "txtNoiDung";
-            this.txtNoiDung.Size = new System.Drawing.Size(252, 26);
+            this.txtNoiDung.Size = new System.Drawing.Size(252, 44);
             this.txtNoiDung.TabIndex = 2;
             // 
             // cboTraCuu
@@ -124,7 +124,7 @@
             this.cboTraCuu.Location = new System.Drawing.Point(261, 94);
             this.cboTraCuu.Margin = new System.Windows.Forms.Padding(3, 25, 3, 25);
             this.cboTraCuu.Name = "cboTraCuu";
-            this.cboTraCuu.Size = new System.Drawing.Size(252, 26);
+            this.cboTraCuu.Size = new System.Drawing.Size(252, 44);
             this.cboTraCuu.TabIndex = 3;
             // 
             // tableButton
@@ -191,12 +191,12 @@
             this.tableDGVTraCuuSanPham.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableDGVTraCuuSanPham.Controls.Add(this.dgvTraCuuSanPham, 0, 0);
             this.tableDGVTraCuuSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableDGVTraCuuSanPham.Location = new System.Drawing.Point(3, 22);
+            this.tableDGVTraCuuSanPham.Location = new System.Drawing.Point(3, 40);
             this.tableDGVTraCuuSanPham.Name = "tableDGVTraCuuSanPham";
             this.tableDGVTraCuuSanPham.RowCount = 1;
             this.tableDGVTraCuuSanPham.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableDGVTraCuuSanPham.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 145F));
-            this.tableDGVTraCuuSanPham.Size = new System.Drawing.Size(758, 145);
+            this.tableDGVTraCuuSanPham.Size = new System.Drawing.Size(758, 127);
             this.tableDGVTraCuuSanPham.TabIndex = 3;
             // 
             // dgvTraCuuSanPham
@@ -211,8 +211,9 @@
             this.dgvTraCuuSanPham.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvTraCuuSanPham.Location = new System.Drawing.Point(3, 3);
             this.dgvTraCuuSanPham.Name = "dgvTraCuuSanPham";
+            this.dgvTraCuuSanPham.RowHeadersWidth = 82;
             this.dgvTraCuuSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTraCuuSanPham.Size = new System.Drawing.Size(752, 139);
+            this.dgvTraCuuSanPham.Size = new System.Drawing.Size(752, 121);
             this.dgvTraCuuSanPham.TabIndex = 0;
             // 
             // gbForm
@@ -239,7 +240,7 @@
             // 
             // frmTraCuuSanPham
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(764, 623);
             this.ControlBox = false;

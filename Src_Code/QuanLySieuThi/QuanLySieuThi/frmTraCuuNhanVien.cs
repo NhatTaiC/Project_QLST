@@ -38,6 +38,13 @@ namespace QuanLySieuThi
 
             // dgvTraCuuNV 
             dgvTraCuuNV.DataSource = bus_nv.LayDSNV();
+            dgvTraCuuNV.Columns[0].HeaderText = "Mã Nhân Viên";
+            dgvTraCuuNV.Columns[1].HeaderText = "Tên Nhân Viên";
+            dgvTraCuuNV.Columns[2].HeaderText = "Ngày Sinh";
+            dgvTraCuuNV.Columns[3].HeaderText = "Giới Tính";
+            dgvTraCuuNV.Columns[4].HeaderText = "Địa Chỉ";
+            dgvTraCuuNV.Columns[5].HeaderText = "Số Điện Thoại";
+            dgvTraCuuNV.Columns[6].HeaderText = "Tài Khoản";
 
             // Columns["NgaySinh"]
             dgvTraCuuNV.Columns["NgaySinh"].DefaultCellStyle.Format = "dd/MM/yyyy";

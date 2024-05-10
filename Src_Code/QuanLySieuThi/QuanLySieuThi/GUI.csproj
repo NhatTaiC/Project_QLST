@@ -275,6 +275,8 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DSSP_TheoTenSanPham.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Data\create_qlst_data.bat" />
+    <None Include="Data\SQLCMD.rll" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -302,6 +304,10 @@
     <None Include="IMG\Supermarket_2.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\batchparser.dll" />
+    <Content Include="Data\location_sqlcmd.txt" />
+    <Content Include="Data\qlst_data_script.sql" />
+    <Content Include="Data\SQLCMD.EXE" />
     <Content Include="DB_Backup\QLST.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

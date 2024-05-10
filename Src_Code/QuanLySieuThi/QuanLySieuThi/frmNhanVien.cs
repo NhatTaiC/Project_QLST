@@ -34,6 +34,13 @@ namespace QuanLySieuThi
         public void LoadData() {
             // dgvNhanVien
             dgvNhanVien.DataSource = bus_nv.LayDSNV();
+            dgvNhanVien.Columns[0].HeaderText = "Mã Nhân Viên";
+            dgvNhanVien.Columns[1].HeaderText = "Tên Nhân Viên";
+            dgvNhanVien.Columns[2].HeaderText = "Ngày Sinh";
+            dgvNhanVien.Columns[3].HeaderText = "Giới Tính";
+            dgvNhanVien.Columns[4].HeaderText = "Địa Chỉ";
+            dgvNhanVien.Columns[5].HeaderText = "Số Điện Thoại";
+            dgvNhanVien.Columns[6].HeaderText = "Tài Khoản";
 
             // dtpNgaySinh
             dtpNgaySinh.Value = DateTime.Now;

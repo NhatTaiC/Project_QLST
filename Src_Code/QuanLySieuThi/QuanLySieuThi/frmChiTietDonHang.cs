@@ -35,6 +35,14 @@ namespace QuanLySieuThi
         {
             // dgvChiTietDonHang
             dgvCTDH.DataSource = bus_ctdh.LayDSCTDH();
+            dgvCTDH.Columns[0].HeaderText = "Mã Chi Tiết";
+            dgvCTDH.Columns[1].HeaderText = "Mã Đơn";
+            dgvCTDH.Columns[2].HeaderText = "Mã Sản Phẩm";
+            dgvCTDH.Columns[3].HeaderText = "Tên Sản Phẩm";
+            dgvCTDH.Columns[4].HeaderText = "Giá Bán";
+            dgvCTDH.Columns[5].HeaderText = "Số Lượng";
+            dgvCTDH.Columns[6].HeaderText = "Thành Tiền";
+            dgvCTDH.Columns[7].HeaderText = "Đơn Vị Tính";
 
             // cboTenSanPham
             cboTenSanPham.DataSource = bus_sp.LayDSSP();

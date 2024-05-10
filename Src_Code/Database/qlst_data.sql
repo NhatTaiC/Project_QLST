@@ -2,14 +2,109 @@
 Project Quản Lý Siêu Thị
 Database [QLST]
 Thành viên trong nhóm: Châu Nhật Tài, Lê Văn Toàn
-Ngày tạo: 01/04/2024
-INSERT 
+Ngày tạo: 10/05/2024
+ALL
 */
 
+/*
+CREATE DATABASE [QLST]
+*/
+
+--CREATE DATABASE
+--DROP DATABASE [QLST]
+CREATE DATABASE QLST;
+GO
+
+--USE DATABASE
 USE [QLST];
 GO
 
 SET DATEFORMAT dmy;
+GO
+
+--CREATE TABLES
+CREATE TABLE [dbo].[TaiKhoan]
+(
+	[TaiKhoan] varchar(50) not null PRIMARY KEY,
+	[MatKhau] varchar(50),
+	[HoTen] nvarchar(100),
+	[NgayTao] date,
+	[ChucVu] nvarchar(100)
+);
+
+CREATE TABLE [dbo].[NhaCungCap]
+(
+	[MaNCC] varchar(50) not null PRIMARY KEY,
+	[TenNCC] nvarchar(100),
+	[DiaChiNCC] nvarchar(100),
+	[SdtNCC] nvarchar(100),
+);
+
+CREATE TABLE [dbo].[LoaiSanPham]
+(
+	[MaLoaiSP] varchar(50) not null PRIMARY KEY,
+	[TenLoaiSP] nvarchar(100),
+	[MoTa] nvarchar(100)
+);
+
+CREATE TABLE [dbo].[SanPham]
+(
+	[MaSP] varchar(50) not null PRIMARY KEY,
+	[TenSP] nvarchar(100),
+	[GiaNhap] int,
+	[GiaBan] int,
+	[SoLuong] int,
+	[DonViTinh] nvarchar(100),
+	[NoiSanXuat] nvarchar(100),
+	[HanSuDung] date,
+	[MaNCC] varchar(50) not null,
+	[MaLoaiSP] varchar(50) not null,
+	CONSTRAINT FK_NhaCungCap_SanPham FOREIGN KEY([MaNCC]) REFERENCES [dbo].[NhaCungCap]([MaNCC]),
+	CONSTRAINT FK_LoaiSanPham_SanPham FOREIGN KEY([MaLoaiSP]) REFERENCES [dbo].[LoaiSanPham]([MaLoaiSP])
+);
+
+CREATE TABLE [dbo].[NhanVien]
+(
+	[MaNV] varchar(50) not null PRIMARY KEY,
+	[TenNV] nvarchar(100),
+	[NgaySinh] date,
+	[GioiTinh] nvarchar(100),
+	[DiaChi] nvarchar(100),
+	[Sdt] nvarchar(100),
+	[TaiKhoan] varchar(50) not null,
+	CONSTRAINT FK_TaiKhoan_NhanVien FOREIGN KEY([TaiKhoan]) REFERENCES [dbo].[TaiKhoan]([TaiKhoan])
+);
+
+CREATE TABLE [dbo].[DonHang]
+(
+	[MaDon] varchar(50) not null PRIMARY KEY,
+	[NgayBan] date,
+	[TongGiaTri] int,
+	[MaNV] varchar(50) not null,
+	CONSTRAINT FK_DonHang_NhanVien FOREIGN KEY([MaNV]) REFERENCES [dbo].[NhanVien]([MaNV])
+);
+
+CREATE TABLE [dbo].[ChiTietDonHang]
+(
+	[MaChiTiet] varchar(50) not null,
+	[MaDon] varchar(50) not null,
+	[MaSP] varchar(50) not null,
+	[TenSP] nvarchar(100),
+	[GiaBan] int,
+	[SoLuong] int,
+	[ThanhTien] int,
+	[DonViTinh] nvarchar(100),
+	CONSTRAINT PK_ChiTietDonHang PRIMARY KEY([MaChiTiet], [MaDon], [MaSP]),
+	CONSTRAINT FK_DonHang_ChiTietDonHang FOREIGN KEY([MaDon]) REFERENCES [dbo].[DonHang]([MaDon]),
+	CONSTRAINT FK_SanPham_ChiTietDonHang FOREIGN KEY([MaSP]) REFERENCES [dbo].[SanPham]([MaSP])
+);
+GO
+
+/*
+INSERT DATA FOR [QLST]
+*/
+
+USE [QLST];
 GO
 
 --Tbl_TaiKhoan
@@ -227,4 +322,71 @@ INSERT INTO [dbo].[ChiTietDonHang]
 VALUES
 	('MCT001','DH001', 'MSP001', N'Pepsi Lon 350ml', 10000, 10, 100000, N'Chai'),
 	('MCT002','DH002', 'MSP002', N'Coca Lon 350ml', 10000, 5, 50000, N'Chai');
+GO
+
+/*
+STORE PROCEDURE FOR [QLST]
+*/
+
+USE [QLST];
+GO
+
+-- LayDSSP_TheoTenSP
+CREATE PROC sp_LayDSSP_TheoTenSP(@tenSP nvarchar(100))
+AS
+	SELECT sp.MaSP, sp.TenSP, sp.GiaNhap, sp.GiaBan, sp.SoLuong, sp.DonViTinh, sp.NoiSanXuat, sp.HanSuDung FROM [dbo].[SanPham] AS sp
+	WHERE sp.TenSP LIKE '%' + @tenSP + '%'
+GO
+
+--exec sp_LayDSSP_TheoTenSP 'Nike';
+
+--DROP proc sp_LayDSSP_TheoTenSP;
+
+-- LayDSDH_TheoTenNV
+CREATE PROC sp_LayDSDH_TheoTenNV(@tenNV nvarchar(100))
+AS
+	SELECT dh.MaDon, dh.NgayBan, dh.TongGiaTri, nv.TenNV FROM [dbo].[NhanVien] AS nv
+	JOIN [dbo].[DonHang] AS dh
+	ON nv.MaNV = dh.MaNV
+	WHERE nv.TenNV LIKE '%' + @tenNV + '%'
+GO
+
+--exec sp_LayDSDH_TheoTenNV 'Mai Vân Linh';
+
+--DROP proc sp_LayDSDH_TheoTenNV;
+
+-- LayDSDH_TheoNgayBan
+CREATE PROC sp_LayDSDH_TheoNgayBan(@ngayBan date)
+AS
+	SELECT dh.MaDon, dh.NgayBan, dh.TongGiaTri, nv.TenNV FROM [dbo].[NhanVien] AS nv
+	JOIN [dbo].[DonHang] AS dh
+	ON nv.MaNV = dh.MaNV
+	WHERE dh.NgayBan = @ngayBan
+GO
+
+--exec sp_LayDSDH_TheoNgayBan '2024-04-01';
+
+--DROP proc sp_LayDSDH_TheoNgayBan;
+
+/*
+SELECT DATA FROM [QLST]
+*/
+
+USE [QLST];
+GO
+
+SELECT * FROM TaiKhoan;
+
+SELECT * FROM NhaCungCap;
+
+SELECT * FROM LoaiSanPham;
+
+SELECT * FROM SanPham;
+
+SELECT * FROM NhanVien;
+
+SELECT * FROM DonHang;
+
+SELECT * FROM ChiTietDonHang;
+
 GO

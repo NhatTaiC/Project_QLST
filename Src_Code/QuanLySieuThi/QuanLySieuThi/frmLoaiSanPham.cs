@@ -34,6 +34,9 @@ namespace QuanLySieuThi
         {
             // dgvLoaiSP
             dgvLoaiSP.DataSource = bus_lsp.LayDSLSP();
+            dgvLoaiSP.Columns[0].HeaderText = "Mã Loại Sản Phẩm";
+            dgvLoaiSP.Columns[1].HeaderText = "Tên Loại Sản Phẩm";
+            dgvLoaiSP.Columns[2].HeaderText = "Mô tả";
 
             // Others
             txtMaLSP.Focus();

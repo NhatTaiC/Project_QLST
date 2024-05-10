@@ -385,7 +385,7 @@ namespace DAL
                               on nv.MaNV equals dh.MaNV
                               join ctdh in db.ChiTietDonHangs
                               on dh.MaDon equals ctdh.MaDon
-                              where nv.TenNV == tenNV
+                              where nv.TenNV.Contains(tenNV)
                               select new
                               {
                                   MaChiTiet = ctdh.MaChiTiet,

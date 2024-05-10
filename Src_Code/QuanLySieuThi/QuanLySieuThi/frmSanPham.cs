@@ -36,6 +36,16 @@ namespace QuanLySieuThi
         {
             // dgvSP
             dgvSP.DataSource = bus_sp.LayDSSP();
+            dgvSP.Columns[0].HeaderText = "Mã Sản Phẩm";
+            dgvSP.Columns[1].HeaderText = "Tên Sản Phẩm";
+            dgvSP.Columns[2].HeaderText = "Giá Nhập";
+            dgvSP.Columns[3].HeaderText = "Giá Bán";
+            dgvSP.Columns[4].HeaderText = "Số Lượng";
+            dgvSP.Columns[5].HeaderText = "Đơn Vị Tính";
+            dgvSP.Columns[6].HeaderText = "Nơi Sản Xuất";
+            dgvSP.Columns[7].HeaderText = "Hạn Sử Dụng";
+            dgvSP.Columns[8].HeaderText = "Mã Nhà Cung Cấp";
+            dgvSP.Columns[9].HeaderText = "Mã Loại Sản Phẩm";
 
             // Columns["HanSuDung"]
             dgvSP.Columns["HanSuDung"].DefaultCellStyle.Format = "dd/MM/yyyy";
