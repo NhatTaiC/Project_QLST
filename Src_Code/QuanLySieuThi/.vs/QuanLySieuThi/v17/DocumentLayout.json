@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EF5D5CB5-A90B-4AA7-84C6-1D23F146BC23}|QuanLySieuThi\\GUI.csproj|d:\\study\\cn.net\\project_qlst\\src_code\\quanlysieuthi\\quanlysieuthi\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{EF5D5CB5-A90B-4AA7-84C6-1D23F146BC23}|QuanLySieuThi\\GUI.csproj|solutionrelative:quanlysieuthi\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EF5D5CB5-A90B-4AA7-84C6-1D23F146BC23}|QuanLySieuThi\\GUI.csproj|D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\quanlysieuthi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EF5D5CB5-A90B-4AA7-84C6-1D23F146BC23}|QuanLySieuThi\\GUI.csproj|solutionrelative:quanlysieuthi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedHeight": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\Program.cs",
               "RelativeDocumentMoniker": "QuanLySieuThi\\Program.cs",
               "ToolTip": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\Program.cs",
               "RelativeToolTip": "QuanLySieuThi\\Program.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAqwCYAAAAqAAAA",
+              "ViewState": "AQIAABoAAAAAAAAAAAAUwCYAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-07T03:58:54.858Z",
               "IsPinned": true,
@@ -40,7 +44,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "frmMain.cs",
               "DocumentMoniker": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\frmMain.cs",
               "RelativeDocumentMoniker": "QuanLySieuThi\\frmMain.cs",
@@ -54,7 +58,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "frmMain.cs [Design]",
               "DocumentMoniker": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\frmMain.cs",
               "RelativeDocumentMoniker": "QuanLySieuThi\\frmMain.cs",
@@ -64,6 +68,19 @@
               "WhenOpened": "2024-05-07T03:59:03.765Z",
               "IsPinned": true,
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.config",
+              "DocumentMoniker": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\App.config",
+              "RelativeDocumentMoniker": "QuanLySieuThi\\App.config",
+              "ToolTip": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\App.config",
+              "RelativeToolTip": "QuanLySieuThi\\App.config",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-05-10T18:10:53.279Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",

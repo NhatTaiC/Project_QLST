@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUS", "BUS\BUS.csproj", "{DCE1FB7C-4517-40CF-A0C5-E2A06764EA4C}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QLST_Setup", "..\QLST_Setup\QLST_Setup.vdproj", "{029849E5-956A-4072-BE6A-292506F2992D}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "QLST_Setup", "..\QLST_Setup\QLST_Setup.vdproj", "{5017BF1A-49E1-44F2-A9A4-12473DE23560}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,8 +35,8 @@ Global
 		{DCE1FB7C-4517-40CF-A0C5-E2A06764EA4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCE1FB7C-4517-40CF-A0C5-E2A06764EA4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCE1FB7C-4517-40CF-A0C5-E2A06764EA4C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{029849E5-956A-4072-BE6A-292506F2992D}.Debug|Any CPU.ActiveCfg = Debug
-		{029849E5-956A-4072-BE6A-292506F2992D}.Release|Any CPU.ActiveCfg = Release
+		{5017BF1A-49E1-44F2-A9A4-12473DE23560}.Debug|Any CPU.ActiveCfg = Debug
+		{5017BF1A-49E1-44F2-A9A4-12473DE23560}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
