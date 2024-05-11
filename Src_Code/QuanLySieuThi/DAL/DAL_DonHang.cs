@@ -119,7 +119,7 @@ namespace DAL
                 if (maDonHang != string.Empty)
                 {
                     // Check MaDH có trong DB CTDH hay không? trước khi xóa
-                    if (CheckDH_TheoMaDH(maDonHang) == 1)
+                    if (CheckDH_TheoMaDH(maDonHang) == 0)
                     {
                         // Tìm Đơn Hàng Cần Xóa = Mã Đơn Hàng
                         var d_delete = from d in db.DonHangs
@@ -280,6 +280,16 @@ namespace DAL
                        join ctdh in db.ChiTietDonHangs
                        on dh.MaDon equals ctdh.MaDon
                        where ctdh.MaDon == maDon
+                       select dh;
+
+            return temp.Count();
+        }
+
+        // CheckDH_TheoMaDH_2
+        public int CheckDH_TheoMaDH_2(string maDon)
+        {
+            var temp = from dh in db.DonHangs
+                       where dh.MaDon == maDon
                        select dh;
 
             return temp.Count();

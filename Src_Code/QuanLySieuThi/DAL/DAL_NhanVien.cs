@@ -177,7 +177,7 @@ namespace DAL
                 if (nv != string.Empty)
                 {
                     // Check MaNV có trong DB DonHang hay không? trước khi xóa nv
-                    if (CheckNV_TheoMaNV(nv) == 1)
+                    if (CheckNV_TheoMaNV(nv) == 0)
                     {
                         // Truy vấn MaNV có tồn tại trong Table NhanVien ko?
                         var n_delete = from n in db.NhanViens

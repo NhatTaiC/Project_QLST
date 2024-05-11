@@ -13,3 +13,5 @@ Data Source=.\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True
 D:\PROGRAM\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\Backup
 
 D:\PROGRAM\Microsoft SQL Server\MSSQL16.SQLEXPRESS\MSSQL\DATA
+
+Data Source=KOH-LAPTOP\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True;Trust Server Certificate=True

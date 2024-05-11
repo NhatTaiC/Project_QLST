@@ -142,17 +142,47 @@
     <Compile Include="frmInDanhSachSanPham_TheoTenSanPham.Designer.cs">
       <DependentUpon>frmInDanhSachSanPham_TheoTenSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInDanhSachSanPham_TheoTenSanPham_KetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInDanhSachSanPham_TheoTenSanPham_KetQua.Designer.cs">
+      <DependentUpon>frmInDanhSachSanPham_TheoTenSanPham_KetQua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInDH_TheoMaDon_KetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInDH_TheoMaDon_KetQua.Designer.cs">
+      <DependentUpon>frmInDH_TheoMaDon_KetQua.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInDSDH_TheoNgayBan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmInDSDH_TheoNgayBan.Designer.cs">
       <DependentUpon>frmInDSDH_TheoNgayBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInDSDH_TheoNgayBan_KetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInDSDH_TheoNgayBan_KetQua.Designer.cs">
+      <DependentUpon>frmInDSDH_TheoNgayBan_KetQua.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInDSDH_TheoTenNV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmInDSDH_TheoTenNV.Designer.cs">
       <DependentUpon>frmInDSDH_TheoTenNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInDSDH_TheoTenNV_KetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInDSDH_TheoTenNV_KetQua.Designer.cs">
+      <DependentUpon>frmInDSDH_TheoTenNV_KetQua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInDH_TheoMaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInDH_TheoMaDon.Designer.cs">
+      <DependentUpon>frmInDH_TheoMaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLoaiSanPham.cs">
       <SubType>Form</SubType>
@@ -210,11 +240,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLSTDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLSTDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Report\DSDH_TheoNgayBan.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -231,6 +256,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSSP_TheoTenSanPham.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\LayDH_TheoMaDon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LayDH_TheoMaDon.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="frmBanHang.resx">
@@ -254,11 +285,26 @@
     <EmbeddedResource Include="frmInDanhSachSanPham_TheoTenSanPham.resx">
       <DependentUpon>frmInDanhSachSanPham_TheoTenSanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInDanhSachSanPham_TheoTenSanPham_KetQua.resx">
+      <DependentUpon>frmInDanhSachSanPham_TheoTenSanPham_KetQua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInDH_TheoMaDon.resx">
+      <DependentUpon>frmInDH_TheoMaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInDH_TheoMaDon_KetQua.resx">
+      <DependentUpon>frmInDH_TheoMaDon_KetQua.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInDSDH_TheoNgayBan.resx">
       <DependentUpon>frmInDSDH_TheoNgayBan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInDSDH_TheoNgayBan_KetQua.resx">
+      <DependentUpon>frmInDSDH_TheoNgayBan_KetQua.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInDSDH_TheoTenNV.resx">
       <DependentUpon>frmInDSDH_TheoTenNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInDSDH_TheoTenNV_KetQua.resx">
+      <DependentUpon>frmInDSDH_TheoTenNV_KetQua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoaiSanPham.resx">
       <DependentUpon>frmLoaiSanPham.cs</DependentUpon>
@@ -309,6 +355,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DSSP_TheoTenSanPham.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\LayDH_TheoMaDon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LayDH_TheoMaDon.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Data\create_qlst_data.bat" />
     <None Include="Data\SQLCMD.rll" />
     <None Include="Properties\Settings.settings">
@@ -320,17 +370,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="QLSTDataSet.xsc">
-      <DependentUpon>QLSTDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLSTDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLSTDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLSTDataSet.xss">
-      <DependentUpon>QLSTDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -349,10 +388,19 @@
     <None Include="IMG\Supermarket_2.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\qlst_data.sql" />
+    <Content Include="Database\qlst_data_script.sql" />
+    <Content Include="Database\qlst_db.sql" />
+    <Content Include="Database\qlst_db.txt" />
+    <Content Include="Database\qlst_db_insert_data.sql" />
+    <Content Include="Database\qlst_sp.sql" />
+    <Content Include="Database\xem_qlst.sql" />
     <Content Include="Data\batchparser.dll" />
     <Content Include="Data\location_sqlcmd.txt" />
+    <Content Include="Data\qlst_data.sql" />
     <Content Include="Data\qlst_data_script.sql" />
     <Content Include="Data\SQLCMD.EXE" />
+    <Content Include="Data\xem_qlst.sql" />
     <Content Include="DB_Backup\QLST.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -379,12 +427,6 @@
     <Content Include="IMG\Supermarket_icon.jpg" />
     <Content Include="IMG\Supermarket_icon_2.ico" />
     <Content Include="IMG\Supermarket_icon_2.jpg" />
-    <Content Include="QLST.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="QLST_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Text\Note.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -401,6 +443,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Export RPT to PDF\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -160,11 +160,11 @@ INSERT INTO [dbo].[LoaiSanPham]
 	[MoTa]
 )
 VALUES
-	('LSP001', N'Đồ Khô', N'Đồ khô, đồ đóng hộp'),
-	('LSP002', N'Đồ Lạnh', N'Đồ đông lạnh'),
-	('LSP003', N'Đồ Điện Tử', N'Tivi, màn hình,...'),
-	('LSP004', N'Giày Dép', N'Các loại giày dép'),
-	('LSP005', N'Quần Áo', N'Các loại quần áo');
+	('LSP001', N'Đồ Khô', N'Đồ Khô, Đồ Đóng Hộp'),
+	('LSP002', N'Đồ Lạnh', N'Đồ Đông Lạnh'),
+	('LSP003', N'Đồ Điện Tử', N'Tivi, Màn Hình,...'),
+	('LSP004', N'Giày Dép', N'Các Loại Giày Dép'),
+	('LSP005', N'Quần Áo', N'Các Loại Quần Áo');
 
 --Tbl_SanPham
 INSERT INTO [dbo].[SanPham]
@@ -181,27 +181,28 @@ INSERT INTO [dbo].[SanPham]
 	[MaLoaiSP]
 )
 VALUES
+	--Supermarket
 	('MSP001', N'Pepsi Lon 350ml', 4000, 10000, 101, N'Chai', N'Hồ Chí Minh', N'2025-04-01', 'NCC001', 'LSP001'),
 	('MSP002', N'Coca Lon 350ml', 4000, 10000, 101, N'Chai', N'Hồ Chí Minh', N'2025-04-01', 'NCC002', 'LSP001'),
 	('MSP003', N'Fanta Lon 350ml', 4000, 10000, 101, N'Chai', N'Hồ Chí Minh', N'2025-04-01', 'NCC001', 'LSP001'),
-	('MSP004', N'Nike air force 1', 1000000, 1200000, 101, N'Đôi', N'Hồ Chí Minh', N'2025-04-01', 'NCC004', 'LSP004'),
-	('MSP005', N'Adidas stan smith', 1500000, 1700000, 101, N'Đôi', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP004'),
-	('MSP006', N'Oreo đá xay', 50000, 60000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
-	('MSP007', N'Cơm nắm', 10000, 14000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
-	('MSP008', N'Trà chanh', 10000, 15000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP004'),
+	('MSP004', N'Nike Air Force 1', 1000000, 1200000, 101, N'Đôi', N'Hồ Chí Minh', N'2025-04-01', 'NCC004', 'LSP004'),
+	('MSP005', N'Adidas Stan Smith', 1500000, 1700000, 101, N'Đôi', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP004'),
+	('MSP006', N'Oreo Đá xay', 50000, 60000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
+	('MSP007', N'Cơm Nắm', 10000, 14000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
+	('MSP008', N'Trà Chanh', 10000, 15000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP004'),
 	('MSP009', N'TV LG', 15000000, 16000000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
-	('MSP010', N'Màn hình Asus', 3000000, 3200000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC010', 'LSP003'),
-	--adidas
+	('MSP010', N'Màn Hình Asus', 3000000, 3200000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC010', 'LSP003'),
+	--Adidas
 	('MSP011', N'Giày SAMBA OG', 2500000, 2700000, 101, N'Đôi', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP004'),
-	('MSP012', N'Áo thun chạy bộ ADIZERO', 1600000, 1700000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP005'),
-	('MSP013', N'Áo gile own the run', 1600000, 1700000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP005'),
+	('MSP012', N'Áo Thun Chạy Bộ ADIZERO', 1600000, 1700000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP005'),
+	('MSP013', N'Áo Gile Own The Run', 1600000, 1700000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP005'),
 	('MSP014', N'Giày ADIZERO PRIME X 2.0 STRUNG', 6500000, 6700000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP004'),
-	('MSP015', N'Quần short chạy bộ', 700000, 800000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP005'),
+	('MSP015', N'Quần Short Chạy Bộ', 700000, 800000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP005'),
 	('MSP016', N'Giày MARVEL DURAMO SL TRẺ EM', 700000, 800000, 101, N'Đôi', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP004'),
-	('MSP017', N'Áo thun 3 lá ADICOLOR', 550000, 650000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP005'),
-	('MSP018', N'Áo gió MICKEY MOUSE', 430000, 530000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP005'),
-	('MSP019', N'Tất 3 lá ADICOLOR', 100000, 150000, 101, N'Đôi', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP005'),
-	--nike
+	('MSP017', N'Áo Thun 3 Lá ADICOLOR', 550000, 650000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP005'),
+	('MSP018', N'Áo Gió MICKEY MOUSE', 430000, 530000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP005'),
+	('MSP019', N'Tất 3 Lá ADICOLOR', 100000, 150000, 101, N'Đôi', N'Hồ Chí Minh', N'2025-04-01', 'NCC003', 'LSP005'),
+	--Nike
 	('MSP020', N'Dép Nike Calm', 1479000, 1579000, 101, N'Đôi', N'Hồ Chí Minh', N'2025-04-01', 'NCC004', 'LSP004'),
 	('MSP021', N'Giày Nike Air Max Isla', 2900000, 3000000, 101, N'Đôi', N'Hồ Chí Minh', N'2025-04-01', 'NCC004', 'LSP004'),
 	('MSP022', N'Giày Nike Air Max Koko', 2900000, 3000000, 101, N'Đôi', N'Hồ Chí Minh', N'2025-04-01', 'NCC004', 'LSP004'),
@@ -211,46 +212,46 @@ VALUES
 	('MSP026', N'Dép Nike Offcourt', 1019000, 1100000, 101, N'Đôi', N'Hồ Chí Minh', N'2025-04-01', 'NCC004', 'LSP004'),
 	('MSP027', N'Dép Jordan Super Play', 1600000, 1750000, 101, N'Đôi', N'Hồ Chí Minh', N'2025-04-01', 'NCC004', 'LSP004'),
 	('MSP028', N'Dép Nike Air More Uptempo', 2500000, 2649000, 101, N'Đôi', N'Hồ Chí Minh', N'2025-04-01', 'NCC004', 'LSP004'),
-	--hightland
-	('MSP029', N'Cà phê phin sữa đá', 20000, 29000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
-	('MSP030', N'Bạc xỉu', 20000, 29000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
-	('MSP031', N'Cà phê phin đen đá', 19000, 29000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
-	('MSP032', N'Cà phê phin đen nóng', 19000, 29000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
-	('MSP033', N'Cà phê Espresso Americano', 30000, 35000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
-	('MSP034', N'Cà phê Espresso Latte', 50000, 55000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
-	('MSP035', N'Cà phê Espresso Cappuccino', 50000, 55000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
-	('MSP036', N'Cà phê Espresso Caramel Macchiato', 51000, 59000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
-	('MSP037', N'Đá xay Freeze Trà Xanh', 51000, 59000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
+	--HighLand
+	('MSP029', N'Cà Phê Phin Sữa Đá', 20000, 29000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
+	('MSP030', N'Bạc Xỉu', 20000, 29000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
+	('MSP031', N'Cà Phê Phin Đen Đá', 19000, 29000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
+	('MSP032', N'Cà Phê Phin Đen Nóng', 19000, 29000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
+	('MSP033', N'Cà Phê Espresso Americano', 30000, 35000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
+	('MSP034', N'Cà Phê Espresso Latte', 50000, 55000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
+	('MSP035', N'Cà Phê Espresso Cappuccino', 50000, 55000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
+	('MSP036', N'Cà Phê Espresso Caramel Macchiato', 51000, 59000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
+	('MSP037', N'Đá Xay Freeze Trà Xanh', 51000, 59000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC005', 'LSP002'),
 	--Circle K
-	('MSP045', N'Mì xào trứng xúc xích', 30000, 35000, 101, N'Dĩa', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP001'),
-	('MSP038', N'Bánh bao trứng cút', 25000, 30000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP001'),
-	('MSP039', N'Bánh mì ốp la', 15000, 20000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP001'),
-	('MSP040', N'Xôi lá chuối', 25000, 30000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP001'),
-	('MSP041', N'Mì trộn Indomie', 25000, 30000, 101, N'Dĩa', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP001'),
-	('MSP042', N'Bánh giò', 20000, 25000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP001'),
-	('MSP043', N'Sữa tươi cà phê', 20000, 25000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP002'),
-	('MSP044', N'Trà đào', 20000, 25000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP002'),
+	('MSP045', N'Mì Xào Trứng Xúc Xích', 30000, 35000, 101, N'Phần', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP001'),
+	('MSP038', N'Bánh Bao Trứng Cút', 25000, 30000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP001'),
+	('MSP039', N'Bánh Mì Ốp La', 15000, 20000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP001'),
+	('MSP040', N'Xôi Lá Chuối', 25000, 30000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP001'),
+	('MSP041', N'Mì Trộn Indomie', 25000, 30000, 101, N'Phần', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP001'),
+	('MSP042', N'Bánh Giò', 20000, 25000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP001'),
+	('MSP043', N'Sữa Tươi Cà Phê', 20000, 25000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP002'),
+	('MSP044', N'Trà Đào', 20000, 25000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP002'),
 	('MSP046', N'Milo', 15000, 25000, 101, N'Ly', N'Hồ Chí Minh', N'2025-04-01', 'NCC006', 'LSP002'),
-	--family mart
-	('MSP047', N'Bánh crepe tiramisu', 15000, 25000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
-	('MSP048', N'Bánh đậu đỏ', 20000, 25000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
-	('MSP049', N'Bánh Dorayaki nhân kem sữa Hokkaido', 10000, 15000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
+	--Family Mart
+	('MSP047', N'Bánh Crepe Tiramisu', 15000, 25000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
+	('MSP048', N'Bánh Đậu Đỏ', 20000, 25000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
+	('MSP049', N'Bánh Dorayaki Nhân Kem Sữa Hokkaido', 10000, 15000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
 	('MSP050', N'Bánh Hawaii Khoai Tây', 20000, 28000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
-	('MSP051', N'Bánh bao nhân thịt heo trứng muối', 20000, 28000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
-	('MSP052', N'Bánh giò nhân gà 2 trứng cút', 12000, 17000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
-	('MSP053', N'Bắp cải cuộn tôm', 4000, 8000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
+	('MSP051', N'Bánh Bao Nhân Thịt Heo Trứng Muối', 20000, 28000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
+	('MSP052', N'Bánh Giò Nhân Gà 2 Trứng Cút', 12000, 17000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
+	('MSP053', N'Bắp Cải Cuộn Tôm', 4000, 8000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
 	('MSP054', N'Bánh Mì Que Pate Nướng Cay', 12000, 18000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
-	('MSP055', N'Bánh Mì truyền thống', 12000, 18000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
+	('MSP055', N'Bánh Mì Truyền Thống', 12000, 18000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC007', 'LSP001'),
 	--LG
-	('MSP056', N'Tủ lạnh LG French Door InstaView 530L màu đen LFB53BLMI', 29000000, 29900000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
-	('MSP057', N'Máy rửa bát LG TrueSteam màu Be LDT14BGA3', 19000000, 2200000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
-	('MSP058', N'Máy lọc không khí PuriCare360 Alpha PET Lọc không khí 360 | AS65GDBY0', 25000000, 2590000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
-	('MSP059', N'Điều hòa LG DUALCOOL Inverter 1 chiều 9.000 BTU (1HP)|V10ENO', 8000000, 8700000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
+	('MSP056', N'Tủ Lạnh LG French Door InstaView 530L Màu Đen LFB53BLMI', 29000000, 29900000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
+	('MSP057', N'Máy Rửa Bát LG TrueSteam Màu Be LDT14BGA3', 19000000, 2200000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
+	('MSP058', N'Máy Lọc Không Khí PuriCare360 Alpha PET Lọc Không Khí 360 | AS65GDBY0', 25000000, 2590000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
+	('MSP059', N'Điều Hòa LG DUALCOOL Inverter 1 chiều 9.000 BTU (1HP)|V10ENO', 8000000, 8700000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
 	('MSP060', N'Tivi LG OLED A3 65 inch 2023 4K Smart TV | OLED65A3', 3200000, 32900000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
-	('MSP061', N'Màn hình chơi game UltraGear Full HD IPS 1ms (GtG) 27'' tương thích với NVIDIA G-SYNC', 4090000, 5200000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
-	('MSP062', N'Tivi LG OLED Posé Objet Collection LX1 55 inch 4K Smart TV | 55LX1Q', 5400000, 54900000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
-	('MSP063', N'Tủ lạnh LG Instaview Door-in-door và ngăn lấy nước ngoài UV nano 635L màu be GR-X257BG', 37000000, 37900000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
-	('MSP064', N'Tủ chăm sóc quần áo thông minh LG Styler 5 móc True Steam Màu xanh lá cây | S5GOC', 54000000, 55000000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
+	('MSP061', N'Màn Hình ChơiGgame UltraGear Full HD IPS 1ms (GtG) 27''Tương Thích Với NVIDIA G-SYNC', 4090000, 5200000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
+	('MSP062', N'Tivi LG OLED Posé Objet Collection LX1 55 Inch 4K Smart TV | 55LX1Q', 5400000, 54900000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
+	('MSP063', N'Tủ Lạnh LG Instaview Door-in-door Và Ngăn Lấy Nước Ngoài UV Nano 635L Màu Be GR-X257BG', 37000000, 37900000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
+	('MSP064', N'Tủ Chăm Sóc Quần Áo Thông Minh LG Styler 5 Móc True Steam Màu Xanh Lá Cây | S5GOC', 54000000, 55000000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC008', 'LSP003'),
 	--Samsung
 	('MSP065', N'S24 Ultra', 3000000, 37000000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003'),
 	('MSP066', N'Zflip 5', 20000000, 25000000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003'),
@@ -262,15 +263,15 @@ VALUES
 	('MSP072', N'Galaxy A23', 3500000, 3700000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003'),
 	('MSP073', N'Galaxy A34', 8100000, 8489000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003'),
 	--Asus
-	('MSP074', N'ASUS Zenbook Pro 14 Duo OLED UX8402VU-P1028W', 54000000, 54690000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003'),
-	('MSP075', N'ASUS Zenbook 14 OLED UX3405MA-PP152W', 32000000, 32490000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003'),
-	('MSP076', N'ASUS Zenbook 14 OLED UX3402VA-KM203W', 22000000, 22900000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003'),
-	('MSP077', N'ASUS Zenbook 14 Flip OLED', 25000000, 25400000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003'),
-	('MSP078', N'ASUS ZenScreen MB166C- 16 inch', 4000000, 4990000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003'),
-	('MSP079', N'ASUS Zenbook 14 OLED UX3405MA-PP588W', 26000000, 26990000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003'),
-	('MSP080', N'ASUS ZenScreen OLED MQ16AH – 16 inch', 3000000, 3900000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003'),
-	('MSP081', N'ASUS ZenScreen MB166C Portable Monitor- 16 inch', 4000000, 4990000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003'),
-	('MSP082', N'ASUS ZenScreen MB16AH Portable USB- 16 inch', 5000000, 5990000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC009', 'LSP003');
+	('MSP074', N'ASUS Zenbook Pro 14 Duo OLED UX8402VU-P1028W', 54000000, 54690000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC010', 'LSP003'),
+	('MSP075', N'ASUS Zenbook 14 OLED UX3405MA-PP152W', 32000000, 32490000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC010', 'LSP003'),
+	('MSP076', N'ASUS Zenbook 14 OLED UX3402VA-KM203W', 22000000, 22900000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC010', 'LSP003'),
+	('MSP077', N'ASUS Zenbook 14 Flip OLED', 25000000, 25400000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC010', 'LSP003'),
+	('MSP078', N'ASUS ZenScreen MB166C- 16 Inch', 4000000, 4990000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC010', 'LSP003'),
+	('MSP079', N'ASUS Zenbook 14 OLED UX3405MA-PP588W', 26000000, 26990000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC010', 'LSP003'),
+	('MSP080', N'ASUS ZenScreen OLED MQ16AH – 16 Inch', 3000000, 3900000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC010', 'LSP003'),
+	('MSP081', N'ASUS ZenScreen MB166C Portable Monitor- 16 Inch', 4000000, 4990000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC010', 'LSP003'),
+	('MSP082', N'ASUS ZenScreen MB16AH Portable USB- 16 Inch', 5000000, 5990000, 101, N'Cái', N'Hồ Chí Minh', N'2025-04-01', 'NCC010', 'LSP003');
 
 --Tbl_NhanVien
 INSERT INTO [dbo].[NhanVien]
@@ -304,7 +305,7 @@ INSERT INTO [dbo].[DonHang]
 	[MaNV]
 )
 VALUES 
-	(N'DH001', N'2024-04-01', 100000, 'NV001'),
+	(N'DH001', N'2024-04-01', 36559000, 'NV001'),
 	(N'DH002', N'2024-04-01', 50000, 'NV002');
 
 --Tbl_ChiTietDonHang
@@ -321,7 +322,26 @@ INSERT INTO [dbo].[ChiTietDonHang]
 )
 VALUES
 	('MCT001','DH001', 'MSP001', N'Pepsi Lon 350ml', 10000, 10, 100000, N'Chai'),
-	('MCT002','DH002', 'MSP002', N'Coca Lon 350ml', 10000, 5, 50000, N'Chai');
+	('MCT002','DH001', 'MSP002', N'Coca Lon 350ml', 10000, 10, 100000, N'Chai'),
+	('MCT003','DH001', 'MSP003', N'Fanta Lon 350ml', 10000, 10, 100000, N'Chai'),
+	('MCT004','DH001', 'MSP004', N'Nike Air Force 1', 1200000, 1, 1200000, N'Đôi'),
+	('MCT005','DH001', 'MSP005', N'Adidas Stan Smith', 1200000, 1, 1200000, N'Đôi'),
+	('MCT006','DH001', 'MSP006', N'Oreo Đá Xay', 60000, 2, 120000, N'Ly'),
+	('MCT007','DH001', 'MSP007', N'Cơm Nắm', 14000, 10, 140000, N'Cái'),
+	('MCT008','DH001', 'MSP008', N'Trà Chanh', 15000, 10, 150000, N'Ly'),
+	('MCT009','DH001', 'MSP009', N'TV LG', 16000000, 1, 16000000, N'Cái'),
+	('MCT010','DH001', 'MSP010', N'Màn Hình Asus', 3200000, 1, 3200000, N'Cái'),
+	('MCT011','DH001', 'MSP011', N'Giày SAMBA OG', 2700000, 1, 2700000, N'Đôi'),
+	('MCT012','DH001', 'MSP012', N'Áo Thun Chạy Bộ ADIZERO', 1700000, 1, 1700000, N'Cái'),
+	('MCT013','DH001', 'MSP013', N'Áo Gile Own The Run', 1700000, 1, 1700000, N'Cái'),
+	('MCT014','DH001', 'MSP014', N'Giày ADIZERO PRIME X 2.0 STRUNG', 6700000, 1, 6700000, N'Đôi'),
+	('MCT015','DH001', 'MSP015', N'Quần Short Chạy Bộ', 800000, 2, 1600000, N'Cái'),
+	('MCT016','DH001', 'MSP016', N'Giày MARVEL DURAMO SL TRẺ EM', 800000, 1, 800000, N'Đôi'),
+	('MCT017','DH001', 'MSP017', N'Áo Thun 3 Lá ADICOLOR', 650000, 1, 650000, N'Cái'),
+	('MCT018','DH001', 'MSP018', N'Áo Gió MICKEY MOUSE', 530000, 1, 530000, N'Cái'),
+	('MCT019','DH001', 'MSP019', N'Tất 3 Lá ADICOLOR', 150000, 1, 150000, N'Cái'),
+	('MCT020','DH001', 'MSP020', N'Dép Nike Calm', 1579000, 1, 1579000, N'Đôi'),
+	('MCT021','DH002', 'MSP002', N'Coca Lon 350ml', 10000, 5, 50000, N'Chai');
 GO
 
 /*
@@ -338,9 +358,9 @@ AS
 	WHERE sp.TenSP LIKE '%' + @tenSP + '%'
 GO
 
---exec sp_LayDSSP_TheoTenSP 'Nike';
+--EXEC sp_LayDSSP_TheoTenSP 'Nike';
 
---DROP proc sp_LayDSSP_TheoTenSP;
+--DROP PROC sp_LayDSSP_TheoTenSP;
 
 -- LayDSDH_TheoTenNV
 CREATE PROC sp_LayDSDH_TheoTenNV(@tenNV nvarchar(100))
@@ -351,9 +371,9 @@ AS
 	WHERE nv.TenNV LIKE '%' + @tenNV + '%'
 GO
 
---exec sp_LayDSDH_TheoTenNV 'Mai Vân Linh';
+--EXEC sp_LayDSDH_TheoTenNV 'Mai Vân Linh';
 
---DROP proc sp_LayDSDH_TheoTenNV;
+--DROP PROC sp_LayDSDH_TheoTenNV;
 
 -- LayDSDH_TheoNgayBan
 CREATE PROC sp_LayDSDH_TheoNgayBan(@ngayBan date)
@@ -364,9 +384,25 @@ AS
 	WHERE dh.NgayBan = @ngayBan
 GO
 
---exec sp_LayDSDH_TheoNgayBan '2024-04-01';
+--EXEC sp_LayDSDH_TheoNgayBan '2024-04-01';
 
---DROP proc sp_LayDSDH_TheoNgayBan;
+--DROP PROC sp_LayDSDH_TheoNgayBan;
+
+-- LayDH_TheoMaDon
+CREATE PROC sp_LayDH_TheoMaDon(@maDon varchar(50))
+AS
+	SELECT dh.MaDon, dh.NgayBan, dh.TongGiaTri, nv.TenNV, ctdh.TenSP, ctdh.GiaBan, ctdh.SoLuong, ctdh.ThanhTien
+	FROM [dbo].[ChiTietDonHang] AS ctdh
+	JOIN [dbo].[DonHang] AS dh
+	ON ctdh.MaDon = dh.MaDon
+	JOIN [dbo].[NhanVien] AS nv
+	ON dh.MaNV = nv.MaNV
+	WHERE dh.MaDon = @maDon
+GO
+
+--EXEC sp_LayDH_TheoMaDon 'DH001'
+
+--DROP PROC sp_LayDH_TheoMaDon;
 
 /*
 SELECT DATA FROM [QLST]

@@ -52,7 +52,7 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(201, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 45);
+            this.label1.Size = new System.Drawing.Size(450, 89);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đăng Nhập";
             // 
@@ -117,7 +117,7 @@
             this.txtTaiKhoan.Location = new System.Drawing.Point(220, 10);
             this.txtTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(212, 26);
+            this.txtTaiKhoan.Size = new System.Drawing.Size(212, 44);
             this.txtTaiKhoan.TabIndex = 0;
             // 
             // txtMatKhau
@@ -126,7 +126,7 @@
             this.txtMatKhau.Location = new System.Drawing.Point(220, 52);
             this.txtMatKhau.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.Size = new System.Drawing.Size(212, 26);
+            this.txtMatKhau.Size = new System.Drawing.Size(212, 44);
             this.txtMatKhau.TabIndex = 1;
             this.txtMatKhau.UseSystemPasswordChar = true;
             // 
@@ -138,7 +138,7 @@
             this.cboChucVu.Location = new System.Drawing.Point(220, 94);
             this.cboChucVu.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.cboChucVu.Name = "cboChucVu";
-            this.cboChucVu.Size = new System.Drawing.Size(212, 26);
+            this.cboChucVu.Size = new System.Drawing.Size(212, 44);
             this.cboChucVu.TabIndex = 2;
             // 
             // tableButton
@@ -201,7 +201,7 @@
             // frmDangNhap
             // 
             this.AcceptButton = this.btnDangNhap;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 390);
             this.Controls.Add(this.tableButton);

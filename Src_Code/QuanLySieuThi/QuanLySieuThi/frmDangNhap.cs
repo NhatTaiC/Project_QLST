@@ -26,7 +26,7 @@ namespace QuanLySieuThi
             InitializeComponent();
         }
 
-        // Initialize Variable
+        // Initialize Variables
         BUS_TaiKhoan bus_tk = new BUS_TaiKhoan();
         public static SqlConnection Con; // Khai báo đối tượng kết nối DB
 
