@@ -97,8 +97,8 @@ namespace QuanLySieuThi
         // ThoatMNS_Click
         private void thoatMNS_Click(object sender, EventArgs e)
         {
-            // Đóng kết nối DB
-            CloseConnect();
+            //// Đóng kết nối DB
+            //CloseConnect();
 
             // Đóng App
             Application.Exit();
@@ -233,8 +233,8 @@ namespace QuanLySieuThi
         // frmMain_Load
         private void frmMain_Load(object sender, EventArgs e)
         {
-            // Mở kết nối DB
-            OpenConnect();
+            //// Mở kết nối DB
+            //OpenConnect();
 
             // Hiện tên người dùng
             statusLabelUserName.Text = $"Xin Chào {taiKhoan}!";
@@ -353,12 +353,26 @@ namespace QuanLySieuThi
             if (!CheckFormExist("frmBanHang"))
             {
                 frmBanHang f = new frmBanHang();
-                //f.MdiParent = this;
                 f.Show();
             }
             else
             {
                 ActForm("frmBanHang");
+            }
+        }
+
+        // inDHTheoMaDonMNSI_Click
+        private void inDHTheoMaDonMNSI_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmInDH_TheoMaDon"))
+            {
+                frmInDH_TheoMaDon f = new frmInDH_TheoMaDon();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmInDH_TheoMaDon");
             }
         }
     }

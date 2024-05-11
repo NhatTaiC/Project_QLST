@@ -35,9 +35,6 @@ namespace QuanLySieuThi
         {
             // dtpNgayBan
             dtpNgayBan.Value = DateTime.Now;
-
-            // crvDSDH_TheoTenNV
-            crvDSDH_TheoNgayBan.ReportSource = null;
         }
 
         // Function Reset()
@@ -83,26 +80,11 @@ namespace QuanLySieuThi
         {
             if (bus_dh.TimDonHang_TheoNgayBan(dtpNgayBan.Value) >= 1)
             {
-                // Khởi tạo đối tượng rpt
-                DSDH_TheoNgayBan rpt = new DSDH_TheoNgayBan();
+                DateTime temp = new DateTime();
+                temp = dtpNgayBan.Value;
 
-                // Khởi tạo ParameterValues
-                ParameterValues para = new ParameterValues();
-
-                // Khởi tạo ParameterDiscreteValue
-                ParameterDiscreteValue val = new ParameterDiscreteValue();
-
-                // Gán giá trị cho ParameterDiscreteValue
-                val.Value = dtpNgayBan.Value.ToString();
-
-                // Thêm val vào para
-                para.Add(val);
-
-                // Định nghĩa biến tham gia cho rpt
-                rpt.DataDefinition.ParameterFields["@ngayBan"].ApplyCurrentValues(para);
-
-                // Gọi rpt
-                crvDSDH_TheoNgayBan.ReportSource = rpt; 
+                frmInDSDH_TheoNgayBan_KetQua f = new frmInDSDH_TheoNgayBan_KetQua(temp);
+                f.ShowDialog();
             }
             else
             {

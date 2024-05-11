@@ -35,9 +35,6 @@ namespace QuanLySieuThi
         public void LoadData() { 
             // txtTenSanPham
             txtTenSanPham.Focus();
-
-            // crvDSSP_TheoTenSP
-            crvDSSP_TheoTenSP.ReportSource = null;
         }
 
         // Function Reset()
@@ -87,26 +84,8 @@ namespace QuanLySieuThi
             {
                 if (bus_sp.TimSP_TheoTenSP_3(txtTenSanPham.Text) >= 1)
                 {
-                    // Khởi tạo đối tượng rpt
-                    DSSP_TheoTenSanPham rpt = new DSSP_TheoTenSanPham();
-
-                    // Khởi tạo ParameterValues
-                    ParameterValues para = new ParameterValues();
-
-                    // Khởi tạo ParameterDiscreteValue
-                    ParameterDiscreteValue val = new ParameterDiscreteValue();
-
-                    // Gán giá trị cho ParameterDiscreteValue
-                    val.Value = txtTenSanPham.Text;
-
-                    // Thêm val vào para
-                    para.Add(val);
-
-                    // Định nghĩa biến tham gia cho rpt
-                    rpt.DataDefinition.ParameterFields["@tenSP"].ApplyCurrentValues(para);
-
-                    // Gọi rpt
-                    crvDSSP_TheoTenSP.ReportSource = rpt;
+                    frmInDanhSachSanPham_TheoTenSanPham_KetQua f = new frmInDanhSachSanPham_TheoTenSanPham_KetQua(txtTenSanPham.Text);
+                    f.ShowDialog();
                 }
                 else
                 {

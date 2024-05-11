@@ -1,0 +1,7 @@
+TaiKhoan(TaiKhoan, MatKhau, HoTen, NgayTao, ChucVu)
+NhaCungCap(MaNCC, TenNCC, DiaChi, Sdt)
+LoaiSanPham(MaLoaiSP, TenLoaiSP, MoTa)
+SanPham(MaSP, TenSP, MaNCC, GiaNhap, GiaBan, SoLuong, DonViTinh, NoiSX, HSD)
+NhanVien(MaNV, TenNV, NgaySinh, GioiTinh, DiaChi, Sdt, ChucVu)
+DonHang(MaDon, NgayBan, TongGiaTri, NguoiNhap-MaNV)
+ChiTietDonHang(MaDon, MaSP, TenSP, DonViTinh, GiaBan, SoLuong, ThanhTien)

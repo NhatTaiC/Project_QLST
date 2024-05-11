@@ -37,11 +37,8 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnIn = new System.Windows.Forms.Button();
-            this.tableReport = new System.Windows.Forms.TableLayoutPanel();
-            this.crvDSDH_TheoTenNV = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.tableForm.SuspendLayout();
             this.tableButton.SuspendLayout();
-            this.tableReport.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -49,7 +46,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 56);
+            this.label1.Location = new System.Drawing.Point(21, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(852, 45);
             this.label1.TabIndex = 0;
@@ -63,7 +60,7 @@
             this.tableForm.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableForm.Controls.Add(this.label2, 0, 0);
             this.tableForm.Controls.Add(this.txtTenNhanVien, 1, 0);
-            this.tableForm.Location = new System.Drawing.Point(162, 147);
+            this.tableForm.Location = new System.Drawing.Point(162, 126);
             this.tableForm.Name = "tableForm";
             this.tableForm.RowCount = 1;
             this.tableForm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -101,7 +98,7 @@
             this.tableButton.Controls.Add(this.btnThoat, 2, 0);
             this.tableButton.Controls.Add(this.btnLamMoi, 1, 0);
             this.tableButton.Controls.Add(this.btnIn, 0, 0);
-            this.tableButton.Location = new System.Drawing.Point(230, 289);
+            this.tableButton.Location = new System.Drawing.Point(230, 268);
             this.tableButton.Name = "tableButton";
             this.tableButton.RowCount = 1;
             this.tableButton.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -148,39 +145,12 @@
             this.btnIn.UseVisualStyleBackColor = true;
             this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
-            // tableReport
-            // 
-            this.tableReport.ColumnCount = 1;
-            this.tableReport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableReport.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableReport.Controls.Add(this.crvDSDH_TheoTenNV, 0, 0);
-            this.tableReport.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableReport.Location = new System.Drawing.Point(0, 426);
-            this.tableReport.Name = "tableReport";
-            this.tableReport.RowCount = 1;
-            this.tableReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableReport.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableReport.Size = new System.Drawing.Size(885, 455);
-            this.tableReport.TabIndex = 3;
-            // 
-            // crvDSDH_TheoTenNV
-            // 
-            this.crvDSDH_TheoTenNV.ActiveViewIndex = -1;
-            this.crvDSDH_TheoTenNV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crvDSDH_TheoTenNV.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crvDSDH_TheoTenNV.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crvDSDH_TheoTenNV.Location = new System.Drawing.Point(3, 3);
-            this.crvDSDH_TheoTenNV.Name = "crvDSDH_TheoTenNV";
-            this.crvDSDH_TheoTenNV.Size = new System.Drawing.Size(879, 449);
-            this.crvDSDH_TheoTenNV.TabIndex = 0;
-            // 
             // frmInDSDH_TheoTenNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 881);
+            this.ClientSize = new System.Drawing.Size(885, 358);
             this.ControlBox = false;
-            this.Controls.Add(this.tableReport);
             this.Controls.Add(this.tableButton);
             this.Controls.Add(this.tableForm);
             this.Controls.Add(this.label1);
@@ -195,7 +165,6 @@
             this.tableForm.ResumeLayout(false);
             this.tableForm.PerformLayout();
             this.tableButton.ResumeLayout(false);
-            this.tableReport.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,12 +175,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableForm;
         private System.Windows.Forms.TableLayoutPanel tableButton;
-        private System.Windows.Forms.TableLayoutPanel tableReport;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTenNhanVien;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.Button btnIn;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crvDSDH_TheoTenNV;
     }
 }

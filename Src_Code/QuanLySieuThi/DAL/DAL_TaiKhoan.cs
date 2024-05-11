@@ -125,35 +125,45 @@ namespace DAL
                 // Check TaiKhoan có # null ko? mới xóa
                 if (tk != string.Empty)
                 {
-                    // Truy vấn NhanVien có cùng TaiKhoan và xóa đi trước khi thông báo
-                    var tk_nv = from t in db.NhanViens
-                                where t.MaNV == tk
-                                select t;
-
-                    // Xóa NhanVien có cùng TaiKhoan
-                    foreach (var item in tk_nv)
+                    if (CheckTaiKhoan_2(tk) == 0)
                     {
-                        db.NhanViens.DeleteOnSubmit(item); // Xóa NhanVien có cùng TaiKhoan trong DB NhanVien
-                        db.SubmitChanges(); // Xác nhận thay đổi DB NhanVien
+                        // Truy vấn NhanVien có cùng TaiKhoan và xóa đi trước khi thông báo
+                        var tk_nv = from t in db.NhanViens
+                                    where t.MaNV == tk
+                                    select t;
+
+                        // Xóa NhanVien có cùng TaiKhoan
+                        foreach (var item in tk_nv)
+                        {
+                            db.NhanViens.DeleteOnSubmit(item); // Xóa NhanVien có cùng TaiKhoan trong DB NhanVien
+                            db.SubmitChanges(); // Xác nhận thay đổi DB NhanVien
+                        }
+
+                        // Truy vấn TaiKhoan có trong DSTK hay ko?
+                        var t_delete = from t in db.TaiKhoans
+                                       where t.TaiKhoan1 == tk
+                                       select t;
+
+                        // Xóa TK
+                        foreach (var item in t_delete)
+                        {
+                            db.TaiKhoans.DeleteOnSubmit(item); // Xóa TaiKhoan trong DB TaiKhoan
+                            db.SubmitChanges(); // Xác nhận thay đổi DB TaiKhoan
+                        }
+
+                        // Thông báo
+                        MessageBox.Show($"Xóa tài khoản +{tk}+ thành công!", "Thông báo",
+                           MessageBoxButtons.OK,
+                           MessageBoxIcon.Information);
+                        return true; 
                     }
-
-                    // Truy vấn TaiKhoan có trong DSTK hay ko?
-                    var t_delete = from t in db.TaiKhoans
-                                   where t.TaiKhoan1 == tk
-                                   select t;
-
-                    // Xóa TK
-                    foreach (var item in t_delete)
+                    else
                     {
-                        db.TaiKhoans.DeleteOnSubmit(item); // Xóa TaiKhoan trong DB TaiKhoan
-                        db.SubmitChanges(); // Xác nhận thay đổi DB TaiKhoan
+                        // Thông báo
+                        MessageBox.Show("Tài khoản có liên quan đến NhanVien\nKhông thể xóa!", "Thông báo",
+                           MessageBoxButtons.OK,
+                           MessageBoxIcon.Error);
                     }
-
-                    // Thông báo
-                    MessageBox.Show($"Xóa tài khoản +{tk}+ thành công!", "Thông báo",
-                       MessageBoxButtons.OK,
-                       MessageBoxIcon.Information);
-                    return true;
                 }
                 else
                 {
@@ -302,6 +312,16 @@ namespace DAL
                 return true;
             }
             return false;
+        }
+
+        // CheckTaiKhoan_2()
+        public int CheckTaiKhoan_2(string taiKhoan) {
+            var temp = from tk in db.TaiKhoans
+                       join nv in db.NhanViens
+                       on tk.TaiKhoan1 equals nv.TaiKhoan
+                       where nv.TaiKhoan == taiKhoan
+                       select tk;
+            return temp.Count();
         }
     }
 }

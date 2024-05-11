@@ -37,9 +37,6 @@ namespace QuanLySieuThi
         {
             // txtTenNhanVien
             txtTenNhanVien.Focus();
-
-            // crvDSDH_TheoTenNV
-            crvDSDH_TheoTenNV.ReportSource = null;
         }
 
         // Function Reset()
@@ -91,26 +88,8 @@ namespace QuanLySieuThi
                 // Check TenNV có trong DB hay ko?
                 if (bus_dh.TimDonHang_TheoTenNV(txtTenNhanVien.Text) >= 1)
                 {
-                    // Khởi tạo đối tượng rpt
-                    DSDH_TheoTenNV rpt = new DSDH_TheoTenNV();
-
-                    // Khởi tạo ParameterValues
-                    ParameterValues para = new ParameterValues();
-
-                    // Khởi tạo ParameterDiscreteValue
-                    ParameterDiscreteValue val = new ParameterDiscreteValue();
-
-                    // Gán giá trị cho ParameterDiscreteValue
-                    val.Value = txtTenNhanVien.Text;
-
-                    // Thêm val vào para
-                    para.Add(val);
-
-                    // Định nghĩa biến tham gia cho rpt
-                    rpt.DataDefinition.ParameterFields["@tenNV"].ApplyCurrentValues(para);
-
-                    // Gọi rpt
-                    crvDSDH_TheoTenNV.ReportSource = rpt; 
+                    frmInDSDH_TheoTenNV_KetQua f = new frmInDSDH_TheoTenNV_KetQua(txtTenNhanVien.Text);
+                    f.ShowDialog();
                 }
                 else
                 {

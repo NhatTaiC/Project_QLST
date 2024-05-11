@@ -134,7 +134,7 @@ namespace DAL
                 if (maNCC != string.Empty)
                 {
                     // Check MaNCC có trong DB SanPham hay không?
-                    if (CheckNCC_TheoMaNCC(maNCC) == 1)
+                    if (CheckNCC_TheoMaNCC(maNCC) == 0)
                     {
                         // Tìm NCC muốn xóa = maNCC
                         var ncc_delete = from nc in db.NhaCungCaps

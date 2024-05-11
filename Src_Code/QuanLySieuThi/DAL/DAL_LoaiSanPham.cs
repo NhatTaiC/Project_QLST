@@ -132,7 +132,7 @@ namespace DAL
                 if (maLSP != string.Empty)
                 {
                     // Check MaLSP có trong DB SanPham hay không trước khí xóa!
-                    if (CheckLSP_TheoMaLSP(maLSP) == 1)
+                    if (CheckLSP_TheoMaLSP(maLSP) == 0)
                     {
                         // Tìm LoaiSanPham cần xóa = maLSP
                         var lsp_delete = from l in db.LoaiSanPhams
