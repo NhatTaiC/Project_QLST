@@ -142,17 +142,35 @@
     <Compile Include="frmInDanhSachSanPham_TheoTenSanPham.Designer.cs">
       <DependentUpon>frmInDanhSachSanPham_TheoTenSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInDanhSachSanPham_TheoTenSanPham_KetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInDanhSachSanPham_TheoTenSanPham_KetQua.Designer.cs">
+      <DependentUpon>frmInDanhSachSanPham_TheoTenSanPham_KetQua.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInDSDH_TheoNgayBan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmInDSDH_TheoNgayBan.Designer.cs">
       <DependentUpon>frmInDSDH_TheoNgayBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInDSDH_TheoNgayBan_KetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInDSDH_TheoNgayBan_KetQua.Designer.cs">
+      <DependentUpon>frmInDSDH_TheoNgayBan_KetQua.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInDSDH_TheoTenNV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmInDSDH_TheoTenNV.Designer.cs">
       <DependentUpon>frmInDSDH_TheoTenNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInDSDH_TheoTenNV_KetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInDSDH_TheoTenNV_KetQua.Designer.cs">
+      <DependentUpon>frmInDSDH_TheoTenNV_KetQua.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLoaiSanPham.cs">
       <SubType>Form</SubType>
@@ -249,11 +267,20 @@
     <EmbeddedResource Include="frmInDanhSachSanPham_TheoTenSanPham.resx">
       <DependentUpon>frmInDanhSachSanPham_TheoTenSanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInDanhSachSanPham_TheoTenSanPham_KetQua.resx">
+      <DependentUpon>frmInDanhSachSanPham_TheoTenSanPham_KetQua.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInDSDH_TheoNgayBan.resx">
       <DependentUpon>frmInDSDH_TheoNgayBan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInDSDH_TheoNgayBan_KetQua.resx">
+      <DependentUpon>frmInDSDH_TheoNgayBan_KetQua.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInDSDH_TheoTenNV.resx">
       <DependentUpon>frmInDSDH_TheoTenNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInDSDH_TheoTenNV_KetQua.resx">
+      <DependentUpon>frmInDSDH_TheoTenNV_KetQua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoaiSanPham.resx">
       <DependentUpon>frmLoaiSanPham.cs</DependentUpon>
