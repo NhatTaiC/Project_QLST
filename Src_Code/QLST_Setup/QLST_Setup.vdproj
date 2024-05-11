@@ -39,6 +39,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_45E5D2771CF54848A74744A1E20BCA91"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5AA36FC83604AF17E9138193F287DC6F"
         "OwnerKey" = "8:_27A5ACB726A64CACB6EC4E39E8DD8850"
         "MsmSig" = "8:_UNDEFINED"
@@ -326,6 +332,26 @@
             {
             "SourcePath" = "8:..\\DB_Backup\\QLST.mdf"
             "TargetName" = "8:QLST.mdf"
+            "Tag" = "8:"
+            "Folder" = "8:_D7F5267CD2F4459ABF249F434BA424E7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_45E5D2771CF54848A74744A1E20BCA91"
+            {
+            "SourcePath" = "8:..\\Database\\qlst_data.sql"
+            "TargetName" = "8:qlst_data.sql"
             "Tag" = "8:"
             "Folder" = "8:_D7F5267CD2F4459ABF249F434BA424E7"
             "Condition" = "8:"
@@ -831,7 +857,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:QLST_Setup"
         "ProductCode" = "8:{3B884976-BC7D-44E1-9CA0-D0F2C75166BF}"
-        "PackageCode" = "8:{207A8AB1-4F9D-4735-9D23-88E557DD8680}"
+        "PackageCode" = "8:{28FCF097-9EE7-42F3-AD42-4747C0B5FCA4}"
         "UpgradeCode" = "8:{FF0AB6F5-2DAB-46BA-8A4F-932B2E42CB5D}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
