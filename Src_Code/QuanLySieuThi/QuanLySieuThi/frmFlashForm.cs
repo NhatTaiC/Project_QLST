@@ -5,6 +5,7 @@
 * 05/05/2024
 * frmFlashForm.cs
 */
+using BUS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,18 +29,20 @@ namespace QuanLySieuThi
         // Initialize Variables
         public static SqlConnection Con; // Khai báo đối tượng kết nối DB
 
-        // Function Connect()
-        public void Connect() { 
+        // Function OpenConnect()
+        public void OpenConnect()
+        {
+            // Mở kết nối DB
             Con = new SqlConnection();
             Con.ConnectionString = Properties.Settings.Default.tspConnect;
-            Con.Open(); // Mở kết nối DB
+            Con.Open();
         }
 
         // frmFlashForm_Load
         private void frmFlashForm_Load(object sender, EventArgs e)
         {
-            // Mở kết nối DB
-            Connect();
+            //// Mở kết nối DB
+            //OpenConnect();
         }
 
         // timer1_Tick

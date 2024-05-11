@@ -26,7 +26,7 @@ namespace QuanLySieuThi
             InitializeComponent();
         }
 
-        // Initialize Variable
+        // Initialize Variables
         BUS_TaiKhoan bus_tk = new BUS_TaiKhoan();
         public static SqlConnection Con; // Khai báo đối tượng kết nối DB
 
@@ -75,8 +75,8 @@ namespace QuanLySieuThi
         // frmDangNhap_Load
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
-            // Mở kết nối DB
-            OpenConnect();
+            //// Mở kết nối DB
+            //OpenConnect();
 
             // Nạp dữ liệu Tài khoản vào frmDangNhap
             LoadData();
@@ -85,8 +85,8 @@ namespace QuanLySieuThi
         // btnThoat_Click
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            // Đóng kết nối DB
-            CloseConnect();
+            //// Đóng kết nối DB
+            //CloseConnect();
 
             // Thoát APP
             Application.Exit();
