@@ -139,11 +139,11 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_LayDSDH_TheoNgayBan")]
-		public ISingleResult<sp_LayDSDH_TheoNgayBanResult> sp_LayDSDH_TheoNgayBan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngayBan)
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_LayDH_TheoMaDon")]
+		public ISingleResult<sp_LayDH_TheoMaDonResult> sp_LayDH_TheoMaDon([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string maDon)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ngayBan);
-			return ((ISingleResult<sp_LayDSDH_TheoNgayBanResult>)(result.ReturnValue));
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), maDon);
+			return ((ISingleResult<sp_LayDH_TheoMaDonResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_LayDSSP_TheoTenSP")]
@@ -151,6 +151,13 @@ namespace DAL
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), tenSP);
 			return ((ISingleResult<sp_LayDSSP_TheoTenSPResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_LayDSDH_TheoNgayBan")]
+		public ISingleResult<sp_LayDSDH_TheoNgayBanResult> sp_LayDSDH_TheoNgayBan([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Date")] System.Nullable<System.DateTime> ngayBan)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), ngayBan);
+			return ((ISingleResult<sp_LayDSDH_TheoNgayBanResult>)(result.ReturnValue));
 		}
 		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.sp_LayDSDH_TheoTenNV")]
@@ -1825,7 +1832,7 @@ namespace DAL
 		}
 	}
 	
-	public partial class sp_LayDSDH_TheoNgayBanResult
+	public partial class sp_LayDH_TheoMaDonResult
 	{
 		
 		private string _MaDon;
@@ -1836,7 +1843,15 @@ namespace DAL
 		
 		private string _TenNV;
 		
-		public sp_LayDSDH_TheoNgayBanResult()
+		private string _TenSP;
+		
+		private System.Nullable<int> _GiaBan;
+		
+		private System.Nullable<int> _SoLuong;
+		
+		private System.Nullable<int> _ThanhTien;
+		
+		public sp_LayDH_TheoMaDonResult()
 		{
 		}
 		
@@ -1900,6 +1915,70 @@ namespace DAL
 				if ((this._TenNV != value))
 				{
 					this._TenNV = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenSP", DbType="NVarChar(100)")]
+		public string TenSP
+		{
+			get
+			{
+				return this._TenSP;
+			}
+			set
+			{
+				if ((this._TenSP != value))
+				{
+					this._TenSP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GiaBan", DbType="Int")]
+		public System.Nullable<int> GiaBan
+		{
+			get
+			{
+				return this._GiaBan;
+			}
+			set
+			{
+				if ((this._GiaBan != value))
+				{
+					this._GiaBan = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SoLuong", DbType="Int")]
+		public System.Nullable<int> SoLuong
+		{
+			get
+			{
+				return this._SoLuong;
+			}
+			set
+			{
+				if ((this._SoLuong != value))
+				{
+					this._SoLuong = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThanhTien", DbType="Int")]
+		public System.Nullable<int> ThanhTien
+		{
+			get
+			{
+				return this._ThanhTien;
+			}
+			set
+			{
+				if ((this._ThanhTien != value))
+				{
+					this._ThanhTien = value;
 				}
 			}
 		}
@@ -2052,6 +2131,86 @@ namespace DAL
 				if ((this._HanSuDung != value))
 				{
 					this._HanSuDung = value;
+				}
+			}
+		}
+	}
+	
+	public partial class sp_LayDSDH_TheoNgayBanResult
+	{
+		
+		private string _MaDon;
+		
+		private System.Nullable<System.DateTime> _NgayBan;
+		
+		private System.Nullable<int> _TongGiaTri;
+		
+		private string _TenNV;
+		
+		public sp_LayDSDH_TheoNgayBanResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDon", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string MaDon
+		{
+			get
+			{
+				return this._MaDon;
+			}
+			set
+			{
+				if ((this._MaDon != value))
+				{
+					this._MaDon = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NgayBan", DbType="Date")]
+		public System.Nullable<System.DateTime> NgayBan
+		{
+			get
+			{
+				return this._NgayBan;
+			}
+			set
+			{
+				if ((this._NgayBan != value))
+				{
+					this._NgayBan = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TongGiaTri", DbType="Int")]
+		public System.Nullable<int> TongGiaTri
+		{
+			get
+			{
+				return this._TongGiaTri;
+			}
+			set
+			{
+				if ((this._TongGiaTri != value))
+				{
+					this._TongGiaTri = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenNV", DbType="NVarChar(100)")]
+		public string TenNV
+		{
+			get
+			{
+				return this._TenNV;
+			}
+			set
+			{
+				if ((this._TenNV != value))
+				{
+					this._TenNV = value;
 				}
 			}
 		}

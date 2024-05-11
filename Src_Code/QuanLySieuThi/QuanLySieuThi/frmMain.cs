@@ -353,12 +353,26 @@ namespace QuanLySieuThi
             if (!CheckFormExist("frmBanHang"))
             {
                 frmBanHang f = new frmBanHang();
-                //f.MdiParent = this;
                 f.Show();
             }
             else
             {
                 ActForm("frmBanHang");
+            }
+        }
+
+        // inDHTheoMaDonMNSI_Click
+        private void inDHTheoMaDonMNSI_Click(object sender, EventArgs e)
+        {
+            if (!CheckFormExist("frmInDH_TheoMaDon"))
+            {
+                frmInDH_TheoMaDon f = new frmInDH_TheoMaDon();
+                f.MdiParent = this;
+                f.Show();
+            }
+            else
+            {
+                ActForm("frmInDH_TheoMaDon");
             }
         }
     }

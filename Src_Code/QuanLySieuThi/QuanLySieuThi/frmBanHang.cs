@@ -396,6 +396,10 @@ namespace QuanLySieuThi
             // Thông báo
             MessageBox.Show("Thanh toán thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            // Xuất Hóa Đơn
+            frmInDH_TheoMaDon_KetQua f = new frmInDH_TheoMaDon_KetQua(txtMaDon.Text);
+            f.ShowDialog();
+
             Reset();
         }
 

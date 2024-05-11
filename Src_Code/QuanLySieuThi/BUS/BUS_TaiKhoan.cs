@@ -80,5 +80,10 @@ namespace BUS
         {
             return dal_tk.CheckTaiKhoan(taiKhoan, matKhau, chucVu);
         }
+
+        // CheckTaiKhoan_2()
+        public int CheckTaiKhoan_2(string taiKhoan) {
+            return dal_tk.CheckTaiKhoan_2(taiKhoan);
+        }
     }
 }

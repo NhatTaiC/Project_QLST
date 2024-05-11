@@ -148,6 +148,12 @@
     <Compile Include="frmInDanhSachSanPham_TheoTenSanPham_KetQua.Designer.cs">
       <DependentUpon>frmInDanhSachSanPham_TheoTenSanPham_KetQua.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInDH_TheoMaDon_KetQua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInDH_TheoMaDon_KetQua.Designer.cs">
+      <DependentUpon>frmInDH_TheoMaDon_KetQua.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInDSDH_TheoNgayBan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,12 @@
     </Compile>
     <Compile Include="frmInDSDH_TheoTenNV_KetQua.Designer.cs">
       <DependentUpon>frmInDSDH_TheoTenNV_KetQua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInDH_TheoMaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInDH_TheoMaDon.Designer.cs">
+      <DependentUpon>frmInDH_TheoMaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLoaiSanPham.cs">
       <SubType>Form</SubType>
@@ -246,6 +258,12 @@
       <DependentUpon>DSSP_TheoTenSanPham.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\LayDH_TheoMaDon.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LayDH_TheoMaDon.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="frmBanHang.resx">
       <DependentUpon>frmBanHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +287,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInDanhSachSanPham_TheoTenSanPham_KetQua.resx">
       <DependentUpon>frmInDanhSachSanPham_TheoTenSanPham_KetQua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInDH_TheoMaDon.resx">
+      <DependentUpon>frmInDH_TheoMaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInDH_TheoMaDon_KetQua.resx">
+      <DependentUpon>frmInDH_TheoMaDon_KetQua.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInDSDH_TheoNgayBan.resx">
       <DependentUpon>frmInDSDH_TheoNgayBan.cs</DependentUpon>
@@ -331,6 +355,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>DSSP_TheoTenSanPham.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\LayDH_TheoMaDon.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LayDH_TheoMaDon.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Data\create_qlst_data.bat" />
     <None Include="Data\SQLCMD.rll" />
     <None Include="Properties\Settings.settings">
@@ -360,10 +388,19 @@
     <None Include="IMG\Supermarket_2.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\qlst_data.sql" />
+    <Content Include="Database\qlst_data_script.sql" />
+    <Content Include="Database\qlst_db.sql" />
+    <Content Include="Database\qlst_db.txt" />
+    <Content Include="Database\qlst_db_insert_data.sql" />
+    <Content Include="Database\qlst_sp.sql" />
+    <Content Include="Database\xem_qlst.sql" />
     <Content Include="Data\batchparser.dll" />
     <Content Include="Data\location_sqlcmd.txt" />
+    <Content Include="Data\qlst_data.sql" />
     <Content Include="Data\qlst_data_script.sql" />
     <Content Include="Data\SQLCMD.EXE" />
+    <Content Include="Data\xem_qlst.sql" />
     <Content Include="DB_Backup\QLST.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

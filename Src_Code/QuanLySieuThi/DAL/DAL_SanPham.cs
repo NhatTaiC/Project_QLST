@@ -153,7 +153,7 @@ namespace DAL
                 if (maSP != string.Empty)
                 {
                     // Check MaSP có trong DB ChiTietDonHang hay không? trước khi xóa
-                    if (CheckSP_TheoMaSP(maSP) == 1)
+                    if (CheckSP_TheoMaSP(maSP) == 0)
                     {
                         // Tìm sản phẩm muốn xóa == maSP
                         var sp_delete = from sp in db.SanPhams

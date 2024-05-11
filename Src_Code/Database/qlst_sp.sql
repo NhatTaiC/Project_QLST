@@ -16,9 +16,9 @@ AS
 	WHERE sp.TenSP LIKE '%' + @tenSP + '%'
 GO
 
---exec sp_LayDSSP_TheoTenSP 'Nike';
+--EXEC sp_LayDSSP_TheoTenSP 'Nike';
 
---DROP proc sp_LayDSSP_TheoTenSP;
+--DROP PROC sp_LayDSSP_TheoTenSP;
 
 -- LayDSDH_TheoTenNV
 CREATE PROC sp_LayDSDH_TheoTenNV(@tenNV nvarchar(100))
@@ -29,9 +29,9 @@ AS
 	WHERE nv.TenNV LIKE '%' + @tenNV + '%'
 GO
 
---exec sp_LayDSDH_TheoTenNV 'Mai Vân Linh';
+--EXEC sp_LayDSDH_TheoTenNV 'Mai Vân Linh';
 
---DROP proc sp_LayDSDH_TheoTenNV;
+--DROP PROC sp_LayDSDH_TheoTenNV;
 
 -- LayDSDH_TheoNgayBan
 CREATE PROC sp_LayDSDH_TheoNgayBan(@ngayBan date)
@@ -42,7 +42,23 @@ AS
 	WHERE dh.NgayBan = @ngayBan
 GO
 
---exec sp_LayDSDH_TheoNgayBan '2024-04-01';
+--EXEC sp_LayDSDH_TheoNgayBan '2024-04-01';
 
---DROP proc sp_LayDSDH_TheoNgayBan;
+--DROP PROC sp_LayDSDH_TheoNgayBan;
+
+-- LayDH_TheoMaDon
+CREATE PROC sp_LayDH_TheoMaDon(@maDon varchar(50))
+AS
+	SELECT dh.MaDon, dh.NgayBan, dh.TongGiaTri, nv.TenNV, ctdh.TenSP, ctdh.GiaBan, ctdh.SoLuong, ctdh.ThanhTien
+	FROM [dbo].[ChiTietDonHang] AS ctdh
+	JOIN [dbo].[DonHang] AS dh
+	ON ctdh.MaDon = dh.MaDon
+	JOIN [dbo].[NhanVien] AS nv
+	ON dh.MaNV = nv.MaNV
+	WHERE dh.MaDon = @maDon
+GO
+
+--EXEC sp_LayDH_TheoMaDon 'DH001'
+
+--DROP PROC sp_LayDH_TheoMaDon;
 	
