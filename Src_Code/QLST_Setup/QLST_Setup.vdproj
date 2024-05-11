@@ -15,6 +15,24 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_01BF72434C2042EAA7526DEB9DAA87BC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_074568C5D0F4468A9D862E4543798CBD"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_19AB3FFB0A904E42B44373CABED159ED"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_2360A5417BC548A986FA772D1C0151E0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -93,6 +111,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_9BDE4A7A46C144729905E415DDC4C830"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_A50ECA6D8700665BE9516FE6528F1119"
         "OwnerKey" = "8:_A8208C5D33B21220DF569397F5D1E98A"
         "MsmSig" = "8:_UNDEFINED"
@@ -112,6 +136,12 @@
         "Entry"
         {
         "MsmKey" = "8:_B7D4FA85B21444DDBC25CF97BB91A8FC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_BF9DF3FC24EC470D958070580E41A7B1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -148,6 +178,12 @@
         "Entry"
         {
         "MsmKey" = "8:_EF17E305151B4FAA9471A99D2A4C15F8"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FCF8748E90B04852BA33064F90EB9F5D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -288,6 +324,66 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_01BF72434C2042EAA7526DEB9DAA87BC"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Report\\DSDH_TheoNgayBan.cs"
+            "TargetName" = "8:DSDH_TheoNgayBan.cs"
+            "Tag" = "8:"
+            "Folder" = "8:_7E9EE16C72B841F29B923E109E5F2668"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_074568C5D0F4468A9D862E4543798CBD"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Report\\DSSP_TheoTenSanPham.rpt"
+            "TargetName" = "8:DSSP_TheoTenSanPham.rpt"
+            "Tag" = "8:"
+            "Folder" = "8:_7E9EE16C72B841F29B923E109E5F2668"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_19AB3FFB0A904E42B44373CABED159ED"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Report\\DSDH_TheoTenNV.cs"
+            "TargetName" = "8:DSDH_TheoTenNV.cs"
+            "Tag" = "8:"
+            "Folder" = "8:_7E9EE16C72B841F29B923E109E5F2668"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2360A5417BC548A986FA772D1C0151E0"
             {
             "SourcePath" = "8:..\\Data\\SQLCMD.EXE"
@@ -510,6 +606,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9BDE4A7A46C144729905E415DDC4C830"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Report\\DSDH_TheoTenNV.rpt"
+            "TargetName" = "8:DSDH_TheoTenNV.rpt"
+            "Tag" = "8:"
+            "Folder" = "8:_7E9EE16C72B841F29B923E109E5F2668"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A50ECA6D8700665BE9516FE6528F1119"
             {
             "AssemblyRegister" = "3:1"
@@ -578,6 +694,26 @@
             "TargetName" = "8:SQLCMD.rll"
             "Tag" = "8:"
             "Folder" = "8:_D7F5267CD2F4459ABF249F434BA424E7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BF9DF3FC24EC470D958070580E41A7B1"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Report\\DSDH_TheoNgayBan.rpt"
+            "TargetName" = "8:DSDH_TheoNgayBan.rpt"
+            "Tag" = "8:"
+            "Folder" = "8:_7E9EE16C72B841F29B923E109E5F2668"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -745,6 +881,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FCF8748E90B04852BA33064F90EB9F5D"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Report\\DSSP_TheoTenSanPham.cs"
+            "TargetName" = "8:DSSP_TheoTenSanPham.cs"
+            "Tag" = "8:"
+            "Folder" = "8:_7E9EE16C72B841F29B923E109E5F2668"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -770,6 +926,17 @@
                     "Property" = "8:_1E5DB6459E67472695D9E77496EC4A6B"
                         "Folders"
                         {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_7E9EE16C72B841F29B923E109E5F2668"
+                            {
+                            "Name" = "8:Report"
+                            "AlwaysCreate" = "11:TRUE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_4A71B502D7864AB3A46B97FE4533CFAD"
+                                "Folders"
+                                {
+                                }
+                            }
                             "{9EF0B969-E518-4E46-987F-47570745A589}:_866CCD068E5246F2AA7BA8321E27F045"
                             {
                             "Name" = "8:Text"
@@ -857,7 +1024,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:QLST_Setup"
         "ProductCode" = "8:{3B884976-BC7D-44E1-9CA0-D0F2C75166BF}"
-        "PackageCode" = "8:{28FCF097-9EE7-42F3-AD42-4747C0B5FCA4}"
+        "PackageCode" = "8:{14F55861-79C9-43EA-BC6B-9E8F56443F41}"
         "UpgradeCode" = "8:{FF0AB6F5-2DAB-46BA-8A4F-932B2E42CB5D}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
