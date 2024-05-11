@@ -39,6 +39,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_1F90F46B12DC42B994706637AC686019"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_20EDFF858A254D98BCDC62C938D266C0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -81,6 +87,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_6E735C3E9D2A4A509245ACDC5B80886A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_7A15CF7932AB4AFBB3CC72C4912510EB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -112,6 +124,12 @@
         "Entry"
         {
         "MsmKey" = "8:_8BC8981B2BB541B58197FB0D28B73F6A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8DA77348EE114B9497D02A5F1C84334C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -166,6 +184,12 @@
         "Entry"
         {
         "MsmKey" = "8:_E1EE1C3871AB47B8AE6F7005EFABDD55"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E39749B3289C4258B4CE9EB1B8E405D9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -383,6 +407,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1F90F46B12DC42B994706637AC686019"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Export RPT to PDF\\DSDonHang_MaiVanLinh.pdf"
+            "TargetName" = "8:DSDonHang_MaiVanLinh.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_FB74D79F4B674FDD9BEDE6366070BC20"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_20EDFF858A254D98BCDC62C938D266C0"
             {
             "SourcePath" = "8:..\\Data\\xem_qlst.sql"
@@ -525,6 +569,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6E735C3E9D2A4A509245ACDC5B80886A"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Export RPT to PDF\\HoaDon_DH001.pdf"
+            "TargetName" = "8:HoaDon_DH001.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_FB74D79F4B674FDD9BEDE6366070BC20"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7A15CF7932AB4AFBB3CC72C4912510EB"
             {
             "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Report\\DSDH_TheoNgayBan.cs"
@@ -653,6 +717,26 @@
             "TargetName" = "8:DSSP_TheoTenSanPham.cs"
             "Tag" = "8:"
             "Folder" = "8:_7E9EE16C72B841F29B923E109E5F2668"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8DA77348EE114B9497D02A5F1C84334C"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Export RPT to PDF\\NgayBan_04012024.pdf"
+            "TargetName" = "8:NgayBan_04012024.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_FB74D79F4B674FDD9BEDE6366070BC20"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -838,6 +922,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E39749B3289C4258B4CE9EB1B8E405D9"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Export RPT to PDF\\DSSP_Asus.pdf"
+            "TargetName" = "8:DSSP_Asus.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_FB74D79F4B674FDD9BEDE6366070BC20"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E3B80F2E336F43A88B2072D9FD54FB03"
             {
             "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Report\\DSSP_TheoTenSanPham.rpt"
@@ -978,6 +1082,17 @@
                                 {
                                 }
                             }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_FB74D79F4B674FDD9BEDE6366070BC20"
+                            {
+                            "Name" = "8:Export RPT to PDF"
+                            "AlwaysCreate" = "11:TRUE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_87EBAE73EAFE4D99A992A0C52182AF78"
+                                "Folders"
+                                {
+                                }
+                            }
                         }
                     }
                 }
@@ -1032,7 +1147,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:QLST_Setup"
         "ProductCode" = "8:{3B884976-BC7D-44E1-9CA0-D0F2C75166BF}"
-        "PackageCode" = "8:{14F55861-79C9-43EA-BC6B-9E8F56443F41}"
+        "PackageCode" = "8:{AAE8B7BE-AD11-4B44-941A-64ECA278220A}"
         "UpgradeCode" = "8:{FF0AB6F5-2DAB-46BA-8A4F-932B2E42CB5D}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
