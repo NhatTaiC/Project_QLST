@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_02191C64C87F4806A29C7622DEEC9A6E"
+        "MsmKey" = "8:_0E92A1CBE35741D69D7219B38E204271"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -28,7 +28,7 @@
         "Entry"
         {
         "MsmKey" = "8:_15704B50B5A0DB9C7D1A0E93F1119152"
-        "OwnerKey" = "8:_A06197FB209F4BCFB3D7C9C76E043CA0"
+        "OwnerKey" = "8:_7CFC8B37565F4D6E993878EA2A9C22EB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -39,13 +39,19 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_1F90F46B12DC42B994706637AC686019"
+        "MsmKey" = "8:_16CB92D96E2F4B60A6CF20C1AEBB9C29"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_20EDFF858A254D98BCDC62C938D266C0"
+        "MsmKey" = "8:_1E088A585CB748A5B1B0120AC6D1F87E"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_1F90F46B12DC42B994706637AC686019"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -58,7 +64,19 @@
         "Entry"
         {
         "MsmKey" = "8:_2190DC4A76D1CE400C28DF67DA6DC790"
-        "OwnerKey" = "8:_A06197FB209F4BCFB3D7C9C76E043CA0"
+        "OwnerKey" = "8:_7CFC8B37565F4D6E993878EA2A9C22EB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_288163C196CF41EB9BBC31A444E51E65"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_305A30D0B186434A8248AB3B68870771"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -69,25 +87,43 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_456BD05E0CBA44348126F35EBF250EBE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_53E3C131D2988CC8AFEBFD5C890C3752"
-        "OwnerKey" = "8:_A06197FB209F4BCFB3D7C9C76E043CA0"
+        "OwnerKey" = "8:_7CFC8B37565F4D6E993878EA2A9C22EB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5731E60946124A23B93A366B3DB5BF27"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_61F1017078F24F0CB3837951DEA7EA12"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_65C0350E0B0942079FC73D3287D4CE7A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_69A43764B2C649EEAA18C0E317214D21"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_6C324D95D4EA43BAA10E0FDA62CABE2A"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6CC3F52E0B8D47E8B186F8104957B353"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_6E735C3E9D2A4A509245ACDC5B80886A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -100,24 +136,24 @@
         "Entry"
         {
         "MsmKey" = "8:_7AEB3D43491348A275D8542B918EC97B"
-        "OwnerKey" = "8:_A06197FB209F4BCFB3D7C9C76E043CA0"
+        "OwnerKey" = "8:_7CFC8B37565F4D6E993878EA2A9C22EB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_7B6602020D94221A1542E37C8A372AED"
-        "OwnerKey" = "8:_A06197FB209F4BCFB3D7C9C76E043CA0"
+        "OwnerKey" = "8:_7CFC8B37565F4D6E993878EA2A9C22EB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_7EB9DBE55DAC43279FEF6A4AD4E6C8B9"
+        "MsmKey" = "8:_7CFC8B37565F4D6E993878EA2A9C22EB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_8734B491097545F5B4588B8016C10811"
+        "MsmKey" = "8:_7F370F5DC2614F66BDE9257A49F90B3C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -135,25 +171,25 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_99FCE332FE844A3F9F68215D2A1A2301"
+        "MsmKey" = "8:_929AF9CBDCBC4A47A5C948365A220CF3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_A06197FB209F4BCFB3D7C9C76E043CA0"
+        "MsmKey" = "8:_9610EACC0E4F4FC4AAEC22728382E46C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_CB01F2D2BDDA44AA8F2335D1EE40629C"
+        "MsmKey" = "8:_A9D5B36088314596B3FFE546F5148AD1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_D2C7E2295112409F81E45740D370E435"
+        "MsmKey" = "8:_C38EFF5125B447A2823B6A67A57EF217"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -165,26 +201,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_D76FDB305C3949FCA5A6C02990929631"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_DB5B23953BD20E0F4BC632580D014AB7"
-        "OwnerKey" = "8:_A06197FB209F4BCFB3D7C9C76E043CA0"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DC45CF6C4F434B91AF999CC9706C2BED"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_E1EE1C3871AB47B8AE6F7005EFABDD55"
-        "OwnerKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_7CFC8B37565F4D6E993878EA2A9C22EB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -208,7 +226,7 @@
         "Entry"
         {
         "MsmKey" = "8:_ECC732032A2FD44BF6ED38B572776B8F"
-        "OwnerKey" = "8:_A06197FB209F4BCFB3D7C9C76E043CA0"
+        "OwnerKey" = "8:_7CFC8B37565F4D6E993878EA2A9C22EB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -220,7 +238,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A06197FB209F4BCFB3D7C9C76E043CA0"
+        "OwnerKey" = "8:_7CFC8B37565F4D6E993878EA2A9C22EB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -326,6 +344,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -356,12 +382,12 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_02191C64C87F4806A29C7622DEEC9A6E"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0E92A1CBE35741D69D7219B38E204271"
             {
-            "SourcePath" = "8:..\\Data\\SQLCMD.rll"
-            "TargetName" = "8:SQLCMD.rll"
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Report\\LayDH_TheoMaDon.rpt"
+            "TargetName" = "8:LayDH_TheoMaDon.rpt"
             "Tag" = "8:"
-            "Folder" = "8:_D7F5267CD2F4459ABF249F434BA424E7"
+            "Folder" = "8:_7E9EE16C72B841F29B923E109E5F2668"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -407,12 +433,12 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1F90F46B12DC42B994706637AC686019"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_16CB92D96E2F4B60A6CF20C1AEBB9C29"
             {
-            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Export RPT to PDF\\DSDonHang_MaiVanLinh.pdf"
-            "TargetName" = "8:DSDonHang_MaiVanLinh.pdf"
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\DB_Backup\\QLST.mdf"
+            "TargetName" = "8:QLST.mdf"
             "Tag" = "8:"
-            "Folder" = "8:_FB74D79F4B674FDD9BEDE6366070BC20"
+            "Folder" = "8:_D7F5267CD2F4459ABF249F434BA424E7"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -427,12 +453,32 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_20EDFF858A254D98BCDC62C938D266C0"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1E088A585CB748A5B1B0120AC6D1F87E"
             {
-            "SourcePath" = "8:..\\Data\\xem_qlst.sql"
-            "TargetName" = "8:xem_qlst.sql"
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Data\\location_sqlcmd.txt"
+            "TargetName" = "8:location_sqlcmd.txt"
             "Tag" = "8:"
             "Folder" = "8:_D7F5267CD2F4459ABF249F434BA424E7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1F90F46B12DC42B994706637AC686019"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Export RPT to PDF\\DSDonHang_MaiVanLinh.pdf"
+            "TargetName" = "8:DSDonHang_MaiVanLinh.pdf"
+            "Tag" = "8:"
+            "Folder" = "8:_FB74D79F4B674FDD9BEDE6366070BC20"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -478,12 +524,72 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_288163C196CF41EB9BBC31A444E51E65"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Data\\batchparser.dll"
+            "TargetName" = "8:batchparser.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_D7F5267CD2F4459ABF249F434BA424E7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_305A30D0B186434A8248AB3B68870771"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Data\\qlst_data_script.sql"
+            "TargetName" = "8:qlst_data_script.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_D7F5267CD2F4459ABF249F434BA424E7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3AFFA596513C49C5AFF9354CDEC91815"
             {
             "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Report\\DSDH_TheoNgayBan.rpt"
             "TargetName" = "8:DSDH_TheoNgayBan.rpt"
             "Tag" = "8:"
             "Folder" = "8:_7E9EE16C72B841F29B923E109E5F2668"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_456BD05E0CBA44348126F35EBF250EBE"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Data\\SQLCMD.rll"
+            "TargetName" = "8:SQLCMD.rll"
+            "Tag" = "8:"
+            "Folder" = "8:_D7F5267CD2F4459ABF249F434BA424E7"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -529,30 +635,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6C324D95D4EA43BAA10E0FDA62CABE2A"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5731E60946124A23B93A366B3DB5BF27"
             {
-            "SourcePath" = "8:..\\IMG\\Supermarket_icon_2.ico"
-            "TargetName" = "8:Supermarket_icon_2.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_B7E20AFABD884A2A98E2B50FCB3DDD26"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6CC3F52E0B8D47E8B186F8104957B353"
-            {
-            "SourcePath" = "8:..\\Data\\SQLCMD.EXE"
-            "TargetName" = "8:SQLCMD.EXE"
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Data\\xem_qlst.sql"
+            "TargetName" = "8:xem_qlst.sql"
             "Tag" = "8:"
             "Folder" = "8:_D7F5267CD2F4459ABF249F434BA424E7"
             "Condition" = "8:"
@@ -569,12 +655,72 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6E735C3E9D2A4A509245ACDC5B80886A"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_61F1017078F24F0CB3837951DEA7EA12"
             {
             "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Export RPT to PDF\\HoaDon_DH001.pdf"
             "TargetName" = "8:HoaDon_DH001.pdf"
             "Tag" = "8:"
             "Folder" = "8:_FB74D79F4B674FDD9BEDE6366070BC20"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_65C0350E0B0942079FC73D3287D4CE7A"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Data\\qlst_data.sql"
+            "TargetName" = "8:qlst_data.sql"
+            "Tag" = "8:"
+            "Folder" = "8:_D7F5267CD2F4459ABF249F434BA424E7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_69A43764B2C649EEAA18C0E317214D21"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Text\\ReadMe.txt"
+            "TargetName" = "8:ReadMe.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_866CCD068E5246F2AA7BA8321E27F045"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6C324D95D4EA43BAA10E0FDA62CABE2A"
+            {
+            "SourcePath" = "8:..\\IMG\\Supermarket_icon_2.ico"
+            "TargetName" = "8:Supermarket_icon_2.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_B7E20AFABD884A2A98E2B50FCB3DDD26"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -671,30 +817,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7EB9DBE55DAC43279FEF6A4AD4E6C8B9"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7F370F5DC2614F66BDE9257A49F90B3C"
             {
-            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Report\\LayDH_TheoMaDon.cs"
-            "TargetName" = "8:LayDH_TheoMaDon.cs"
-            "Tag" = "8:"
-            "Folder" = "8:_7E9EE16C72B841F29B923E109E5F2668"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8734B491097545F5B4588B8016C10811"
-            {
-            "SourcePath" = "8:..\\Data\\qlst_data_script.sql"
-            "TargetName" = "8:qlst_data_script.sql"
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\DB_Backup\\QLST_log.ldf"
+            "TargetName" = "8:QLST_log.ldf"
             "Tag" = "8:"
             "Folder" = "8:_D7F5267CD2F4459ABF249F434BA424E7"
             "Condition" = "8:"
@@ -751,10 +877,10 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_99FCE332FE844A3F9F68215D2A1A2301"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_929AF9CBDCBC4A47A5C948365A220CF3"
             {
-            "SourcePath" = "8:..\\Data\\location_sqlcmd.txt"
-            "TargetName" = "8:location_sqlcmd.txt"
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Data\\SQLCMD.EXE"
+            "TargetName" = "8:SQLCMD.EXE"
             "Tag" = "8:"
             "Folder" = "8:_D7F5267CD2F4459ABF249F434BA424E7"
             "Condition" = "8:"
@@ -771,9 +897,9 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CB01F2D2BDDA44AA8F2335D1EE40629C"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9610EACC0E4F4FC4AAEC22728382E46C"
             {
-            "SourcePath" = "8:..\\Data\\create_qlst_data.bat"
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Data\\create_qlst_data.bat"
             "TargetName" = "8:create_qlst_data.bat"
             "Tag" = "8:"
             "Folder" = "8:_D7F5267CD2F4459ABF249F434BA424E7"
@@ -791,12 +917,32 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D2C7E2295112409F81E45740D370E435"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A9D5B36088314596B3FFE546F5148AD1"
             {
-            "SourcePath" = "8:..\\Text\\ReadMe.txt"
-            "TargetName" = "8:ReadMe.txt"
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\DB_Backup\\QLST.bak"
+            "TargetName" = "8:QLST.bak"
             "Tag" = "8:"
-            "Folder" = "8:_866CCD068E5246F2AA7BA8321E27F045"
+            "Folder" = "8:_D7F5267CD2F4459ABF249F434BA424E7"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C38EFF5125B447A2823B6A67A57EF217"
+            {
+            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Report\\LayDH_TheoMaDon.cs"
+            "TargetName" = "8:LayDH_TheoMaDon.cs"
+            "Tag" = "8:"
+            "Folder" = "8:_7E9EE16C72B841F29B923E109E5F2668"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -817,26 +963,6 @@
             "TargetName" = "8:DSDH_TheoTenNV.cs"
             "Tag" = "8:"
             "Folder" = "8:_7E9EE16C72B841F29B923E109E5F2668"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D76FDB305C3949FCA5A6C02990929631"
-            {
-            "SourcePath" = "8:..\\Data\\batchparser.dll"
-            "TargetName" = "8:batchparser.dll"
-            "Tag" = "8:"
-            "Folder" = "8:_D7F5267CD2F4459ABF249F434BA424E7"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -880,46 +1006,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DC45CF6C4F434B91AF999CC9706C2BED"
-            {
-            "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\Report\\LayDH_TheoMaDon.rpt"
-            "TargetName" = "8:LayDH_TheoMaDon.rpt"
-            "Tag" = "8:"
-            "Folder" = "8:_7E9EE16C72B841F29B923E109E5F2668"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E1EE1C3871AB47B8AE6F7005EFABDD55"
-            {
-            "SourcePath" = "8:..\\Data\\qlst_data.sql"
-            "TargetName" = "8:qlst_data.sql"
-            "Tag" = "8:"
-            "Folder" = "8:_D7F5267CD2F4459ABF249F434BA424E7"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E39749B3289C4258B4CE9EB1B8E405D9"
@@ -1147,7 +1233,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:QLST_Setup"
         "ProductCode" = "8:{3B884976-BC7D-44E1-9CA0-D0F2C75166BF}"
-        "PackageCode" = "8:{AAE8B7BE-AD11-4B44-941A-64ECA278220A}"
+        "PackageCode" = "8:{BB78EB5D-945F-4B53-A458-23A86D1DBCF5}"
         "UpgradeCode" = "8:{FF0AB6F5-2DAB-46BA-8A4F-932B2E42CB5D}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -1267,7 +1353,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D43C21F0F3A348BFA78D5B28936A3ACB"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8038C84682B44E0F80C5EB3D983B3C72"
             {
             "Name" = "8:QLST"
             "Arguments" = "8:"
@@ -1275,7 +1361,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_A06197FB209F4BCFB3D7C9C76E043CA0"
+            "Target" = "8:_7CFC8B37565F4D6E993878EA2A9C22EB"
             "Folder" = "8:_9706960DFD724E0EAB3E65182495B7C0"
             "WorkingFolder" = "8:_E0FC52944A9B49179A33F7ECDDB90D93"
             "Icon" = "8:_6C324D95D4EA43BAA10E0FDA62CABE2A"
@@ -1680,7 +1766,7 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A06197FB209F4BCFB3D7C9C76E043CA0"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_7CFC8B37565F4D6E993878EA2A9C22EB"
             {
             "SourcePath" = "8:..\\QuanLySieuThi\\QuanLySieuThi\\obj\\Debug\\QuanLySieuThi.exe"
             "TargetName" = "8:"

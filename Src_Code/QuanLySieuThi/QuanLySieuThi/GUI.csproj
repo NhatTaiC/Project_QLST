@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>IMG\Supermarket_icon_2.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -361,6 +364,11 @@
     </EmbeddedResource>
     <None Include="Data\create_qlst_data.bat" />
     <None Include="Data\SQLCMD.rll" />
+    <None Include="DB_Backup\QLST.bak" />
+    <None Include="Export RPT to PDF\DSDonHang_MaiVanLinh.pdf" />
+    <None Include="Export RPT to PDF\DSSP_Asus.pdf" />
+    <None Include="Export RPT to PDF\HoaDon_DH001.pdf" />
+    <None Include="Export RPT to PDF\NgayBan_04012024.pdf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -427,7 +435,7 @@
     <Content Include="IMG\Supermarket_icon.jpg" />
     <Content Include="IMG\Supermarket_icon_2.ico" />
     <Content Include="IMG\Supermarket_icon_2.jpg" />
-    <Content Include="Text\Note.txt" />
+    <Content Include="Text\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -444,8 +452,6 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Export RPT to PDF\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
