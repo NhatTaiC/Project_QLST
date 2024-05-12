@@ -98,12 +98,16 @@ namespace QuanLySieuThi
         // Function Reset()
         public void Reset()
         {
+            // txtMaDonHang
+            txtMaDonHang.Text = string.Empty;
+
             // Called LoadData()
             LoadData();
         }
 
         // Function Reset2()
-        public void Reset2() {
+        public void Reset2()
+        {
             // Left
             txtMaDon.Focus();
             txtMaDon.Text = string.Empty;
@@ -407,18 +411,53 @@ namespace QuanLySieuThi
         private void btnTim_Click(object sender, EventArgs e)
         {
             // Check Mã Đơn có != null hay ko?
-            if (txtMaDonHang.Text != string.Empty)
+            if (txtMaDon.Text != string.Empty || txtMaDonHang.Text != string.Empty)
             {
-                // dgvMuaHang
-                dgvMuaHang.DataSource = bus_ctdh.TimDonHang_TheoMaDon(txtMaDonHang.Text);
+                if (txtMaDon.Text != string.Empty)
+                {
+                    // dgvMuaHang
+                    dgvMuaHang.DataSource = bus_ctdh.TimDonHang_TheoMaDon(txtMaDon.Text);
+                }
+                else
+                {
+                    // dgvMuaHang
+                    dgvMuaHang.DataSource = bus_ctdh.TimDonHang_TheoMaDon(txtMaDonHang.Text);
+                }
 
                 // Tính tổng tiền
-                txtTongTien.Text = $"{bus_bh.TinhTongTien(txtMaDonHang.Text)}"; 
+                txtTongTien.Text = $"{bus_bh.TinhTongTien(txtMaDonHang.Text)}";
             }
             else
             {
                 // Thông báo
-                MessageBox.Show("Vui lòng không để trống mã đơn hàng (phải) trước khi tìm theo mã đơn!", "Thông báo",
+                MessageBox.Show("Vui lòng không để trống mã đơn hàng (phải) trước khi tìm theo mã đơn hàng !", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        // btnIn_Click
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            // Check Mã Đơn Hàng có != null hay không?
+            if (txtMaDon.Text != string.Empty || txtMaDonHang.Text != string.Empty)
+            {
+                if (txtMaDon.Text != string.Empty)
+                {
+                    // Xuất Hóa Đơn
+                    frmInDH_TheoMaDon_KetQua f = new frmInDH_TheoMaDon_KetQua(txtMaDon.Text);
+                    f.ShowDialog();
+                }
+                else
+                {
+                    // Xuất Hóa Đơn
+                    frmInDH_TheoMaDon_KetQua f = new frmInDH_TheoMaDon_KetQua(txtMaDonHang.Text);
+                    f.ShowDialog();
+                }
+            }
+            else
+            {
+                // Thông báo
+                MessageBox.Show("Vui lòng không để trống mã đơn hàng (phải) hoặc (trái) trước khi in theo mã đơn hàng!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
