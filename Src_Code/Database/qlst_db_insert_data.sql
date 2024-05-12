@@ -210,7 +210,7 @@ INSERT INTO [dbo].[DonHang]
 	[MaNV]
 )
 VALUES 
-	(N'DH001', N'2024-04-01', 36559000, 'NV001'),
+	(N'DH001', N'2024-04-01', 40419000, 'NV001'),
 	(N'DH002', N'2024-04-01', 50000, 'NV002');
 
 --Tbl_ChiTietDonHang
