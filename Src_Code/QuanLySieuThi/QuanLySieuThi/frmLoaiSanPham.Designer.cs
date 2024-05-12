@@ -63,7 +63,7 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(244, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(455, 45);
+            this.label1.Size = new System.Drawing.Size(909, 89);
             this.label1.TabIndex = 1;
             this.label1.Text = "Quản Lý Loại Sản Phẩm";
             // 
@@ -103,7 +103,7 @@
             this.txtTenLSP.Location = new System.Drawing.Point(269, 54);
             this.txtTenLSP.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.txtTenLSP.Name = "txtTenLSP";
-            this.txtTenLSP.Size = new System.Drawing.Size(398, 26);
+            this.txtTenLSP.Size = new System.Drawing.Size(398, 44);
             this.txtTenLSP.TabIndex = 1;
             // 
             // label2
@@ -147,7 +147,7 @@
             this.txtMoTa.Location = new System.Drawing.Point(269, 99);
             this.txtMoTa.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.txtMoTa.Name = "txtMoTa";
-            this.txtMoTa.Size = new System.Drawing.Size(398, 26);
+            this.txtMoTa.Size = new System.Drawing.Size(398, 44);
             this.txtMoTa.TabIndex = 2;
             // 
             // txtMaLSP
@@ -155,7 +155,7 @@
             this.txtMaLSP.Location = new System.Drawing.Point(269, 10);
             this.txtMaLSP.Margin = new System.Windows.Forms.Padding(3, 10, 3, 10);
             this.txtMaLSP.Name = "txtMaLSP";
-            this.txtMaLSP.Size = new System.Drawing.Size(398, 26);
+            this.txtMaLSP.Size = new System.Drawing.Size(398, 44);
             this.txtMaLSP.TabIndex = 0;
             // 
             // tableButton
@@ -302,14 +302,14 @@
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(333, 74);
             this.btnTim.TabIndex = 0;
-            this.btnTim.Text = "Tìm Sản Phẩm Theo Tên Loại Sản Phẩm";
+            this.btnTim.Text = "Tìm Loại Sản Phẩm Theo Tên Loại Sản Phẩm";
             this.btnTim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTim.UseVisualStyleBackColor = true;
             this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // frmLoaiSanPham
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 881);
             this.ControlBox = false;
