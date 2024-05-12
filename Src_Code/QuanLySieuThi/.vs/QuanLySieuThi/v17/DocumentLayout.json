@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "QuanLySieuThi\\Program.cs",
               "ToolTip": "D:\\STUDY\\CN.NET\\Project_QLST\\Src_Code\\QuanLySieuThi\\QuanLySieuThi\\Program.cs",
               "RelativeToolTip": "QuanLySieuThi\\Program.cs",
-              "ViewState": "AQIAACgAAAAAAAAAAAAAACgAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACgAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-07T03:58:54.858Z",
               "IsPinned": true,
@@ -49,7 +49,8 @@
               "ViewState": "AQIAAKUAAAAAAAAAAAAAAFMAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-07T03:59:06.808Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -61,7 +62,8 @@
               "RelativeToolTip": "QuanLySieuThi\\frmMain.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-07T03:59:03.765Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Bookmark",
