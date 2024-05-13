@@ -1,1 +1,1 @@
-sqlcmd -E -S .\SQLEXPRESS -i qlst_data.sql
+sqlcmd -E -S .\SQLEXPRESS -i qlst_data_script.sql
