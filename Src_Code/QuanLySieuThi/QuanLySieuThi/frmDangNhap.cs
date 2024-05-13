@@ -16,6 +16,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace QuanLySieuThi
 {
@@ -29,6 +30,7 @@ namespace QuanLySieuThi
         // Initialize Variables
         BUS_TaiKhoan bus_tk = new BUS_TaiKhoan();
         public static SqlConnection Con; // Khai báo đối tượng kết nối DB
+        public static string connstring = ConfigurationManager.ConnectionStrings["QuanLySieuThi.Properties.Settings.tspConnect"].ConnectionString;
 
         // Function LoadData()
         public void LoadData()
@@ -57,7 +59,8 @@ namespace QuanLySieuThi
         public void OpenConnect() {
             // Mở kết nối DB
             Con = new SqlConnection();
-            Con.ConnectionString = Properties.Settings.Default.tspConnect;
+            //Con.ConnectionString = Properties.Settings.Default.tspConnect;
+            Con.ConnectionString = connstring;
             Con.Open();
         }
 
@@ -75,8 +78,8 @@ namespace QuanLySieuThi
         // frmDangNhap_Load
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
-            // Mở kết nối DB
-            OpenConnect();
+            //// Mở kết nối DB
+            //OpenConnect();
 
             // Nạp dữ liệu Tài khoản vào frmDangNhap
             LoadData();
@@ -85,8 +88,8 @@ namespace QuanLySieuThi
         // btnThoat_Click
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            // Đóng kết nối DB
-            CloseConnect();
+            //// Đóng kết nối DB
+            //CloseConnect();
 
             // Thoát APP
             Application.Exit();

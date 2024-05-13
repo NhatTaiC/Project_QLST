@@ -26,21 +26,11 @@ namespace DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NHAT-TAI;Initial Catalog=QLST;Integrated Security=True")]
-        public string QLSTConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True;TrustServe" +
+            "rCertificate=True")]
+        public string tspConnect {
             get {
-                return ((string)(this["QLSTConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KOH-LAPTOP\\SQLEXPRESS;Initial Catalog=QLST;Integrated Security=True;T" +
-            "rustServerCertificate=True")]
-        public string QLSTConnectionString1 {
-            get {
-                return ((string)(this["QLSTConnectionString1"]));
+                return ((string)(this["tspConnect"]));
             }
         }
     }
