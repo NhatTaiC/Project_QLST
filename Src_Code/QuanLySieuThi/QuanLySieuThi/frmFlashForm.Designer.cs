@@ -43,10 +43,10 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(434, 209);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(585, 210);
+            this.label1.Size = new System.Drawing.Size(1159, 420);
             this.label1.TabIndex = 0;
             this.label1.Text = "Project: Quản Lý Siêu Thị\r\nPhiên bản: 1.0\r\nThực hiện: Châu Nhật Tài, Lê Văn Toàn\r" +
-    "\n+++++ Đang tải dữ liệu +++++\r\n\r\n\r\n";
+    "\n+++++ Đang Tải Dữ Liệu +++++\r\n\r\n\r\n";
             // 
             // pictureBox1
             // 
@@ -67,7 +67,7 @@
             // 
             // frmFlashForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(19F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 623);
             this.Controls.Add(this.pictureBox1);

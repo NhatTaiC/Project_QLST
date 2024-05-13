@@ -54,7 +54,7 @@ namespace DAL
     #endregion
 		
 		public QLSTDataContext() : 
-				base(global::DAL.Properties.Settings.Default.QLSTConnectionString1, mappingSource)
+				base(global::DAL.Properties.Settings.Default.tspConnect, mappingSource)
 		{
 			OnCreated();
 		}

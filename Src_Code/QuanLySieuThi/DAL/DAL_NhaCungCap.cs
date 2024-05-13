@@ -33,8 +33,9 @@ namespace DAL
 
         public DAL_NhaCungCap()
         {
-            string sql = "Data Source=" + ServerName + ";Initial Catalog=" + DbName + ";Integrated Security=True;";
-            db = new QLSTDataContext(sql);
+            //string sql = @"Data Source=" + ServerName + ";Initial Catalog=" + DbName + ";Integrated Security=True;";
+            //Db = new QLSTDataContext(sql);
+            Db = new QLSTDataContext(Properties.Settings.Default.tspConnect);
         }
 
         // Properties
